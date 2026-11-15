@@ -26,6 +26,7 @@ struct RootView: View {
         .preferredColorScheme(.dark)
         .sheet(isPresented: $model.showNewProgram) { NewProgramView().environmentObject(model) }
         .sheet(isPresented: $model.showSettings) { SettingsPanel().environmentObject(model) }
+        .sheet(isPresented: $model.showRegeneration) { RegenerationPanel().environmentObject(model) }
         .task { await model.start() }
     }
 }
@@ -160,7 +161,6 @@ struct NewProgramView: View {
 
 struct WorkspaceView: View {
     @EnvironmentObject var model: AppModel
-    @State private var section = "brief"
     @State private var detailsExpanded = false
     var body: some View {
         VStack(spacing: 0) {
@@ -183,6 +183,7 @@ struct WorkspaceView: View {
                     Text(model.draft.title).font(.system(size: 19, weight: .medium)).fixedSize(horizontal: false, vertical: true)
                     FieldLabel(text: "Programma").padding(.top, 8)
                     sidebarButton("Brief della classe", icon: "text.alignleft", value: "brief")
+                    sidebarButton("Percorso annuale", icon: "list.bullet.rectangle", value: "plan")
                     sidebarButton("Dati del programma", icon: "square.grid.2x2", value: "details")
                     Spacer()
                     HStack(spacing: 7) {
@@ -192,9 +193,11 @@ struct WorkspaceView: View {
                 }
                 .padding(24).frame(width: 230).background(Theme.panel.opacity(0.45))
                 Rectangle().fill(Theme.border).frame(width: 1)
-                ScrollView {
+                if model.workspaceSection == "plan" {
+                    AnnualPlanView()
+                } else { ScrollView {
                     VStack(alignment: .leading, spacing: 24) {
-                        if section == "brief" {
+                        if model.workspaceSection == "brief" {
                             VStack(alignment: .leading, spacing: 10) {
                                 FieldLabel(text: "Punto di partenza")
                                 Text("Brief della classe").font(.system(size: 30, weight: .medium)).tracking(-0.8)
@@ -232,6 +235,14 @@ struct WorkspaceView: View {
                                 Text("Le indicazioni vengono salvate automaticamente su questo Mac.")
                                     .foregroundStyle(Theme.secondary)
                             }.font(.system(size: 12)).padding(.top, 8)
+                            HStack {
+                                if model.planning?.currentPlan != nil {
+                                    Button("Rigenera da questo brief") { model.showRegeneration = true }.buttonStyle(PrimaryButton())
+                                } else {
+                                    Button("Genera percorso annuale") { Task { await model.startPlanning() } }.buttonStyle(PrimaryButton())
+                                }
+                                Spacer()
+                            }.disabled(model.startingPlanning || model.planning?.latestJob?.isRunning == true)
                         } else {
                             Text("Dati del programma").font(.system(size: 30, weight: .medium)).tracking(-0.8)
                             Text("Le informazioni con cui riconosci questo percorso nella raccolta.").font(.system(size: 14)).foregroundStyle(Theme.secondary)
@@ -243,16 +254,17 @@ struct WorkspaceView: View {
                     .frame(maxWidth: 740, alignment: .leading)
                     .padding(38).frame(maxWidth: .infinity, alignment: .topLeading)
                 }
+                }
             }
         }
     }
 
     private func sidebarButton(_ title: String, icon: String, value: String) -> some View {
-        Button { section = value } label: {
+        Button { model.workspaceSection = value } label: {
             HStack(spacing: 10) { Image(systemName: icon).frame(width: 16); Text(title); Spacer() }
-                .font(.system(size: 12, weight: section == value ? .medium : .regular))
-                .foregroundStyle(section == value ? Theme.cyan : Theme.secondary)
-                .padding(11).background(section == value ? Theme.cyan.opacity(0.07) : .clear, in: RoundedRectangle(cornerRadius: 7))
+                .font(.system(size: 12, weight: model.workspaceSection == value ? .medium : .regular))
+                .foregroundStyle(model.workspaceSection == value ? Theme.cyan : Theme.secondary)
+                .padding(11).background(model.workspaceSection == value ? Theme.cyan.opacity(0.07) : .clear, in: RoundedRectangle(cornerRadius: 7))
         }.buttonStyle(.plain)
     }
 }

@@ -3,7 +3,7 @@
 - **Data:** 15 novembre 2026
 - **Base:** [architettura approvata](ARCHITECTURE.md) e [Project Brief](PROJECT_BRIEF.md)
 - **Piattaforma:** macOS
-- **Stato:** incremento 1 realizzato e collaudato; incrementi didattici successivi da realizzare
+- **Stato:** incrementi 1 e 2 implementati; contenuti delle lezioni e materiali collegati negli incrementi successivi
 
 Ogni incremento produce un comportamento utilizzabile e verificabile. La priorità è il motore didattico; l'interfaccia cresce nella misura necessaria a usarlo. I criteri seguenti descrivono il completamento del singolo incremento e non riducono il perimetro finale del brief.
 
@@ -24,6 +24,8 @@ Implementare interpretazione del brief, progettazione e revisione delle UDA, pro
 La consultazione della struttura è in sola lettura. Il docente modifica il brief o formula una richiesta e avvia la rigenerazione completa. Conservare la versione precedente, distinguere il brief ancora da applicare e rendere corrente soltanto un risultato completato. Realizzare l'export PDF del programma annuale con UDA, metadati e lezioni.
 
 **Risultato verificabile:** completare dall'app la sequenza programma, brief, scheletro revisionato, richiesta di modifica, nuovo scheletro e PDF. Una rigenerazione interrotta non cancella il percorso precedente. Un brief essenziale consente comunque al motore di procedere con ipotesi riconoscibili.
+
+**Implementazione:** app 0.2.0; workflow e verifiche in [ANNUAL_PLANNING.md](ANNUAL_PLANNING.md).
 
 ## 3 Lezioni e continuità didattica
 
@@ -55,4 +57,4 @@ Verificare ripresa delle attività, errori di rete e quota, consultazione senza 
 
 ## Prossima attività
 
-Avviare l'incremento 2: collegare interpretazione del brief, progettazione e revisione del percorso annuale, rigenerazione completa e PDF del programma.
+Scegliere con il docente materia, classe e obiettivi del pilota dell'incremento 3. Definire il contratto dei contenuti delle lezioni e il contesto necessario a mantenerne la continuità prima di implementarne la generazione.

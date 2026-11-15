@@ -18,6 +18,7 @@ swift build --package-path macos -c release
 SWIFT_BIN_DIR="$(swift build --package-path macos -c release --show-bin-path)"
 "$PACKAGING_ENV/bin/python" -m PyInstaller --noconfirm --clean --log-level WARN \
     --onedir --name didactyx-engine --paths engine \
+    --add-data "$PROJECT_DIR/engine/didactyx_engine/assets:didactyx_engine/assets" \
     --distpath tmp/engine-dist --workpath tmp/engine-build --specpath tmp/engine-build engine/runner.py
 
 APP_STAGE="$PROJECT_DIR/tmp/app-stage/DidactyX.app"

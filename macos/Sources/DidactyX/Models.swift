@@ -54,6 +54,51 @@ struct AccountStatus: Codable, Sendable {
     var message: String
 }
 
+struct PlanVersion: Codable, Identifiable, Sendable {
+    var id: String
+    var programId: String
+    var version: Int
+    var createdAt: String
+    var brief: Brief
+    var changeRequest: String
+    var data: JSONValue
+}
+
+struct PlanVersionSummary: Codable, Identifiable, Sendable {
+    var id: String
+    var version: Int
+    var createdAt: String
+    var changeRequest: String
+}
+
+struct PlanningJob: Codable, Identifiable, Sendable {
+    var id: String
+    var programId: String
+    var kind: String
+    var status: String
+    var phase: String
+    var message: String
+    var error: String?
+    var resultPlanId: String?
+    var isRunning: Bool { status == "running" }
+    var canResume: Bool { ["failed", "interrupted", "cancelled"].contains(status) }
+}
+
+struct PlanReview: Codable, Sendable {
+    var id: String
+    var planId: String
+    var createdAt: String
+    var data: JSONValue
+}
+
+struct PlanningState: Codable, Sendable {
+    var currentPlan: PlanVersion?
+    var versions: [PlanVersionSummary]
+    var latestJob: PlanningJob?
+    var briefPending: Bool
+    var latestReview: PlanReview?
+}
+
 enum JSONValue: Codable, Sendable {
     case object([String: JSONValue]), array([JSONValue]), string(String), number(Double), bool(Bool), null
 
@@ -85,6 +130,10 @@ enum JSONValue: Codable, Sendable {
     }
     var string: String? { if case .string(let value) = self { return value }; return nil }
     var integer: Int? { if case .number(let value) = self { return Int(value) }; return nil }
+    var number: Double? { if case .number(let value) = self { return value }; return nil }
+    var items: [JSONValue] { if case .array(let value) = self { return value }; return [] }
+    var strings: [String] { items.compactMap(\.string) }
+    func text(_ key: String) -> String { self[key]?.string ?? "" }
 }
 
 struct EngineError: LocalizedError {

@@ -1,0 +1,71 @@
+{
+  "date": "2026-11-15",
+  "application_version": "0.2.0",
+  "platform_tested": "macOS 26.7.2 arm64",
+  "bundled_python_version": "3.12.14",
+  "checks": {
+    "python_tests": {
+      "passed": 20,
+      "failed": 0
+    },
+    "swift_python_bundled_integration": "passed",
+    "release_build": "passed",
+    "local_code_signature": "passed",
+    "real_initial_generation": "passed",
+    "real_regeneration_from_native_ui": "passed",
+    "native_cancel_and_resume_from_checkpoint": "passed",
+    "native_history_selection_and_export": "passed",
+    "native_brief_pending_banner": "passed",
+    "native_reopen_preserves_versions": "passed",
+    "real_manual_review_without_structure_changes": "passed",
+    "previous_version_unchanged": "passed",
+    "requested_uda_order_applied": "passed",
+    "pdf_export_from_bundled_engine": "passed",
+    "all_pdf_pages_rendered_and_visually_checked": 48,
+    "final_application_open_on_personal_library": true,
+    "test_data_separate_from_personal_archive": true
+  },
+  "full_brief_case": {
+    "v1": {
+      "udas": 4,
+      "lessons": 35,
+      "hours": 66,
+      "pdf_pages": 24,
+      "all_titles_and_lesson_codes_present": true
+    },
+    "v2": {
+      "udas": 4,
+      "lessons": 37,
+      "hours": 66,
+      "pdf_pages": 24,
+      "all_titles_and_lesson_codes_present": true
+    }
+  },
+  "minimal_brief_case": {
+    "hours": 12,
+    "udas": 4,
+    "lessons": 15,
+    "assumptions_explicit": true,
+    "structural_errors": []
+  },
+  "manual_review": {
+    "findings": 4,
+    "kinds": [
+      "didactic"
+    ],
+    "versions_before": 2,
+    "versions_after": 2,
+    "current_plan_unchanged": true
+  },
+  "pdf_sha256": {
+    "annual-programme-v2.pdf": "0512f3227adacedacf69c8395d7467033649073865c71e78df270616a6c00f53",
+    "annual-programme-v1.pdf": "2b2c663571a1d8ce27b29aae935bb91d8a6c471f1c937aad0c09eb3b2ed5fd7f"
+  },
+  "limits": [
+    "Percorsi e metadati; contenuti completi delle lezioni nell’incremento 3.",
+    "Nessun curricolo ufficiale fornito; nessuna conformità ministeriale certificata.",
+    "Prove su dati fittizi: efficacia didattica in classe da valutare con il docente.",
+    "Applicazione locale arm64 con firma ad hoc; distribuzione e notarizzazione non verificate."
+  ],
+  "privacy": "Nessuna identità account, credenziale, percentuale di quota o dato di studente reale incluso."
+}

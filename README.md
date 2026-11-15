@@ -11,9 +11,12 @@ La priorità del progetto è una qualità didattica molto elevata, sostenuta da 
 - [Architettura macOS](docs/ARCHITECTURE.md): stack approvato, responsabilità dei componenti e organizzazione tecnica iniziale.
 - [Piano di sviluppo](docs/IMPLEMENTATION_PLAN.md): incrementi, risultati verificabili e prossima attività.
 - [Prima app macOS](docs/FOUNDATION_MACOS.md): utilizzo, costruzione, dati locali e verifiche della fondazione.
+- [Progettazione annuale](docs/ANNUAL_PLANNING.md): generazione reale, revisioni, versioni, ripresa e PDF.
 
 Il Project Brief è il riferimento principale per le decisioni di prodotto. Viene aggiornato nel repository insieme all'evoluzione del progetto; la cronologia Git conserva le modifiche.
 
 ## Stato del progetto
 
-La prima app macOS include home dei programmi, brief libero e strutturato, salvataggio SQLite, impostazioni e lettura dello stato Codex. Il pacchetto locale si costruisce con `bash scripts/build_macos.sh` ed è disponibile in `dist/DidactyX.app`. Il prossimo incremento collega la progettazione annuale e il relativo PDF. WebKit per i materiali e il componente editoriale fanno parte dello stack approvato e verranno integrati con le funzioni didattiche. Il supporto Windows sarà valutato successivamente.
+L'app macOS 0.2.0 include programmi, brief libero e strutturato, impostazioni Codex e progettazione annuale reale: UDA e lezioni con metadati, autori e revisori separati, rigenerazione completa, storico ed esportazione PDF. I dati sono salvati in SQLite sul Mac. Il pacchetto locale si costruisce con `bash scripts/build_macos.sh` ed è disponibile in `dist/DidactyX.app`.
+
+Il prossimo incremento riguarda i contenuti completi delle lezioni e la continuità didattica tra essi. WebKit verrà integrato con il lettore dei materiali. Il supporto Windows sarà valutato successivamente.

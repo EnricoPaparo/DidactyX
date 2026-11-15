@@ -67,7 +67,7 @@ struct SettingsPanel: View {
             .overlay(RoundedRectangle(cornerRadius: 11).stroke(Theme.border))
 
             HStack {
-                Text("DidactyX 0.1.0").font(Theme.mono(10))
+                Text("DidactyX 0.2.0").font(Theme.mono(10))
                 Spacer()
                 if let version = model.account?.version { Text(version).font(Theme.mono(9)) }
             }.foregroundStyle(Theme.secondary)

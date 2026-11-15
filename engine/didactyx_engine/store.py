@@ -41,10 +41,11 @@ class Store:
         self.path = self.directory / "library.sqlite3"
         with closing(self.connect()) as connection, connection:
             version = connection.execute("PRAGMA user_version").fetchone()[0]
-            if version > 1:
+            if version > 2:
                 raise DomainError(-32010, "Questo archivio richiede una versione più recente di DidactyX.")
             connection.execute("PRAGMA journal_mode=WAL")
-            connection.executescript("""
+            if version == 0:
+                connection.executescript("""
                 CREATE TABLE IF NOT EXISTS programs (
                     id TEXT PRIMARY KEY, title TEXT NOT NULL, class_label TEXT NOT NULL,
                     description TEXT NOT NULL, brief_json TEXT NOT NULL,
@@ -53,7 +54,36 @@ class Store:
                 );
                 CREATE TABLE IF NOT EXISTS settings (key TEXT PRIMARY KEY, value TEXT NOT NULL);
                 PRAGMA user_version=1;
-            """)
+                """)
+            if version < 2:
+                connection.executescript("""
+                    BEGIN IMMEDIATE;
+                    CREATE TABLE IF NOT EXISTS annual_plans (
+                        id TEXT PRIMARY KEY, program_id TEXT NOT NULL REFERENCES programs(id) ON DELETE CASCADE,
+                        version INTEGER NOT NULL, created_at TEXT NOT NULL, brief_json TEXT NOT NULL,
+                        change_request TEXT NOT NULL, data_json TEXT NOT NULL,
+                        UNIQUE(program_id, version)
+                    );
+                    CREATE TABLE IF NOT EXISTS plan_heads (
+                        program_id TEXT PRIMARY KEY REFERENCES programs(id) ON DELETE CASCADE,
+                        plan_id TEXT NOT NULL REFERENCES annual_plans(id)
+                    );
+                    CREATE TABLE IF NOT EXISTS planning_jobs (
+                        id TEXT PRIMARY KEY, program_id TEXT NOT NULL REFERENCES programs(id) ON DELETE CASCADE,
+                        kind TEXT NOT NULL, status TEXT NOT NULL, phase TEXT NOT NULL, message TEXT NOT NULL,
+                        created_at TEXT NOT NULL, updated_at TEXT NOT NULL, owner_pid INTEGER NOT NULL,
+                        snapshot_json TEXT NOT NULL, checkpoint_json TEXT NOT NULL,
+                        result_plan_id TEXT, error TEXT
+                    );
+                    CREATE UNIQUE INDEX IF NOT EXISTS one_running_plan_job ON planning_jobs(program_id)
+                        WHERE status='running';
+                    CREATE TABLE IF NOT EXISTS plan_reviews (
+                        id TEXT PRIMARY KEY, plan_id TEXT NOT NULL REFERENCES annual_plans(id) ON DELETE CASCADE,
+                        created_at TEXT NOT NULL, data_json TEXT NOT NULL
+                    );
+                    PRAGMA user_version=2;
+                    COMMIT;
+                """)
 
     def connect(self):
         connection = sqlite3.connect(self.path, timeout=5)

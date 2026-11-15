@@ -2,7 +2,9 @@
 set -euo pipefail
 PROJECT_DIR="$(cd "$(dirname "$0")/.." && pwd)"
 cd "$PROJECT_DIR"
-python3 -m unittest discover -s tests -v
+CHECK_PYTHON="$PROJECT_DIR/tmp/packaging-venv/bin/python"
+if [ ! -x "$CHECK_PYTHON" ]; then CHECK_PYTHON=python3; fi
+"$CHECK_PYTHON" -m unittest discover -s tests -v
 ENGINE_BINARY="$PROJECT_DIR/dist/DidactyX.app/Contents/Resources/engine/didactyx-engine"
 if [ ! -x "$ENGINE_BINARY" ]; then
     printf 'Costruisci prima l’app con bash scripts/build_macos.sh.\n' >&2

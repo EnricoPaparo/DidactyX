@@ -15,16 +15,19 @@ enum Theme {
 }
 
 struct PrimaryButton: ButtonStyle {
+    @Environment(\.isEnabled) private var isEnabled
     func makeBody(configuration: Configuration) -> some View {
         configuration.label
             .font(.system(size: 13, weight: .semibold))
             .foregroundStyle(Theme.background)
             .padding(.horizontal, 17).padding(.vertical, 11)
             .background(Theme.cyan.opacity(configuration.isPressed ? 0.75 : 1), in: RoundedRectangle(cornerRadius: 8))
+            .opacity(isEnabled ? 1 : 0.4)
     }
 }
 
 struct QuietButton: ButtonStyle {
+    @Environment(\.isEnabled) private var isEnabled
     func makeBody(configuration: Configuration) -> some View {
         configuration.label
             .font(.system(size: 13, weight: .medium))
@@ -32,6 +35,7 @@ struct QuietButton: ButtonStyle {
             .padding(.horizontal, 13).padding(.vertical, 10)
             .background(configuration.isPressed ? Theme.raised : Theme.panel, in: RoundedRectangle(cornerRadius: 8))
             .overlay(RoundedRectangle(cornerRadius: 8).stroke(Theme.border, lineWidth: 1))
+            .opacity(isEnabled ? 1 : 0.4)
     }
 }
 
