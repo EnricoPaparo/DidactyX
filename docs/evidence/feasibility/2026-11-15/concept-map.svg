@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="500" viewBox="0 0 760 500" role="img">
+<title>Progetto Faro: due kit e un solo trasporto</title>
+<rect width="760" height="500" fill="white"/>
+<rect x="100" y="32" width="430" height="54" rx="6" fill="#EDF5F6" stroke="#157D91"/>
+<text x="315" y="65" text-anchor="middle" font-family="sans-serif" font-size="19" fill="#172B3A">Equazione</text>
+<rect x="100" y="162" width="430" height="54" rx="6" fill="#EDF5F6" stroke="#157D91"/>
+<text x="315" y="195" text-anchor="middle" font-family="sans-serif" font-size="19" fill="#172B3A">Trasformazioni equivalenti</text>
+<rect x="100" y="292" width="430" height="54" rx="6" fill="#EDF5F6" stroke="#157D91"/>
+<text x="315" y="325" text-anchor="middle" font-family="sans-serif" font-size="19" fill="#172B3A">Soluzione</text>
+<rect x="100" y="422" width="430" height="54" rx="6" fill="#EDF5F6" stroke="#157D91"/>
+<text x="315" y="455" text-anchor="middle" font-family="sans-serif" font-size="19" fill="#172B3A">Verifica per sostituzione</text>
+<path d="M315 86 V154" stroke="#157D91" stroke-width="2" fill="none"/>
+<path d="M310 154 L320 154 L315 162 Z" fill="#157D91"/>
+<text x="332" y="130.0" font-family="sans-serif" font-size="16" fill="#172B3A">si risolve attraverso</text>
+<path d="M315 216 V284" stroke="#157D91" stroke-width="2" fill="none"/>
+<path d="M310 284 L320 284 L315 292 Z" fill="#157D91"/>
+<text x="332" y="260.0" font-family="sans-serif" font-size="16" fill="#172B3A">permettono di trovare</text>
+<path d="M315 346 V414" stroke="#157D91" stroke-width="2" fill="none"/>
+<path d="M310 414 L320 414 L315 422 Z" fill="#157D91"/>
+<text x="332" y="390.0" font-family="sans-serif" font-size="16" fill="#172B3A">si controlla mediante</text>
+</svg>

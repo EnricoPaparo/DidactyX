@@ -1,0 +1,11 @@
+{
+  "date": "2026-11-15",
+  "macos": "26.7.2",
+  "architecture": "arm64",
+  "pdf_python": "3.12.14",
+  "reportlab": "4.4.9",
+  "pypdf": "6.21.4",
+  "Pillow": "13.0.0",
+  "data": "synthetic",
+  "architecture_selected": false
+}

@@ -1,0 +1,38 @@
+{
+  "title": "Soluzione di 2x + 3 = 19",
+  "nodes": [
+    {
+      "id": "1",
+      "label": "Problema: 2x + 3 = 19"
+    },
+    {
+      "id": "2",
+      "label": "Due kit: 2x = 16"
+    },
+    {
+      "id": "3",
+      "label": "Un kit: x = 8 euro"
+    },
+    {
+      "id": "4",
+      "label": "Verifica: 2 × 8 + 3 = 19"
+    }
+  ],
+  "edges": [
+    {
+      "source": "1",
+      "target": "2",
+      "label": "Sottraiamo 3 da entrambi i membri"
+    },
+    {
+      "source": "2",
+      "target": "3",
+      "label": "Dividiamo entrambi i membri per 2"
+    },
+    {
+      "source": "3",
+      "target": "4",
+      "label": "Sostituiamo x con 8 nell’equazione iniziale: otteniamo 19 = 19"
+    }
+  ]
+}

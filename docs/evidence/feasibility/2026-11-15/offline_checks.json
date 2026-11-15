@@ -1,0 +1,16 @@
+{
+  "passed": true,
+  "checks": [
+    "chatgpt_authentication",
+    "structured_lessons",
+    "review_error_detection",
+    "teacher_instruction_preserved",
+    "independent_arithmetic",
+    "valid_graph_references",
+    "svg_parse",
+    "native_raster_decode",
+    "pdf_text_and_embedded_image",
+    "interruption_and_resume"
+  ],
+  "note": "Controlli tecnici sui campioni; non sostituiscono la valutazione didattica o visiva."
+}

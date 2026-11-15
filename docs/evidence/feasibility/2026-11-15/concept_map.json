@@ -1,0 +1,38 @@
+{
+  "title": "Progetto Faro: due kit e un solo trasporto",
+  "nodes": [
+    {
+      "id": "n1",
+      "label": "Equazione"
+    },
+    {
+      "id": "n2",
+      "label": "Trasformazioni equivalenti"
+    },
+    {
+      "id": "n3",
+      "label": "Soluzione"
+    },
+    {
+      "id": "n4",
+      "label": "Verifica per sostituzione"
+    }
+  ],
+  "edges": [
+    {
+      "source": "n1",
+      "target": "n2",
+      "label": "si risolve attraverso"
+    },
+    {
+      "source": "n2",
+      "target": "n3",
+      "label": "permettono di trovare"
+    },
+    {
+      "source": "n3",
+      "target": "n4",
+      "label": "si controlla mediante"
+    }
+  ]
+}

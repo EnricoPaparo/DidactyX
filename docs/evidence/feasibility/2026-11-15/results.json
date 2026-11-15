@@ -1,0 +1,101 @@
+{
+  "codex_version": "codex-cli 0.169.0-alpha.11.1",
+  "environment": {
+    "authentication": "chatgpt",
+    "model_catalog": [
+      {
+        "id": "gpt-6.1-sol",
+        "model": "gpt-6.1-sol",
+        "is_default": true
+      },
+      {
+        "id": "gpt-6-astra",
+        "model": "gpt-6-astra",
+        "is_default": false
+      },
+      {
+        "id": "gpt-6.1-terra",
+        "model": "gpt-6.1-terra",
+        "is_default": false
+      },
+      {
+        "id": "gpt-6-sol",
+        "model": "gpt-6-sol",
+        "is_default": false
+      },
+      {
+        "id": "gpt-6-luna",
+        "model": "gpt-6-luna",
+        "is_default": false
+      },
+      {
+        "id": "gpt-5.6-sol",
+        "model": "gpt-5.6-sol",
+        "is_default": false
+      },
+      {
+        "id": "gpt-5.6-terra",
+        "model": "gpt-5.6-terra",
+        "is_default": false
+      },
+      {
+        "id": "gpt-5.6-luna",
+        "model": "gpt-5.6-luna",
+        "is_default": false
+      }
+    ],
+    "rate_limits": {
+      "readable": true,
+      "has_primary_window": true,
+      "has_secondary_window": false
+    }
+  },
+  "checks": {
+    "lesson1": {
+      "status": "completed",
+      "seconds": 30.15,
+      "schema_fields_valid": true,
+      "model": "gpt-6.1-sol"
+    },
+    "lesson2": {
+      "status": "completed",
+      "seconds": 31.37,
+      "schema_fields_valid": true,
+      "previous_content_used": true
+    },
+    "independent_review": {
+      "status": "completed",
+      "seconds": 13.22,
+      "seeded_error_detected": true,
+      "teacher_request_preserved": true
+    },
+    "interruption": {
+      "passed": true
+    },
+    "resume_after_restart": {
+      "status": "completed",
+      "seconds": 4.09,
+      "passed": true,
+      "context_reinjected": false
+    }
+  },
+  "observed_notification_methods": [
+    "account/rateLimits/updated",
+    "account/updated",
+    "item/agentMessage/delta",
+    "item/completed",
+    "item/started",
+    "mcpServer/startupStatus/updated",
+    "remoteControl/status/changed",
+    "thread/goal/cleared",
+    "thread/readState/changed",
+    "thread/settings/updated",
+    "thread/started",
+    "thread/status/changed",
+    "thread/tokenUsage/updated",
+    "turn/completed",
+    "turn/moderationMetadata",
+    "turn/started"
+  ],
+  "completed": true
+}

@@ -1,0 +1,52 @@
+{
+  "lesson_id": "L2",
+  "title": "Progetto Faro: due kit e un solo trasporto",
+  "objectives": [
+    "Interpretare l’equazione 2x + 3 = 19.",
+    "Motivare sottrazione e divisione su entrambi i membri.",
+    "Verificare la soluzione nell’equazione iniziale."
+  ],
+  "sections": [
+    {
+      "heading": "1. Ripartiamo dal progetto Faro",
+      "text": "Nella lezione L1, un kit e 3 euro di trasporto costavano 11 euro. Abbiamo risolto x + 3 = 11 e trovato che il kit costava 8 euro.\nOra, nello stesso progetto Faro, due kit identici e un unico trasporto da 3 euro costano complessivamente 19 euro. Tutti i dati sono fittizi. Ritroveremo lo stesso prezzo? Controlliamolo attraverso una nuova equazione."
+    },
+    {
+      "heading": "2. Scrivere e leggere l’equazione",
+      "text": "Indichiamo ancora con x il prezzo di un solo kit. Due kit identici costano x + x, che scriviamo 2x: significa 2 × x, non x + 2.\nAggiungiamo una sola volta il trasporto: 2x + 3 = 19.\nCome in L1, il segno = afferma che i due membri hanno lo stesso valore: non è un comando per scrivere un risultato. Cerchiamo il valore di x che rende vera questa uguaglianza."
+    },
+    {
+      "heading": "3. Sottrarre il costo del trasporto",
+      "text": "Prima vogliamo conoscere il costo dei due kit senza trasporto. Sottraiamo quindi 3 da entrambi i membri:\n2x + 3 − 3 = 19 − 3.\nA sinistra, +3 e −3 si compensano; a destra, 19 − 3 = 16. Otteniamo:\n2x = 16.\nCome nella bilancia descritta in L1, togliere la stessa quantità dai due lati mantiene l’equilibrio. Non abbiamo spostato il 3: abbiamo eseguito la stessa sottrazione sui due membri."
+    },
+    {
+      "heading": "4. Dividere per trovare il prezzo unitario",
+      "text": "Ora sappiamo che due kit costano 16 euro. Per trovare il prezzo di uno, dividiamo per 2 entrambi i membri:\n(2x) : 2 = 16 : 2.\nDividere due quantità uguali per lo stesso numero diverso da zero mantiene l’uguaglianza. A sinistra, metà del prezzo di due kit identici è x; a destra, 16 : 2 = 8. Quindi x = 8."
+    },
+    {
+      "heading": "5. Verificare nella situazione iniziale",
+      "text": "Sostituiamo 8 a x nell’equazione iniziale:\n2 × 8 + 3 = 19.\nCalcoliamo prima il prodotto: 16 + 3 = 19, quindi 19 = 19. L’uguaglianza è vera: ciascun kit costa 8 euro, proprio come avevamo trovato in L1."
+    }
+  ],
+  "worked_example": {
+    "project": "Faro",
+    "problem": "Due kit identici e 3 euro di trasporto costano 19 euro. Quanto costa ciascun kit?",
+    "steps": [
+      "Modello: 2x + 3 = 19.",
+      "Sottraiamo 3 da entrambi i membri: 2x = 16.",
+      "Dividiamo entrambi i membri per 2: x = 8.",
+      "Verifichiamo: 2 × 8 + 3 = 19."
+    ],
+    "answer": "Ogni kit costa 8 euro."
+  },
+  "introduced_concepts": [
+    "2x come somma di due quantità identiche",
+    "Divisione di entrambi i membri per uno stesso numero diverso da zero"
+  ],
+  "references_to_previous_lesson": [
+    "L1, sezione 1: progetto Faro ed equazione x + 3 = 11.",
+    "L1, sezione 2: uguaglianza come stesso valore dei membri.",
+    "L1, sezione 3: bilancia, sottrazione su entrambi i membri e risultato x = 8.",
+    "L1, sezione 4: verifica mediante sostituzione nell’equazione iniziale."
+  ]
+}

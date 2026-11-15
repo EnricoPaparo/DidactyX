@@ -1,0 +1,19 @@
+{
+  "detected_errors": [
+    {
+      "exercise_id": "E1",
+      "explanation": "Sottraendo 3 si ottiene 2x = 16, non x = 16. Occorre dividere entrambi i membri per 2.",
+      "corrected_answer": "x = 8"
+    }
+  ],
+  "didactic_warnings": [
+    "E2 richiede operazioni con frazioni e proprietà distributiva, non trattate nelle due lezioni.",
+    "E3 richiede proprietà distributiva, gestione dei segni e riconoscimento di un’equazione senza soluzioni: il livello supera quanto introdotto. L’avvertenza è consultiva; i tre esercizi restano invariati."
+  ],
+  "exercise_count": 3,
+  "teacher_instruction_preserved": true,
+  "lesson_continuity_notes": [
+    "La continuità è coerente: L2 riprende contesto, prezzo unitario di 8 euro, significato dell’uguaglianza, sottrazione e verifica di L1, introducendo correttamente 2x e la divisione dei due membri.",
+    "Le risposte proposte per E2 ed E3 sono corrette."
+  ]
+}

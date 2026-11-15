@@ -1,0 +1,20 @@
+{
+  "pdf_created": true,
+  "pages": 4,
+  "text_extractable": true,
+  "svg_created": true,
+  "vector_diagrams": true,
+  "raster_image_embedded": true,
+  "visual_inspection": {
+    "performed": true,
+    "pages_checked": [
+      1,
+      2,
+      3,
+      4
+    ],
+    "clipping_found": false,
+    "orphaned_example_found": false,
+    "iteration_count": 3
+  }
+}

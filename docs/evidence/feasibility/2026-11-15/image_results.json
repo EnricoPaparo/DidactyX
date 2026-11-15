@@ -1,0 +1,19 @@
+{
+  "turn_status": "completed",
+  "seconds": 36.14,
+  "native_image_items": 1,
+  "image_saved": true,
+  "assistant_response": "",
+  "image_tool_status": "completed",
+  "artifact": "native-illustration.png",
+  "width": 1752,
+  "height": 897,
+  "visual_inspection": {
+    "performed": true,
+    "left_weights": 3,
+    "right_weights": 11,
+    "balance_level": true,
+    "no_text": true,
+    "single_sample_only": true
+  }
+}

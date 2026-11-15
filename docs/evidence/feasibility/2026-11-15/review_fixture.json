@@ -1,0 +1,20 @@
+{
+  "teacher_request": "Mantieni esattamente tre esercizi impegnativi e senza spiegazioni nelle consegne. Puoi segnalare difficoltà eccessiva; non semplificare né aggiungere esercizi. Le soluzioni sotto sono metadati per il controllo e non fanno parte della consegna.",
+  "exercises": [
+    {
+      "id": "E1",
+      "question": "Risolvi 2x + 3 = 19",
+      "candidate_answer": "x = 16"
+    },
+    {
+      "id": "E2",
+      "question": "Risolvi (3x - 2)/4 + (x + 1)/3 = 5",
+      "candidate_answer": "x = 62/13"
+    },
+    {
+      "id": "E3",
+      "question": "Risolvi 2(x - 3) - 3(2x + 1) = 5 - 4x",
+      "candidate_answer": "nessuna soluzione"
+    }
+  ]
+}

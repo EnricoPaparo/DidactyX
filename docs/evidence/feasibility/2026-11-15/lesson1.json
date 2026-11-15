@@ -1,0 +1,47 @@
+{
+  "lesson_id": "L1",
+  "title": "Progetto Faro: trovare il prezzo del kit",
+  "objectives": [
+    "Comprendere il significato del segno di uguaglianza.",
+    "Risolvere l’equazione x + 3 = 11 motivando ogni passaggio.",
+    "Verificare la soluzione mediante sostituzione."
+  ],
+  "sections": [
+    {
+      "heading": "1. Dal problema all’equazione",
+      "text": "Nel progetto Faro acquistiamo un kit. Il prezzo del kit non è ancora noto: lo indichiamo con la lettera x. Il trasporto costa 3 euro e il totale da pagare è 11 euro. Tutti i dati sono fittizi.\nPossiamo scrivere: x + 3 = 11.\nQuesta scrittura traduce il problema: prezzo del kit più costo del trasporto è uguale al totale. La lettera x è l’incognita, cioè il numero che dobbiamo trovare. In questa equazione i numeri rappresentano importi in euro."
+    },
+    {
+      "heading": "2. Che cosa significa «uguale»?",
+      "text": "Il segno = afferma che le espressioni ai suoi lati hanno lo stesso valore. Non significa «adesso scrivi il risultato» e non indica un’azione da eseguire da sinistra verso destra.\nL’espressione x + 3 è il primo membro; il numero 11 è il secondo membro. Cerchiamo il valore di x che rende vera questa uguaglianza. Per esempio, se scegliessimo 7, avremmo 7 + 3 = 11, cioè 10 = 11: un’affermazione falsa. Quindi 7 non è la soluzione."
+    },
+    {
+      "heading": "3. Perché sottrarre 3 da entrambi i membri?",
+      "text": "Vogliamo lasciare x da sola, perché rappresenta il prezzo del solo kit. Nel primo membro a x sono aggiunti 3 euro: per eliminare questa aggiunta sottraiamo 3.\nDobbiamo però sottrarre 3 anche dal secondo membro. Se due quantità sono uguali, togliere la stessa quantità da entrambe mantiene l’uguaglianza. È come una bilancia in equilibrio: togliendo lo stesso peso dai due piatti, l’equilibrio resta.\nScriviamo quindi: x + 3 − 3 = 11 − 3.\nA sinistra, aggiungere 3 e poi sottrarre 3 lascia x; a destra, 11 − 3 vale 8. Otteniamo x = 8. Non abbiamo semplicemente cancellato un numero: abbiamo eseguito la stessa sottrazione sui due membri."
+    },
+    {
+      "heading": "4. Controllare il risultato",
+      "text": "Una soluzione è un valore che rende vera l’equazione iniziale. Per controllare 8, lo sostituiamo a x proprio in x + 3 = 11. Otteniamo 8 + 3 = 11, quindi 11 = 11. I due membri hanno lo stesso valore: la verifica è riuscita."
+    }
+  ],
+  "worked_example": {
+    "project": "Faro",
+    "problem": "Quanto costa il kit, escluso il trasporto?",
+    "steps": [
+      "Indichiamo con x il prezzo sconosciuto del kit.",
+      "Sommiamo prezzo e trasporto: x + 3 = 11.",
+      "Sottraiamo 3 da entrambi i membri: x + 3 − 3 = 11 − 3.",
+      "Semplifichiamo i due membri: x = 8.",
+      "Verifichiamo nell’equazione iniziale: 8 + 3 = 11. L’uguaglianza è vera."
+    ],
+    "answer": "Il kit costa 8 euro. Aggiungendo i 3 euro di trasporto, il totale è 11 euro."
+  },
+  "introduced_concepts": [
+    "Incognita",
+    "Membri di un’equazione",
+    "Significato dell’uguaglianza",
+    "Sottrazione della stessa quantità da entrambi i membri",
+    "Soluzione e verifica per sostituzione"
+  ],
+  "references_to_previous_lesson": []
+}

@@ -1,0 +1,85 @@
+{
+  "type": "object",
+  "properties": {
+    "lesson_id": {
+      "type": "string"
+    },
+    "title": {
+      "type": "string"
+    },
+    "objectives": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "sections": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "heading": {
+            "type": "string"
+          },
+          "text": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "heading",
+          "text"
+        ],
+        "additionalProperties": false
+      }
+    },
+    "worked_example": {
+      "type": "object",
+      "properties": {
+        "project": {
+          "type": "string"
+        },
+        "problem": {
+          "type": "string"
+        },
+        "steps": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "answer": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "project",
+        "problem",
+        "steps",
+        "answer"
+      ],
+      "additionalProperties": false
+    },
+    "introduced_concepts": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "references_to_previous_lesson": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    }
+  },
+  "required": [
+    "lesson_id",
+    "title",
+    "objectives",
+    "sections",
+    "worked_example",
+    "introduced_concepts",
+    "references_to_previous_lesson"
+  ],
+  "additionalProperties": false
+}

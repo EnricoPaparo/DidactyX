@@ -1,0 +1,87 @@
+[
+  {
+    "file": "results.json",
+    "bytes": 2293,
+    "sha256": "2a484eea5d1e5c9fd00b8ad2e8f57adccc8d3ad2571ef519c4959e664a17bdde"
+  },
+  {
+    "file": "lesson.schema.json",
+    "bytes": 1556,
+    "sha256": "60a7e5d591e2a3b468ce702c24071e33fa15b8012b49c1f94bad3f271e37c734"
+  },
+  {
+    "file": "lesson1.json",
+    "bytes": 3215,
+    "sha256": "d8e86d13ce1252ee3f0a0c7540d1547ba7bbd035f4aedc373a3b6b9570dda8b9"
+  },
+  {
+    "file": "lesson2.json",
+    "bytes": 3229,
+    "sha256": "1c08b06b14024a055b7fa4488faa56f58a3340d556bb43c079dedda999455b1a"
+  },
+  {
+    "file": "independent_review.json",
+    "bytes": 924,
+    "sha256": "2157f8e9e6aff3d8224c1ae0c74c398f29cd70a27cd206e2d1acf67969f26a2c"
+  },
+  {
+    "file": "review_fixture.json",
+    "bytes": 662,
+    "sha256": "1924bb467a3d7e2e0afa456ee99c9c82e1b9e1ad9fe4dd6d71abdcd3db0c002f"
+  },
+  {
+    "file": "concept_map.json",
+    "bytes": 647,
+    "sha256": "88e453f2c4c22dbf5c9afc475cc184b124be3202bdd9dad52119c929ef5fd81f"
+  },
+  {
+    "file": "procedure_map.json",
+    "bytes": 697,
+    "sha256": "46c015effcb28c0b2d060e4220072b8a8876bde147da230e45bffb79c338df80"
+  },
+  {
+    "file": "visual_results.json",
+    "bytes": 139,
+    "sha256": "d095f563babfa8b2cffec976d707e6b42e390b847fbd3904848b5353fd46b389"
+  },
+  {
+    "file": "image_results.json",
+    "bytes": 422,
+    "sha256": "aacf28ed8b4fd953abf291552b7aef19013edc30f4452178876bf380a5ef27fb"
+  },
+  {
+    "file": "pdf_results.json",
+    "bytes": 360,
+    "sha256": "e2fd81b0661e99cf0015b57081d2cef337581b9795d5106e1b8ed04619ca96ff"
+  },
+  {
+    "file": "offline_checks.json",
+    "bytes": 431,
+    "sha256": "1365cc217ffc0ceb43ec1d7e2e5de69b4721e2f7a0ff28b0f305f77d4fd666a8"
+  },
+  {
+    "file": "runtime.json",
+    "bytes": 226,
+    "sha256": "5ab7bbd1ef29edb0dde7c842850feb2180e1c4210521cd2cc388dcb2776f9dd2"
+  },
+  {
+    "file": "concept-map.svg",
+    "bytes": 1756,
+    "sha256": "83ee477cc6e5265e280a3daa5d20e7fa73b4e3b4ec95b6fb887a75cd14ee2e8d"
+  },
+  {
+    "file": "procedure-map.svg",
+    "bytes": 1902,
+    "sha256": "c4e550b974098449ae0dfc9baa666fee93f3510e4de5d5cdcc70593ff1c59c11"
+  },
+  {
+    "file": "native-illustration.png",
+    "bytes": 1194236,
+    "sha256": "1165bede3d235634b78ab75a0635316c110415c4d8cd5543c95deee81af63ddf"
+  },
+  {
+    "file": "didactyx-feasibility-sample.pdf",
+    "bytes": 1335417,
+    "sha256": "14ee1394f764e0f320222cc4a67a5cea346c3ee5f06bfcb190d7126acbda9531"
+  }
+]
