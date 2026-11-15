@@ -5,6 +5,8 @@
 - **Esito:** le capacità tecniche provate sono disponibili nell'ambiente corrente; architettura del prodotto ancora da scegliere
 - **Dati utilizzati:** classe ed esempi interamente fittizi
 
+**Aggiornamento successivo alle prove:** lo stack macOS è stato approvato e registrato in [ARCHITECTURE.md](ARCHITECTURE.md). Il presente rapporto conserva i risultati e le condizioni della verifica precedente alla scelta.
+
 ## 1 Risultato operativo
 
 Il README e il Project Brief sono stati pubblicati sul ramo `main` del repository DidactyX con il commit iniziale `5f73d903714c358d90216c532006630d864c3b81`.

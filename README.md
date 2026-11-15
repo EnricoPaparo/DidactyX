@@ -8,9 +8,11 @@ La priorità del progetto è una qualità didattica molto elevata, sostenuta da 
 
 - [Project Brief](docs/PROJECT_BRIEF.md): visione, requisiti, workflow generativo, interfaccia e decisioni ancora aperte.
 - [Verifica tecnica iniziale](docs/TECHNICAL_FEASIBILITY.md): prove reali su account Codex, generazione, revisione, immagini, ripresa e PDF, con evidenze e limiti.
+- [Architettura macOS](docs/ARCHITECTURE.md): stack approvato, responsabilità dei componenti e organizzazione tecnica iniziale.
+- [Piano di sviluppo](docs/IMPLEMENTATION_PLAN.md): incrementi, risultati verificabili e prossima attività.
 
 Il Project Brief è il riferimento principale per le decisioni di prodotto. Viene aggiornato nel repository insieme all'evoluzione del progetto; la cronologia Git conserva le modifiche.
 
 ## Stato del progetto
 
-Brief di prodotto definito e prime prove di fattibilità tecnica eseguite. L'architettura dell'applicazione e il motore definitivo sono ancora da progettare. Gli script sperimentali non costituiscono l'implementazione del prodotto. Il supporto Windows sarà valutato successivamente all'utilizzo della prima versione su macOS.
+Brief di prodotto definito, prove di fattibilità concluse e stack macOS approvato: SwiftUI, WebKit, motore Python, SQLite e adattatore Codex App Server. ReportLab è la base iniziale dell'export PDF, da verificare sui casi editoriali più complessi. Il prossimo incremento è la fondazione locale dell'app; gli script sperimentali non costituiscono il motore definitivo. Il supporto Windows sarà valutato successivamente.

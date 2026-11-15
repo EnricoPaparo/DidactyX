@@ -1,8 +1,8 @@
 # DidactyX Project Brief
 
-- **Versione:** 1.1
-- **Data:** 14 novembre 2026
-- **Stato:** requisiti e workflow concordati, con precisazioni funzionali della revisione 1.1; architettura tecnica da definire
+- **Versione:** 1.2
+- **Data:** 15 novembre 2026
+- **Stato:** requisiti e workflow concordati; stack macOS approvato, dettagli di implementazione in definizione
 - **Prima piattaforma:** macOS
 - **Destinatario iniziale:** il docente ideatore del progetto
 
@@ -10,7 +10,7 @@ DidactyX è un motore didattico che accompagna il docente dalla progettazione an
 
 Il prodotto concentra la complessità nella generazione, nel coordinamento e nella revisione dei contenuti. L'esperienza del docente rimane minimale: descrivere le esigenze, consultare il percorso, richiedere materiali e modifiche, revisionare ed esportare PDF. Questo documento costituisce il riferimento di prodotto per l'implementazione.
 
-Le precisazioni funzionali rendono verificabili i requisiti già espressi e ne chiariscono i casi ambigui. Le scelte di implementazione e gli aspetti ancora da decidere sono raccolti nella sezione 19.
+Le precisazioni funzionali rendono verificabili i requisiti già espressi e ne chiariscono i casi ambigui. Lo stack approvato è documentato nell'[architettura macOS](ARCHITECTURE.md); gli aspetti ancora da decidere sono raccolti nella sezione 19 e i prossimi incrementi nel [piano di sviluppo](IMPLEMENTATION_PLAN.md).
 
 ## Indice
 
@@ -556,18 +556,20 @@ Il docente valuta correttezza, comprensibilità, progressione, possibilità di s
 
 ### 19.1 Decisioni ancora aperte
 
-Le seguenti scelte non sono state deliberate e non devono essere considerate requisiti già approvati:
+Il 15 novembre 2026 è stato approvato lo stack della prima versione macOS: SwiftUI per l'app, WebKit per leggere i materiali, Python per il motore, SQLite e file locali per l'archivio, adattatore Codex App Server e componente PDF separato con ReportLab come base iniziale. L'organizzazione tecnica e i confini sono descritti in [ARCHITECTURE.md](ARCHITECTURE.md).
 
-- Stack applicativo, struttura del codice e confezionamento dell'app macOS.
-- Integrazione ufficiale concreta con account e servizi disponibili; prova delle funzionalità testuali e visive.
+Le seguenti scelte richiedono ancora definizione o verifica:
+
+- Dettagli della struttura del codice, comunicazione tra app e motore e confezionamento dell'app macOS.
+- Accesso di un nuovo docente, gestione della dipendenza Codex e compatibilità delle funzioni tra le modalità di autenticazione. Testo e immagini sono stati verificati sul login locale già presente, come documentato nel [rapporto tecnico](TECHNICAL_FEASIBILITY.md).
 - Modelli da utilizzare, orchestrazione dei ruoli e ripartizione del lavoro tra agenti.
-- Persistenza locale, formato interno dei materiali e strategia di versionamento dei progetti.
+- Schema SQLite, formato strutturato dei materiali, gestione degli allegati e versionamento dei progetti.
 - Identificazione della versione corrente, collegamento dei materiali dopo una rigenerazione e ripresa coerente del lavoro.
 - Recupero del contesto, memoria del percorso e verifica della continuità tra contenuti.
 - Schema definitivo dei metadati e fonti curricolari pertinenti ai contesti supportati.
 - Fonti disciplinari, metodo di verifica e criteri pratici per valutare la qualità.
 - Materia, tipo di scuola e classe da usare per il primo percorso pilota; ampiezza dell'eventuale supporto interdisciplinare.
-- Motore di impaginazione, template PDF e dettagli del design dell'interfaccia.
+- Verifica del renderer PDF su formule complesse, mappe articolate e raccolte lunghe; template editoriali e dettagli del design dell'interfaccia.
 - Requisiti minimi di macOS e hardware, installazione, aggiornamenti e conservazione dei dati tra versioni dell'app.
 - Distribuzione ad altri docenti e futura valutazione del supporto Windows.
 
@@ -583,3 +585,4 @@ Quando saranno prese decisioni tecniche, potranno essere documentate in file ded
 | --- | --- | --- |
 | 1.0 | 14 novembre 2026 | Raccolta iniziale delle decisioni di prodotto e del workflow concordato. |
 | 1.1 | 14 novembre 2026 | Precisazione di contesto applicato, versioni, revisione, varianti, tempi del recupero e criteri di verifica della qualità. Perimetro e priorità invariati. |
+| 1.2 | 15 novembre 2026 | Registrazione dello stack macOS approvato, collegamento ad architettura e piano di sviluppo e aggiornamento delle decisioni ancora aperte. |
