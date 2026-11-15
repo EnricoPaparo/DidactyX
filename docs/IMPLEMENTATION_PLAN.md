@@ -58,3 +58,5 @@ Verificare ripresa delle attività, errori di rete e quota, consultazione senza 
 ## Prossima attività
 
 Scegliere con il docente materia, classe e obiettivi del pilota dell'incremento 3. Definire il contratto dei contenuti delle lezioni e il contesto necessario a mantenerne la continuità prima di implementarne la generazione.
+
+Lo sviluppo è sospeso al termine dell'incremento 2. Per riprendere, consultare [PROJECT_STATUS.md](PROJECT_STATUS.md), che riporta risultati verificati, stato Git e decisioni ancora da concordare.
