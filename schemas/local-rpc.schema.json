@@ -1,0 +1,13 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "DidactyX local request protocol version 1",
+  "type": "object",
+  "required": ["id", "method"],
+  "properties": {
+    "id": {"type": ["string", "integer"]},
+    "method": {"enum": ["system.ping", "program.list", "program.get", "program.create", "program.update", "settings.get", "settings.update", "account.status"]},
+    "params": {"type": "object"}
+  },
+  "additionalProperties": false,
+  "description": "Messaggi JSON UTF-8 delimitati da newline. Risposta con lo stesso id e result oppure error con code numerico e message. program.update richiede id, expected_revision e changes; la revisione protegge da sovrascritture concorrenti."
+}

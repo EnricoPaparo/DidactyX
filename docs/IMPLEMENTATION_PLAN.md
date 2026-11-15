@@ -3,7 +3,7 @@
 - **Data:** 15 novembre 2026
 - **Base:** [architettura approvata](ARCHITECTURE.md) e [Project Brief](PROJECT_BRIEF.md)
 - **Piattaforma:** macOS
-- **Stato:** incrementi da realizzare; prove tecniche preliminari già concluse
+- **Stato:** incremento 1 realizzato e collaudato; incrementi didattici successivi da realizzare
 
 Ogni incremento produce un comportamento utilizzabile e verificabile. La priorità è il motore didattico; l'interfaccia cresce nella misura necessaria a usarlo. I criteri seguenti descrivono il completamento del singolo incremento e non riducono il perimetro finale del brief.
 
@@ -14,6 +14,8 @@ Creare la prima applicazione SwiftUI, il processo Python e il loro collegamento.
 **Risultato verificabile:** aprire l'app, creare un programma, chiuderla e riaprirla ritrovando i dati; entrare nel programma e consultare il brief. Il motore risponde alle richieste locali senza bloccare l'interfaccia. Lo stato dell'account risulta reale e gli errori di collegamento sono riconoscibili.
 
 Le verifiche riguardano soprattutto salvataggio, collegamento tra processi e riapertura. L'app deve poter avviarsi dal Finder nell'ambiente di sviluppo, oltre che dagli strumenti di compilazione.
+
+**Implementazione:** disponibile nella prima app macOS; dettagli e comandi in [FOUNDATION_MACOS.md](FOUNDATION_MACOS.md).
 
 ## 2 Primo flusso didattico completo
 
@@ -53,4 +55,4 @@ Verificare ripresa delle attività, errori di rete e quota, consultazione senza 
 
 ## Prossima attività
 
-Avviare l'incremento 1: prima app macOS collegata al motore locale, con creazione e riapertura dei programmi. L'incremento successivo porta alla prima funzione didattica completa, dalla generazione annuale al PDF del programma.
+Avviare l'incremento 2: collegare interpretazione del brief, progettazione e revisione del percorso annuale, rigenerazione completa e PDF del programma.
