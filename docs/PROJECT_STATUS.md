@@ -4,6 +4,7 @@
 - **Stato del lavoro:** primo traguardo dell'incremento 3 completato; materiali pronti alla valutazione del docente.
 - **Versione disponibile:** DidactyX 0.3.0 per macOS.
 - **Branch:** `codex/lesson-content`, basato su `codex/macos-foundation`.
+- **Pull request dei contenuti:** [PR #2](https://github.com/EnricoPaparo/DidactyX/pull/2), aperta in bozza; commit applicativo `293ad94`.
 - **Base applicativa:** [PR #1](https://github.com/EnricoPaparo/DidactyX/pull/1), ancora in bozza e non unita a `main` alla verifica odierna. I nuovi contenuti sono in un branch separato.
 
 ## Completato e utilizzabile
