@@ -41,7 +41,7 @@ class Store:
         self.path = self.directory / "library.sqlite3"
         with closing(self.connect()) as connection, connection:
             version = connection.execute("PRAGMA user_version").fetchone()[0]
-            if version > 2:
+            if version > 3:
                 raise DomainError(-32010, "Questo archivio richiede una versione più recente di DidactyX.")
             connection.execute("PRAGMA journal_mode=WAL")
             if version == 0:
@@ -82,6 +82,27 @@ class Store:
                         created_at TEXT NOT NULL, data_json TEXT NOT NULL
                     );
                     PRAGMA user_version=2;
+                    COMMIT;
+                """)
+            if version < 3:
+                connection.executescript("""
+                    BEGIN IMMEDIATE;
+                    CREATE TABLE IF NOT EXISTS lesson_versions (
+                        id TEXT PRIMARY KEY, program_id TEXT NOT NULL REFERENCES programs(id) ON DELETE CASCADE,
+                        plan_id TEXT NOT NULL REFERENCES annual_plans(id), lesson_id TEXT NOT NULL,
+                        version INTEGER NOT NULL, created_at TEXT NOT NULL, brief TEXT NOT NULL,
+                        data_json TEXT NOT NULL, context_json TEXT NOT NULL, checks_json TEXT NOT NULL,
+                        UNIQUE(plan_id, lesson_id, version)
+                    );
+                    CREATE TABLE IF NOT EXISTS lesson_heads (
+                        plan_id TEXT NOT NULL REFERENCES annual_plans(id), lesson_id TEXT NOT NULL,
+                        version_id TEXT NOT NULL REFERENCES lesson_versions(id), PRIMARY KEY(plan_id,lesson_id)
+                    );
+                    CREATE TABLE IF NOT EXISTS lesson_reviews (
+                        id TEXT PRIMARY KEY, version_id TEXT NOT NULL REFERENCES lesson_versions(id),
+                        created_at TEXT NOT NULL, data_json TEXT NOT NULL
+                    );
+                    PRAGMA user_version=3;
                     COMMIT;
                 """)
 

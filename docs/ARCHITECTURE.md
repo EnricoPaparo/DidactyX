@@ -1,7 +1,7 @@
 # Architettura di DidactyX per macOS
 
-- **Data:** 15 novembre 2026
-- **Stato:** stack approvato dal docente; organizzazione tecnica iniziale da realizzare e verificare
+- **Data:** 16 novembre 2026
+- **Stato:** stack approvato; fondazione, progettazione annuale e primo traguardo dei contenuti implementati
 - **Ambito:** prima applicazione locale per macOS
 - **Riferimento di prodotto:** [Project Brief](PROJECT_BRIEF.md)
 - **Evidenze precedenti alla scelta:** [verifica tecnica iniziale](TECHNICAL_FEASIBILITY.md)
@@ -53,9 +53,9 @@ L'interfaccia deve rimanere utilizzabile durante la generazione. Mostra lo stato
 
 ## 4 Motore e comunicazione locale
 
-Il motore Python funziona come processo locale avviato e gestito dall'app. La base proposta per la comunicazione è uno scambio di messaggi JSON su standard input e output, con identificativi delle richieste, risposte ed eventi di avanzamento. Il confezionamento dovrà includere Python e le dipendenze necessarie all'esecuzione.
+Il motore Python funziona come processo locale avviato e gestito dall'app. La comunicazione usa messaggi JSON su standard input e output, con identificativi delle richieste e risposte; l’interfaccia legge l’avanzamento delle attività. Il pacchetto locale include Python e le dipendenze necessarie all’esecuzione.
 
-Le operazioni esposte al programma riguardano azioni del prodotto: creare o aprire un programma, salvare un brief, generare o revisionare un materiale, richiedere una modifica, esportare e leggere lo stato dell'account. Il formato esatto dei messaggi verrà definito nel primo incremento.
+Le operazioni esposte al programma riguardano azioni del prodotto: creare o aprire un programma, salvare un brief, generare o revisionare un materiale, richiedere una modifica, esportare e leggere lo stato dell'account. Il contratto è in `schemas/local-rpc.schema.json`.
 
 Le operazioni lunghe vengono rappresentate come attività persistenti. La chiusura o interruzione di un'attività conserva i risultati completati e rende riconoscibile il punto raggiunto. La ripresa controlla le versioni del contesto prima di continuare.
 
@@ -65,7 +65,7 @@ Il coordinamento degli agenti è interno al motore. Autore e revisore hanno resp
 
 SQLite conserva le informazioni che devono rimanere coerenti tra loro: programmi, brief, scheletri, metadati, versioni dei contenuti, collegamenti, revisioni e stato delle attività. Le immagini e gli altri allegati voluminosi vengono conservati in cartelle locali e referenziati dall'archivio.
 
-Il contenuto didattico ha una rappresentazione JSON strutturata e versionata, con blocchi riconoscibili per testo, formule, esempi, esercizi, mappe e immagini. Il formato viene validato prima di acquisire un risultato generato. Lo schema fisico del database e gli schemi JSON saranno definiti durante lo sviluppo; non si assume che le fixture del laboratorio siano già adeguate al prodotto.
+Il contenuto didattico ha una rappresentazione JSON strutturata e versionata, con blocchi riconoscibili per testo, formule, esempi, esercizi, mappe e immagini. Il formato viene validato prima di acquisire un risultato generato. Lo schema SQLite è alla versione 3, con migrazioni dalla fondazione e dalla progettazione annuale. Il contratto dei contenuti attualmente implementati è in `schemas/lesson-content.schema.json`; immagini, mappe ed esercizi strutturati saranno estesi nei rispettivi incrementi.
 
 Il motore controlla la scrittura dell'archivio. Un materiale mantiene il riferimento alle versioni del programma, del contesto e delle fonti interne utilizzate. Le versioni precedenti vengono conservate; il completamento di una rigenerazione rende corrente la nuova struttura attraverso un aggiornamento coerente. Un risultato parziale non sostituisce la struttura annuale precedente.
 
@@ -112,7 +112,7 @@ docs/         Requisiti, architettura, piano ed evidenze
 experiments/  Prove separate dall'implementazione del prodotto
 ```
 
-Le cartelle applicative verranno create con i rispettivi incrementi di sviluppo. I prototipi esistenti rimangono in `experiments/` e costituiscono evidenze e riferimenti, senza essere promossi automaticamente a motore definitivo.
+Le cartelle applicative sono presenti per gli incrementi implementati. I prototipi esistenti rimangono in `experiments/` e costituiscono evidenze e riferimenti, senza essere promossi automaticamente a motore definitivo.
 
 ## 10 Ordine di realizzazione
 
@@ -133,3 +133,9 @@ Le verifiche del collegamento tra app e motore e della conservazione dei dati pr
 La fondazione e la progettazione annuale hanno ora un protocollo locale JSON a righe, migrazioni SQLite fino alla versione 2, uno schema del percorso, attività persistenti con ripresa per passaggio e un runtime Python incluso nell'app. I contratti sono in `schemas/`; l'implementazione annuale è descritta in [ANNUAL_PLANNING.md](ANNUAL_PLANNING.md).
 
 Restano da definire i contratti dei contenuti completi, il recupero del contesto su percorsi lunghi, la scelta dei modelli per i diversi ruoli, i template editoriali dei materiali, la distribuzione ad altri docenti e i requisiti minimi verificati del sistema. La materia e la classe del percorso pilota richiedono inoltre una scelta con il docente.
+
+## 11 Primo traguardo dei contenuti implementato
+
+`LessonStore` conserva versioni, dipendenze e revisioni dei materiali. `LessonManager` coordina progetto esplicativo, uno o più autori, eventuale ricomposizione e revisioni disciplinare e della continuità. I contenuti precedenti vengono recuperati integralmente nelle versioni salvate. Pubblicazione del risultato e punto di ripresa sono atomici; i riferimenti diventati obsoleti producono segnalazioni, senza riscritture automatiche.
+
+Lettore WebKit e ReportLab usano gli stessi blocchi canonici. I casi Python supportati vengono controllati in un processo separato con restrizioni e limiti di tempo; i casi non eseguiti rimangono riconoscibili. Fonti e trascrizioni sono conservate nella versione. Dettagli operativi e limiti in [LESSON_CONTENT.md](LESSON_CONTENT.md).

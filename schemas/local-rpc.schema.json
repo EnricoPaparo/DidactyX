@@ -30,7 +30,14 @@
         "job.get",
         "job.cancel",
         "job.resume",
-        "plan.export"
+        "plan.export",
+        "lesson.state",
+        "lesson.version",
+        "lesson.generate",
+        "lesson.review",
+        "lesson.document",
+        "lesson.export",
+        "lesson.brief.save"
       ]
     },
     "params": {
@@ -38,5 +45,5 @@
     }
   },
   "additionalProperties": false,
-  "description": "Messaggi JSON UTF-8 delimitati da newline. Risposta con lo stesso id e result oppure error con code numerico e message. program.update richiede id, expected_revision e changes; la revisione protegge da sovrascritture concorrenti. plan.generate e plan.review restituiscono subito un job persistente; job.get ne legge lo stato. plan.state restituisce versione corrente, storico, ultima attività e revisione. plan.version e plan.export richiedono program_id e plan_id; export usa la versione salvata senza generazione AI."
+  "description": "Messaggi JSON UTF-8 delimitati da newline. Risposta con lo stesso id e result oppure error con code numerico e message. program.update richiede id, expected_revision e changes; la revisione protegge da sovrascritture concorrenti. plan.generate e plan.review restituiscono subito un job persistente; job.get ne legge lo stato. plan.state restituisce versione corrente, storico, ultima attività e revisione. plan.version e plan.export richiedono program_id e plan_id; export usa la versione salvata senza generazione AI. lesson.generate accetta program_id, plan_id e lesson_id oppure lesson_ids, con brief facoltativo. lesson.document ed export usano program_id e version_id salvati. job.cancel e resume instradano attività annuali e contenuti al rispettivo coordinatore."
 }

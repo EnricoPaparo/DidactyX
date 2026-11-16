@@ -6,20 +6,21 @@ La priorità del progetto è una qualità didattica molto elevata, sostenuta da 
 
 ## Documentazione
 
-- [Stato e ripresa del lavoro](docs/PROJECT_STATUS.md): punto di sospensione, risultati disponibili e prossime decisioni.
+- [Stato e ripresa del lavoro](docs/PROJECT_STATUS.md): risultati disponibili e prossime attività.
 - [Project Brief](docs/PROJECT_BRIEF.md): visione, requisiti, workflow generativo, interfaccia e decisioni ancora aperte.
 - [Verifica tecnica iniziale](docs/TECHNICAL_FEASIBILITY.md): prove reali su account Codex, generazione, revisione, immagini, ripresa e PDF, con evidenze e limiti.
 - [Architettura macOS](docs/ARCHITECTURE.md): stack approvato, responsabilità dei componenti e organizzazione tecnica iniziale.
 - [Piano di sviluppo](docs/IMPLEMENTATION_PLAN.md): incrementi, risultati verificabili e prossima attività.
 - [Prima app macOS](docs/FOUNDATION_MACOS.md): utilizzo, costruzione, dati locali e verifiche della fondazione.
 - [Progettazione annuale](docs/ANNUAL_PLANNING.md): generazione reale, revisioni, versioni, ripresa e PDF.
+- [Contenuti delle lezioni](docs/LESSON_CONTENT.md): memoria dei contenuti effettivi, autori, revisori, lettore e PDF.
 
 Il Project Brief è il riferimento principale per le decisioni di prodotto. Viene aggiornato nel repository insieme all'evoluzione del progetto; la cronologia Git conserva le modifiche.
 
 ## Stato del progetto
 
-L'app macOS 0.2.0 include programmi, brief libero e strutturato, impostazioni Codex e progettazione annuale reale: UDA e lezioni con metadati, autori e revisori separati, rigenerazione completa, storico ed esportazione PDF. I dati sono salvati in SQLite sul Mac. Il pacchetto locale si costruisce con `bash scripts/build_macos.sh` ed è disponibile in `dist/DidactyX.app`.
+L'app macOS 0.3.0 include programmi, brief libero e strutturato, impostazioni Codex, progettazione annuale e contenuti completi delle lezioni. Autori e revisori separati usano il contesto della classe e i materiali precedenti effettivi. Sono disponibili storico, ripresa, revisione su richiesta, lettore WebKit ed esportazione PDF del programma e delle lezioni. I dati sono salvati in SQLite sul Mac.
 
-Il prossimo incremento riguarda i contenuti completi delle lezioni e la continuità didattica tra essi. WebKit verrà integrato con il lettore dei materiali. Il supporto Windows sarà valutato successivamente.
+Il primo traguardo dell'incremento 3 è un pilota inventato, autorizzato dal docente: due lezioni Python collegate, su variabili/input/conversioni e `if/else`. I campioni sono in [evidence/lesson-content/2026-11-16](docs/evidence/lesson-content/2026-11-16/README.md). La valutazione didattica con il docente precede l'estensione a una UDA completa e ai materiali collegati.
 
-Lo sviluppo è sospeso su richiesta del docente al termine dell'incremento 2. Il [punto di ripresa](docs/PROJECT_STATUS.md) raccoglie lo stato verificato e le attività da concordare nella prossima sessione.
+Il pacchetto locale si costruisce con `bash scripts/build_macos.sh` ed è disponibile in `dist/DidactyX.app`. I controlli si eseguono con `bash scripts/check_foundation.sh`. Il supporto Windows sarà valutato successivamente.

@@ -223,6 +223,7 @@ struct UdaCard: View {
 }
 
 struct LessonMetadata: View {
+    @EnvironmentObject var model: AppModel
     let value: JSONValue
     let number: Int
     let uda: JSONValue
@@ -243,6 +244,11 @@ struct LessonMetadata: View {
             })
             PlanField(label: "Metodologie", values: value["methods"]?.strings ?? [])
             PlanField(label: "Progetti", values: (value["project_ids"]?.strings ?? []).compactMap { id in plan["projects"]?.items.first(where: { $0.text("id") == id })?.text("title") })
+            Button("Apri contenuto della lezione") {
+                guard let planId = model.displayedPlan?.id else { return }
+                Task { await model.openLesson(value.text("id"), planId: planId) }
+            }.buttonStyle(QuietButton())
+                .accessibilityLabel("Apri contenuto · " + value.text("title"))
         }
         .padding(17).background(Theme.background.opacity(0.6), in: RoundedRectangle(cornerRadius: 8))
     }

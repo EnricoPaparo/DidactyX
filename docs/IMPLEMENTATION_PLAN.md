@@ -1,9 +1,9 @@
 # Piano di sviluppo iniziale di DidactyX
 
-- **Data:** 15 novembre 2026
+- **Data:** 16 novembre 2026
 - **Base:** [architettura approvata](ARCHITECTURE.md) e [Project Brief](PROJECT_BRIEF.md)
 - **Piattaforma:** macOS
-- **Stato:** incrementi 1 e 2 implementati; contenuti delle lezioni e materiali collegati negli incrementi successivi
+- **Stato:** incrementi 1 e 2 implementati; primo traguardo dell'incremento 3 disponibile, da valutare con il docente
 
 Ogni incremento produce un comportamento utilizzabile e verificabile. La priorità è il motore didattico; l'interfaccia cresce nella misura necessaria a usarlo. I criteri seguenti descrivono il completamento del singolo incremento e non riducono il perimetro finale del brief.
 
@@ -35,7 +35,9 @@ Integrare il lettore WebKit e l'export delle lezioni. Verificare formule e rappr
 
 **Risultato verificabile:** almeno due lezioni collegate che riprendano correttamente esempi, terminologia e concetti. Il docente deve poter leggere e valutare la qualità dei contenuti nell'app e nei PDF, anche quando la seconda lezione viene sviluppata fuori sequenza.
 
-La materia, la classe e gli obiettivi del pilota vengono scelti con il docente. Il campione matematico del laboratorio resta una prova tecnica, non una scelta implicita del primo caso reale.
+**Primo traguardo:** app 0.3.0, due lezioni Python generate realmente per una seconda superiore fittizia, su scelta delegata dal docente. Workflow e limiti sono in [LESSON_CONTENT.md](LESSON_CONTENT.md); campioni ed evidenze in [evidence/lesson-content/2026-11-16](evidence/lesson-content/2026-11-16/README.md). Sono implementati corpi effettivi precedenti, richiami verificabili, prerequisiti mancanti, più autori con ricomposizione, due revisioni, storico, ripresa, lettore e PDF. La generazione fuori sequenza e il riallineamento sono coperti dai test automatici. Le formule del primo traguardo sono lineari Unicode; TeX e formule complesse richiedono un incremento dedicato.
+
+Il passaggio successivo è valutare con il docente le due lezioni, correggere gli aspetti didattici o editoriali emersi e sviluppare una prima UDA completa prima di considerare consolidata la qualità del motore.
 
 ## 4 Materiali collegati e valutazione
 
@@ -57,6 +59,6 @@ Verificare ripresa delle attività, errori di rete e quota, consultazione senza 
 
 ## Prossima attività
 
-Scegliere con il docente materia, classe e obiettivi del pilota dell'incremento 3. Definire il contratto dei contenuti delle lezioni e il contesto necessario a mantenerne la continuità prima di implementarne la generazione.
+Aprire il pilota nell'app e valutare profondità, chiarezza, ritmo, esempi e continuità delle due lezioni anche nei PDF. Tradurre i riscontri del docente in criteri e miglioramenti concreti del motore. Successivamente estendere il collaudo a una UDA completa e proseguire con l'incremento 4.
 
-Lo sviluppo è sospeso al termine dell'incremento 2. Per riprendere, consultare [PROJECT_STATUS.md](PROJECT_STATUS.md), che riporta risultati verificati, stato Git e decisioni ancora da concordare.
+Il [punto di ripresa](PROJECT_STATUS.md) raccoglie stato verificato, limiti e comandi operativi.

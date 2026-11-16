@@ -27,6 +27,20 @@ final class AppModel: ObservableObject {
     @Published var startingPlanning = false
     @Published var exporting = false
     @Published var exportedPDF: String?
+    @Published var lessonState: LessonState?
+    @Published var displayedLesson: LessonVersion?
+    @Published var lessonHTML = ""
+    @Published var lessonBrief = "" { didSet { scheduleLessonSave() } }
+    @Published var selectedLessonId: String?
+    @Published var selectedLessonPlanId: String?
+    @Published var startingLesson = false
+    @Published var exportingLesson = false
+    @Published var exportedLessonPDF: String?
+    var lessonPoll: Task<Void, Never>?
+    var lessonSaveTask: Task<Void, Never>?
+    var selectingLesson = false
+    var savingLessonBrief = false
+    var savedLessonBrief = ""
     private var planningPoll: Task<Void, Never>?
     private var savedDraft = ProgramDraft()
     private var selecting = false
@@ -74,6 +88,7 @@ final class AppModel: ObservableObject {
         selecting = true
         selected = program
         planningPoll?.cancel()
+        clearLesson()
         planning = nil
         displayedPlan = nil
         exportedPDF = nil
@@ -89,6 +104,7 @@ final class AppModel: ObservableObject {
         selecting = true
         selected = nil
         planningPoll?.cancel()
+        clearLesson()
         planning = nil
         displayedPlan = nil
         selecting = false
@@ -137,6 +153,9 @@ final class AppModel: ObservableObject {
     @discardableResult
     func flush() async -> Bool {
         saveTask?.cancel()
+        lessonSaveTask?.cancel()
+        while savingLessonBrief { try? await Task.sleep(for: .milliseconds(20)) }
+        guard await saveLessonBrief() else { return false }
         while isSaving { try? await Task.sleep(for: .milliseconds(20)) }
         await save()
         return selected == nil || draft == savedDraft
@@ -229,6 +248,7 @@ final class AppModel: ObservableObject {
         do {
             _ = try await engine.request("job.cancel", ["id": .string(job.id)])
             await refreshPlanning()
+            if selectedLessonId != nil { await refreshLesson() }
         } catch { errorMessage = error.localizedDescription }
     }
 
@@ -237,6 +257,7 @@ final class AppModel: ObservableObject {
         do {
             _ = try await engine.request("job.resume", ["id": .string(job.id)])
             await refreshPlanning()
+            if selectedLessonId != nil { await refreshLesson() }
         } catch { errorMessage = error.localizedDescription }
     }
 

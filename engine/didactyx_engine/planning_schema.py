@@ -44,6 +44,13 @@ REVIEW = obj({"summary": S, "findings": array(obj({
 
 
 def validate(value, schema, path="$"):
+    if "anyOf" in schema:
+        for option in schema["anyOf"]:
+            try:
+                validate(value, option, path)
+                return
+            except (ValueError, TypeError): pass
+        raise ValueError(f"{path}: blocco non riconosciuto")
     kind = schema["type"]
     if kind == "object":
         if not isinstance(value, dict) or set(value) != set(schema["properties"]):
@@ -56,6 +63,8 @@ def validate(value, schema, path="$"):
         if not isinstance(value, str): raise ValueError(f"{path}: testo atteso")
     elif kind == "number":
         if type(value) not in (int, float) or not math.isfinite(value): raise ValueError(f"{path}: numero non valido")
+    elif kind == "boolean":
+        if type(value) is not bool: raise ValueError(f"{path}: valore booleano atteso")
     if "enum" in schema and value not in schema["enum"]: raise ValueError(f"{path}: valore non previsto")
 
 

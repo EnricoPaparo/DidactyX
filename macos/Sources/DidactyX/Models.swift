@@ -99,6 +99,37 @@ struct PlanningState: Codable, Sendable {
     var latestReview: PlanReview?
 }
 
+struct LessonVersion: Codable, Identifiable, Sendable {
+    var id: String
+    var programId: String
+    var planId: String
+    var lessonId: String
+    var version: Int
+    var createdAt: String
+    var brief: String
+    var data: JSONValue
+    var context: JSONValue
+    var checks: JSONValue
+}
+
+struct LessonVersionSummary: Codable, Identifiable, Sendable {
+    var id: String
+    var version: Int
+    var createdAt: String
+    var brief: String
+}
+
+struct LessonState: Codable, Sendable {
+    var currentVersion: LessonVersion?
+    var versions: [LessonVersionSummary]
+    var latestReview: JSONValue?
+    var latestJob: PlanningJob?
+    var staleReasons: [String]
+    var historicalPlan: Bool
+    var briefPending: Bool
+    var draftBrief: String
+}
+
 enum JSONValue: Codable, Sendable {
     case object([String: JSONValue]), array([JSONValue]), string(String), number(Double), bool(Bool), null
 
