@@ -6,13 +6,20 @@ La priorità del progetto è una qualità didattica molto elevata, sostenuta da 
 
 ## Documentazione
 
+- [Stato e ripresa del lavoro](docs/PROJECT_STATUS.md): punto di sospensione, risultati disponibili e prossime decisioni.
 - [Project Brief](docs/PROJECT_BRIEF.md): visione, requisiti, workflow generativo, interfaccia e decisioni ancora aperte.
 - [Verifica tecnica iniziale](docs/TECHNICAL_FEASIBILITY.md): prove reali su account Codex, generazione, revisione, immagini, ripresa e PDF, con evidenze e limiti.
 - [Architettura macOS](docs/ARCHITECTURE.md): stack approvato, responsabilità dei componenti e organizzazione tecnica iniziale.
 - [Piano di sviluppo](docs/IMPLEMENTATION_PLAN.md): incrementi, risultati verificabili e prossima attività.
+- [Prima app macOS](docs/FOUNDATION_MACOS.md): utilizzo, costruzione, dati locali e verifiche della fondazione.
+- [Progettazione annuale](docs/ANNUAL_PLANNING.md): generazione reale, revisioni, versioni, ripresa e PDF.
 
 Il Project Brief è il riferimento principale per le decisioni di prodotto. Viene aggiornato nel repository insieme all'evoluzione del progetto; la cronologia Git conserva le modifiche.
 
 ## Stato del progetto
 
-Brief di prodotto definito, prove di fattibilità concluse e stack macOS approvato: SwiftUI, WebKit, motore Python, SQLite e adattatore Codex App Server. ReportLab è la base iniziale dell'export PDF, da verificare sui casi editoriali più complessi. Il prossimo incremento è la fondazione locale dell'app; gli script sperimentali non costituiscono il motore definitivo. Il supporto Windows sarà valutato successivamente.
+L'app macOS 0.2.0 include programmi, brief libero e strutturato, impostazioni Codex e progettazione annuale reale: UDA e lezioni con metadati, autori e revisori separati, rigenerazione completa, storico ed esportazione PDF. I dati sono salvati in SQLite sul Mac. Il pacchetto locale si costruisce con `bash scripts/build_macos.sh` ed è disponibile in `dist/DidactyX.app`.
+
+Il prossimo incremento riguarda i contenuti completi delle lezioni e la continuità didattica tra essi. WebKit verrà integrato con il lettore dei materiali. Il supporto Windows sarà valutato successivamente.
+
+Lo sviluppo è sospeso su richiesta del docente al termine dell'incremento 2. Il [punto di ripresa](docs/PROJECT_STATUS.md) raccoglie lo stato verificato e le attività da concordare nella prossima sessione.

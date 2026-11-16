@@ -130,4 +130,6 @@ Le verifiche del collegamento tra app e motore e della conservazione dei dati pr
 
 ## 12 Dettagli ancora da definire
 
-Rimangono da precisare durante i primi incrementi: schemi dei messaggi e dei dati, migrazioni dell'archivio, recupero del contesto su percorsi lunghi, politiche di ripresa e concorrenza, modelli per i diversi ruoli, template editoriali, confezionamento dei runtime e requisiti minimi del sistema. La materia e la classe del percorso pilota richiedono inoltre una scelta con il docente.
+La fondazione e la progettazione annuale hanno ora un protocollo locale JSON a righe, migrazioni SQLite fino alla versione 2, uno schema del percorso, attività persistenti con ripresa per passaggio e un runtime Python incluso nell'app. I contratti sono in `schemas/`; l'implementazione annuale è descritta in [ANNUAL_PLANNING.md](ANNUAL_PLANNING.md).
+
+Restano da definire i contratti dei contenuti completi, il recupero del contesto su percorsi lunghi, la scelta dei modelli per i diversi ruoli, i template editoriali dei materiali, la distribuzione ad altri docenti e i requisiti minimi verificati del sistema. La materia e la classe del percorso pilota richiedono inoltre una scelta con il docente.

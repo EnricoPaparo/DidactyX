@@ -1,0 +1,28 @@
+{
+  "date": "2026-11-15",
+  "application_version": "0.1.0",
+  "platform_tested": "macOS 26.7.2 arm64",
+  "swift_version": "6.3.3",
+  "bundled_python_version": "3.12.14",
+  "checks": {
+    "release_build": "passed",
+    "local_code_signature": "passed",
+    "python_tests": {"passed": 8, "failed": 0},
+    "swift_python_integration": "passed",
+    "bundled_engine_without_external_python": "passed",
+    "native_ui_create_program": "passed",
+    "native_ui_free_brief_and_optional_fields": "passed",
+    "native_ui_save_on_quit_and_reopen": "passed",
+    "native_ui_save_before_return_to_library": "passed",
+    "real_codex_account_status": "passed",
+    "test_program_removed": true,
+    "final_application_open_on_library": true
+  },
+  "limits": [
+    "Firma locale ad hoc; distribuzione ad altri Mac e notarizzazione non verificate.",
+    "macOS 14 è il target dichiarato; verificato soltanto il sistema indicato.",
+    "Accesso account in sola lettura; cambio account gestito dal client Codex.",
+    "Generazione annuale, contenuti e PDF non ancora collegati all'app."
+  ],
+  "privacy": "Nessuna identità account, percentuale di quota o dato di classe reale incluso in queste evidenze."
+}

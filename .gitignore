@@ -6,3 +6,6 @@ __pycache__/
 !.env.example
 /tmp/
 /output/
+/dist/
+.build/
+.venv/

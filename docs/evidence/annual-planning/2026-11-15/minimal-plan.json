@@ -1,0 +1,860 @@
+{
+  "version": 1,
+  "brief": {
+    "free_text": "Parti dalle variabili e arriva alle condizioni if in Python. Ho 12 ore complessive.",
+    "school_context": "",
+    "student_profile": "",
+    "starting_knowledge": "",
+    "objectives": "",
+    "topics": "",
+    "organisation": "",
+    "preferences": ""
+  },
+  "change_request": "",
+  "data": {
+    "context": {
+      "subject": "Informatica — introduzione alla programmazione in Python",
+      "school_context": "Per il percorso «Dalle variabili alle condizioni if» si ipotizza una classe della scuola secondaria di secondo grado; indirizzo e anno restano da confermare.",
+      "class_profile": "Si ipotizza una classe principiante, con autonomia digitale eterogenea e senza precedenti esperienze di programmazione.",
+      "starting_knowledge": [
+        "Uso essenziale del computer e della tastiera, da verificare all'avvio.",
+        "Conoscenza delle operazioni aritmetiche e dei confronti numerici, da verificare.",
+        "Non si richiedono conoscenze pregresse di Python."
+      ],
+      "goals": [
+        {
+          "id": "G1",
+          "description": "Nel lavoro «Dai dati alle variabili», creare e aggiornare variabili distinguendo i principali tipi di dato."
+        },
+        {
+          "id": "G2",
+          "description": "Nel lavoro «Input, elaborazione e output», realizzare semplici programmi con acquisizione dei dati, conversioni e calcoli."
+        },
+        {
+          "id": "G3",
+          "description": "Nel lavoro «Scegliere con if», tradurre semplici regole decisionali in condizioni e strutture if, elif ed else."
+        },
+        {
+          "id": "G4",
+          "description": "Nel lavoro «Mettere alla prova le scelte», verificare i diversi rami di un programma e correggere errori elementari."
+        }
+      ],
+      "required_topics": [
+        "Variabili, assegnazione e aggiornamento dei valori.",
+        "Tipi fondamentali: int, float, str e bool.",
+        "Input e output con input() e print().",
+        "Conversioni di tipo essenziali.",
+        "Operatori aritmetici ed espressioni.",
+        "Operatori di confronto e condizioni booleane.",
+        "Operatori logici and, or e not in condizioni semplici.",
+        "Selezione con if, if/else e if/elif/else.",
+        "Indentazione e lettura del flusso di esecuzione.",
+        "Verifica dei rami decisionali e correzione degli errori più comuni."
+      ],
+      "optional_topics": [
+        "Condizioni annidate, solo se i traguardi essenziali risultano consolidati.",
+        "Ampliamento dei casi di prova con valori limite."
+      ],
+      "preferences": [
+        "Rispettare la progressione richiesta: partire dalle variabili e arrivare alle condizioni if.",
+        "Alternare brevi spiegazioni, esercitazioni guidate e attività autonome.",
+        "Privilegiare la pratica con Python e problemi semplici, senza estendere il percorso a cicli o definizione di funzioni.",
+        "Prevedere una verifica pratica conclusiva e osservazioni formative durante le esercitazioni."
+      ],
+      "total_hours": 12,
+      "hours": {
+        "theory": 3,
+        "laboratory": 6,
+        "assessment": 1,
+        "recovery": 1,
+        "buffer": 1
+      },
+      "assumptions": [
+        "Le 12 ore indicate costituiscono l'intero monte ore disponibile per questo percorso; non si ipotizza un ulteriore monte ore annuale.",
+        "La collocazione nella scuola secondaria di secondo grado e il profilo principiante sono ipotesi da confermare.",
+        "Si presume la disponibilità di un ambiente Python funzionante e di un dispositivo per studente o per coppia.",
+        "La ripartizione oraria è una proposta: le ore di teoria, laboratorio e verifica sono distinte e non conteggiano due volte attività integrate.",
+        "Recupero e margine restano riserve del monte ore complessivo, non lezioni aggiuntive.",
+        "Nel lavoro «Mettere alla prova le scelte» si valuteranno soprattutto correttezza delle condizioni, copertura dei rami e autonomia nella correzione.",
+        "Gli approfondimenti facoltativi saranno proposti soltanto se compatibili con i tempi e con il consolidamento degli apprendimenti essenziali."
+      ],
+      "curriculum_references": []
+    },
+    "udas": [
+      {
+        "id": "U1",
+        "title": "Dai dati alle variabili",
+        "description": "In «Dai dati alle variabili», guida gli studenti nella rappresentazione, memorizzazione e modifica di semplici dati. Rileva all'avvio l'autonomia digitale e fai osservare i valori nell'ambiente Python, senza anticipare programmi interattivi.",
+        "period": "Primo segmento: 2 ore, escluse le riserve",
+        "prerequisites": [
+          "Uso essenziale del computer e della tastiera, da verificare all'avvio.",
+          "Conoscenza delle operazioni aritmetiche elementari, da verificare.",
+          "Nessuna conoscenza pregressa di Python richiesta."
+        ],
+        "annual_goal_ids": [
+          "G1"
+        ],
+        "objectives": [
+          {
+            "id": "U1-O1",
+            "description": "Creare variabili con nomi significativi e modificarne il valore mediante assegnazioni."
+          },
+          {
+            "id": "U1-O2",
+            "description": "Distinguere int, float, str e bool in semplici dati e assegnazioni."
+          },
+          {
+            "id": "U1-O3",
+            "description": "Prevedere il valore finale delle variabili dopo una breve sequenza di assegnazioni."
+          }
+        ],
+        "knowledge": [
+          "Variabili, valori e assegnazione.",
+          "Tipi fondamentali int, float, str e bool.",
+          "Esecuzione sequenziale e sostituzione del valore precedente."
+        ],
+        "skills": [
+          "Scrivere ed eseguire semplici assegnazioni.",
+          "Scegliere nomi comprensibili per le variabili.",
+          "Associare ai dati i tipi appropriati.",
+          "Ricostruire i valori delle variabili durante l'esecuzione."
+        ],
+        "competences": [
+          "Rappresentare semplici informazioni mediante variabili, motivando le scelte effettuate."
+        ],
+        "topics": [
+          "Variabili e assegnazione.",
+          "Aggiornamento dei valori mediante nuove assegnazioni.",
+          "Tipi int, float, str e bool.",
+          "Lettura di brevi sequenze di istruzioni."
+        ],
+        "optional_topics": [],
+        "methods": [
+          "Alterna brevi spiegazioni, dimostrazioni ed esercitazioni guidate.",
+          "Richiedi previsioni dei valori prima dell'esecuzione.",
+          "Offri tracce parzialmente predisposte agli studenti con minore autonomia digitale.",
+          "Nel lavoro a coppie, alterna i ruoli alla tastiera."
+        ],
+        "assessment": [
+          "Integra nel laboratorio una breve rilevazione diagnostica dell'autonomia digitale e delle conoscenze iniziali.",
+          "Osserva assegnazioni, riconoscimento dei tipi e previsione dei valori, fornendo riscontri immediati.",
+          "Raccogli una breve evidenza individuale anche quando gli studenti lavorano a coppie."
+        ],
+        "hours": {
+          "theory": 0.5,
+          "laboratory": 1.5,
+          "assessment": 0
+        },
+        "lessons": [
+          {
+            "id": "L1",
+            "title": "Rappresentare dati con le variabili",
+            "description": "In «Rappresentare dati con le variabili», introduci assegnazione, nomi significativi e tipi fondamentali. Guida la lettura di brevi sequenze e la previsione dei valori, preparando le successive attività nell'ambiente Python.",
+            "kind": "theory",
+            "duration_hours": 0.5,
+            "objective_ids": [
+              "U1-O1",
+              "U1-O2",
+              "U1-O3"
+            ],
+            "concepts": [
+              "Variabile, valore e assegnazione.",
+              "Nomi significativi.",
+              "Tipi int, float, str e bool.",
+              "Esecuzione sequenziale e riassegnazione."
+            ],
+            "prerequisite_lesson_ids": [],
+            "methods": [
+              "Breve spiegazione dialogata.",
+              "Dimostrazione nell'ambiente Python.",
+              "Previsione guidata dei valori."
+            ],
+            "project_ids": []
+          },
+          {
+            "id": "L2",
+            "title": "Assegnare, modificare e prevedere",
+            "description": "In «Assegnare, modificare e prevedere», rileva l'autonomia digitale mentre accompagni le prime esecuzioni. Fai confrontare i valori previsti con quelli osservati nell'ambiente Python, senza introdurre input o programmi interattivi.",
+            "kind": "laboratory",
+            "duration_hours": 0.5,
+            "objective_ids": [
+              "U1-O1",
+              "U1-O3"
+            ],
+            "concepts": [
+              "Creazione e riassegnazione delle variabili.",
+              "Sostituzione del valore precedente.",
+              "Tracciamento dei valori nell'ordine di esecuzione."
+            ],
+            "prerequisite_lesson_ids": [
+              "L1"
+            ],
+            "methods": [
+              "Esercitazione guidata.",
+              "Osservazione diagnostica integrata.",
+              "Previsione, esecuzione e confronto.",
+              "Riscontri immediati."
+            ],
+            "project_ids": []
+          },
+          {
+            "id": "L3",
+            "title": "I dati di un preventivo",
+            "description": "In «I dati di un preventivo», avvia «Un preventivo che sceglie» facendo rappresentare i dati mediante variabili inizializzate e motivare i tipi scelti. Affianca brevi attività sui tipi non necessari al progetto e raccogli una previsione individuale dei valori dopo alcune riassegnazioni.",
+            "kind": "laboratory",
+            "duration_hours": 1,
+            "objective_ids": [
+              "U1-O1",
+              "U1-O2",
+              "U1-O3"
+            ],
+            "concepts": [
+              "Scelta delle variabili a partire dai dati.",
+              "Distinzione tra int, float, str e bool.",
+              "Inizializzazione e modifica dei valori.",
+              "Lettura sequenziale delle assegnazioni."
+            ],
+            "prerequisite_lesson_ids": [
+              "L1",
+              "L2"
+            ],
+            "methods": [
+              "Progetto progressivo.",
+              "Lavoro a coppie con alternanza dei ruoli.",
+              "Tracce di supporto differenziate.",
+              "Breve restituzione individuale."
+            ],
+            "project_ids": [
+              "P1"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "U2",
+        "title": "Input, elaborazione e output",
+        "description": "In «Input, elaborazione e output», accompagna gli studenti dalle variabili ai programmi interattivi. Riduci progressivamente il supporto e limita i problemi a dati validi e calcoli semplici, concentrando il lavoro su acquisizione, conversioni, elaborazione e presentazione dei risultati.",
+        "period": "Secondo segmento: 3 ore, escluse le riserve",
+        "prerequisites": [
+          "Da «Dai dati alle variabili»: creare variabili e modificarne i valori.",
+          "Da «Dai dati alle variabili»: distinguere i tipi fondamentali.",
+          "Applicare le operazioni aritmetiche elementari."
+        ],
+        "annual_goal_ids": [
+          "G1",
+          "G2"
+        ],
+        "objectives": [
+          {
+            "id": "U2-O1",
+            "description": "Acquisire dati con input() e convertirli nel tipo numerico necessario."
+          },
+          {
+            "id": "U2-O2",
+            "description": "Costruire espressioni aritmetiche coerenti con un semplice problema."
+          },
+          {
+            "id": "U2-O3",
+            "description": "Realizzare un programma sequenziale che acquisisca dati, calcoli un risultato e lo presenti con print()."
+          }
+        ],
+        "knowledge": [
+          "Input e output con input() e print().",
+          "Natura testuale del dato restituito da input().",
+          "Conversioni essenziali con int(), float() e str().",
+          "Operatori aritmetici, precedenze e parentesi."
+        ],
+        "skills": [
+          "Organizzare un programma secondo input, elaborazione e output.",
+          "Convertire dati numerici inseriti come testo.",
+          "Usare espressioni per calcolare e aggiornare valori.",
+          "Confrontare il risultato del programma con un risultato atteso."
+        ],
+        "competences": [
+          "Tradurre un semplice problema di calcolo in un programma interattivo sequenziale."
+        ],
+        "topics": [
+          "Acquisizione dei dati con input().",
+          "Conversioni di tipo essenziali.",
+          "Operatori aritmetici ed espressioni.",
+          "Aggiornamento delle variabili mediante espressioni.",
+          "Presentazione dei risultati con print()."
+        ],
+        "optional_topics": [],
+        "methods": [
+          "Alterna brevi spiegazioni e completamento guidato di programmi.",
+          "Proponi un'attività autonoma su dati e calcoli già compresi.",
+          "Fai confrontare risultati attesi e risultati ottenuti.",
+          "Mantieni disponibili tracce di supporto, riducendole progressivamente."
+        ],
+        "assessment": [
+          "Osserva durante il laboratorio la scelta delle conversioni, la correttezza dei calcoli e la comprensibilità dell'output.",
+          "Esamina il programma prodotto e richiedi una breve motivazione individuale delle scelte.",
+          "Integra i riscontri nelle esercitazioni, senza aggiungere una prova separata."
+        ],
+        "hours": {
+          "theory": 1,
+          "laboratory": 2,
+          "assessment": 0
+        },
+        "lessons": [
+          {
+            "id": "L4",
+            "title": "Acquisire e presentare dati",
+            "description": "In «Acquisire e presentare dati», riprendi i tipi riconosciuti in «I dati di un preventivo» per introdurre input(), print() e conversioni essenziali. Rendi esplicita la natura testuale dei dati acquisiti, mantenendo validi gli inserimenti previsti.",
+            "kind": "theory",
+            "duration_hours": 0.5,
+            "objective_ids": [
+              "U2-O1",
+              "U2-O3"
+            ],
+            "concepts": [
+              "Acquisizione con input().",
+              "Restituzione di una stringa da input().",
+              "Conversioni con int(), float() e str().",
+              "Presentazione con print().",
+              "Ordine delle operazioni di acquisizione e presentazione."
+            ],
+            "prerequisite_lesson_ids": [
+              "L3"
+            ],
+            "methods": [
+              "Breve spiegazione dialogata.",
+              "Dimostrazione guidata.",
+              "Domande sulla scelta del tipo."
+            ],
+            "project_ids": []
+          },
+          {
+            "id": "L5",
+            "title": "Dall'inserimento al dato utilizzabile",
+            "description": "In «Dall'inserimento al dato utilizzabile», fai completare brevi programmi di acquisizione, conversione e presentazione. Osserva individualmente la scelta delle conversioni e affronta gli errori elementari emersi, senza richiedere la gestione degli input errati.",
+            "kind": "laboratory",
+            "duration_hours": 1,
+            "objective_ids": [
+              "U2-O1",
+              "U2-O3"
+            ],
+            "concepts": [
+              "Memorizzazione dei dati acquisiti.",
+              "Distinzione tra testo e dato numerico.",
+              "Conversioni essenziali.",
+              "Output comprensibile.",
+              "Errori elementari nella scelta delle conversioni."
+            ],
+            "prerequisite_lesson_ids": [
+              "L3",
+              "L4"
+            ],
+            "methods": [
+              "Completamento guidato di programmi.",
+              "Supporti progressivamente ridotti.",
+              "Esecuzioni su dati validi.",
+              "Osservazione formativa e motivazione individuale."
+            ],
+            "project_ids": []
+          },
+          {
+            "id": "L6",
+            "title": "Dai dati ai calcoli",
+            "description": "In «Dai dati ai calcoli», collega le operazioni aritmetiche note alle espressioni Python e all'aggiornamento delle variabili. Guida la pianificazione di input, elaborazione e output e il calcolo di un risultato atteso prima dell'esecuzione.",
+            "kind": "theory",
+            "duration_hours": 0.5,
+            "objective_ids": [
+              "U2-O2",
+              "U2-O3"
+            ],
+            "concepts": [
+              "Operatori aritmetici.",
+              "Precedenze e parentesi.",
+              "Aggiornamento mediante espressioni.",
+              "Schema input, elaborazione e output.",
+              "Risultato atteso."
+            ],
+            "prerequisite_lesson_ids": [
+              "L3",
+              "L5"
+            ],
+            "methods": [
+              "Spiegazione dialogata.",
+              "Analisi guidata di un problema semplice.",
+              "Previsione del risultato."
+            ],
+            "project_ids": []
+          },
+          {
+            "id": "L7",
+            "title": "Un preventivo interattivo",
+            "description": "In «Un preventivo interattivo», fai evolvere «Un preventivo che sceglie» in un programma sequenziale con acquisizione, conversioni, calcolo del totale e output. Riduci il supporto e richiedi il confronto con un risultato atteso e una breve motivazione individuale.",
+            "kind": "laboratory",
+            "duration_hours": 1,
+            "objective_ids": [
+              "U2-O1",
+              "U2-O2",
+              "U2-O3"
+            ],
+            "concepts": [
+              "Integrazione di input e conversioni.",
+              "Espressioni per il calcolo del totale.",
+              "Aggiornamento delle variabili.",
+              "Presentazione del risultato.",
+              "Confronto tra risultato atteso e ottenuto."
+            ],
+            "prerequisite_lesson_ids": [
+              "L5",
+              "L6"
+            ],
+            "methods": [
+              "Progetto progressivo.",
+              "Attività autonoma con supporti disponibili.",
+              "Lavoro a coppie con alternanza dei ruoli.",
+              "Confronto dei risultati e riscontro individuale."
+            ],
+            "project_ids": [
+              "P1"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "U3",
+        "title": "Scegliere con if",
+        "description": "In «Scegliere con if», guida gli studenti dai confronti alle decisioni del programma. Introduci progressivamente if, if/else e if/elif/else, mantenendo brevi le condizioni composte e rendendo espliciti indentazione, ordine delle condizioni e ramo eseguito.",
+        "period": "Terzo segmento: 3 ore, escluse le riserve",
+        "prerequisites": [
+          "Da «Dai dati alle variabili»: riconoscere valori booleani.",
+          "Da «Input, elaborazione e output»: acquisire e convertire dati.",
+          "Da «Input, elaborazione e output»: costruire espressioni e presentare risultati.",
+          "Conoscere i confronti numerici elementari, da verificare prima dell'avvio."
+        ],
+        "annual_goal_ids": [
+          "G3"
+        ],
+        "objectives": [
+          {
+            "id": "U3-O1",
+            "description": "Tradurre semplici regole in condizioni mediante operatori di confronto e operatori logici and, or e not."
+          },
+          {
+            "id": "U3-O2",
+            "description": "Scegliere e utilizzare if, if/else o if/elif/else in relazione alle alternative previste."
+          },
+          {
+            "id": "U3-O3",
+            "description": "Prevedere il ramo eseguito per dati assegnati, interpretando condizioni, ordine dei controlli e indentazione."
+          }
+        ],
+        "knowledge": [
+          "Operatori di confronto e risultati booleani.",
+          "Differenza tra assegnazione e confronto di uguaglianza.",
+          "Operatori logici and, or e not.",
+          "Selezione semplice, alternativa e multipla.",
+          "Indentazione e flusso di esecuzione."
+        ],
+        "skills": [
+          "Formulare condizioni semplici e composte.",
+          "Organizzare alternative mediante rami decisionali.",
+          "Distinguere assegnazione e confronto di uguaglianza.",
+          "Leggere e correggere l'indentazione.",
+          "Individuare il ramo eseguito per un insieme di dati."
+        ],
+        "competences": [
+          "Tradurre regole decisionali espresse in linguaggio naturale in un programma condizionale comprensibile."
+        ],
+        "topics": [
+          "Operatori di confronto e condizioni booleane.",
+          "Operatori logici and, or e not in condizioni semplici.",
+          "if, if/else e if/elif/else.",
+          "Indentazione e lettura del flusso di esecuzione.",
+          "Ordine delle condizioni e scelta del ramo."
+        ],
+        "optional_topics": [
+          "Condizioni annidate, soltanto dopo il consolidamento degli apprendimenti essenziali e se resta tempo nelle ore disponibili."
+        ],
+        "methods": [
+          "Parti da regole decisionali espresse verbalmente e guida la loro traduzione.",
+          "Alterna lettura del flusso, esercitazioni guidate e modifica autonoma di programmi.",
+          "Fai prevedere il ramo eseguito prima della verifica in Python.",
+          "Distribuisci gli operatori logici in brevi esercitazioni, senza richiedere che compaiano tutti nel progetto."
+        ],
+        "assessment": [
+          "Osserva la corrispondenza tra regola e condizione, la scelta della struttura e la correttezza dell'indentazione.",
+          "Raccogli brevi previsioni individuali motivate del ramo eseguito.",
+          "Verifica l'uso di and, or e not nelle esercitazioni, anche quando non necessari al progetto.",
+          "Integra queste osservazioni nel laboratorio, senza una prova separata."
+        ],
+        "hours": {
+          "theory": 1,
+          "laboratory": 2,
+          "assessment": 0
+        },
+        "lessons": [
+          {
+            "id": "L8",
+            "title": "Dai confronti alle prime scelte",
+            "description": "In «Dai confronti alle prime scelte», riprendi i valori booleani e verifica i confronti numerici prima di introdurre if e if/else. Distingui assegnazione e uguaglianza e guida la lettura dell'indentazione e del ramo eseguito.",
+            "kind": "theory",
+            "duration_hours": 0.5,
+            "objective_ids": [
+              "U3-O1",
+              "U3-O2",
+              "U3-O3"
+            ],
+            "concepts": [
+              "Operatori di confronto.",
+              "Risultati booleani.",
+              "Assegnazione e confronto di uguaglianza.",
+              "if e if/else.",
+              "Indentazione e flusso di esecuzione."
+            ],
+            "prerequisite_lesson_ids": [
+              "L3",
+              "L7"
+            ],
+            "methods": [
+              "Richiamo dialogato dei prerequisiti.",
+              "Traduzione guidata di regole verbali.",
+              "Dimostrazione del flusso.",
+              "Previsione del ramo eseguito."
+            ],
+            "project_ids": []
+          },
+          {
+            "id": "L9",
+            "title": "Una condizione, due possibilità",
+            "description": "In «Una condizione, due possibilità», fai utilizzare prima if e poi if/else in brevi programmi con dati acquisiti. Richiedi previsioni individuali prima dell'esecuzione e riscontri mirati su confronto, indentazione e scelta della struttura.",
+            "kind": "laboratory",
+            "duration_hours": 0.5,
+            "objective_ids": [
+              "U3-O1",
+              "U3-O2",
+              "U3-O3"
+            ],
+            "concepts": [
+              "Formulazione di condizioni semplici.",
+              "Selezione semplice e alternativa.",
+              "Ramo eseguito e istruzioni successive alla selezione.",
+              "Indentazione dei blocchi."
+            ],
+            "prerequisite_lesson_ids": [
+              "L7",
+              "L8"
+            ],
+            "methods": [
+              "Esercitazione guidata.",
+              "Previsione, esecuzione e confronto.",
+              "Modifica di programmi brevi.",
+              "Osservazione formativa individuale."
+            ],
+            "project_ids": []
+          },
+          {
+            "id": "L10",
+            "title": "Più alternative e condizioni composte",
+            "description": "In «Più alternative e condizioni composte», estendi la selezione a if/elif/else e chiarisci il ruolo dell'ordine dei controlli. Introduci and, or e not attraverso condizioni brevi e distinte, senza aggiungere annidamenti.",
+            "kind": "theory",
+            "duration_hours": 0.5,
+            "objective_ids": [
+              "U3-O1",
+              "U3-O2",
+              "U3-O3"
+            ],
+            "concepts": [
+              "Selezione con if/elif/else.",
+              "Ordine delle condizioni.",
+              "Esecuzione del primo ramo con condizione vera, oppure del ramo else se nessuna condizione è vera.",
+              "Operatori and, or e not.",
+              "Condizioni composte brevi e parentesi."
+            ],
+            "prerequisite_lesson_ids": [
+              "L9"
+            ],
+            "methods": [
+              "Spiegazione dialogata.",
+              "Confronto tra regole e alternative.",
+              "Lettura guidata del flusso.",
+              "Previsioni motivate."
+            ],
+            "project_ids": []
+          },
+          {
+            "id": "L11",
+            "title": "Leggere e costruire le alternative",
+            "description": "In «Leggere e costruire le alternative», fai esercitare separatamente if/elif/else e gli operatori and, or e not. Raccogli evidenze individuali sulla traduzione delle regole e sulla previsione dei rami, prima dell'integrazione nel progetto.",
+            "kind": "laboratory",
+            "duration_hours": 0.5,
+            "objective_ids": [
+              "U3-O1",
+              "U3-O2",
+              "U3-O3"
+            ],
+            "concepts": [
+              "Alternative multiple.",
+              "Ordine dei controlli.",
+              "Condizioni con and, or e not.",
+              "Previsione del ramo eseguito.",
+              "Coerenza tra regola e condizione."
+            ],
+            "prerequisite_lesson_ids": [
+              "L10"
+            ],
+            "methods": [
+              "Brevi esercitazioni guidate e autonome.",
+              "Traduzione dal linguaggio naturale.",
+              "Previsione prima dell'esecuzione.",
+              "Riscontri individuali sugli operatori logici."
+            ],
+            "project_ids": []
+          },
+          {
+            "id": "L12",
+            "title": "Il preventivo applica le regole",
+            "description": "In «Il preventivo applica le regole», fai integrare in «Un preventivo che sceglie» semplici regole di sconto, con non più di tre rami. Richiedi l'indicazione delle alternative previste, la motivazione delle condizioni e la previsione del ramo per alcuni dati, senza forzare l'uso di tutti gli operatori logici.",
+            "kind": "laboratory",
+            "duration_hours": 1,
+            "objective_ids": [
+              "U3-O1",
+              "U3-O2",
+              "U3-O3"
+            ],
+            "concepts": [
+              "Scelta della struttura condizionale.",
+              "Traduzione delle regole di sconto.",
+              "Ordine delle condizioni e indentazione.",
+              "Integrazione di calcoli e selezione.",
+              "Identificazione e previsione dei rami."
+            ],
+            "prerequisite_lesson_ids": [
+              "L7",
+              "L9",
+              "L10",
+              "L11"
+            ],
+            "methods": [
+              "Progetto progressivo.",
+              "Modifica autonoma del programma precedente.",
+              "Lavoro a coppie con alternanza dei ruoli.",
+              "Motivazione individuale delle scelte.",
+              "Riscontri formativi mirati."
+            ],
+            "project_ids": [
+              "P1"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "U4",
+        "title": "Mettere alla prova le scelte",
+        "description": "In «Mettere alla prova le scelte», dedica il consolidamento alla scelta dei casi di prova e alla correzione degli errori. Mantieni contenuta la dimensione del programma da revisionare, per rendere sostenibili la conclusione del progetto e la successiva verifica pratica individuale.",
+        "period": "Quarto segmento: 2 ore, escluse le riserve",
+        "prerequisites": [
+          "Da «Input, elaborazione e output»: realizzare programmi con input, conversioni, calcoli e output.",
+          "Da «Input, elaborazione e output»: confrontare risultati attesi e ottenuti.",
+          "Da «Scegliere con if»: formulare condizioni e utilizzare le strutture di selezione.",
+          "Da «Scegliere con if»: leggere il flusso di esecuzione e l'indentazione."
+        ],
+        "annual_goal_ids": [
+          "G1",
+          "G2",
+          "G3",
+          "G4"
+        ],
+        "objectives": [
+          {
+            "id": "U4-O1",
+            "description": "Selezionare casi di prova che attivino tutti i rami previsti, indicando il risultato atteso."
+          },
+          {
+            "id": "U4-O2",
+            "description": "Individuare e correggere errori elementari di conversione, confronto, indentazione e ordine delle condizioni."
+          },
+          {
+            "id": "U4-O3",
+            "description": "Realizzare individualmente un semplice programma con variabili, input, conversioni, elaborazione, selezione e output, documentandone le prove."
+          }
+        ],
+        "knowledge": [
+          "Risultato atteso e risultato ottenuto.",
+          "Copertura dei rami decisionali.",
+          "Errori elementari di sintassi, tipo e logica.",
+          "Procedura essenziale di individuazione, correzione e nuova verifica."
+        ],
+        "skills": [
+          "Preparare una tabella essenziale dei casi di prova.",
+          "Eseguire prove sui diversi rami.",
+          "Controllare il comportamento in corrispondenza delle soglie previste dalla regola.",
+          "Usare messaggi di errore e comportamento osservato per orientare la correzione.",
+          "Ripetere le prove dopo una modifica."
+        ],
+        "competences": [
+          "Integrare dati, calcoli e decisioni in un semplice programma.",
+          "Verificare il comportamento di un programma condizionale e correggerlo con autonomia crescente."
+        ],
+        "topics": [
+          "Verifica dei diversi rami decisionali.",
+          "Confronto tra risultati attesi e ottenuti.",
+          "Controllo delle uguaglianze nelle condizioni basate su soglie.",
+          "Correzione degli errori più comuni.",
+          "Integrazione di variabili, input, conversioni, calcoli, condizioni e output."
+        ],
+        "optional_topics": [
+          "Ampliamento sistematico dei casi di prova con ulteriori valori limite, dopo il consolidamento delle verifiche essenziali."
+        ],
+        "methods": [
+          "Usa la breve spiegazione iniziale per sistematizzare il metodo di prova e correzione.",
+          "Dedica il laboratorio alla revisione del progetto già sviluppato, senza introdurre nuove funzionalità.",
+          "Fornisci riscontri mirati prima della verifica conclusiva.",
+          "Mantieni individuale la verifica pratica, anche quando il progetto è sviluppato a coppie."
+        ],
+        "assessment": [
+          "Osserva nel laboratorio la scelta dei casi di prova e la capacità di correggere gli errori.",
+          "Dedica un'ora a una verifica pratica individuale su un problema breve e analogo a quelli affrontati, comprendendo realizzazione, prove ed eventuali correzioni.",
+          "Valuta prioritariamente correttezza delle condizioni, copertura dei rami e autonomia nella correzione; considera anche uso delle variabili, conversioni, calcoli e comprensibilità dell'output.",
+          "Rendi noti i criteri prima della prova e rileva l'autonomia nella correzione anche attraverso le osservazioni formative precedenti."
+        ],
+        "hours": {
+          "theory": 0.5,
+          "laboratory": 0.5,
+          "assessment": 1
+        },
+        "lessons": [
+          {
+            "id": "L13",
+            "title": "Progettare prove e orientare le correzioni",
+            "description": "In «Progettare prove e orientare le correzioni», sistematizza il confronto tra risultati attesi e ottenuti, la copertura dei rami e il controllo delle uguaglianze sulle soglie. Riprendi gli errori elementari già incontrati e presenta i criteri della verifica conclusiva.",
+            "kind": "theory",
+            "duration_hours": 0.5,
+            "objective_ids": [
+              "U4-O1",
+              "U4-O2"
+            ],
+            "concepts": [
+              "Scelta dei dati per attivare ciascun ramo.",
+              "Risultato atteso e risultato ottenuto.",
+              "Controllo delle uguaglianze sulle soglie.",
+              "Errori di conversione, confronto, indentazione e ordine delle condizioni.",
+              "Individuazione dell'errore, correzione e nuova esecuzione."
+            ],
+            "prerequisite_lesson_ids": [
+              "L7",
+              "L12"
+            ],
+            "methods": [
+              "Sistematizzazione dialogata delle esperienze.",
+              "Analisi guidata di errori elementari.",
+              "Pianificazione di una tabella essenziale delle prove.",
+              "Condivisione dei criteri di valutazione."
+            ],
+            "project_ids": []
+          },
+          {
+            "id": "L14",
+            "title": "Revisionare il preventivo",
+            "description": "In «Revisionare il preventivo», concludi «Un preventivo che sceglie» facendo provare tutti i rami e documentare risultati ed eventuali correzioni. Mantieni il programma già sviluppato e non aggiungere funzionalità; raccogli riscontri individuali anche nel lavoro a coppie.",
+            "kind": "laboratory",
+            "duration_hours": 0.5,
+            "objective_ids": [
+              "U4-O1",
+              "U4-O2"
+            ],
+            "concepts": [
+              "Tabella essenziale dei casi di prova.",
+              "Copertura dei rami decisionali.",
+              "Verifica delle soglie previste.",
+              "Confronto tra attese e risultati.",
+              "Correzione e ripetizione delle prove."
+            ],
+            "prerequisite_lesson_ids": [
+              "L12",
+              "L13"
+            ],
+            "methods": [
+              "Revisione del progetto progressivo.",
+              "Esecuzione di prove pianificate.",
+              "Riscontri mirati prima della verifica.",
+              "Osservazione individuale dell'autonomia nella correzione."
+            ],
+            "project_ids": [
+              "P1"
+            ]
+          },
+          {
+            "id": "L15",
+            "title": "Realizzare e verificare un programma condizionale",
+            "description": "In «Realizzare e verificare un programma condizionale», proponi una verifica pratica individuale breve e analoga alle attività precedenti, distinta da «Un preventivo che sceglie». Comprendi nell'ora realizzazione, documentazione delle prove ed eventuali correzioni, su dati validi e senza nuove richieste tecniche.",
+            "kind": "assessment",
+            "duration_hours": 1,
+            "objective_ids": [
+              "U4-O1",
+              "U4-O2",
+              "U4-O3"
+            ],
+            "concepts": [
+              "Variabili e tipi di dato.",
+              "Input, conversioni, calcoli e output.",
+              "Condizioni e strutture di selezione.",
+              "Indentazione e ordine dei controlli.",
+              "Copertura dei rami e risultati attesi.",
+              "Correzione degli errori e nuova verifica."
+            ],
+            "prerequisite_lesson_ids": [
+              "L14"
+            ],
+            "methods": [
+              "Prova pratica individuale.",
+              "Produzione di un programma e di una breve tabella delle prove.",
+              "Valutazione con criteri comunicati in precedenza.",
+              "Integrazione delle evidenze formative per l'autonomia nella correzione."
+            ],
+            "project_ids": []
+          }
+        ]
+      }
+    ],
+    "projects": [
+      {
+        "id": "P1",
+        "title": "Un preventivo che sceglie",
+        "description": "Usa «Un preventivo che sceglie» come filo conduttore, dalla rappresentazione dei dati di un acquisto al calcolo del totale e all'applicazione di semplici regole di sconto. Limita la versione finale a poche variabili e a una selezione con non più di tre rami, su dati validi. Integra tutte le tappe nelle ore di laboratorio previste, senza cicli, definizioni di funzioni o gestione delle eccezioni. Distingui il prodotto eventualmente collaborativo dalla verifica individuale conclusiva.",
+        "competences": [
+          "Modellare dati e calcoli di un semplice problema.",
+          "Tradurre regole in decisioni condizionali.",
+          "Verificare e migliorare un programma mediante casi di prova."
+        ],
+        "milestones": [
+          {
+            "uda_id": "U1",
+            "description": "In «I dati di un preventivo», fai individuare i dati necessari a «Un preventivo che sceglie» e rappresentarli mediante variabili, senza richiedere ancora input o calcoli.",
+            "deliverable": "Prima versione con variabili inizializzate e breve motivazione dei tipi scelti."
+          },
+          {
+            "uda_id": "U2",
+            "description": "In «Un preventivo interattivo», fai trasformare la prima versione di «Un preventivo che sceglie» in un programma interattivo per il calcolo del totale.",
+            "deliverable": "Programma sequenziale con input, conversioni, calcolo e output, accompagnato dal confronto con un risultato atteso."
+          },
+          {
+            "uda_id": "U3",
+            "description": "In «Il preventivo applica le regole», fai integrare in «Un preventivo che sceglie» semplici regole di sconto mediante alternative esplicite, mantenendo contenuto il numero dei rami.",
+            "deliverable": "Programma aggiornato con selezione condizionale, indicazione dei rami previsti e breve motivazione delle condizioni."
+          },
+          {
+            "uda_id": "U4",
+            "description": "In «Revisionare il preventivo», fai verificare ogni ramo di «Un preventivo che sceglie» e documentare le eventuali correzioni, senza aggiungere funzionalità.",
+            "deliverable": "Versione revisionata e breve tabella dei casi di prova con risultati attesi e ottenuti ed eventuali correzioni."
+          }
+        ]
+      }
+    ],
+    "review_notes": [
+      "Per «Dai dati alle variabili» e per le attività successive, considera provvisoria l'ipotesi di una classe principiante della scuola secondaria di secondo grado: conferma anno, indirizzo e autonomia digitale. Verifica prima dell'avvio la disponibilità di Python funzionante e di un dispositivo per studente o per coppia.",
+      "Da «Dai dati alle variabili» a «Mettere alla prova le scelte», dedica 10 ore alle attività programmate: 3 di teoria, 6 di laboratorio e 1 di verifica. Conserva, entro le 12 ore complessive richieste, 1 ora di recupero e 1 di margine come riserve, senza aggiungere lezioni. Le osservazioni diagnostiche e formative restano comprese nelle esercitazioni.",
+      "Prima di «Scegliere con if», valuta se impiegare il recupero sulle difficoltà emerse in assegnazioni, conversioni e confronti. Usa il margine per rallentamenti e necessità organizzative: non considerarlo automaticamente disponibile per nuovi argomenti.",
+      "In «Scegliere con if», mantieni la progressione dalle variabili alle decisioni, senza introdurre cicli o definizioni di funzioni. In «Più alternative e condizioni composte» e «Leggere e costruire le alternative», affronta and, or e not con condizioni brevi e distingui le difficoltà sugli operatori logici da quelle sull'ordine dei rami. Lascia facoltative le condizioni annidate.",
+      "In «Un preventivo che sceglie», mantieni poche variabili, calcoli semplici e non più di tre rami. Non forzare tutti i tipi di dato o tutti gli operatori logici nel progetto: raccogli le evidenze mancanti in «I dati di un preventivo» e «Leggere e costruire le alternative». Questa scelta limita il carico dei principianti senza rinunciare agli apprendimenti previsti.",
+      "In «Revisionare il preventivo», la mezz'ora disponibile richiede un programma già funzionante nelle sue parti principali. Dedica il tempo alla copertura dei rami, al confronto tra attese e risultati e alle correzioni essenziali. In «Progettare prove e orientare le correzioni», distingui il controllo necessario delle uguaglianze sulle soglie dall'ampliamento facoltativo dei casi con ulteriori valori limite.",
+      "Da «I dati di un preventivo» a «Revisionare il preventivo», alterna i ruoli nel lavoro a coppie e raccogli brevi riscontri individuali. Usa previsioni motivate, spiegazioni delle conversioni e lettura dei rami per distinguere gli apprendimenti di ciascuno dal risultato condiviso.",
+      "In «Realizzare e verificare un programma condizionale», proponi un problema contenuto e distinto dal progetto, con dati validi e senza gestione degli input errati. Lascia tempo effettivo per documentare le prove e correggere il programma. Se la soluzione non presenta errori, non penalizzare l'assenza di correzioni: considera le evidenze raccolte nelle esercitazioni precedenti per valutare tale autonomia."
+    ]
+  }
+}

@@ -1,0 +1,392 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "DidactyX annual plan v1",
+  "type": "object",
+  "properties": {
+    "context": {
+      "type": "object",
+      "properties": {
+        "subject": {
+          "type": "string"
+        },
+        "school_context": {
+          "type": "string"
+        },
+        "class_profile": {
+          "type": "string"
+        },
+        "starting_knowledge": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "goals": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "id": {
+                "type": "string"
+              },
+              "description": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "id",
+              "description"
+            ],
+            "additionalProperties": false
+          }
+        },
+        "required_topics": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "optional_topics": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "preferences": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "total_hours": {
+          "type": "number"
+        },
+        "hours": {
+          "type": "object",
+          "properties": {
+            "theory": {
+              "type": "number"
+            },
+            "laboratory": {
+              "type": "number"
+            },
+            "assessment": {
+              "type": "number"
+            },
+            "recovery": {
+              "type": "number"
+            },
+            "buffer": {
+              "type": "number"
+            }
+          },
+          "required": [
+            "theory",
+            "laboratory",
+            "assessment",
+            "recovery",
+            "buffer"
+          ],
+          "additionalProperties": false
+        },
+        "assumptions": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "curriculum_references": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      },
+      "required": [
+        "subject",
+        "school_context",
+        "class_profile",
+        "starting_knowledge",
+        "goals",
+        "required_topics",
+        "optional_topics",
+        "preferences",
+        "total_hours",
+        "hours",
+        "assumptions",
+        "curriculum_references"
+      ],
+      "additionalProperties": false
+    },
+    "udas": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "title": {
+            "type": "string"
+          },
+          "description": {
+            "type": "string"
+          },
+          "period": {
+            "type": "string"
+          },
+          "prerequisites": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "annual_goal_ids": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "objectives": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "id": {
+                  "type": "string"
+                },
+                "description": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "id",
+                "description"
+              ],
+              "additionalProperties": false
+            }
+          },
+          "knowledge": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "skills": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "competences": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "topics": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "optional_topics": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "methods": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "assessment": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "hours": {
+            "type": "object",
+            "properties": {
+              "theory": {
+                "type": "number"
+              },
+              "laboratory": {
+                "type": "number"
+              },
+              "assessment": {
+                "type": "number"
+              }
+            },
+            "required": [
+              "theory",
+              "laboratory",
+              "assessment"
+            ],
+            "additionalProperties": false
+          },
+          "lessons": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "id": {
+                  "type": "string"
+                },
+                "title": {
+                  "type": "string"
+                },
+                "description": {
+                  "type": "string"
+                },
+                "kind": {
+                  "type": "string",
+                  "enum": [
+                    "theory",
+                    "laboratory",
+                    "assessment"
+                  ]
+                },
+                "duration_hours": {
+                  "type": "number"
+                },
+                "objective_ids": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                },
+                "concepts": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                },
+                "prerequisite_lesson_ids": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                },
+                "methods": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                },
+                "project_ids": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                }
+              },
+              "required": [
+                "id",
+                "title",
+                "description",
+                "kind",
+                "duration_hours",
+                "objective_ids",
+                "concepts",
+                "prerequisite_lesson_ids",
+                "methods",
+                "project_ids"
+              ],
+              "additionalProperties": false
+            }
+          }
+        },
+        "required": [
+          "id",
+          "title",
+          "description",
+          "period",
+          "prerequisites",
+          "annual_goal_ids",
+          "objectives",
+          "knowledge",
+          "skills",
+          "competences",
+          "topics",
+          "optional_topics",
+          "methods",
+          "assessment",
+          "hours",
+          "lessons"
+        ],
+        "additionalProperties": false
+      }
+    },
+    "projects": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "title": {
+            "type": "string"
+          },
+          "description": {
+            "type": "string"
+          },
+          "competences": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "milestones": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "uda_id": {
+                  "type": "string"
+                },
+                "description": {
+                  "type": "string"
+                },
+                "deliverable": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "uda_id",
+                "description",
+                "deliverable"
+              ],
+              "additionalProperties": false
+            }
+          }
+        },
+        "required": [
+          "id",
+          "title",
+          "description",
+          "competences",
+          "milestones"
+        ],
+        "additionalProperties": false
+      }
+    },
+    "review_notes": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    }
+  },
+  "required": [
+    "context",
+    "udas",
+    "projects",
+    "review_notes"
+  ],
+  "additionalProperties": false
+}

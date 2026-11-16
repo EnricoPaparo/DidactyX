@@ -1,0 +1,32 @@
+{
+  "plan_version": 2,
+  "data": {
+    "summary": "Non emergono errori nelle ore, nei riferimenti o nella progressione: le attività occupano 58 ore, completate da 4 ore di recupero e 4 di margine. Il progetto integra 8 ore senza duplicazioni. È mantenuta correttamente la scelta già applicata di anticipare i circuiti rispetto a energia e calore. Le osservazioni seguenti sono raccomandazioni, non correzioni obbligatorie.",
+    "findings": [
+      {
+        "kind": "didactic",
+        "location": "Distribuzione annuale delle riserve; «Verifica individuale su energia e fenomeni termici»",
+        "description": "Le riserve rispettano il totale richiesto, ma non è ancora indicato come distinguere operativamente recupero e margine nelle quattro finestre. Nell'ultima rimane una sola ora: la sua destinazione incide sulla possibilità di intervenire dopo la verifica conclusiva.",
+        "suggestion": "Prevedi un'assegnazione indicativa e modificabile delle riserve, destinando preferibilmente l'ora finale al recupero degli apprendimenti essenziali. Mantieni separati i due contingenti annuali, senza aggiungere lezioni."
+      },
+      {
+        "kind": "didactic",
+        "location": "«Prova pratica di montaggio e controllo»",
+        "description": "La prova richiede evidenze individuali di montaggio, sicurezza e documentazione in un'ora. Il percorso riconosce il problema dei turni, ma numerosità della classe e disponibilità delle postazioni restano sconosciute: la fattibilità non è ancora determinabile.",
+        "suggestion": "Prima di confermare l'organizzazione, stima tempi individuali e postazioni disponibili. Se non bastano, raccogli parte delle evidenze pratiche individuali durante i laboratori precedenti e usa l'ora di prova per completarle, senza aumentare le 6 ore annuali di verifica."
+      },
+      {
+        "kind": "didactic",
+        "location": "«Energia e calore: trasformazioni e rilettura dei circuiti»",
+        "description": "Tutte le 6 ore di laboratorio sono concentrate su misure termiche e confronti di raffreddamento. La scelta sostiene bene il progetto finale, ma lascia lavoro ed energia meccanica con un riscontro pratico meno diretto rispetto agli altri nuclei.",
+        "suggestion": "Valuta se destinare una parte del laboratorio ordinario a un riscontro sperimentale sul lavoro o sulle trasformazioni energetiche, riducendo una preparazione termica ripetuta. Conserva le quote annuali e la conclusione del progetto."
+      },
+      {
+        "kind": "didactic",
+        "location": "Valutazione delle quattro UDA e progetto «Dalle misure ai modelli»",
+        "description": "Sono presenti criteri pertinenti e riscontri individuali, ma non sono esplicitati i livelli di padronanza attesi. Rimane quindi da chiarire quando una prestazione guidata, autonoma o parzialmente corretta dimostri il raggiungimento dell'obiettivo.",
+        "suggestion": "Aggiungi descrittori sintetici per gli apprendimenti essenziali, distinguendo correttezza concettuale, qualità delle procedure, interpretazione dei dati e autonomia. Nel progetto tieni distinta la qualità del dossier dalla comprensione individuale."
+      }
+    ]
+  }
+}

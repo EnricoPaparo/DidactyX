@@ -1,0 +1,1570 @@
+{
+  "version": 2,
+  "brief": {
+    "free_text": "Classe seconda di istituto tecnico, studenti di 15-16 anni. Conoscono proporzioni e formule elementari ma faticano a collegarle ai fenomeni. Progetta un anno di 33 settimane per 66 ore: 28 teoria, 24 laboratorio, 6 verifiche, 4 recupero, 4 margine. Quattro UDA su misure ed errori, forze ed equilibrio, energia e calore, circuiti elettrici semplici. Obiettivi: misurare con consapevolezza, interpretare fenomeni con modelli semplici, descrivere esperimenti e collegare teoria e pratica. Laboratorio essenziale con materiali comuni. Un progetto progressivo deve collegare almeno due UDA. Le lezioni sono blocchi di una o due ore. Non sono forniti documenti curricolari ufficiali.",
+    "school_context": "",
+    "student_profile": "",
+    "starting_knowledge": "",
+    "objectives": "",
+    "topics": "",
+    "organisation": "",
+    "preferences": ""
+  },
+  "change_request": "Introduci i circuiti elettrici prima di energia e calore; mantieni quattro UDA e tutte le 66 ore con la ripartizione indicata. Ricalibra prerequisiti e progetto nell’intero anno.",
+  "data": {
+    "context": {
+      "subject": "Fisica applicata",
+      "school_context": "Classe 2ª A di istituto tecnico; indirizzo e istituto non specificati. Programmazione annuale su dati fittizi per il collaudo del workflow.",
+      "class_profile": "Studenti di 15-16 anni che conoscono proporzioni e formule elementari, ma faticano a collegarle ai fenomeni fisici. Numerosità e bisogni educativi specifici non indicati.",
+      "starting_knowledge": [
+        "Conoscenza delle proporzioni.",
+        "Conoscenza di formule matematiche elementari."
+      ],
+      "goals": [
+        {
+          "id": "G1",
+          "description": "Misurare grandezze fisiche scegliendo strumenti adeguati e comunicando risultati con unità di misura e consapevolezza dell'incertezza."
+        },
+        {
+          "id": "G2",
+          "description": "Interpretare equilibrio, funzionamento dei circuiti e fenomeni energetici e termici mediante modelli semplici, riconoscendone le condizioni di applicazione."
+        },
+        {
+          "id": "G3",
+          "description": "Descrivere esperimenti documentando procedure, dati, risultati e limiti, distinguendo osservazioni e interpretazioni."
+        },
+        {
+          "id": "G4",
+          "description": "Collegare teoria e pratica attraverso un progetto progressivo che integri misurazione, previsione e verifica sperimentale in più UDA."
+        }
+      ],
+      "required_topics": [
+        "U1 — Misure ed errori: grandezze, unità, strumenti, misure ripetute, incertezza elementare, tabelle e semplici grafici.",
+        "U2 — Forze ed equilibrio: rappresentazione delle forze, massa e peso, equilibrio in casi semplici, momenti e leve.",
+        "U3 — Circuiti elettrici semplici: componenti e schemi, sicurezza, corrente, tensione, resistenza, legge di Ohm per componenti ohmici, serie e parallelo.",
+        "U4 — Energia e calore: lavoro, trasformazioni e conservazione dell'energia, temperatura, scambi termici, relazione calorimetrica elementare e isolamento; rilettura energetica dei circuiti."
+      ],
+      "optional_topics": [],
+      "preferences": [
+        "Mantenere quattro UDA, introducendo i circuiti elettrici prima di energia e calore, come richiesto nella modifica.",
+        "Privilegiare il passaggio tra fenomeno osservato, schema, dati e formula, con supporti gradualmente ridotti.",
+        "Utilizzare un laboratorio essenziale con materiali comuni e attività dimensionate sulle dotazioni effettive.",
+        "Organizzare le attività in blocchi di una o due ore.",
+        "Rispettare 33 settimane e 66 ore complessive: 28 di teoria, 24 di laboratorio, 6 di verifiche, 4 di recupero e 4 di margine.",
+        "Conteggiare ogni ora di calendario una sola volta, includendo il progetto nelle quote delle UDA.",
+        "Mantenere recupero e margine come riserve annuali distinte, senza esportarli come lezioni aggiuntive.",
+        "Ricalibrare P1 come progetto progressivo annuale con un dossier di gruppo e riscontri individuali, collegando le quattro UDA.",
+        "Non subordinare l'accesso alle UDA al superamento delle verifiche: usare gli esiti per predisporre consolidamento e recupero."
+      ],
+      "total_hours": 66,
+      "hours": {
+        "theory": 28,
+        "laboratory": 24,
+        "assessment": 6,
+        "recovery": 4,
+        "buffer": 4
+      },
+      "assumptions": [
+        "Le 33 settimane corrispondono a una disponibilità media di 2 ore settimanali. Le attività delle UDA occupano 58 ore; recupero e margine occupano le restanti 8, già incluse nelle 66.",
+        "Si propone questa distribuzione: U1, 6 ore di teoria, 6 di laboratorio e 1 di verifica; U2, 8 di teoria, 6 di laboratorio e 2 di verifica; U3, 6 di teoria, 6 di laboratorio e 2 di verifica; U4, 8 di teoria, 6 di laboratorio e 1 di verifica. I totali rispettano tutte le quote annuali.",
+        "Finestre indicative: U1 settimane 1–8, U2 settimane 9–17, U3 settimane 18–25, U4 settimane 26–33. Le disponibilità residue sono rispettivamente 3, 2, 2 e 1 ore, da destinare flessibilmente alle riserve mantenendo 4 ore di recupero e 4 di margine.",
+        "I prerequisiti fisici non dichiarati saranno rilevati inizialmente, senza considerarli acquisiti. U2 riprende misure e rappresentazioni di U1; U3 richiede proporzioni, unità, tabelle e grafici di U1, non conoscenze termiche o bilanci energetici.",
+        "Nota di revisione: i circuiti precedono deliberatamente la trattazione sistematica di energia e calore. U3 introduce operativamente corrente, tensione e resistenza senza richiedere U4 come prerequisito; gli eventuali richiami energetici restano qualitativi e vengono formalizzati in U4.",
+        "U4 riprende le forze di U2 e introduce lo spostamento prima del lavoro, senza presumere conoscenze cinematiche. Utilizza inoltre gli schemi e le osservazioni dei circuiti di U3 per collegare funzionamento elettrico e trasformazioni energetiche.",
+        "Si propone P1, «Dalle misure ai modelli»: in U1 si costruisce un protocollo di misura; in U2 lo si applica a una leva con materiali comuni; in U3 si trasferiscono documentazione e confronto previsione-osservazione ai circuiti; in U4 si aggiunge un confronto termico e si rileggono energeticamente i circuiti. Il collegamento annuale è metodologico e concettuale, senza richiedere un unico apparato.",
+        "P1 impegna 8 ore già comprese nelle UDA: U1, 1 ora di teoria e 1 di laboratorio; U2, 1 di laboratorio e 1 di verifica; U3, 1 di teoria e 1 di laboratorio; U4, 2 di laboratorio. Totale progettuale: 2 ore di teoria, 5 di laboratorio e 1 di verifica, senza duplicazioni. La verifica di U2 valuta una tappa intermedia; le tappe successive ricevono feedback nelle attività ordinarie e confluiscono nelle verifiche già previste.",
+        "Per P1 si mantengono esplicite le ipotesi sui carichi di uguale peso e sulla leva equilibrata da scarica. La documentazione distingue dati, previsioni, scostamenti e limiti del modello.",
+        "Si assume da verificare la disponibilità di termometri idonei, pile, collegamenti e utilizzatori compatibili. Le misure elettriche dirette dipendono dagli strumenti disponibili; in loro assenza si mantengono montaggi e osservazioni, affiancati da dati esplicitamente forniti.",
+        "Sono previsti controlli preventivi di sicurezza: appoggi stabili, carichi leggeri, acqua tiepida e circuiti esclusivamente a pile. Sono esclusi rete elettrica, cortocircuiti provocati, fiamme e liquidi molto caldi.",
+        "Non si attribuiscono alla classe caratteristiche non documentate. Ruoli cooperativi, supporti graduati e riscontri individuali sono scelte progettuali da adattare ai partecipanti effettivi.",
+        "Non sono stati forniti documenti curricolari ufficiali; non vengono introdotti riferimenti normativi o fonti esterne."
+      ],
+      "curriculum_references": []
+    },
+    "udas": [
+      {
+        "id": "U1",
+        "title": "Misure ed errori: dai fenomeni ai dati",
+        "description": "Costruisce le procedure di misura e documentazione dell'intero anno. Avvia P1 con un protocollo di misura di distanze, successivamente applicato alle leve e assunto come riferimento metodologico nelle altre indagini.",
+        "period": "Settimane 1–8: 13 ore programmate su 16 disponibili; 3 ore per le riserve annuali.",
+        "prerequisites": [
+          "Conoscere proporzioni e formule matematiche elementari."
+        ],
+        "annual_goal_ids": [
+          "G1",
+          "G3",
+          "G4"
+        ],
+        "objectives": [
+          {
+            "id": "U1-O1",
+            "description": "Scegliere uno strumento adeguato alla grandezza osservata, riconoscendone portata e risoluzione."
+          },
+          {
+            "id": "U1-O2",
+            "description": "Registrare misure ripetute con unità corrette, calcolarne la media e dichiarare un'incertezza elementare coerente con risoluzione e variabilità osservata."
+          },
+          {
+            "id": "U1-O3",
+            "description": "Organizzare dati in tabelle e semplici grafici, distinguendo osservazioni, risultati e possibili fonti di errore."
+          },
+          {
+            "id": "U1-O4",
+            "description": "Predisporre e provare per P1 un protocollo ripetibile di misura di distanze, dichiarando strumenti, riferimenti e modalità di registrazione."
+          }
+        ],
+        "knowledge": [
+          "Grandezze fisiche, unità e conversioni essenziali.",
+          "Misure dirette e indirette.",
+          "Portata e risoluzione degli strumenti.",
+          "Misure ripetute, valore medio e incertezza elementare.",
+          "Variabilità delle letture ed effetti sistematici non eliminabili semplicemente ripetendo le misure.",
+          "Tabelle, semplici grafici e struttura della documentazione sperimentale."
+        ],
+        "skills": [
+          "Leggere strumenti comuni e motivarne la scelta.",
+          "Eseguire misure ripetute e conversioni.",
+          "Esprimere risultati con unità e incertezza coerenti.",
+          "Costruire tabelle e grafici leggibili.",
+          "Documentare riferimenti, procedura e anomalie."
+        ],
+        "competences": [
+          "Produrre misure consapevoli e confrontabili.",
+          "Comunicare evidenze distinguendole dalle interpretazioni.",
+          "Preparare procedure trasferibili a successive indagini."
+        ],
+        "topics": [
+          "Grandezze e unità di misura.",
+          "Scelta e lettura degli strumenti.",
+          "Ripetibilità, fonti di errore e incertezza elementare.",
+          "Organizzazione e rappresentazione dei dati.",
+          "P1: protocollo, riferimenti e prime misure di distanza."
+        ],
+        "optional_topics": [],
+        "methods": [
+          "Diagnosi iniziale integrata nelle ore di teoria, senza presumere conoscenze fisiche non dichiarate.",
+          "Alternanza tra brevi spiegazioni, osservazioni concrete e trattamento dei dati.",
+          "Laboratorio con materiali comuni, ruoli cooperativi e registrazioni individuali.",
+          "Tabelle guida e tracce di relazione da ridurre progressivamente.",
+          "P1: 1 ora di teoria e 1 di laboratorio già comprese nell'UDA.",
+          "Blocchi di una o due ore."
+        ],
+        "assessment": [
+          "Feedback formativo su strumenti, unità, registrazioni e chiarezza delle procedure.",
+          "Verifica individuale di 1 ora su letture strumentali, misure ripetute, incertezza, tabelle e grafici.",
+          "Riscontro specifico su U1-O4 durante L8 mediante esecuzione del protocollo e scheda iniziale di P1, senza ore aggiuntive di verifica.",
+          "Criteri: adeguatezza dello strumento, unità corrette, incertezza coerente, tracciabilità e chiarezza."
+        ],
+        "hours": {
+          "theory": 6,
+          "laboratory": 6,
+          "assessment": 1
+        },
+        "lessons": [
+          {
+            "id": "L1",
+            "title": "Osservare, scegliere grandezze e strumenti",
+            "description": "Diagnosi iniziale non valutativa e introduzione di grandezze, unità, conversioni, misure dirette e indirette. Prima lettura delle caratteristiche degli strumenti comuni.",
+            "kind": "theory",
+            "duration_hours": 2,
+            "objective_ids": [
+              "U1-O1",
+              "U1-O2"
+            ],
+            "concepts": [
+              "Grandezze e unità",
+              "Conversioni essenziali",
+              "Misure dirette e indirette",
+              "Portata e risoluzione"
+            ],
+            "prerequisite_lesson_ids": [],
+            "methods": [
+              "Domande diagnostiche",
+              "Lezione dialogata con oggetti comuni",
+              "Letture ed esercizi guidati"
+            ],
+            "project_ids": []
+          },
+          {
+            "id": "L2",
+            "title": "Leggere strumenti e registrare misure",
+            "description": "Scelta e uso degli strumenti disponibili su oggetti comuni. Registrazione individuale delle letture e confronto delle scelte effettuate dai gruppi.",
+            "kind": "laboratory",
+            "duration_hours": 2,
+            "objective_ids": [
+              "U1-O1",
+              "U1-O2"
+            ],
+            "concepts": [
+              "Adeguatezza dello strumento",
+              "Lettura delle scale",
+              "Unità di misura",
+              "Registrazione delle letture"
+            ],
+            "prerequisite_lesson_ids": [
+              "L1"
+            ],
+            "methods": [
+              "Laboratorio cooperativo con ruoli",
+              "Scheda individuale guidata",
+              "Feedback sulle procedure"
+            ],
+            "project_ids": []
+          },
+          {
+            "id": "L3",
+            "title": "Dalle letture ripetute a dati interpretabili",
+            "description": "Sistematizzazione di media, incertezza elementare, tabelle e grafici a partire dalle letture raccolte. Distinzione tra variabilità ed effetti sistematici che la ripetizione non elimina.",
+            "kind": "theory",
+            "duration_hours": 2,
+            "objective_ids": [
+              "U1-O2",
+              "U1-O3"
+            ],
+            "concepts": [
+              "Misure ripetute e valore medio",
+              "Incertezza e risoluzione",
+              "Variabilità ed effetti sistematici",
+              "Tabelle e semplici grafici"
+            ],
+            "prerequisite_lesson_ids": [
+              "L2"
+            ],
+            "methods": [
+              "Analisi guidata dei dati",
+              "Esercizi graduati",
+              "Discussione delle fonti di errore"
+            ],
+            "project_ids": []
+          },
+          {
+            "id": "L4",
+            "title": "Raccogliere e rappresentare misure ripetute",
+            "description": "Applicazione di una procedura controllata a misure ripetute di oggetti comuni. Produzione di risultati con unità e incertezza, tabelle e rappresentazioni grafiche pertinenti.",
+            "kind": "laboratory",
+            "duration_hours": 2,
+            "objective_ids": [
+              "U1-O1",
+              "U1-O2",
+              "U1-O3"
+            ],
+            "concepts": [
+              "Ripetibilità",
+              "Media e incertezza elementare",
+              "Controllo della procedura",
+              "Rappresentazione dei risultati"
+            ],
+            "prerequisite_lesson_ids": [
+              "L3"
+            ],
+            "methods": [
+              "Laboratorio in piccoli gruppi",
+              "Tabelle guida",
+              "Registrazioni individuali",
+              "Confronto formativo dei risultati"
+            ],
+            "project_ids": []
+          },
+          {
+            "id": "L5",
+            "title": "Rendere un esperimento ripercorribile",
+            "description": "Definizione della struttura della documentazione sperimentale. Revisione delle registrazioni distinguendo procedura, osservazioni, risultati, interpretazioni e limiti.",
+            "kind": "theory",
+            "duration_hours": 1,
+            "objective_ids": [
+              "U1-O3"
+            ],
+            "concepts": [
+              "Tracciabilità",
+              "Procedura e dati",
+              "Osservazioni e interpretazioni",
+              "Limiti e conclusioni"
+            ],
+            "prerequisite_lesson_ids": [
+              "L4"
+            ],
+            "methods": [
+              "Revisione guidata delle registrazioni",
+              "Costruzione di una traccia di relazione",
+              "Autovalutazione con criteri espliciti"
+            ],
+            "project_ids": []
+          },
+          {
+            "id": "L6",
+            "title": "Controllare e comunicare una procedura di misura",
+            "description": "Laboratorio ordinario sul controllo della ripetibilità di una misura di distanza. Scambio delle istruzioni tra gruppi e revisione dei riferimenti e dei passaggi poco espliciti.",
+            "kind": "laboratory",
+            "duration_hours": 1,
+            "objective_ids": [
+              "U1-O1",
+              "U1-O2",
+              "U1-O3"
+            ],
+            "concepts": [
+              "Riferimenti di misura",
+              "Ripetibilità delle istruzioni",
+              "Confrontabilità dei risultati",
+              "Revisione della documentazione"
+            ],
+            "prerequisite_lesson_ids": [
+              "L4",
+              "L5"
+            ],
+            "methods": [
+              "Controllo pratico tra pari",
+              "Scheda sintetica",
+              "Feedback del docente"
+            ],
+            "project_ids": []
+          },
+          {
+            "id": "L7",
+            "title": "P1: definire il protocollo iniziale",
+            "description": "Avvio del dossier annuale e pianificazione di un protocollo per misurare distanze su un'asta o un righello rispetto a riferimenti dichiarati, senza presupporre il modello delle leve.",
+            "kind": "theory",
+            "duration_hours": 1,
+            "objective_ids": [
+              "U1-O1",
+              "U1-O3",
+              "U1-O4"
+            ],
+            "concepts": [
+              "Protocollo di misura",
+              "Scelta degli strumenti",
+              "Riferimenti dichiarati",
+              "Pianificazione delle registrazioni"
+            ],
+            "prerequisite_lesson_ids": [
+              "L5",
+              "L6"
+            ],
+            "methods": [
+              "Progettazione cooperativa guidata",
+              "Confronto dei protocolli",
+              "Controllo di fattibilità"
+            ],
+            "project_ids": [
+              "P1"
+            ]
+          },
+          {
+            "id": "L8",
+            "title": "P1: provare e documentare il protocollo",
+            "description": "Esecuzione di poche misure ripetute di distanza. Completamento della prima sezione del dossier con riferimenti, dati e incertezza; riscontro formativo specifico sulla ripetibilità.",
+            "kind": "laboratory",
+            "duration_hours": 1,
+            "objective_ids": [
+              "U1-O1",
+              "U1-O2",
+              "U1-O3",
+              "U1-O4"
+            ],
+            "concepts": [
+              "Applicazione del protocollo",
+              "Misure ripetute di distanza",
+              "Unità, media e incertezza",
+              "Revisione delle istruzioni"
+            ],
+            "prerequisite_lesson_ids": [
+              "L7",
+              "L3"
+            ],
+            "methods": [
+              "Laboratorio di progetto",
+              "Scheda di gruppo e registrazioni individuali",
+              "Feedback sulla ripetibilità"
+            ],
+            "project_ids": [
+              "P1"
+            ]
+          },
+          {
+            "id": "L9",
+            "title": "Verifica individuale su misure e dati",
+            "description": "Accertamento su strumenti, misure ripetute, incertezza, tabelle e grafici. Gli esiti orientano il recupero senza condizionare l'accesso all'UDA successiva.",
+            "kind": "assessment",
+            "duration_hours": 1,
+            "objective_ids": [
+              "U1-O1",
+              "U1-O2",
+              "U1-O3"
+            ],
+            "concepts": [
+              "Strumenti e unità",
+              "Media e incertezza",
+              "Fonti di errore",
+              "Tabelle e grafici"
+            ],
+            "prerequisite_lesson_ids": [
+              "L3",
+              "L5",
+              "L8"
+            ],
+            "methods": [
+              "Prova individuale applicativa",
+              "Valutazione con criteri dichiarati"
+            ],
+            "project_ids": []
+          }
+        ]
+      },
+      {
+        "id": "U2",
+        "title": "Forze ed equilibrio negli oggetti comuni",
+        "description": "Sviluppa il passaggio dall'oggetto allo schema delle forze e alla previsione quantitativa. Applica le procedure di U1 a situazioni statiche e alla tappa meccanica di P1, che prosegue nelle UDA successive.",
+        "period": "Settimane 9–17: 16 ore programmate su 18 disponibili; 2 ore per le riserve annuali.",
+        "prerequisites": [
+          "Usare unità, tabelle e semplici stime dell'incertezza sviluppate in U1.",
+          "Misurare distanze rispetto a riferimenti dichiarati.",
+          "Applicare proporzioni e ricavare un'incognita da formule elementari."
+        ],
+        "annual_goal_ids": [
+          "G1",
+          "G2",
+          "G3",
+          "G4"
+        ],
+        "objectives": [
+          {
+            "id": "U2-O1",
+            "description": "Identificare il sistema osservato e rappresentare le principali forze esterne in situazioni statiche semplici."
+          },
+          {
+            "id": "U2-O2",
+            "description": "Distinguere massa e peso e utilizzare la relativa relazione e la risultante di forze collineari in problemi elementari."
+          },
+          {
+            "id": "U2-O3",
+            "description": "Prevedere l'equilibrio di una leva piana con carichi verticali mediante il confronto dei momenti, identificando correttamente i bracci."
+          },
+          {
+            "id": "U2-O4",
+            "description": "Applicare il protocollo di P1 a una leva, confrontando previsioni e risultati e discutendo incertezza, ipotesi e limiti dell'apparato."
+          }
+        ],
+        "knowledge": [
+          "Forza come interazione, sistema osservato e rappresentazione delle forze.",
+          "Massa, peso e reazioni dei vincoli.",
+          "Risultante di forze collineari ed equilibrio traslazionale.",
+          "Fulcro, linea d'azione e braccio come distanza perpendicolare.",
+          "Momento di una forza ed equilibrio rotazionale introduttivo.",
+          "Ipotesi e limiti del modello ideale di leva."
+        ],
+        "skills": [
+          "Passare dall'oggetto reale a uno schema delle forze.",
+          "Distinguere massa e peso nelle descrizioni e nei calcoli.",
+          "Individuare e misurare i bracci effettivi.",
+          "Applicare relazioni elementari tra carichi e bracci.",
+          "Variare una condizione alla volta e confrontare dati e previsioni.",
+          "Documentare scostamenti considerando misure, apparato e ipotesi."
+        ],
+        "competences": [
+          "Interpretare l'equilibrio attraverso modelli semplici.",
+          "Integrare misurazione e previsione quantitativa.",
+          "Argomentare conclusioni dichiarando le condizioni del modello."
+        ],
+        "topics": [
+          "Interazioni e schemi delle forze.",
+          "Massa e peso.",
+          "Risultante ed equilibrio traslazionale.",
+          "Momenti, bracci e leve.",
+          "P1: applicazione del protocollo e bilancio intermedio."
+        ],
+        "optional_topics": [],
+        "methods": [
+          "Sequenze di previsione, osservazione, rappresentazione e confronto con il modello.",
+          "Problemi contestualizzati con passaggio esplicito da oggetto a schema e formula.",
+          "Laboratorio ordinario preparatorio prima dell'applicazione progettuale.",
+          "Uso di aste o righelli, appoggi stabili e carichi leggeri dello stesso tipo, assumendone esplicitamente l'uguaglianza approssimata dei pesi.",
+          "Controllo dell'equilibrio della leva scarica nella configurazione di prova e identificazione dei bracci effettivi; prevenzione di cadute e ribaltamenti.",
+          "P1: 1 ora di laboratorio per poche configurazioni controllate e 1 ora di verifica intermedia, già comprese nell'UDA.",
+          "Blocchi di una o due ore; verifiche senza funzione di sbarramento."
+        ],
+        "assessment": [
+          "Osservazione formativa di schemi, bracci e procedure sperimentali.",
+          "Verifica individuale di 1 ora su forze, massa, peso ed equilibrio.",
+          "Verifica intermedia di P1 di 1 ora con esame della sezione meccanica del dossier e breve riscontro scritto individuale.",
+          "Criteri: coerenza degli schemi, correttezza dei bracci e dei calcoli, qualità delle misure, analisi degli scostamenti e comprensione personale.",
+          "La valutazione di P1 riguarda la tappa meccanica, non conclude il progetto annuale."
+        ],
+        "hours": {
+          "theory": 8,
+          "laboratory": 6,
+          "assessment": 2
+        },
+        "lessons": [
+          {
+            "id": "L10",
+            "title": "Interazioni, sistema osservato, massa e peso",
+            "description": "Introduzione delle forze a partire da oggetti comuni. Identificazione del sistema, rappresentazione delle forze esterne e distinzione tra massa e peso con applicazioni quantitative essenziali.",
+            "kind": "theory",
+            "duration_hours": 2,
+            "objective_ids": [
+              "U2-O1",
+              "U2-O2"
+            ],
+            "concepts": [
+              "Forza come interazione",
+              "Sistema e forze esterne",
+              "Rappresentazione delle forze",
+              "Massa e peso"
+            ],
+            "prerequisite_lesson_ids": [
+              "L1",
+              "L3"
+            ],
+            "methods": [
+              "Lezione dialogata",
+              "Passaggio dall'oggetto allo schema",
+              "Problemi guidati con unità esplicite"
+            ],
+            "project_ids": []
+          },
+          {
+            "id": "L11",
+            "title": "Osservare oggetti appoggiati e vincoli",
+            "description": "Esplorazione di configurazioni statiche con oggetti comuni e appoggi stabili. Elaborazione di schemi distinguendo osservazioni e interpretazioni mediante il modello.",
+            "kind": "laboratory",
+            "duration_hours": 2,
+            "objective_ids": [
+              "U2-O1",
+              "U2-O2"
+            ],
+            "concepts": [
+              "Peso e reazioni dei vincoli",
+              "Scelta del sistema",
+              "Schemi delle forze",
+              "Osservazioni e interpretazioni"
+            ],
+            "prerequisite_lesson_ids": [
+              "L10",
+              "L5"
+            ],
+            "methods": [
+              "Laboratorio osservativo",
+              "Schemi individuali",
+              "Confronto guidato delle interpretazioni"
+            ],
+            "project_ids": []
+          },
+          {
+            "id": "L12",
+            "title": "Risultante ed equilibrio traslazionale",
+            "description": "Costruzione del modello di equilibrio per forze collineari. Collegamento tra configurazioni osservate, schemi, segni e relazioni quantitative.",
+            "kind": "theory",
+            "duration_hours": 2,
+            "objective_ids": [
+              "U2-O1",
+              "U2-O2"
+            ],
+            "concepts": [
+              "Forze collineari",
+              "Verso e segno",
+              "Risultante",
+              "Equilibrio traslazionale"
+            ],
+            "prerequisite_lesson_ids": [
+              "L10",
+              "L11"
+            ],
+            "methods": [
+              "Modellizzazione guidata",
+              "Problemi contestualizzati",
+              "Confronto tra schema e calcolo"
+            ],
+            "project_ids": []
+          },
+          {
+            "id": "L13",
+            "title": "Momenti, bracci e leve piane",
+            "description": "Introduzione dell'equilibrio rotazionale per leve piane con carichi verticali. Individuazione dei bracci come distanze perpendicolari dalle linee d'azione e costruzione di previsioni.",
+            "kind": "theory",
+            "duration_hours": 2,
+            "objective_ids": [
+              "U2-O1",
+              "U2-O3"
+            ],
+            "concepts": [
+              "Fulcro e linea d'azione",
+              "Braccio della forza",
+              "Momento",
+              "Equilibrio rotazionale",
+              "Equilibrio statico"
+            ],
+            "prerequisite_lesson_ids": [
+              "L12",
+              "L8"
+            ],
+            "methods": [
+              "Osservazioni dimostrative",
+              "Schemi geometrici guidati",
+              "Esercizi di previsione"
+            ],
+            "project_ids": []
+          },
+          {
+            "id": "L14",
+            "title": "Dalla leva reale allo schema dei bracci",
+            "description": "Laboratorio preparatorio per riconoscere fulcro, punti di applicazione e bracci effettivi. Misure di distanza e confronto tra poche configurazioni con apparato stabile.",
+            "kind": "laboratory",
+            "duration_hours": 2,
+            "objective_ids": [
+              "U2-O1",
+              "U2-O3"
+            ],
+            "concepts": [
+              "Bracci effettivi",
+              "Schema dell'apparato",
+              "Misure di distanza",
+              "Confronto previsione-osservazione"
+            ],
+            "prerequisite_lesson_ids": [
+              "L13",
+              "L6"
+            ],
+            "methods": [
+              "Laboratorio guidato con carichi leggeri",
+              "Registrazioni individuali",
+              "Controllo preventivo degli appoggi",
+              "Feedback sui bracci"
+            ],
+            "project_ids": []
+          },
+          {
+            "id": "L15",
+            "title": "Prevedere l'equilibrio e dichiarare le ipotesi",
+            "description": "Consolidamento dei modelli di equilibrio e analisi degli scostamenti possibili. Discussione delle ipotesi sui carichi, del peso proprio della leva e dei limiti delle misure.",
+            "kind": "theory",
+            "duration_hours": 2,
+            "objective_ids": [
+              "U2-O1",
+              "U2-O2",
+              "U2-O3"
+            ],
+            "concepts": [
+              "Schemi e relazioni quantitative",
+              "Massa e peso",
+              "Confronto dei momenti",
+              "Ipotesi sui carichi e sulla leva",
+              "Incertezza e limiti del modello"
+            ],
+            "prerequisite_lesson_ids": [
+              "L12",
+              "L14",
+              "L3"
+            ],
+            "methods": [
+              "Problemi contestualizzati",
+              "Discussione degli errori ricorrenti",
+              "Confronto tra previsioni e dati ordinari"
+            ],
+            "project_ids": []
+          },
+          {
+            "id": "L16",
+            "title": "Controlli preliminari di una prova di equilibrio",
+            "description": "Esercitazione su stabilità, equilibrio della leva scarica e identificazione dei bracci. Addestramento a modificare una sola condizione alla volta e registrare le condizioni iniziali.",
+            "kind": "laboratory",
+            "duration_hours": 1,
+            "objective_ids": [
+              "U2-O1",
+              "U2-O3"
+            ],
+            "concepts": [
+              "Equilibrio della leva scarica",
+              "Stabilità dell'appoggio",
+              "Bracci effettivi",
+              "Controllo delle condizioni di prova"
+            ],
+            "prerequisite_lesson_ids": [
+              "L14",
+              "L15"
+            ],
+            "methods": [
+              "Laboratorio preparatorio",
+              "Lista sintetica dei controlli",
+              "Osservazione formativa individuale"
+            ],
+            "project_ids": []
+          },
+          {
+            "id": "L17",
+            "title": "P1: applicare il protocollo alla leva",
+            "description": "Adattamento del protocollo di U1 a poche configurazioni di equilibrio. Controllo della leva scarica, uso di carichi leggeri assunti di uguale peso e confronto tra previsioni e misure.",
+            "kind": "laboratory",
+            "duration_hours": 1,
+            "objective_ids": [
+              "U2-O3",
+              "U2-O4"
+            ],
+            "concepts": [
+              "Trasferimento del protocollo",
+              "Ipotesi sui carichi",
+              "Confronto dei momenti",
+              "Incertezza e scostamenti",
+              "Revisione della procedura"
+            ],
+            "prerequisite_lesson_ids": [
+              "L8",
+              "L15",
+              "L16"
+            ],
+            "methods": [
+              "Laboratorio di progetto con scheda predisposta",
+              "Poche configurazioni controllate",
+              "Contributi individuali identificabili",
+              "Aggiornamento del dossier"
+            ],
+            "project_ids": [
+              "P1"
+            ]
+          },
+          {
+            "id": "L18",
+            "title": "Verifica individuale su forze ed equilibrio",
+            "description": "Accertamento su schemi delle forze, massa e peso, risultante ed equilibrio delle leve. Rilevazione dei bisogni di consolidamento senza funzione di sbarramento.",
+            "kind": "assessment",
+            "duration_hours": 1,
+            "objective_ids": [
+              "U2-O1",
+              "U2-O2",
+              "U2-O3"
+            ],
+            "concepts": [
+              "Forze esterne",
+              "Massa e peso",
+              "Equilibrio traslazionale",
+              "Momenti e bracci"
+            ],
+            "prerequisite_lesson_ids": [
+              "L12",
+              "L15",
+              "L16"
+            ],
+            "methods": [
+              "Prova individuale con schemi e problemi",
+              "Valutazione con criteri dichiarati"
+            ],
+            "project_ids": []
+          },
+          {
+            "id": "L19",
+            "title": "P1: bilancio intermedio della tappa meccanica",
+            "description": "Valutazione della sezione meccanica del dossier e riscontro scritto individuale su protocollo, previsioni, dati, ipotesi e limiti. Registrazione delle revisioni per le indagini successive.",
+            "kind": "assessment",
+            "duration_hours": 1,
+            "objective_ids": [
+              "U2-O3",
+              "U2-O4"
+            ],
+            "concepts": [
+              "Coerenza tra modello e dati",
+              "Identificazione dei bracci",
+              "Ipotesi sperimentali",
+              "Analisi degli scostamenti",
+              "Revisione del protocollo"
+            ],
+            "prerequisite_lesson_ids": [
+              "L17",
+              "L5"
+            ],
+            "methods": [
+              "Esame del dossier di gruppo",
+              "Riscontro scritto individuale",
+              "Valutazione distinta di prodotto e comprensione personale"
+            ],
+            "project_ids": [
+              "P1"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "U3",
+        "title": "Circuiti elettrici semplici: dagli schemi al funzionamento",
+        "description": "Introduce i circuiti prima della trattazione sistematica di energia e calore. Corrente, tensione e resistenza sono affrontate operativamente, senza prerequisiti termici o bilanci energetici. P1 trasferisce ai circuiti previsione, controllo e documentazione.",
+        "period": "Settimane 18–25: 14 ore programmate su 16 disponibili; 2 ore per le riserve annuali.",
+        "prerequisites": [
+          "Usare unità, proporzioni, tabelle e semplici grafici sviluppati in U1.",
+          "Documentare procedure e distinguere osservazioni e interpretazioni.",
+          "Confrontare previsioni e risultati con il metodo esercitato in U1 e U2.",
+          "Non sono richieste conoscenze di energia e calore."
+        ],
+        "annual_goal_ids": [
+          "G1",
+          "G2",
+          "G3",
+          "G4"
+        ],
+        "objectives": [
+          {
+            "id": "U3-O1",
+            "description": "Riconoscere i componenti essenziali e passare da un circuito reale a uno schema corretto e viceversa."
+          },
+          {
+            "id": "U3-O2",
+            "description": "Costruire e controllare un circuito semplice a pile rispettando le regole di sicurezza e individuando semplici cause di mancato funzionamento."
+          },
+          {
+            "id": "U3-O3",
+            "description": "Interpretare dati di tensione e corrente e applicare la legge di Ohm a componenti ohmici nelle condizioni considerate, distinguendo dati forniti e misure dirette."
+          },
+          {
+            "id": "U3-O4",
+            "description": "Confrontare collegamenti essenziali in serie e in parallelo e documentare in P1 la corrispondenza tra previsioni, schemi e funzionamento osservato."
+          }
+        ],
+        "knowledge": [
+          "Generatore, utilizzatore, collegamenti e interruttore.",
+          "Circuito aperto, chiuso e cortocircuito.",
+          "Corrente, tensione e resistenza con relative unità.",
+          "Legge di Ohm e condizioni di applicazione.",
+          "Collegamenti elementari in serie e in parallelo.",
+          "Distinzione tra evidenze qualitative, misure dirette e dati forniti."
+        ],
+        "skills": [
+          "Leggere e disegnare schemi elettrici essenziali.",
+          "Montare circuiti a pile e controllarli prima dell'alimentazione.",
+          "Confrontare configurazioni identificando componenti e condizioni.",
+          "Interpretare tabelle e grafici tensione-corrente senza generalizzare la legge di Ohm a qualsiasi utilizzatore.",
+          "Documentare funzionamento, anomalie e provenienza dei dati.",
+          "Usare eventuali strumenti idonei secondo le istruzioni e con collegamenti preventivamente controllati."
+        ],
+        "competences": [
+          "Collegare schemi, modelli e funzionamento di circuiti reali.",
+          "Trasferire un metodo di indagine a un nuovo ambito fisico.",
+          "Operare responsabilmente e comunicare evidenze con autonomia crescente."
+        ],
+        "topics": [
+          "Componenti e simboli essenziali.",
+          "Sicurezza e prevenzione dei cortocircuiti.",
+          "Corrente, tensione e resistenza.",
+          "Legge di Ohm per componenti ohmici.",
+          "Serie e parallelo.",
+          "P1: previsione, montaggio, confronto e documentazione."
+        ],
+        "optional_topics": [],
+        "methods": [
+          "Alternanza tra schema, previsione, montaggio e osservazione con supporti progressivamente ridotti.",
+          "Introduzione operativa delle grandezze elettriche senza dipendenze da U4; eventuali richiami energetici soltanto qualitativi.",
+          "Verifica preventiva di pile, collegamenti e utilizzatori compatibili.",
+          "Misure dirette solo con strumenti idonei disponibili e previa istruzione. In alternativa, montaggi e osservazioni affiancati da dati esplicitamente forniti e riferiti a un componente identificato.",
+          "Controllo preventivo del docente; uso esclusivo di pile a bassissima tensione, esclusione della rete elettrica e dei cortocircuiti provocati, scollegamento dopo le prove.",
+          "P1: 1 ora di teoria e 1 di laboratorio dopo le attività preparatorie su serie e parallelo, già comprese nell'UDA.",
+          "Blocchi di una o due ore; conservazione delle evidenze per la rilettura energetica in U4."
+        ],
+        "assessment": [
+          "Feedback su sicurezza, schemi, unità, provenienza dei dati e confronto previsione-osservazione.",
+          "Prova pratica di 1 ora su montaggio, controllo e documentazione con evidenze individuali anche a materiali condivisi.",
+          "Verifica individuale di 1 ora su schemi, legge di Ohm, dati e confronto tra serie e parallelo, richiamando le evidenze di P1.",
+          "Per G1, osservazione delle misure elettriche solo se effettivamente svolte; altrimenti riscontro sulla lettura critica di unità e incertezza dei dati forniti, distinto dalla competenza pratica di misurazione.",
+          "Criteri: sicurezza, corrispondenza schema-montaggio, correttezza delle relazioni, limiti del modello, autonomia e chiarezza."
+        ],
+        "hours": {
+          "theory": 6,
+          "laboratory": 6,
+          "assessment": 2
+        },
+        "lessons": [
+          {
+            "id": "L20",
+            "title": "Componenti, grandezze elettriche e sicurezza",
+            "description": "Introduzione operativa di componenti, simboli, corrente e tensione senza richiedere energia e calore. Preparazione al montaggio con pile e riconoscimento dei collegamenti non sicuri.",
+            "kind": "theory",
+            "duration_hours": 2,
+            "objective_ids": [
+              "U3-O1",
+              "U3-O2"
+            ],
+            "concepts": [
+              "Generatore, utilizzatore e interruttore",
+              "Circuito aperto e chiuso",
+              "Corrente e tensione",
+              "Simboli essenziali",
+              "Sicurezza e cortocircuito"
+            ],
+            "prerequisite_lesson_ids": [
+              "L1",
+              "L5",
+              "L17"
+            ],
+            "methods": [
+              "Lezione dialogata con componenti reali",
+              "Lettura guidata degli schemi",
+              "Analisi preventiva dei rischi"
+            ],
+            "project_ids": []
+          },
+          {
+            "id": "L21",
+            "title": "Dal disegno al circuito funzionante",
+            "description": "Montaggio di circuiti semplici a pile e confronto con gli schemi. Controllo preventivo del docente, ricerca guidata dei guasti semplici e documentazione delle osservazioni.",
+            "kind": "laboratory",
+            "duration_hours": 2,
+            "objective_ids": [
+              "U3-O1",
+              "U3-O2"
+            ],
+            "concepts": [
+              "Corrispondenza schema-montaggio",
+              "Continuità dei collegamenti",
+              "Circuito aperto e chiuso",
+              "Controllo prima dell'alimentazione",
+              "Anomalie di funzionamento"
+            ],
+            "prerequisite_lesson_ids": [
+              "L20",
+              "L5"
+            ],
+            "methods": [
+              "Laboratorio cooperativo",
+              "Controllo preventivo dei montaggi",
+              "Ricerca guidata dei guasti",
+              "Registrazioni individuali"
+            ],
+            "project_ids": []
+          },
+          {
+            "id": "L22",
+            "title": "Resistenza, dati elettrici e legge di Ohm",
+            "description": "Introduzione della resistenza e della legge di Ohm mediante dati di componenti ohmici. Distinzione tra dati forniti e misure dirette; istruzione agli eventuali strumenti prima dell'uso.",
+            "kind": "theory",
+            "duration_hours": 2,
+            "objective_ids": [
+              "U3-O3"
+            ],
+            "concepts": [
+              "Unità elettriche e resistenza",
+              "Legge di Ohm",
+              "Proporzionalità tensione-corrente",
+              "Condizioni del modello ohmico",
+              "Origine e incertezza dei dati"
+            ],
+            "prerequisite_lesson_ids": [
+              "L20",
+              "L21",
+              "L3"
+            ],
+            "methods": [
+              "Analisi guidata di dati forniti",
+              "Esercizi graduati",
+              "Istruzione agli strumenti se disponibili"
+            ],
+            "project_ids": []
+          },
+          {
+            "id": "L23",
+            "title": "Circuiti reali e dati di un componente ohmico",
+            "description": "Montaggio e interpretazione di dati elettrici. Misure solo con strumenti idonei e collegamenti controllati; altrimenti osservazioni pratiche e dati forniti di origine dichiarata, riferiti a un componente identificato.",
+            "kind": "laboratory",
+            "duration_hours": 2,
+            "objective_ids": [
+              "U3-O1",
+              "U3-O2",
+              "U3-O3"
+            ],
+            "concepts": [
+              "Controllo del circuito",
+              "Tensione, corrente e resistenza",
+              "Tabelle e grafici",
+              "Limiti degli strumenti e dei dati",
+              "Componente ohmico"
+            ],
+            "prerequisite_lesson_ids": [
+              "L22",
+              "L21",
+              "L4"
+            ],
+            "methods": [
+              "Percorso pratico adattato alle dotazioni",
+              "Controllo preventivo del docente",
+              "Analisi di dati con origine dichiarata",
+              "Documentazione individuale"
+            ],
+            "project_ids": []
+          },
+          {
+            "id": "L24",
+            "title": "Riconoscere serie e parallelo",
+            "description": "Introduzione dei collegamenti essenziali in serie e in parallelo attraverso schemi e previsioni qualitative. Non sono richiesti bilanci energetici.",
+            "kind": "theory",
+            "duration_hours": 1,
+            "objective_ids": [
+              "U3-O1",
+              "U3-O4"
+            ],
+            "concepts": [
+              "Collegamento in serie",
+              "Collegamento in parallelo",
+              "Percorsi della corrente",
+              "Previsioni di funzionamento"
+            ],
+            "prerequisite_lesson_ids": [
+              "L22",
+              "L23"
+            ],
+            "methods": [
+              "Confronto guidato di schemi",
+              "Previsioni motivate",
+              "Esercizi di rappresentazione"
+            ],
+            "project_ids": []
+          },
+          {
+            "id": "L25",
+            "title": "Montaggi preparatori in serie e in parallelo",
+            "description": "Laboratorio ordinario sulle due configurazioni con utilizzatori compatibili. Preparazione delle procedure per il confronto progettuale con osservazioni qualitative e schemi individuali.",
+            "kind": "laboratory",
+            "duration_hours": 1,
+            "objective_ids": [
+              "U3-O1",
+              "U3-O2",
+              "U3-O4"
+            ],
+            "concepts": [
+              "Schema e collegamenti reali",
+              "Serie e parallelo",
+              "Compatibilità dei componenti",
+              "Controlli di sicurezza"
+            ],
+            "prerequisite_lesson_ids": [
+              "L24",
+              "L21"
+            ],
+            "methods": [
+              "Laboratorio guidato",
+              "Controllo preventivo dei montaggi",
+              "Registrazioni individuali",
+              "Scollegamento delle pile dopo le prove"
+            ],
+            "project_ids": []
+          },
+          {
+            "id": "L26",
+            "title": "P1: trasferire il metodo ai circuiti",
+            "description": "Ripresa delle sezioni precedenti del dossier e delle revisioni emerse per pianificare un confronto essenziale tra serie e parallelo. Distinzione tra metodo trasferibile e grandezze, controlli e modelli specifici.",
+            "kind": "theory",
+            "duration_hours": 1,
+            "objective_ids": [
+              "U3-O1",
+              "U3-O2",
+              "U3-O4"
+            ],
+            "concepts": [
+              "Trasferimento del metodo sperimentale",
+              "Schemi e previsioni",
+              "Condizioni confrontabili",
+              "Controlli di sicurezza",
+              "Criteri di documentazione"
+            ],
+            "prerequisite_lesson_ids": [
+              "L8",
+              "L17",
+              "L24",
+              "L25"
+            ],
+            "methods": [
+              "Progettazione cooperativa",
+              "Revisione del dossier progressivo",
+              "Confronto tra ambiti fisici"
+            ],
+            "project_ids": [
+              "P1"
+            ]
+          },
+          {
+            "id": "L27",
+            "title": "P1: confrontare e documentare i circuiti",
+            "description": "Realizzazione del confronto con configurazioni già esercitate. Aggiornamento del dossier con schemi, previsioni, osservazioni, anomalie ed eventuali misure di origine dichiarata; conservazione delle evidenze per U4.",
+            "kind": "laboratory",
+            "duration_hours": 1,
+            "objective_ids": [
+              "U3-O1",
+              "U3-O2",
+              "U3-O4"
+            ],
+            "concepts": [
+              "Confronto previsione-osservazione",
+              "Serie e parallelo",
+              "Provenienza dei dati",
+              "Limiti delle evidenze qualitative",
+              "Revisione della documentazione"
+            ],
+            "prerequisite_lesson_ids": [
+              "L26",
+              "L23",
+              "L25"
+            ],
+            "methods": [
+              "Laboratorio di progetto",
+              "Controllo preventivo del docente",
+              "Scheda sintetica con contributi individuali",
+              "Feedback formativo"
+            ],
+            "project_ids": [
+              "P1"
+            ]
+          },
+          {
+            "id": "L28",
+            "title": "Prova pratica di montaggio e controllo",
+            "description": "Accertamento di montaggio, controllo e documentazione di un circuito semplice. Prestazioni individuali rilevate anche con materiali condivisi, mediante compiti e turni compatibili con l'ora disponibile.",
+            "kind": "assessment",
+            "duration_hours": 1,
+            "objective_ids": [
+              "U3-O1",
+              "U3-O2",
+              "U3-O4"
+            ],
+            "concepts": [
+              "Schema e circuito reale",
+              "Sicurezza",
+              "Controllo del funzionamento",
+              "Documentazione delle osservazioni"
+            ],
+            "prerequisite_lesson_ids": [
+              "L23",
+              "L25",
+              "L27"
+            ],
+            "methods": [
+              "Prova pratica con osservazione individuale",
+              "Scheda individuale di documentazione",
+              "Valutazione con criteri dichiarati"
+            ],
+            "project_ids": []
+          },
+          {
+            "id": "L29",
+            "title": "Verifica individuale su schemi e dati elettrici",
+            "description": "Accertamento su schemi, grandezze elettriche, legge di Ohm e confronto tra collegamenti. Richiamo alle evidenze della tappa elettrica di P1 nella verifica ordinaria, senza ore progettuali aggiuntive.",
+            "kind": "assessment",
+            "duration_hours": 1,
+            "objective_ids": [
+              "U3-O1",
+              "U3-O3",
+              "U3-O4"
+            ],
+            "concepts": [
+              "Schemi elettrici",
+              "Legge di Ohm e condizioni di validità",
+              "Tabelle e grafici elettrici",
+              "Serie e parallelo",
+              "Dati forniti e misure dirette"
+            ],
+            "prerequisite_lesson_ids": [
+              "L22",
+              "L23",
+              "L24",
+              "L27"
+            ],
+            "methods": [
+              "Prova individuale con interpretazione di dati",
+              "Valutazione con criteri dichiarati",
+              "Rilevazione dei bisogni di recupero"
+            ],
+            "project_ids": []
+          }
+        ]
+      },
+      {
+        "id": "U4",
+        "title": "Energia e calore: trasformazioni e rilettura dei circuiti",
+        "description": "Conclude l'anno introducendo lavoro, trasformazioni energetiche e fenomeni termici. Riprende le forze di U2 e i circuiti di U3. Completa P1 con un confronto termico e una sintesi delle evidenze raccolte.",
+        "period": "Settimane 26–33: 15 ore programmate su 16 disponibili; 1 ora per le riserve annuali.",
+        "prerequisites": [
+          "Misurare, organizzare dati e documentare limiti secondo le procedure di U1.",
+          "Riconoscere forze e distinguere massa e peso come sviluppato in U2.",
+          "Leggere schemi e descrivere il funzionamento dei circuiti di U3.",
+          "Utilizzare proporzioni, differenze e formule elementari."
+        ],
+        "annual_goal_ids": [
+          "G1",
+          "G2",
+          "G3",
+          "G4"
+        ],
+        "objectives": [
+          {
+            "id": "U4-O1",
+            "description": "Descrivere trasformazioni e trasferimenti di energia in sistemi semplici, compresi i circuiti già osservati, dichiarando confini del sistema e scambi con l'ambiente."
+          },
+          {
+            "id": "U4-O2",
+            "description": "Distinguere temperatura e calore e interpretare l'equilibrio termico mediante un modello semplice."
+          },
+          {
+            "id": "U4-O3",
+            "description": "Applicare relazioni elementari per lavoro e scambi termici in situazioni guidate, specificandone le condizioni di validità."
+          },
+          {
+            "id": "U4-O4",
+            "description": "Confrontare andamenti temperatura-tempo in diverse condizioni di isolamento e completare P1 collegando dati, modelli, limiti e rilettura energetica dei circuiti."
+          }
+        ],
+        "knowledge": [
+          "Spostamento e lavoro di una forza costante parallela allo spostamento.",
+          "Forme elementari di energia meccanica.",
+          "Conservazione, trasformazioni, trasferimenti e dissipazione.",
+          "Temperatura, calore ed equilibrio termico.",
+          "Relazione tra calore, massa e variazione di temperatura senza cambiamenti di stato e con calore specifico assunto costante.",
+          "Modalità di trasferimento del calore e isolamento.",
+          "Trasformazioni energetiche nei generatori e negli utilizzatori osservati."
+        ],
+        "skills": [
+          "Rappresentare sistemi e scambi energetici con schemi semplici.",
+          "Applicare formule con unità e condizioni coerenti.",
+          "Misurare temperature a intervalli regolari con strumenti idonei.",
+          "Costruire e confrontare grafici temperatura-tempo.",
+          "Controllare le variabili pertinenti nel confronto tra isolamenti.",
+          "Rileggere osservazioni elettriche in termini energetici senza attribuire misure non effettuate."
+        ],
+        "competences": [
+          "Interpretare fenomeni meccanici, elettrici e termici attraverso trasformazioni e semplici bilanci energetici.",
+          "Valutare se i dati sostengono un confronto sperimentale.",
+          "Integrare misurazione, previsione e verifica riconoscendo analogie metodologiche e differenze tra modelli."
+        ],
+        "topics": [
+          "Spostamento, lavoro e forme elementari di energia.",
+          "Conservazione e dissipazione, distinta dalla scomparsa dell'energia.",
+          "Temperatura, calore ed equilibrio termico.",
+          "Relazione calorimetrica e condizioni di applicazione.",
+          "Trasferimento del calore e isolamento.",
+          "Rilettura energetica dei circuiti.",
+          "P1: confronto termico e sintesi annuale."
+        ],
+        "optional_topics": [],
+        "methods": [
+          "Introduzione dello spostamento prima del lavoro, senza presumere conoscenze cinematiche; energia di movimento trattata qualitativamente.",
+          "Analisi di situazioni quotidiane con sistema e ambiente esplicitati.",
+          "Ripresa delle evidenze di U3 senza nuove misure elettriche o calcoli necessari di potenza.",
+          "Verifica preventiva dei termometri; uso di acqua tiepida, recipienti stabili e materiali comuni, senza fiamme o liquidi molto caldi.",
+          "Quattro ore di laboratorio ordinario preparano misure, grafici e controllo delle variabili; le 2 ore di laboratorio di P1 ospitano il confronto termico e la sintesi del dossier.",
+          "Confronto tra isolamenti con quantità d'acqua equivalenti, temperature iniziali confrontabili, riferimento temporale esplicito e condizioni ambientali e di lettura comparabili.",
+          "Relazioni brevi, supporti ridotti e riscontri individuali; blocchi di una o due ore."
+        ],
+        "assessment": [
+          "Feedback su calore e temperatura, grafici, variabili e interpretazioni energetiche.",
+          "Controllo formativo del dossier finale in L36 con contributi individuali identificabili, senza verifica progettuale aggiuntiva.",
+          "Verifica individuale di 1 ora su energia, fenomeni termici, dati e applicazioni quantitative, comprendente un breve collegamento alle evidenze di P1.",
+          "U4-O4 è osservato direttamente nelle attività pratiche e integrato dalla verifica, senza riprodurre l'intera indagine nell'ora disponibile.",
+          "Criteri: correttezza concettuale, unità, condizioni di validità, confronto dei dati, limiti e argomentazione."
+        ],
+        "hours": {
+          "theory": 8,
+          "laboratory": 6,
+          "assessment": 1
+        },
+        "lessons": [
+          {
+            "id": "L30",
+            "title": "Dalle forze allo spostamento, al lavoro e all'energia",
+            "description": "Introduzione dello spostamento prima del lavoro di una forza costante parallela. Collegamento con energia potenziale gravitazionale ed energia di movimento qualitativa, senza prerequisiti cinematici non dichiarati.",
+            "kind": "theory",
+            "duration_hours": 2,
+            "objective_ids": [
+              "U4-O1",
+              "U4-O3"
+            ],
+            "concepts": [
+              "Spostamento",
+              "Lavoro e condizioni di applicazione",
+              "Unità di lavoro ed energia",
+              "Energia potenziale gravitazionale",
+              "Energia di movimento qualitativa"
+            ],
+            "prerequisite_lesson_ids": [
+              "L10",
+              "L12",
+              "L1"
+            ],
+            "methods": [
+              "Lezione dialogata su situazioni concrete",
+              "Schemi forza-spostamento",
+              "Applicazioni quantitative guidate"
+            ],
+            "project_ids": []
+          },
+          {
+            "id": "L31",
+            "title": "Conservazione dell'energia e rilettura dei circuiti",
+            "description": "Costruzione di schemi energetici con sistema e ambiente espliciti. Rilettura dei circuiti osservati e distinzione tra dissipazione e scomparsa dell'energia, senza richiedere nuove misure elettriche.",
+            "kind": "theory",
+            "duration_hours": 2,
+            "objective_ids": [
+              "U4-O1"
+            ],
+            "concepts": [
+              "Sistema e ambiente",
+              "Conservazione dell'energia",
+              "Trasformazioni e trasferimenti",
+              "Dissipazione",
+              "Energia nei generatori e negli utilizzatori"
+            ],
+            "prerequisite_lesson_ids": [
+              "L30",
+              "L20",
+              "L24",
+              "L27"
+            ],
+            "methods": [
+              "Analisi di fenomeni quotidiani",
+              "Ripresa degli schemi elettrici",
+              "Costruzione di semplici bilanci e schemi energetici"
+            ],
+            "project_ids": []
+          },
+          {
+            "id": "L32",
+            "title": "Temperatura, calore ed equilibrio termico",
+            "description": "Distinzione tra temperatura e calore e introduzione dell'equilibrio termico. Preparazione all'uso dei termometri con attenzione a risoluzione, stabilizzazione, lettura e sicurezza.",
+            "kind": "theory",
+            "duration_hours": 2,
+            "objective_ids": [
+              "U4-O1",
+              "U4-O2"
+            ],
+            "concepts": [
+              "Temperatura",
+              "Calore come trasferimento di energia",
+              "Equilibrio termico",
+              "Termometri e limiti di misura",
+              "Scambi con l'ambiente"
+            ],
+            "prerequisite_lesson_ids": [
+              "L31",
+              "L2",
+              "L3"
+            ],
+            "methods": [
+              "Rilevazione delle concezioni iniziali",
+              "Lezione dialogata",
+              "Esame degli strumenti disponibili"
+            ],
+            "project_ids": []
+          },
+          {
+            "id": "L33",
+            "title": "Misurare temperature nel tempo",
+            "description": "Raccolta di temperature a intervalli regolari con acqua tiepida e recipienti stabili. Produzione di tabelle e grafici e documentazione delle condizioni iniziali e dei limiti delle letture.",
+            "kind": "laboratory",
+            "duration_hours": 2,
+            "objective_ids": [
+              "U4-O2",
+              "U4-O4"
+            ],
+            "concepts": [
+              "Temperatura nel tempo",
+              "Intervalli di rilevazione",
+              "Grafici temperatura-tempo",
+              "Risoluzione e variabilità",
+              "Condizioni iniziali"
+            ],
+            "prerequisite_lesson_ids": [
+              "L32",
+              "L4",
+              "L5"
+            ],
+            "methods": [
+              "Laboratorio con acqua tiepida",
+              "Controllo preventivo di strumenti e recipienti",
+              "Registrazioni individuali",
+              "Documentazione parzialmente strutturata"
+            ],
+            "project_ids": []
+          },
+          {
+            "id": "L34",
+            "title": "Scambi termici, isolamento e condizioni dei modelli",
+            "description": "Introduzione della relazione calorimetrica e delle modalità di trasferimento del calore. Esplicitazione delle condizioni di validità e pianificazione del controllo delle variabili nel confronto tra isolamenti.",
+            "kind": "theory",
+            "duration_hours": 2,
+            "objective_ids": [
+              "U4-O1",
+              "U4-O2",
+              "U4-O3",
+              "U4-O4"
+            ],
+            "concepts": [
+              "Calore, massa e variazione di temperatura",
+              "Calore specifico assunto costante",
+              "Assenza di cambiamenti di stato",
+              "Conduzione, convezione e irraggiamento",
+              "Isolamento e variabili controllate"
+            ],
+            "prerequisite_lesson_ids": [
+              "L31",
+              "L32",
+              "L33"
+            ],
+            "methods": [
+              "Analisi dei grafici",
+              "Problemi quantitativi guidati",
+              "Progettazione dei controlli sperimentali"
+            ],
+            "project_ids": []
+          },
+          {
+            "id": "L35",
+            "title": "Rendere confrontabili le misure termiche",
+            "description": "Laboratorio preparatorio con recipienti equivalenti e acqua tiepida. Controllo di quantità d'acqua, temperature iniziali, riferimento temporale e letture; confronto dei grafici per individuare differenze non eliminabili.",
+            "kind": "laboratory",
+            "duration_hours": 2,
+            "objective_ids": [
+              "U4-O2",
+              "U4-O4"
+            ],
+            "concepts": [
+              "Controllo delle variabili",
+              "Condizioni iniziali e ambientali",
+              "Confrontabilità dei dati",
+              "Ripetibilità delle letture",
+              "Limiti del confronto"
+            ],
+            "prerequisite_lesson_ids": [
+              "L33",
+              "L34"
+            ],
+            "methods": [
+              "Laboratorio preparatorio comparativo",
+              "Registrazioni individuali",
+              "Confronto dei grafici",
+              "Feedback sulle procedure"
+            ],
+            "project_ids": []
+          },
+          {
+            "id": "L36",
+            "title": "P1: confronto termico e sintesi annuale",
+            "description": "Confronto tra due condizioni di isolamento con procedure già esercitate. Raccolta e rappresentazione dei dati e completamento del dossier con limiti, rilettura energetica dei circuiti e breve conclusione individuale, senza riscrittura integrale.",
+            "kind": "laboratory",
+            "duration_hours": 2,
+            "objective_ids": [
+              "U4-O1",
+              "U4-O2",
+              "U4-O4"
+            ],
+            "concepts": [
+              "Isolamento e andamento temperatura-tempo",
+              "Controllo delle variabili",
+              "Evidenze e limiti",
+              "Trasformazioni energetiche nei circuiti",
+              "Analogie metodologiche e differenze tra modelli"
+            ],
+            "prerequisite_lesson_ids": [
+              "L8",
+              "L17",
+              "L27",
+              "L31",
+              "L35"
+            ],
+            "methods": [
+              "Laboratorio di progetto con acqua tiepida",
+              "Confronto tra previsioni e dati",
+              "Aggiornamento del dossier progressivo",
+              "Feedback e conclusione individuale"
+            ],
+            "project_ids": [
+              "P1"
+            ]
+          },
+          {
+            "id": "L37",
+            "title": "Verifica individuale su energia e fenomeni termici",
+            "description": "Accertamento con interpretazione di fenomeni e grafici, applicazioni quantitative e condizioni dei modelli. Breve collegamento alle evidenze elettriche e termiche di P1, senza ripetere l'indagine.",
+            "kind": "assessment",
+            "duration_hours": 1,
+            "objective_ids": [
+              "U4-O1",
+              "U4-O2",
+              "U4-O3",
+              "U4-O4"
+            ],
+            "concepts": [
+              "Lavoro ed energia",
+              "Conservazione e dissipazione",
+              "Temperatura e calore",
+              "Relazione calorimetrica e condizioni di validità",
+              "Grafici, variabili e limiti sperimentali"
+            ],
+            "prerequisite_lesson_ids": [
+              "L30",
+              "L31",
+              "L34",
+              "L36"
+            ],
+            "methods": [
+              "Prova individuale integrata",
+              "Interpretazione di evidenze sperimentali",
+              "Valutazione con criteri dichiarati"
+            ],
+            "project_ids": []
+          }
+        ]
+      }
+    ],
+    "projects": [
+      {
+        "id": "P1",
+        "title": "Dalle misure ai modelli",
+        "description": "Progetto progressivo annuale che collega le quattro UDA mediante un dossier di gruppo con riscontri individuali. Il collegamento è metodologico e concettuale e non richiede un unico apparato: protocollo di misura, leva, circuiti e confronto termico con rilettura energetica. Ogni tappa adatta procedure, grandezze e criteri di evidenza al nuovo fenomeno. Occupa 8 ore già comprese nelle UDA: U1, 1 ora di teoria e 1 di laboratorio; U2, 1 di laboratorio e 1 di verifica intermedia; U3, 1 di teoria e 1 di laboratorio; U4, 2 di laboratorio. Totale: 2 ore di teoria, 5 di laboratorio e 1 di verifica. Le evidenze successive confluiscono nei riscontri formativi e nelle verifiche ordinarie senza ore aggiuntive o doppi conteggi.",
+        "competences": [
+          "Scegliere procedure di misura adeguate e dichiararne i limiti.",
+          "Formulare previsioni e confrontarle con evidenze documentate.",
+          "Trasferire procedure di controllo e comunicazione tra ambiti differenti senza confonderne i modelli.",
+          "Distinguere dati misurati, dati forniti, osservazioni e interpretazioni.",
+          "Collegare funzionamento dei circuiti e fenomeni termici a trasformazioni e trasferimenti energetici.",
+          "Collaborare rendendo riconoscibili contributi e comprensione individuali."
+        ],
+        "milestones": [
+          {
+            "uda_id": "U1",
+            "description": "Definire il protocollo in L7 e provarlo in L8 mediante misure ripetute di distanza: 1 ora di teoria e 1 di laboratorio. Ricevere feedback sulla ripetibilità senza anticipare il modello delle leve.",
+            "deliverable": "Sezione iniziale del dossier con protocollo, strumenti, riferimenti, misure, unità, media e incertezza; registrazioni individuali."
+          },
+          {
+            "uda_id": "U2",
+            "description": "Applicare il protocollo in L17 dopo la preparazione di L13–L16. Dichiarare le ipotesi sui carichi, controllare la leva scarica e identificare i bracci. Valutare la tappa in L19: 1 ora di laboratorio e 1 di verifica intermedia.",
+            "deliverable": "Sezione meccanica con schema delle forze e dei bracci, ipotesi, previsioni, dati, scostamenti e revisione del protocollo; riscontro scritto individuale valutato."
+          },
+          {
+            "uda_id": "U3",
+            "description": "Trasferire il metodo al confronto tra serie e parallelo dopo L24–L25. Pianificare in L26 e realizzare in L27: 1 ora di teoria e 1 di laboratorio. Riprendere le revisioni precedenti senza richiedere conoscenze energetiche di U4.",
+            "deliverable": "Sezione elettrica con schemi, previsioni, controlli di sicurezza, osservazioni, eventuali misure di origine dichiarata e confronto motivato; contributi individuali identificabili."
+          },
+          {
+            "uda_id": "U4",
+            "description": "Realizzare in L36 il confronto termico preparato da L33–L35 e completare il dossier nelle 2 ore di laboratorio previste. Collegare il controllo delle variabili alle tappe precedenti e rileggere i circuiti attraverso L31. Utilizzare le evidenze nella verifica ordinaria L37.",
+            "deliverable": "Dossier finale con condizioni del confronto termico, dati, grafici, limiti, schemi energetici dei circuiti e sintesi dei collegamenti e delle differenze tra le quattro UDA; breve conclusione individuale."
+          }
+        ]
+      }
+    ],
+    "review_notes": [
+      "Il context è mantenuto esattamente uguale a quello fornito. La revisione utilizza esclusivamente i dati del messaggio; curriculum_references resta vuoto.",
+      "Restituito l'intero percorso: quattro UDA e 37 lezioni, tutte di una o due ore, con soli metadati e progettazione.",
+      "Rispettata la richiesta del docente: misure, forze, circuiti, energia e calore. Lo scostamento dalla precedente sequenza è deliberato: i circuiti non richiedono anticipatamente bilanci energetici; la loro lettura energetica viene sviluppata in L31.",
+      "Quadratura U1: L1, L3, L5 e L7 = 6 ore theory; L2, L4, L6 e L8 = 6 laboratory; L9 = 1 assessment. Totale 13 ore.",
+      "Quadratura U2: L10, L12, L13 e L15 = 8 ore theory; L11, L14, L16 e L17 = 6 laboratory; L18 e L19 = 2 assessment. Totale 16 ore.",
+      "Quadratura U3: L20, L22, L24 e L26 = 6 ore theory; L21, L23, L25 e L27 = 6 laboratory; L28 e L29 = 2 assessment. Totale 14 ore.",
+      "Quadratura U4: L30, L31, L32 e L34 = 8 ore theory; L33, L35 e L36 = 6 laboratory; L37 = 1 assessment. Totale 15 ore.",
+      "Totale lezioni: 28 ore theory + 24 laboratory + 6 assessment = 58. Le riserve annuali distinte di 4 ore recovery e 4 buffer completano le 66 ore, senza lezioni aggiuntive.",
+      "Le finestre coprono 33 settimane alla media di 2 ore settimanali. Le disponibilità residue sono 3, 2, 2 e 1 ore: complessivamente 8, da attribuire flessibilmente mantenendo separati recupero e margine. Le 37 lezioni non corrispondono a 37 settimane.",
+      "P1 occupa L7, L8, L17, L19, L26, L27 e L36: 2 ore theory, 5 laboratory e 1 assessment, già comprese nei totali. Ogni tappa occupa 2 ore; L19 è intermedia e L36 conclude il progetto.",
+      "L29 e L37 richiamano evidenze progettuali nelle verifiche ordinarie senza essere conteggiate nuovamente tra le 8 ore dedicate a P1. L31 prepara la sintesi energetica come lezione ordinaria.",
+      "Identificativi globalmente univoci e riferimenti verificati. Tutti i prerequisite_lesson_ids rinviano a lezioni precedenti; nessun ciclo o superamento di verifica richiesto per proseguire.",
+      "Copertura annuale verificata: G1, G3 e G4 sono collegati a tutte le UDA; G2 a U2–U4. Tutti i 16 obiettivi specifici hanno lezioni pertinenti ed evidenze formative o valutative. U1-O4 è osservato in L8, U2-O4 in L17 e L19, U3-O4 in L24–L29, U4-O4 nelle attività termiche e in L37.",
+      "Corretta l'associazione degli obiettivi di L27: il confronto qualitativo tra serie e parallelo non garantisce una verifica della legge di Ohm. U3-O3 resta coperto da L22, L23 e L29, senza applicarlo automaticamente agli utilizzatori del progetto.",
+      "Precisata la distinzione tra lettura critica di dati forniti e misurazione effettiva: in assenza di strumenti elettrici non viene attribuita agli studenti una prestazione pratica non svolta. La misurazione diretta è comunque sviluppata in U1, U2 e U4.",
+      "Le tappe progettuali brevi sono precedute da attività ordinarie preparatorie. Il dossier viene aggiornato progressivamente; non si presuppongono lavoro domestico indispensabile o riscrittura integrale nelle 2 ore finali.",
+      "Conoscenze fisiche iniziali rilevate, non presunte. Lo spostamento è introdotto in L30; l'energia di movimento resta qualitativa. La rilettura dei circuiti non richiede misure del calore prodotto o calcoli necessari di potenza elettrica.",
+      "Limiti dei modelli esplicitati: ripetere non elimina effetti sistematici; carichi della leva approssimativamente uguali e leva scarica equilibrata nella configurazione di prova; legge di Ohm per componenti ohmici; relazione calorimetrica senza cambiamenti di stato e con calore specifico assunto costante.",
+      "Il confronto termico controlla quantità d'acqua, temperature iniziali, riferimento temporale, condizioni ambientali e letture. Le differenze residue sono documentate; i soli grafici di raffreddamento non vengono presentati come misura diretta del calore trasferito.",
+      "Da verificare strumenti comuni, termometri idonei, pile, collegamenti e utilizzatori compatibili. L'assenza degli strumenti elettrici consente il percorso alternativo dichiarato; l'assenza dei materiali essenziali richiede una riprogettazione esplicita.",
+      "Confermati controlli preventivi su appoggi, carichi, recipienti, temperature, componenti e montaggi. Sono esclusi rete elettrica, cortocircuiti provocati, fiamme e liquidi molto caldi.",
+      "Numerosità e bisogni educativi specifici non sono noti. Supporti, ruoli e prove pratiche vanno adattati ai partecipanti effettivi; L28 richiede compiti brevi e turni compatibili con materiali e ora disponibile, mantenendo evidenze individuali.",
+      "Nessuna richiesta esplicita del docente è stata sostituita: conservati ordine richiesto, quattro UDA, 66 ore con ripartizione esatta, laboratorio essenziale, progetto annuale e riserve non esportate come lezioni."
+    ]
+  }
+}
