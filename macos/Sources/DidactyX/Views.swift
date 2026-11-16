@@ -21,8 +21,9 @@ struct RootView: View {
             else { LibraryView() }
         }
         .frame(minWidth: 940, minHeight: 660)
-        .background(Theme.background)
+        .background { AmbientBackground() }
         .foregroundStyle(Theme.text)
+        .tint(Theme.cyan)
         .preferredColorScheme(.dark)
         .sheet(isPresented: $model.showNewProgram) { NewProgramView().environmentObject(model) }
         .sheet(isPresented: $model.showSettings) { SettingsPanel().environmentObject(model) }
@@ -44,11 +45,14 @@ struct LibraryView: View {
                 Button { model.showNewProgram = true } label: { Label("Nuovo programma", systemImage: "plus") }
                     .buttonStyle(PrimaryButton()).disabled(!model.ready)
             }
-            .padding(.top, 40).padding(.bottom, 45)
+            .padding(.top, 35).padding(.bottom, 30)
+            Rectangle().fill(Theme.spectrum).frame(height: 1).opacity(0.55).padding(.bottom, 32)
             HStack(alignment: .firstTextBaseline) {
                 Text("Programmi annuali").font(.system(size: 28, weight: .medium)).tracking(-0.6)
                 Spacer()
-                Text(String(format: "%02d", model.programs.count)).font(Theme.mono(13)).foregroundStyle(Theme.secondary)
+                Text(String(format: "%02d", model.programs.count)).font(Theme.mono(13)).foregroundStyle(Theme.violet)
+                    .padding(.horizontal, 10).padding(.vertical, 5)
+                    .background(Theme.violet.opacity(0.08), in: RoundedRectangle(cornerRadius: 5))
             }
             .padding(.bottom, 10)
             Text("Apri un programma o creane uno nuovo.")
@@ -80,6 +84,7 @@ struct LibraryView: View {
             }
             HStack(spacing: 7) {
                 Circle().fill(model.ready ? Theme.cyan : Theme.secondary).frame(width: 5, height: 5)
+                    .shadow(color: model.ready ? Theme.cyan.opacity(0.5) : .clear, radius: 5)
                 Text(model.ready ? "Archivio locale" : "Archivio in apertura").font(Theme.mono(10))
                 Spacer()
                 Text("Su questo Mac").font(Theme.mono(10))
@@ -100,9 +105,12 @@ struct ProgramCard: View {
             VStack(alignment: .leading, spacing: 15) {
                 HStack {
                     Text(program.classLabel.isEmpty ? "CLASSE DA DEFINIRE" : program.classLabel.uppercased())
-                        .font(Theme.mono(10, .medium)).tracking(1).foregroundStyle(Theme.cyan)
+                        .font(Theme.mono(10, .medium)).tracking(0.7).foregroundStyle(Theme.violet)
+                        .padding(.horizontal, 8).padding(.vertical, 5)
+                        .background(Theme.violet.opacity(0.09), in: RoundedRectangle(cornerRadius: 4))
+                        .lineLimit(1)
                     Spacer()
-                    Image(systemName: "arrow.up.right").font(.system(size: 11)).foregroundStyle(Theme.secondary)
+                    Image(systemName: "arrow.up.right").font(.system(size: 11)).foregroundStyle(hovering ? Theme.cyan : Theme.secondary)
                 }
                 Text(program.title).font(.system(size: 20, weight: .medium)).lineLimit(2).multilineTextAlignment(.leading)
                 Text(program.description.isEmpty ? "Nessuna descrizione" : program.description)
@@ -110,14 +118,22 @@ struct ProgramCard: View {
                     .lineLimit(3).multilineTextAlignment(.leading).frame(maxWidth: .infinity, alignment: .leading)
                 Spacer(minLength: 5)
                 HStack {
-                    Text("BRIEF").font(Theme.mono(9)).tracking(1)
+                    HStack(spacing: 6) {
+                        RoundedRectangle(cornerRadius: 1).fill(Theme.pink).frame(width: 4, height: 4)
+                        Text("PERCORSO").font(Theme.mono(9)).tracking(1)
+                    }
                     Spacer()
                     Text("Apri programma").font(.system(size: 11))
                 }.foregroundStyle(Theme.secondary)
             }
             .padding(22).frame(maxWidth: .infinity, minHeight: 208, alignment: .topLeading)
-            .background(hovering ? Theme.raised : Theme.panel, in: RoundedRectangle(cornerRadius: 12))
-            .overlay(RoundedRectangle(cornerRadius: 12).stroke(hovering ? Theme.cyan.opacity(0.55) : Theme.border))
+            .background(LinearGradient(colors: [hovering ? Theme.raised : Theme.panel, Theme.panel.opacity(0.75)],
+                                       startPoint: .topLeading, endPoint: .bottomTrailing), in: RoundedRectangle(cornerRadius: 12))
+            .overlay(alignment: .top) {
+                Theme.spectrum.frame(height: 2).padding(.horizontal, 22).opacity(hovering ? 0.95 : 0.55)
+            }
+            .overlay(RoundedRectangle(cornerRadius: 12).stroke(hovering ? Theme.violet.opacity(0.75) : Theme.border))
+            .shadow(color: Theme.violet.opacity(hovering ? 0.12 : 0), radius: 18, y: 5)
             .contentShape(RoundedRectangle(cornerRadius: 12))
         }
         .buttonStyle(.plain)
@@ -176,7 +192,7 @@ struct WorkspaceView: View {
                     .buttonStyle(.plain).padding(.leading, 12).accessibilityLabel("Impostazioni")
             }
             .padding(.horizontal, 28).padding(.top, 29).padding(.bottom, 22)
-            Rectangle().fill(Theme.border).frame(height: 1)
+            Rectangle().fill(Theme.spectrum).frame(height: 1).opacity(0.45)
             HStack(spacing: 0) {
                 VStack(alignment: .leading, spacing: 22) {
                     Brand(compact: true).padding(.bottom, 14)
@@ -191,7 +207,9 @@ struct WorkspaceView: View {
                         Text("CONTESTO DELLA CLASSE").font(Theme.mono(8)).tracking(0.7)
                     }.foregroundStyle(Theme.secondary)
                 }
-                .padding(24).frame(width: 230).background(Theme.panel.opacity(0.45))
+                .padding(24).frame(width: 230)
+                .background(LinearGradient(colors: [Theme.panel.opacity(0.8), Theme.background.opacity(0.35)],
+                                           startPoint: .topLeading, endPoint: .bottomTrailing))
                 Rectangle().fill(Theme.border).frame(width: 1)
                 if model.workspaceSection == "lesson" {
                     LessonWorkspace()
@@ -266,7 +284,13 @@ struct WorkspaceView: View {
             HStack(spacing: 10) { Image(systemName: icon).frame(width: 16); Text(title); Spacer() }
                 .font(.system(size: 12, weight: model.workspaceSection == value ? .medium : .regular))
                 .foregroundStyle(model.workspaceSection == value ? Theme.cyan : Theme.secondary)
-                .padding(11).background(model.workspaceSection == value ? Theme.cyan.opacity(0.07) : .clear, in: RoundedRectangle(cornerRadius: 7))
+                .padding(11)
+                .background(model.workspaceSection == value ? Theme.violet.opacity(0.10) : .clear, in: RoundedRectangle(cornerRadius: 7))
+                .overlay(alignment: .leading) {
+                    if model.workspaceSection == value {
+                        RoundedRectangle(cornerRadius: 1).fill(Theme.cyan).frame(width: 2).padding(.vertical, 10)
+                    }
+                }
         }.buttonStyle(.plain)
     }
 }
