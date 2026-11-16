@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" role="img" aria-label="DidactyX">
+<defs>
+  <linearGradient id="mint" x1="20" y1="15" x2="80" y2="85" gradientUnits="userSpaceOnUse"><stop stop-color="#A2FFE5"/><stop offset=".5" stop-color="#57F2CE"/><stop offset="1" stop-color="#27B6BB"/></linearGradient>
+  <linearGradient id="violet" x1="20" y1="15" x2="80" y2="85" gradientUnits="userSpaceOnUse"><stop stop-color="#AB92FF"/><stop offset="1" stop-color="#F47ACB"/></linearGradient>
+  <linearGradient id="tile" x2="75%" y2="100%"><stop stop-color="#241B36"/><stop offset="1" stop-color="#0D0B14"/></linearGradient>
+</defs>
+<rect x="6" y="6" width="88" height="88" rx="20" fill="url(#tile)" stroke="#AB92FF" stroke-opacity=".3" stroke-width=".65"/>
+<polygon points="17,18 37,24 47,40 40,49 27,34 17,31" fill="url(#mint)"/>
+<polygon points="83,18 63,24 53,40 60,49 73,34 83,31" fill="url(#violet)"/>
+<polygon points="40,51 47,60 37,76 17,82 17,69 27,66" fill="url(#violet)"/>
+<polygon points="60,51 53,60 63,76 83,82 83,69 73,66" fill="url(#mint)"/>
+<path d="M50 44 56 50 50 56 44 50Z" fill="#F4EEFF"/>
+</svg>

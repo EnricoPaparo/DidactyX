@@ -14,12 +14,13 @@ La priorità del progetto è una qualità didattica molto elevata, sostenuta da 
 - [Prima app macOS](docs/FOUNDATION_MACOS.md): utilizzo, costruzione, dati locali e verifiche della fondazione.
 - [Progettazione annuale](docs/ANNUAL_PLANNING.md): generazione reale, revisioni, versioni, ripresa e PDF.
 - [Contenuti delle lezioni](docs/LESSON_CONTENT.md): memoria dei contenuti effettivi, autori, revisori, lettore e PDF.
+- [Identità visiva](assets/brand/README.md): palette dark cyberpunk, logo vettoriale e icona macOS.
 
 Il Project Brief è il riferimento principale per le decisioni di prodotto. Viene aggiornato nel repository insieme all'evoluzione del progetto; la cronologia Git conserva le modifiche.
 
 ## Stato del progetto
 
-L'app macOS 0.3.0 include programmi, brief libero e strutturato, impostazioni Codex, progettazione annuale e contenuti completi delle lezioni. Autori e revisori separati usano il contesto della classe e i materiali precedenti effettivi. Sono disponibili storico, ripresa, revisione su richiesta, lettore WebKit ed esportazione PDF del programma e delle lezioni. I dati sono salvati in SQLite sul Mac.
+L'app macOS 0.3.1 include programmi, brief libero e strutturato, impostazioni Codex, progettazione annuale e contenuti completi delle lezioni. Autori e revisori separati usano il contesto della classe e i materiali precedenti effettivi. Sono disponibili storico, ripresa, revisione su richiesta, lettore WebKit ed esportazione PDF del programma e delle lezioni. I dati sono salvati in SQLite sul Mac.
 
 Il primo traguardo dell'incremento 3 è un pilota inventato, autorizzato dal docente: due lezioni Python collegate, su variabili/input/conversioni e `if/else`. I campioni sono in [evidence/lesson-content/2026-11-16](docs/evidence/lesson-content/2026-11-16/README.md). La valutazione didattica con il docente precede l'estensione a una UDA completa e ai materiali collegati.
 

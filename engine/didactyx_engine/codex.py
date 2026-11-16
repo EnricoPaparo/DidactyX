@@ -99,7 +99,7 @@ class AccountReader:
                         return message["result"]
                 raise TimeoutError()
 
-            request(1, "initialize", {"clientInfo": {"name": "didactyx", "title": "DidactyX", "version": "0.3.0"}})
+            request(1, "initialize", {"clientInfo": {"name": "didactyx", "title": "DidactyX", "version": "0.3.1"}})
             send({"method": "initialized", "params": {}})
             response = request(2, "account/read", {"refreshToken": False})
             account = response.get("account") or {}

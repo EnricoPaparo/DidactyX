@@ -2,9 +2,10 @@
 
 - **Aggiornamento:** 16 novembre 2026.
 - **Stato del lavoro:** primo traguardo dell'incremento 3 completato; materiali pronti alla valutazione del docente.
-- **Versione disponibile:** DidactyX 0.3.0 per macOS.
-- **Branch:** `codex/lesson-content`, basato su `codex/macos-foundation`.
-- **Pull request dei contenuti:** [PR #2](https://github.com/EnricoPaparo/DidactyX/pull/2), aperta in bozza; commit applicativo `293ad94`.
+- **Versione disponibile:** DidactyX 0.3.1 per macOS.
+- **Branch corrente:** `codex/cyberpunk-identity`, basato su `codex/lesson-content`.
+- **Pull request visiva:** [PR #3](https://github.com/EnricoPaparo/DidactyX/pull/3), aperta in bozza; restyling e marchio nel commit `f6e781d`.
+- **Pull request dei contenuti:** [PR #2](https://github.com/EnricoPaparo/DidactyX/pull/2), aperta in bozza; commit dei contenuti `293ad94`.
 - **Base applicativa:** [PR #1](https://github.com/EnricoPaparo/DidactyX/pull/1), ancora in bozza e non unita a `main` alla verifica odierna. I nuovi contenuti sono in un branch separato.
 
 ## Completato e utilizzabile
@@ -16,6 +17,10 @@ La progettazione annuale usa l'account ChatGPT già connesso a Codex: interpreta
 L'incremento 3 aggiunge contenuti completi con formato strutturato, contesto della classe e corpi effettivi delle lezioni precedenti. Comprende progetto della spiegazione, uno o più autori con eventuale ricomposizione, revisioni disciplinare e della continuità, controlli di formato, riferimenti e casi Python. Sono disponibili brief specifico facoltativo, lettore WebKit chiaro, versioni, ripresa, segnalazioni di riallineamento, revisione consultiva ed export PDF della versione selezionata. I materiali storici rimangono legati alla loro versione del percorso.
 
 Dettagli in [ANNUAL_PLANNING.md](ANNUAL_PLANNING.md) e [LESSON_CONTENT.md](LESSON_CONTENT.md). Il [Project Brief](PROJECT_BRIEF.md) rimane il riferimento dei requisiti di prodotto.
+
+## Identità visiva 0.3.1
+
+Restyling dark cyberpunk con base nero-viola, accenti menta, violetto e magenta, schede e navigazione riviste, focus dei campi e nuovo marchio geometrico a X. UI, SVG e icona macOS condividono la geometria vettoriale; il lettore didattico mantiene la pagina chiara. Asset e istruzioni in [assets/brand](../assets/brand/README.md). Build release, firma locale, controllo visivo nativo e 36 test esistenti con integrazione Swift-Python verificati.
 
 ## Primo traguardo disponibile
 
