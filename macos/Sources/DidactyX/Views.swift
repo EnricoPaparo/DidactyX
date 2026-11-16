@@ -193,7 +193,9 @@ struct WorkspaceView: View {
                 }
                 .padding(24).frame(width: 230).background(Theme.panel.opacity(0.45))
                 Rectangle().fill(Theme.border).frame(width: 1)
-                if model.workspaceSection == "plan" {
+                if model.workspaceSection == "lesson" {
+                    LessonWorkspace()
+                } else if model.workspaceSection == "plan" {
                     AnnualPlanView()
                 } else { ScrollView {
                     VStack(alignment: .leading, spacing: 24) {

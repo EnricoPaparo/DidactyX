@@ -1,54 +1,59 @@
 # Stato del progetto e punto di ripresa
 
-- **Aggiornamento:** 15 novembre 2026.
-- **Stato del lavoro:** sviluppo sospeso su richiesta del docente, dopo il completamento dell'incremento 2.
-- **Versione disponibile:** DidactyX 0.2.0 per macOS.
-- **Ultimo commit applicativo:** `4519e1d` — progettazione annuale, revisione, versioni e PDF.
-- **Branch:** `codex/macos-foundation`.
-- **Pull request:** [PR #1](https://github.com/EnricoPaparo/DidactyX/pull/1), aperta in bozza; non è stata unita a `main`.
+- **Aggiornamento:** 16 novembre 2026.
+- **Stato del lavoro:** primo traguardo dell'incremento 3 completato; materiali pronti alla valutazione del docente.
+- **Versione disponibile:** DidactyX 0.3.0 per macOS.
+- **Branch:** `codex/lesson-content`, basato su `codex/macos-foundation`.
+- **Base applicativa:** [PR #1](https://github.com/EnricoPaparo/DidactyX/pull/1), ancora in bozza e non unita a `main` alla verifica odierna. I nuovi contenuti sono in un branch separato.
 
 ## Completato e utilizzabile
 
-L'incremento 1 comprende app SwiftUI, raccolta dei programmi, titolo/classe/descrizione, brief libero e sezioni facoltative, salvataggio SQLite e impostazioni con stato reale dell'account Codex.
+La fondazione comprende app SwiftUI, raccolta dei programmi, titolo/classe/descrizione, brief libero e sezioni facoltative, salvataggio SQLite e impostazioni con stato reale dell'account Codex.
 
-L'incremento 2 collega la generazione reale tramite l'account ChatGPT già connesso a Codex. Sono disponibili interpretazione del brief, progettazione e revisione delle UDA, progettazione e revisione delle lezioni previste, gestione di ore e progetti progressivi, controlli strutturali, rigenerazione completa, storico, interruzione/ripresa, revisione su richiesta ed export PDF del programma annuale.
+La progettazione annuale usa l'account ChatGPT già connesso a Codex: interpretazione del brief, progettazione e revisione delle UDA e delle lezioni previste, ore e progetti progressivi, controlli strutturali, rigenerazione completa, storico, interruzione/ripresa, revisione su richiesta e PDF del programma. Lo scheletro rimane in sola lettura; il brief aggiornato viene applicato mediante rigenerazione completa.
 
-Lo scheletro rimane in sola lettura. Il docente ne richiede la modifica attraverso il brief o una richiesta di rigenerazione; la nuova versione diventa corrente a completamento dei controlli. Le osservazioni del revisore rimangono consultive. Il brief modificato ma ancora da applicare è distinto dal contesto della versione salvata.
+L'incremento 3 aggiunge contenuti completi con formato strutturato, contesto della classe e corpi effettivi delle lezioni precedenti. Comprende progetto della spiegazione, uno o più autori con eventuale ricomposizione, revisioni disciplinare e della continuità, controlli di formato, riferimenti e casi Python. Sono disponibili brief specifico facoltativo, lettore WebKit chiaro, versioni, ripresa, segnalazioni di riallineamento, revisione consultiva ed export PDF della versione selezionata. I materiali storici rimangono legati alla loro versione del percorso.
 
-La descrizione operativa completa è in [ANNUAL_PLANNING.md](ANNUAL_PLANNING.md); il [Project Brief](PROJECT_BRIEF.md) rimane il riferimento dei requisiti di prodotto.
+Dettagli in [ANNUAL_PLANNING.md](ANNUAL_PLANNING.md) e [LESSON_CONTENT.md](LESSON_CONTENT.md). Il [Project Brief](PROJECT_BRIEF.md) rimane il riferimento dei requisiti di prodotto.
 
-## Verifiche già concluse
+## Primo traguardo disponibile
 
-- 20 test automatici e integrazione Swift con il motore incluso nell'app superati.
-- Generazione reale su dati fittizi: anno di 66 ore, quattro UDA e 35 lezioni previste.
-- Rigenerazione richiesta dall'interfaccia: circuiti anticipati rispetto a energia e calore, quattro UDA e 37 lezioni, ore conservate e prima versione immutata.
-- Brief essenziale di 12 ore: quattro UDA e 15 lezioni con ipotesi esplicite sul contesto mancante.
-- Collaudo nativo di storico, export, interruzione/ripresa, brief ancora da applicare e revisione consultiva.
-- Due PDF annuali di 24 pagine ciascuno: tutte le 48 pagine renderizzate e controllate visivamente.
-- Build release e firma locale ad hoc verificate sul Mac arm64 utilizzato per lo sviluppo.
+Il docente ha autorizzato la scelta di un esempio inventato. Il programma **Python · due lezioni collegate · pilota** è presente nell'app e contiene il percorso annuale di 24 ore e due lezioni complete:
 
-Campioni e risultati sono conservati in [evidence/annual-planning/2026-11-15](evidence/annual-planning/2026-11-15/README.md). I collaudi usano archivi separati da quello personale; nessuna credenziale o identità dell'account è inclusa nelle evidenze.
+1. **Variabili, input e conversioni:** nove sezioni, PDF di 20 pagine.
+2. **Decidere con if ed else:** otto sezioni, PDF di 21 pagine.
 
-## Prossima sessione: incremento 3
+Entrambe usano l'acquisto di quaderni con un budget. La seconda riceve il contenuto reale della prima e riprende nomi, prompt, dati ed esempi con cinque riferimenti a sezioni salvate. Dieci casi eseguibili per lezione hanno dato l'output atteso; tre blocchi illustrativi per lezione non sono dichiarati eseguiti. La revisione aggiuntiva di L2 propone una variazione facoltativa di un caso già risolto, senza applicarla automaticamente.
 
-La prima attività è scegliere insieme al docente materia, classe e obiettivi del percorso pilota. I campioni di fisica e Python sono collaudi tecnici; non rappresentano una scelta del pilota.
+Campioni JSON, PDF, rapporto e risultati sono in [evidence/lesson-content/2026-11-16](evidence/lesson-content/2026-11-16/README.md). Nessuna credenziale o identità dell'account è inclusa nelle evidenze. L'importazione del pilota è additiva e atomica; non sovrascrive programmi esistenti.
 
-Dopo questa scelta:
+## Verifiche concluse
 
-1. Definire il formato strutturato dei contenuti delle lezioni e i criteri di qualità disciplinare e didattica, comprese le fonti pertinenti al pilota.
-2. Definire il recupero del contesto: contenuti effettivi delle lezioni precedenti, esempi, terminologia, concetti e posizione nel percorso, oltre ai metadati annuali.
-3. Implementare generazione, eventuali contributi di più autori, ricomposizione e revisione delle lezioni.
-4. Integrare lettore WebKit ed export PDF, verificando almeno due lezioni collegate anche con generazione fuori sequenza.
+- 36 test automatici e integrazione Swift con il motore incluso superati.
+- Test di versioni immutabili, migrazione SQLite 2→3, memoria dei corpi reali, più autori, ripresa senza duplicazioni e rifiuto di contesti cambiati.
+- Test di generazione fuori sequenza, disponibilità successiva dei prerequisiti e propagazione dei segnali di riallineamento.
+- L1 generata realmente, interrotta e ripresa durante lo sviluppo; una sola versione finale pubblicata.
+- L2 generata dall'interfaccia con il corpo effettivo di L1; revisione aggiuntiva dal pulsante **Revisiona**, contenuto invariato.
+- Lettore nativo, navigazione tra lezioni, conservazione del brief facoltativo dopo chiusura, riapertura ed export dal pacchetto finale verificati.
+- Tutti i 20 casi Python eseguibili ricontrollati nel motore congelato; 41 pagine PDF renderizzate e controllate visivamente.
+- Build release, runtime incluso e firma locale ad hoc verificati su macOS 26.7.2 arm64.
 
-I contenuti completi delle lezioni non sono ancora implementati. Arricchimento visivo, mappe, esercitazioni, verifiche con varianti e adattamenti, feedback e recupero restano nel perimetro degli incrementi successivi del [piano di sviluppo](IMPLEMENTATION_PLAN.md). La priorità rimane la qualità didattica, con un'interfaccia minimale. Windows sarà valutato successivamente.
+Restano valide le prove dell'incremento 2: anno fittizio di 66 ore, rigenerazione completa dall'interfaccia con sequenza modificata, brief essenziale di 12 ore, storico, interruzione/ripresa e due PDF annuali di 24 pagine. Evidenze in [evidence/annual-planning/2026-11-15](evidence/annual-planning/2026-11-15/README.md).
+
+## Prossima attività
+
+Valutare insieme le due lezioni nell'app e nei PDF: profondità, correttezza, spiegazioni dei passaggi, ritmo, ripetizioni, esempi e continuità. Applicare i riscontri al motore e al formato editoriale, poi estendere il collaudo a una UDA completa.
+
+Arricchimento visivo, mappe, percorsi di esercizi, verifiche con varianti e adattamenti, feedback e recupero restano negli incrementi successivi del [piano](IMPLEMENTATION_PLAN.md). L'efficacia didattica richiede valutazione del docente e uso in classe. La notazione attuale è Unicode lineare: TeX e formule complesse non sono implementati. Windows sarà valutato successivamente.
 
 ## Riferimenti operativi
 
-- App locale: `dist/DidactyX.app`; il pacchetto include il runtime Python.
-- Archivio personale predefinito: `~/Library/Application Support/DidactyX/library.sqlite3`, schema SQLite versione 2.
-- Cartella PDF: configurabile nelle impostazioni dell'app.
+- App locale: `dist/DidactyX.app`; include il runtime Python.
+- Archivio personale: `~/Library/Application Support/DidactyX/library.sqlite3`, schema 3.
+- PDF: cartella configurabile nelle impostazioni; il percorso predefinito è `~/Documents/DidactyX/PDF`.
 - Build: `bash scripts/build_macos.sh`, con l'app chiusa.
-- Controlli automatici e integrazione: `bash scripts/check_foundation.sh`.
-- Collaudi reali facoltativi: `python3 scripts/check_planning_live.py`, con opzioni `--regenerate` oppure `--minimal`; consumano quota Codex.
+- Controlli senza generazione: `bash scripts/check_foundation.sh`.
+- Collaudo reale delle lezioni: `python3 scripts/check_lessons_live.py --data-dir tmp/nuovo-collaudo-lezioni`; consuma quota Codex.
+- Collaudi annuali facoltativi: `python3 scripts/check_planning_live.py`, opzioni `--regenerate` o `--minimal`; consumano quota Codex.
 
-Binari, archivi personali e risultati temporanei sono esclusi da Git. La distribuzione ad altri Mac e la notarizzazione non sono ancora state verificate. L'efficacia didattica in classe dovrà essere valutata con il docente sui contenuti del pilota.
+Binari e archivi personali sono esclusi da Git. Distribuzione ad altri Mac e notarizzazione restano da verificare.

@@ -1,0 +1,11 @@
+{
+  "summary": "Il materiale è corretto, autosufficiente e coerente con L1 e con i vincoli della lezione teorica. Confronti, booleani, selezione e indentazione sono introdotti gradualmente; l’uguaglianza è trattata correttamente. Codice, risultati attesi e controlli forniti concordano. Tempi complessivi: 120 minuti. Continuità e riferimenti alle fonti sono pertinenti. Non emergono errori disciplinari; si propone un miglioramento didattico facoltativo.",
+  "findings": [
+    {
+      "kind": "didactic",
+      "location": "content.sections[S7], «Caso C da provare con maggiore autonomia»",
+      "description": "Il caso proposto per il lavoro più autonomo è già risolto in S6 e ripreso più volte. La ripetizione è una scelta legittima di consolidamento, ma offre un’evidenza limitata della capacità di applicare il ragionamento a dati diversi.",
+      "suggestion": "Sostituire una delle ripetizioni con un acquisto non ancora risolto, per esempio quantità 2, prezzo 3.5 e budget 7. Chiedere prima individualmente spesa, risultato del confronto, ramo e prosecuzione, fornendo la soluzione soltanto dopo il tentativo. Mantenere invariati durata e perimetro."
+    }
+  ]
+}

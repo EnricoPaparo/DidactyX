@@ -1,0 +1,67 @@
+{
+  "date": "2026-11-16",
+  "application_version": "0.3.0",
+  "platform": "macOS 26.7.2 arm64",
+  "data": "fictional class; pilot chosen with teacher authorization",
+  "annual": {
+    "total_hours": 24,
+    "udas": 4,
+    "planned_lessons": 17
+  },
+  "lessons": [
+    {
+      "id": "L1",
+      "title": "Variabili, input e conversioni",
+      "sections": 9,
+      "pdf_pages": 20,
+      "executable_cases_passed": 10,
+      "illustrative_blocks_not_run": 3
+    },
+    {
+      "id": "L2",
+      "title": "Decidere con if ed else",
+      "sections": 8,
+      "pdf_pages": 21,
+      "executable_cases_passed": 10,
+      "illustrative_blocks_not_run": 3,
+      "actual_previous_section_references": [
+        "S8",
+        "S6",
+        "S7",
+        "S4",
+        "S3"
+      ]
+    }
+  ],
+  "automated_tests": 36,
+  "swift_frozen_engine_integration": "passed",
+  "frozen_engine_example_recheck_cases_passed": 20,
+  "native_checks": [
+    "L1 reader on generated content",
+    "L2 generation from UI using actual L1 version",
+    "independent manual review; content unchanged",
+    "optional brief saved and retained after quit",
+    "updated frozen bundle reopened with saved materials",
+    "L1 PDF export from QA app",
+    "L2 PDF export from personal app",
+    "fictional pilot installed additively and both lessons opened in personal app"
+  ],
+  "live_resume": "L1 cancelled and resumed twice during development; completed stages retained, one final version published",
+  "manual_review": {
+    "lesson": "L2",
+    "findings": 1,
+    "type": "optional didactic suggestion",
+    "automatically_applied": false
+  },
+  "visual_pdf_qa": {
+    "pages": 41,
+    "all_pages_rendered_and_visually_checked": true
+  },
+  "remaining": [
+    "teacher assessment of pedagogical quality and pacing",
+    "whole UDA and linked materials",
+    "TeX and complex formula rendering",
+    "distribution and notarization on other Macs",
+    "Windows"
+  ]
+}

@@ -33,7 +33,7 @@ class CodexGenerator:
                 cwd=directory, env=environment, stdin=subprocess.PIPE, stdout=subprocess.PIPE,
                 stderr=subprocess.DEVNULL, text=True, bufsize=1)
             threading.Thread(target=self._read, daemon=True).start()
-            self.request("initialize", {"clientInfo": {"name": "didactyx_planning", "title": "DidactyX", "version": "0.2.0"}})
+            self.request("initialize", {"clientInfo": {"name": "didactyx_generation", "title": "DidactyX", "version": "0.3.0"}})
             self.send({"method": "initialized", "params": {}})
             account = self.request("account/read", {"refreshToken": False}).get("account") or {}
             if account.get("type") != "chatgpt":
@@ -83,7 +83,7 @@ class CodexGenerator:
         self.notices.clear()
         thread = self.request("thread/start", {
             "cwd": str(os.getcwd()), "approvalPolicy": "never", "sandbox": "read-only", "ephemeral": True,
-            "baseInstructions": "Sei un esperto di progettazione didattica scolastica italiana. Lavora esclusivamente sui dati nel messaggio. Non usare tool, file, rete, skill o sottoagenti. Rispondi secondo lo schema richiesto. Non produrre i contenuti delle lezioni: soltanto la progettazione e i metadati.",
+            "baseInstructions": "Sei un esperto di progettazione didattica scolastica italiana e della disciplina richiesta. Lavora esclusivamente sui dati nel messaggio. Non usare tool, file, rete, skill o sottoagenti. Rispondi secondo lo schema richiesto. Svolgi il ruolo assegnato con profondità, correttezza e chiarezza.",
             "developerInstructions": role,
         })
         thread_id = thread["thread"]["id"]

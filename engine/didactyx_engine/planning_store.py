@@ -6,6 +6,8 @@ import uuid
 
 from .store import DomainError, now, text
 
+PUBLIC_JOB_COLUMNS = 'id,program_id,kind,status,phase,message,created_at,updated_at,result_plan_id,error'
+
 
 class PlanningStore:
     def __init__(self, store): self.store = store
@@ -40,7 +42,7 @@ class PlanningStore:
         with closing(self.store.connect()) as connection:
             head = self.decode_plan(connection.execute("SELECT p.* FROM annual_plans p JOIN plan_heads h ON h.plan_id=p.id WHERE h.program_id=?", (program_id,)).fetchone())
             versions = [dict(row) for row in connection.execute("SELECT id,version,created_at,change_request FROM annual_plans WHERE program_id=? ORDER BY version DESC", (program_id,))]
-            job = self.decode_job(connection.execute("SELECT * FROM planning_jobs WHERE program_id=? ORDER BY created_at DESC LIMIT 1", (program_id,)).fetchone())
+            job = self.decode_job(connection.execute("SELECT "+PUBLIC_JOB_COLUMNS+" FROM planning_jobs WHERE program_id=? ORDER BY created_at DESC LIMIT 1", (program_id,)).fetchone())
             review = None
             if head:
                 row = connection.execute("SELECT * FROM plan_reviews WHERE plan_id=? ORDER BY created_at DESC LIMIT 1", (head["id"],)).fetchone()
@@ -52,7 +54,7 @@ class PlanningStore:
 
     def job(self, job_id, private=False):
         with closing(self.store.connect()) as connection:
-            row = connection.execute("SELECT * FROM planning_jobs WHERE id=?", (job_id,)).fetchone()
+            row = connection.execute("SELECT "+('*' if private else PUBLIC_JOB_COLUMNS)+" FROM planning_jobs WHERE id=?", (job_id,)).fetchone()
             if row is None: raise DomainError(-32004, "L'attività non è stata trovata.")
             return self.decode_job(row, private)
 
@@ -68,6 +70,9 @@ class PlanningStore:
         snapshot = {"program": program, "previous_plan": current, "change_request": text(change_request, "richiesta di modifica")}
         snapshot["brief_changed"] = current is not None and current["brief"] != program["brief"]
         if kind == "review": snapshot["program"]["brief"] = current["brief"]
+        return self.insert_job(program_id, snapshot, kind)
+
+    def insert_job(self, program_id, snapshot, kind):
         identifier, timestamp = str(uuid.uuid4()), now()
         try:
             with closing(self.store.connect()) as connection, connection:
