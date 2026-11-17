@@ -1,0 +1,15 @@
+{
+  "registered_at": "2026-11-17",
+  "baseline_git_commit": "5bec488c09fb2209a56d7447d5260d1d8e4caf39",
+  "baseline_application_version": "0.3.1",
+  "inputs": {
+    "benchmarks/didactic/rubric.json": "8b4fd4ff23904e59cbf2b7c95c5efbe6c71ff802a0751ef0c432daff5e9aa6b1",
+    "benchmarks/didactic/cases.json": "68c3e887910a8d5e979af4ac17a03176797a05c703dd4f923a47bb09bc7c9702",
+    "benchmarks/didactic/baseline-prompts.json": "9db8326d0bc9de9629629c1592c7ab93c7bf58bbd73ee446f9c35c50bb5fe341",
+    "docs/evidence/lesson-content/2026-11-16/annual-plan.json": "00d1a22d25e9d40716c7fe7645741a3381d840f076c44b93fe491d2e159c0915",
+    "docs/evidence/lesson-content/2026-11-16/lesson-L1.json": "2e247f9a43944effbcc9f5efa4c6717c37c799f7f2280a9c7206ebf465a8edc1",
+    "docs/evidence/lesson-content/2026-11-16/lesson-L2.json": "36869588ab5575ddca29fde8c9a3269003b3bf6435b0c3a353d3e705bef69697",
+    "engine/didactyx_engine/lessons.py": "a287ec58094a3843bf7bb817f3fe77df464c517882432e739adb4030126787d5"
+  },
+  "holdout_policy": "Esiti H01–H04 aperti solo dopo il congelamento del tuning; mutazioni note al costruttore del benchmark."
+}

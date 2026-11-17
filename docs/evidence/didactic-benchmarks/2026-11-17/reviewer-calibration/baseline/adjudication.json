@@ -1,0 +1,29 @@
+{
+  "method": "Lettura del rapporto rispetto all’oracolo, con motivazione del revisore principale; non conteggio dei soli findings.",
+  "cases": [
+    {
+      "case": "C01",
+      "target_detected": true,
+      "false_alarm_on_protected_control": null,
+      "evidence": "S5, ultimo paragrafo: riconosce che input restituisce una stringa anche digitando cifre e propone la conversione con int."
+    },
+    {
+      "case": "C02",
+      "target_detected": true,
+      "false_alarm_on_protected_control": null,
+      "evidence": "S1: riconosce lista acquisti e ciclo for assenti dal corpo di L1 e propone di eliminare il richiamo inventato."
+    },
+    {
+      "case": "C03",
+      "target_detected": true,
+      "false_alarm_on_protected_control": null,
+      "evidence": "S7: riconosce il caso 5, 2.5, 10 già risolto e distingue consolidamento da applicazione a dati nuovi."
+    },
+    {
+      "case": "C04",
+      "target_detected": null,
+      "false_alarm_on_protected_control": false,
+      "evidence": "Riconosce esplicitamente come legittima l’omissione richiesta. Segnala invece una nota docente rimasta riferita a quesiti assenti: rilievo fondato, non falso allarme sull’omissione."
+    }
+  ]
+}

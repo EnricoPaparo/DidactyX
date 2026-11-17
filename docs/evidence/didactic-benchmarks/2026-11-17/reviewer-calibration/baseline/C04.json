@@ -1,0 +1,15 @@
+{
+  "input_sha256": "7cf612995b42bbf987ce17b2d582fac5347eeea7bb46e5ca66e2b745b49249b8",
+  "prompt_sha256": "7d868e333efdc243dbdd62d8230fd4b0cf0cdca38c3be0dd09377f6da598fa43",
+  "result": {
+    "summary": "La lezione è corretta, autosufficiente e graduale. Codice, calcoli ed esiti forniti sono coerenti; fonti e prerequisiti sono rispettati, senza anticipare condizioni o cicli. L’assenza di sintesi e domande finali rispetta il brief specifico, ma la prima nota docente lo contraddice.",
+    "findings": [
+      {
+        "kind": "coherence",
+        "location": "content.teacher_notes[0]",
+        "description": "La scansione prevede «autocontrollo finale 5» e invita a selezionare quesiti conclusivi, dichiarandone altri disponibili per la rilettura. Questi quesiti non sono presenti e il brief ne richiede deliberatamente l’omissione, affidando la conclusione orale al docente.",
+        "suggestion": "Eliminare i riferimenti all’autocontrollo e ai quesiti disponibili. Per conservare i 120 minuti, assegnare i cinque minuti alla lettura guidata della traccia di S8, senza introdurre nuove domande finali o rendere obbligatoria la conclusione orale."
+      }
+    ]
+  }
+}
