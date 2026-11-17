@@ -1,0 +1,15 @@
+{
+  "input_sha256": "60a2d82931b3d85a202e157e1d9867780163d5de890e94c69893124784a18631",
+  "prompt_sha256": "7d868e333efdc243dbdd62d8230fd4b0cf0cdca38c3be0dd09377f6da598fa43",
+  "result": {
+    "summary": "Materiale disciplinarmente corretto, autosufficiente e coerente con la classe e i vincoli. La scansione totalizza 120 minuti; esempi, conversioni e risultati sono corretti. Non vengono anticipati condizioni, cicli o funzioni definite dagli studenti. Fonti e continuità sono gestite correttamente. Si suggerisce un miglioramento didattico circoscritto.",
+    "findings": [
+      {
+        "kind": "didactic",
+        "location": "content.sections S2–S6; content.self_check; content.teacher_notes[0]",
+        "description": "I controlli di comprensione sono raccolti alla fine, mentre nelle sezioni prevalgono spiegazioni ed esempi già risolti. L'alternanza richiesta tra spiegazione e brevi controlli dipende quindi dall'iniziativa del docente, soprattutto nei passaggi cruciali da assegnazione a visualizzazione e da testo a numero.",
+        "suggestion": "Distribuire alcuni quesiti già presenti dopo S2, S3, S5 e S6, chiedendo una previsione individuale su carta prima di leggere la risposta ragionata. Indicare nelle note quali quesiti utilizzare durante ciascuna sezione, mantenendo i 120 minuti e la natura teorica della lezione."
+      }
+    ]
+  }
+}

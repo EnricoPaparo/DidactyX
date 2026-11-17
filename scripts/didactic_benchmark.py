@@ -9,6 +9,7 @@ from copy import deepcopy
 import hashlib
 import json
 from pathlib import Path
+import re
 import sys
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -108,7 +109,16 @@ def run_reviews(args):
         for future in as_completed(futures):future.result()
 
 
-def check_audit(report, versions):
+def normalize_audit(report, annual):
+    result=deepcopy(report)
+    unit=annual['data']['udas'][0]['id']
+    for evaluation in result['evaluations']:
+        if re.match(r'^'+re.escape(unit)+r'(?:\s|$)',evaluation['target']):evaluation['target']='UDA'
+    return result
+
+
+def check_audit(report, versions, annual=None):
+    if annual is not None:report=normalize_audit(report,annual)
     expected={v['lesson_id'] for v in versions}|{'UDA'}
     if {e['target'] for e in report['evaluations']}!=expected or len(report['evaluations'])!=len(expected):raise ValueError('Audit targets missing or duplicated.')
     all_evidence=[]
@@ -121,10 +131,11 @@ def check_audit(report, versions):
         for finding in evaluation['findings']:all_evidence.extend(finding['evidence'])
     normalize=lambda s:' '.join(s.split())
     by_id={v['lesson_id']:v for v in versions}
+    if annual is not None:by_id['UDA']={'data':annual['data']['udas'][0]}
     for ref in all_evidence:
         version=by_id.get(ref['lesson_id'])
         if not version or not ref['quote'].strip():raise ValueError('Invalid audit evidence.')
-        section=next((s for s in version['data']['sections'] if s['id']==ref['section_id']),None)
+        section=next((s for s in version['data'].get('sections',[]) if s['id']==ref['section_id']),None)
         source=section if section else version['data'].get(ref['section_id'])
         if source is None:raise ValueError('Evidence section does not exist: '+str(ref))
         if normalize(ref['quote']) not in normalize(json.dumps(source,ensure_ascii=False)):
@@ -139,6 +150,22 @@ def check_audit(report, versions):
                 raise ValueError('Unverifiable audit quotation: '+str(ref))
 
 
+def aggregate_reports(reports, rubric):
+    targets={e['target'] for e in reports[0]['evaluations']}
+    weights={c['id']:c['weight'] for c in rubric['criteria']}
+    results=[]
+    for target in sorted(targets):
+        evaluations=[next(e for e in r['evaluations'] if e['target']==target) for r in reports]
+        scores={criterion:[next(r['score'] for r in e['ratings'] if r['criterion_id']==criterion) for e in evaluations] for criterion in CRITERIA}
+        minimum=sum(min(scores[c])*weights[c]/4 for c in CRITERIA)
+        critical=sum(f['severity']=='critical' for e in evaluations for f in e['findings'])
+        results.append({'target':target,'scores_by_judge':scores,'minimum_per_criterion':{c:min(v) for c,v in scores.items()},
+            'weighted_minimum':minimum,'critical_findings':critical,
+            'meets_internal_threshold':minimum>=rubric['acceptance']['minimum_weighted_score'] and
+                all(min(v)>=rubric['acceptance']['minimum_each_criterion'] for v in scores.values()) and critical==0})
+    return results
+
+
 def run_audit(args):
     versions=[read(args.materials/f'lesson-{i}.json') for i in ['L1','L2','L3']]
     annual=read(args.materials/'annual-plan.json');rubric=read(BENCH/'rubric.json')
@@ -149,20 +176,60 @@ def run_audit(args):
         'pedagogy':'Sei un valutatore indipendente della progressione didattica per principianti, del carico, della pratica guidata e dell’autonomia osservabile. Applica comunque tutti i criteri della rubrica.'}
     def run(name):
         saved=call_cached(args.output/f'{name}.json',inputs,roles[name],instruction,AUDIT,args.work_dir/name)
-        check_audit(saved['result'],versions)
+        check_audit(saved['result'],versions,annual)
         print(json.dumps({'judge':name,'completed':True,'evidence_validated':True}),flush=True)
     with ThreadPoolExecutor(max_workers=2) as pool:
         for future in as_completed([pool.submit(run,name) for name in roles]):future.result()
+
+
+def collect_results(root):
+    rubric=read(BENCH/'rubric.json');summary={'rubric_version':rubric['version'],'materials':{},'reviewer_challenges':{}}
+    for variant in ['baseline','tuned']:
+        folder=root/variant;versions=[read(folder/f'lesson-{i}.json') for i in ['L1','L2','L3']]
+        annual=read(folder/'annual-plan.json');reports=[normalize_audit(read(root/f'audit-{variant}'/f'{name}.json')['result'],annual) for name in ['discipline','pedagogy']]
+        for report in reports:check_audit(report,versions,annual)
+        checks=[]
+        ordered=[l for u in annual['data']['udas'] for l in u['lessons']]
+        for index,version in enumerate(versions):
+            context={'lesson':next(l for l in ordered if l['id']==version['lesson_id']),
+                'sources':version['context']['sources'],'previous_materials':versions[:index],'missing_prerequisites':[]}
+            errors=content_errors(version['data'],context)
+            if errors:raise ValueError(errors)
+            expected={v['lesson_id']:v['id'] for v in versions[:index]}
+            observed={v['lesson_id']:v['version_id'] for v in version['context']['source_versions']}
+            if observed!=expected:raise ValueError('Source footprints do not match the corpus versions.')
+            executed=check_examples(version['data'])
+            if any(c['status']=='failed' for c in executed):raise ValueError('Executable example failed.')
+            checks.append({'lesson_id':version['lesson_id'],'sections':len(version['data']['sections']),
+                'passed_cases':sum(c['status']=='passed' for c in executed),'not_run_blocks':sum(c['status']=='not_run' for c in executed),
+                'continuity_refs':len(version['data']['continuity'])})
+        summary['materials'][variant]={'ratings':aggregate_reports(reports,rubric),'structural_and_reference_checks_passed':True,'code_checks':checks}
+    for split in ['calibration','holdout']:
+        cases=[c for c in read(BENCH/'cases.json') if c['split']==split]
+        result={}
+        for variant in ['baseline','tuned']:
+            judgments=read(root/f'reviewer-{split}'/variant/'adjudication.json')['cases']
+            if {j['case'] for j in judgments}!={c['id'] for c in cases} or len(judgments)!=len(cases):raise ValueError('Adjudication missing or duplicated.')
+            faults=[next(j for j in judgments if j['case']==c['id']) for c in cases if c['kind']=='fault']
+            controls=[next(j for j in judgments if j['case']==c['id']) for c in cases if c['kind']=='control']
+            if any(type(j['target_detected']) is not bool for j in faults) or any(type(j['false_alarm_on_protected_control']) is not bool for j in controls):raise ValueError('Unresolved adjudication.')
+            result[variant]={'targeted_faults_detected':sum(j['target_detected'] for j in faults),'targeted_faults_total':len(faults),
+                'controls_without_targeted_false_alarm':sum(not j['false_alarm_on_protected_control'] for j in controls),'controls_total':len(controls)}
+        summary['reviewer_challenges'][split]=result
+    write(root/'results.json',summary)
+    return summary
 
 
 def main():
     parser=argparse.ArgumentParser(description=__doc__);subs=parser.add_subparsers(dest='command',required=True)
     review=subs.add_parser('review');review.add_argument('--variant',choices=['baseline','tuned'],required=True);review.add_argument('--split',choices=['calibration','holdout'],required=True)
     audit=subs.add_parser('audit');audit.add_argument('--materials',type=Path,required=True)
+    collect=subs.add_parser('collect');collect.add_argument('--evidence-root',type=Path,required=True)
     for sub in [review,audit]:
         sub.add_argument('--output',type=Path,required=True);sub.add_argument('--work-dir',type=Path,required=True)
     args=parser.parse_args()
     if args.command=='review':run_reviews(args)
-    else:run_audit(args)
+    elif args.command=='audit':run_audit(args)
+    else:print(json.dumps(collect_results(args.evidence_root),ensure_ascii=False,indent=2))
 
 if __name__=='__main__':main()

@@ -34,5 +34,12 @@ class PilotInstallTests(unittest.TestCase):
         versions=deepcopy(self.versions);versions[1]['data']['continuity'][0]['version_id']='missing'
         with self.assertRaises(ValueError):install(self.folder.name,self.annual,versions)
         self.assertEqual(self.target.list_programs(),[self.existing])
+    def test_distinct_benchmark_title_preserves_existing_pilot(self):
+        first=install(self.folder.name,self.annual,self.versions)
+        before=self.target.get(first['program_id'])
+        second=install(self.folder.name,self.annual,self.versions,title='Python · UDA benchmark')
+        self.assertNotEqual(first['program_id'],second['program_id'])
+        self.assertEqual(self.target.get(first['program_id']),before)
+        self.assertEqual(self.target.get(second['program_id'])['title'],'Python · UDA benchmark')
 
 if __name__=='__main__':unittest.main()

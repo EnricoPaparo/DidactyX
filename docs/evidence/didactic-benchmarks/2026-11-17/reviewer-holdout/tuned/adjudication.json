@@ -1,0 +1,29 @@
+{
+  "method": "Lettura del rapporto rispetto all’oracolo da parte del revisore principale; risultati non dedotti dal numero di findings.",
+  "cases": [
+    {
+      "case": "H01",
+      "target_detected": true,
+      "false_alarm_on_protected_control": null,
+      "evidence": "S2: riconosce = come assegnazione, corregge la falsa definizione e preserva i frammenti diagnostici di S9."
+    },
+    {
+      "case": "H02",
+      "target_detected": true,
+      "false_alarm_on_protected_control": null,
+      "evidence": "S6: individua < e l’uscita sul budget esatto come errore rispetto all’obiettivo, anche con casi tecnicamente corrispondenti; propone <= e output corretto."
+    },
+    {
+      "case": "H03",
+      "target_detected": true,
+      "false_alarm_on_protected_control": null,
+      "evidence": "S1: riconosce l’attribuzione infondata dell’apprendimento e ripristina un controllo dei prerequisiti. L’ulteriore nota sull’autonomia riguarda una debolezza reale del campione."
+    },
+    {
+      "case": "H04",
+      "target_detected": null,
+      "false_alarm_on_protected_control": false,
+      "evidence": "Riconosce l’assenza di errori disciplinari e non contesta i frammenti intenzionalmente errati di S9. La proposta sulle celle da completare è facoltativa e pertinente."
+    }
+  ]
+}

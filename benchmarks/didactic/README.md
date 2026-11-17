@@ -33,6 +33,16 @@ python3 scripts/didactic_benchmark.py review --variant tuned --split holdout --o
 python3 scripts/didactic_benchmark.py audit --materials docs/evidence/didactic-benchmarks/2026-11-17/baseline --output output/benchmark/audit-baseline --work-dir tmp/benchmark/audit-baseline
 ```
 
+Per completare una UDA o rigenerarla con i prompt correnti:
+
+```sh
+python3 scripts/check_didactic_uda_live.py --data-dir tmp/nuova-uda --output output/benchmark/nuova-uda --targets L1 L2 L3
+```
+
+Per continuare un lavoro interrotto si ripete il comando aggiungendo `--resume`, mantenendo invariati i prompt. Il generatore conserva i materiali completati e non duplica le pubblicazioni già concluse. Per confrontare i materiali iniziali si usano i campioni congelati; rigenerarli con i prompt attuali non riproduce il baseline. Le generazioni non sono deterministiche e la versione del modello del client non viene fissata dal benchmark.
+
+`python3 scripts/didactic_benchmark.py collect --evidence-root CARTELLA_EVIDENZE` verifica nuovamente citazioni, struttura, riferimenti ed esecuzioni e ricostruisce i riepiloghi a partire dai rapporti e dalle adjudication. Questo comando non usa AI.
+
 I risultati vengono salvati dopo ogni chiamata con hash di input e prompt. Ripetere lo stesso comando riusa soltanto risultati con gli stessi hash. Non si sovrascrivono giudizi con input diversi. `baseline-prompts.json` conserva le istruzioni del revisore 0.3.1 per confronti riproducibili dopo il tuning.
 
 ## Fondamenti e limiti

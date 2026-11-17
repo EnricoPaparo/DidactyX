@@ -7,6 +7,7 @@ import os
 
 from .planning_store import PlanningStore
 from .store import DomainError, now, text
+from .lesson_prompts import PROMPT_VERSION
 
 
 class LessonStore(PlanningStore):
@@ -96,7 +97,7 @@ class LessonStore(PlanningStore):
         if review and not selected: raise DomainError(-32602, 'Genera prima il contenuto della lezione.')
         snapshot = {'program_id': program_id, 'plan': plan, 'lesson_ids': targets,
                     'brief': text(params.get('brief', ''), 'brief della lezione'), 'source_versions': references,
-                    'review_version_id': selected['id'] if selected else None}
+                    'review_version_id': selected['id'] if selected else None, 'prompt_version': PROMPT_VERSION}
         return self.insert_job(program_id, snapshot, 'lesson_review' if review else 'lesson_generate')
 
     def ensure_context_current(self, snapshot):

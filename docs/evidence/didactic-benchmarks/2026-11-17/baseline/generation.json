@@ -1,0 +1,11 @@
+{
+  "targets": [
+    "L3"
+  ],
+  "application_version": "0.3.1",
+  "prompt_files_sha256": {
+    "engine/didactyx_engine/lessons.py": "a287ec58094a3843bf7bb817f3fe77df464c517882432e739adb4030126787d5"
+  },
+  "source": "L1 e L2 importate dal pilota del 16 novembre; L3 generata realmente dal motore 0.3.1.",
+  "all_lesson_dependencies_current": true
+}

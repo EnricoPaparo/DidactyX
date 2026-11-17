@@ -1,0 +1,21 @@
+{
+  "input_sha256": "7284b7bd8951f99625b64f905d020edea7727be62f6b8bc4cf2b87fb2fa855fd",
+  "prompt_sha256": "4a9afee064858a16c21eb9f14375a0bb7984c9831347298a44377d538b44af33",
+  "result": {
+    "summary": "Confronti, codice, risultati e gestione dell’uguaglianza sono corretti nei casi proposti. La continuità con L1 è effettiva e i tempi sommano 120 minuti teorici. Emerge un’incoerenza sostanziale sui prerequisiti appresi e un miglioramento facoltativo nell’osservazione dell’autonomia.",
+    "findings": [
+      {
+        "kind": "coherence",
+        "location": "S1, ultimo paragrafo; confronto con teacher_notes, terza nota, e context.learning_status",
+        "description": "L’affermazione «La generazione del file della prima lezione dimostra che tutti gli studenti hanno già acquisito input, conversioni e variabili» attribuisce un apprendimento senza evidenze. Il corpo effettivo di L1 documenta la presenza di questi contenuti, non la loro spiegazione o acquisizione. L’invito a saltare qualsiasi controllo contraddice inoltre la nota al docente che richiede di raccogliere spiegazioni e ricostruire i passaggi non compresi. Seguirlo potrebbe lasciare inosservate difficoltà necessarie per comprendere i confronti.",
+        "suggestion": "Eliminare l’attribuzione di apprendimento e l’invito a saltare i controlli. Allineare il paragrafo alla nota operativa già presente: chiedere brevi spiegazioni su input, conversioni e prodotto, usando le risposte per decidere quali passaggi richiamare."
+      },
+      {
+        "kind": "didactic",
+        "location": "S7, «Caso B guidato» e «Caso C da provare con maggiore autonomia»; confronto con S6",
+        "description": "I due acquisti, compresi condizione, messaggio scelto e prosecuzione comune, sono già interamente risolti in S6. Il loro riuso è un consolidamento legittimo, ma la richiesta di maggiore autonomia non offre da sola evidenza di applicazione a un caso inedito: la risposta può essere recuperata dagli esempi precedenti.",
+        "suggestion": "Mantenere questi casi come consolidamento con aiuti ridotti. Facoltativamente, per osservare anche il trasferimento, aggiungere entro i tempi già previsti un breve caso non ancora risolto, per esempio quantità 6, prezzo 1.5 e budget 8, chiedendo prima della restituzione spesa, condizione, ramo e prosecuzione."
+      }
+    ]
+  }
+}

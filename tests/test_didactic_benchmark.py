@@ -52,4 +52,14 @@ class DidacticBenchmarkTests(unittest.TestCase):
         report['evaluations'][0]['ratings'][0]['evidence'][0]['quote']='Tutti gli studenti hanno imparato'
         with self.assertRaises(ValueError):bench.check_audit(report,versions)
 
+    def test_aggregation_uses_weaker_judgment_and_does_not_compensate_a_gap(self):
+        rubric=bench.read(bench.BENCH/'rubric.json')
+        ratings=[{'criterion_id':c,'score':4} for c in bench.CRITERIA]
+        strong={'evaluations':[{'target':'L1','ratings':deepcopy(ratings),'findings':[]}]}
+        weak=deepcopy(strong);weak['evaluations'][0]['ratings'][3]['score']=2
+        result=bench.aggregate_reports([strong,weak],rubric)[0]
+        self.assertGreater(result['weighted_minimum'],75)
+        self.assertFalse(result['meets_internal_threshold'])
+        self.assertEqual(result['minimum_per_criterion']['C4'],2)
+
 if __name__=='__main__':unittest.main()

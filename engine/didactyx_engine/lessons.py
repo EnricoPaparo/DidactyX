@@ -8,7 +8,10 @@ from .lesson_schema import CONTENT, OUTLINE, PART, REVIEW, content_errors
 from .example_checks import check_examples
 from .store import DomainError
 
-RULES = '''Nel corpo destinato allo studente non nominare i campi del nostro formato (self_check, objective_ids, source_ids, stdin, stdout): usa titoli e spiegazioni didattiche naturali. I casi sono presentati come dati inseriti ed esecuzioni di esempio; non spiegare l'infrastruttura dei test. Scrivi in italiano materiale didattico completo e autosufficiente per lo studente, con spiegazioni distese e passaggi motivati, non una scaletta o un riassunto di ciò che il docente dovrebbe spiegare. Adatta tono e profondità al brief della classe e rispetta il brief specifico, anche se atipico; segnala nelle teacher_notes eventuali raccomandazioni senza sostituire le scelte esplicite. Non imporre un limite di parole. Le conoscenze iniziali e gli obiettivi del percorso guidano lo sviluppo. I contenuti di previous_materials sono le versioni reali consultabili delle lezioni precedenti: riprendi esempi, nomi, valori, notazione e procedure con precisione. Sono materiali generati, non prova di apprendimento della classe. Non inventare richiami a materiali assenti. Compila continuity solo con version_id e section_id reali effettivamente ripresi. Per ogni missing_prerequisites spiega i concetti necessari nel testo della lezione e rendi esplicita la scelta in prerequisite_support: non limitarti a una nota al docente. Le fonti utilizzabili sono solo quelle fornite in sources; source_ids deve contenere i riferimenti effettivamente utilizzati. Non inventare fonti consultate. Le note per il docente sono separate dal corpo destinato allo studente. Non usare HTML o Markdown nei blocchi: i renderer gestiscono la tipografia. Le formule sono espressioni Unicode lineari spiegate nel testo, senza comandi TeX. Nei blocchi code separa codice da spiegazione. Per esempi Python funzionanti usa execution=check e casi con stdin e stdout esatto, compresi i prompt e le nuove righe; includi casi diversi per i rami condizionali pertinenti. Codice deliberatamente errato o non autonomo è illustration, con spiegazione dell'errore o del contesto. Non anticipare concetti oltre il perimetro senza introdurli adeguatamente. Negli esempi svolti spiega perché si compie ogni passaggio. Self_check contiene domande e risposte ragionate per controllare la comprensione, non una verifica formale. Glossario e sintesi devono corrispondere al contenuto effettivo.'''
+from .lesson_prompts import (COMMON_RULES, AUTHOR_RULES, REVIEW_ROLE, REVIEW_INSTRUCTION,
+    DISCIPLINE_INSTRUCTION, CONTINUITY_INSTRUCTION, PROMPT_VERSION)
+
+RULES = COMMON_RULES + "\n" + AUTHOR_RULES
 
 
 class LessonManager(PlanningManager):
@@ -21,6 +24,8 @@ class LessonManager(PlanningManager):
 
     def resume(self, job_id):
         job=self.store.job(job_id,True)
+        if job['snapshot'].get('prompt_version', '0.3.1') != PROMPT_VERSION:
+            raise DomainError(-32009, 'Le istruzioni didattiche sono cambiate. Avvia una nuova generazione per usare un workflow coerente; i materiali già completati sono conservati.')
         if job['kind']=='lesson_generate':
             snapshot=dict(job['snapshot'])
             published=job['checkpoint'].get('published',{})
@@ -39,15 +44,16 @@ class LessonManager(PlanningManager):
                 if cancelled():raise GenerationCancelled()
                 if key in checkpoint:return checkpoint[key]
                 self.store.progress(job_id,key,label)
-                value=generator.generate(role,inputs,RULES+'\n'+instruction,schema)
+                rules=COMMON_RULES if job['kind']=='lesson_review' else RULES
+                value=generator.generate(role,inputs,rules+'\n'+instruction,schema)
                 if cancelled():raise GenerationCancelled()
                 checkpoint[key]=value;self.store.progress(job_id,key,label,checkpoint);return value
             if job['kind']=='lesson_review':
                 version=self.store.version(snapshot['program_id'],snapshot['review_version_id'])
                 context=self.store.context(snapshot,version['lesson_id'],{})
                 report=stage('manual_review','Revisione indipendente della lezione…',
-                    'Sei un revisore disciplinare e didattico indipendente.',{'context':context,'content':version['data'],'checks':version['checks']},
-                    'Esamina correttezza, completezza delle spiegazioni, esempi, accessibilità, continuità reale e fonti. Distingui errori da scelte didattiche discutibili ma intenzionali. Proponi interventi concreti senza riscrivere il contenuto: il docente sceglierà se rigenerarlo.',REVIEW)
+                    REVIEW_ROLE,{'context':context,'content':version['data'],'checks':version['checks']},
+                    REVIEW_INSTRUCTION,REVIEW)
                 self.store.finish(job_id,report);return
             published=checkpoint.setdefault('published',{})
             check_snapshot=dict(snapshot);check_snapshot['source_versions']=[r for r in snapshot['source_versions'] if r['lesson_id'] not in published]
@@ -75,8 +81,8 @@ class LessonManager(PlanningManager):
                     content=stage(prefix+'editor',label+'ricomposizione della lezione…','Sei il curatore editoriale didattico.',
                         {**inputs,'contributions':parts},'Ricomponi tutti i contributi, elimina ripetizioni e colma lacune, preservando profondità e passaggi. Produci la lezione completa con introduzione, sezioni, sintesi, glossario, richiami verificabili e fonti.',CONTENT)
                 for key,role,instruction in [
-                    ('discipline','Sei un revisore della correttezza disciplinare distinto dagli autori.','Correggi concetti, definizioni, procedure, codice e output. Ricontrolla casi limite e soluzioni. Restituisci tutto il contenuto corretto, preservando spiegazioni e richieste del docente.'),
-                    ('continuity','Sei il revisore della progressione e della chiarezza didattica.','Confronta il corpo effettivo con le lezioni precedenti fornite, verifica i richiami e la continuità di esempi e notazione. Controlla prerequisiti mancanti, salti logici, comprensibilità e copertura degli obiettivi. Elimina duplicazioni, in particolare sintesi, glossario e domande già presenti nei campi dedicati: puoi accorpare le sezioni conclusive ridondanti preservando il contenuto utile. Elimina dal corpo i nomi tecnici del formato e le spiegazioni dell’infrastruttura dei test. Correggi e restituisci tutta la lezione. Mantieni gli id delle sezioni conservate; limita teacher_notes a osservazioni utili al docente, senza autocertificazioni.')]:
+                    ('discipline','Sei un revisore della correttezza disciplinare distinto dagli autori.',DISCIPLINE_INSTRUCTION),
+                    ('continuity','Sei il revisore della progressione e della chiarezza didattica.',CONTINUITY_INSTRUCTION)]:
                     content=stage(prefix+key,label+('revisione disciplinare…' if key=='discipline' else 'revisione della continuità…'),role,
                                   {**inputs,'proposal':content},instruction,CONTENT)
                 for attempt in range(3):

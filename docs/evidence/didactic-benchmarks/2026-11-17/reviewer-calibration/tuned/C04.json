@@ -1,0 +1,15 @@
+{
+  "input_sha256": "7cf612995b42bbf987ce17b2d582fac5347eeea7bb46e5ca66e2b745b49249b8",
+  "prompt_sha256": "4a9afee064858a16c21eb9f14375a0bb7984c9831347298a44377d538b44af33",
+  "result": {
+    "summary": "Spiegazioni, conversioni, calcoli e output riportati risultano coerenti. I frammenti errati di S9 sono esplicitamente illustrativi. Sono rispettati i limiti della prima lezione; sintesi e domande finali sono intenzionalmente assenti. Rimane una nota al docente non aggiornata.",
+    "findings": [
+      {
+        "kind": "coherence",
+        "location": "content.teacher_notes[0]: distribuzione dei tempi e indicazioni sul confronto conclusivo",
+        "description": "La nota prescrive «autocontrollo finale 5» e invita a selezionare quesiti, lasciando gli altri alla rilettura. Il brief richiede invece di omettere tutte le domande finali, affidandone la gestione orale al docente; self_check è effettivamente vuoto. La nota reintroduce quindi un'attività prescritta e rimanda a quesiti non presenti.",
+        "suggestion": "Eliminare la prescrizione dell'autocontrollo e i riferimenti ai quesiti disponibili. Mantenere i 120 minuti destinando quei 5 minuti alla gestione orale libera del docente oppure all'approfondimento delle tracce, senza rendere obbligatorie domande conclusive."
+      }
+    ]
+  }
+}
