@@ -1,0 +1,15 @@
+{
+  "targets": [
+    "L1",
+    "L2",
+    "L3"
+  ],
+  "git_commit": "aa0d98d54a5d5bdb1acdb0efe4edda751171f0a7",
+  "prompt_files_sha256": {
+    "engine/didactyx_engine/lessons.py": "f9a2a0efd67fbb85a365e9eaec35595aa881c5537a6b945e5ad3cbac4672b089",
+    "engine/didactyx_engine/lesson_prompts.py": "1d770a611652996d9805345673f9e01fccd7344fc4c2ebf91e28f505863cc146"
+  },
+  "previous_versions_unchanged": true,
+  "source_bodies_validated": true,
+  "all_lesson_dependencies_current": true
+}

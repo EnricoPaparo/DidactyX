@@ -63,3 +63,11 @@ python3 scripts/didactic_benchmark.py review --variant tuned --split final --cas
 ```
 
 Il candidato consultivo è valutato separatamente mentre la generazione della UDA mantiene il proprio contratto congelato. Il diario del tuning distingue questo intervento dalle valutazioni iniziali e conserva le istruzioni e i risultati di ciascuna fase.
+
+Un rilievo infondato sulle trascrizioni ha richiesto un ulteriore allineamento degli input. Il campo `visible_examples` usa lo stesso helper del lettore e del PDF, indicando il testo realmente mostrato, inclusa l'eco degli input quando verificata, e la sua posizione. Anche i due valutatori dei contenuti ricevono questo riscontro: il confronto conclusivo usa la rivalutazione `audit-baseline-rendered` e `audit-tuned`, con le stesse istruzioni, rubriche e soglie. I giudizi iniziali senza quel contesto e il rilievo infondato rimangono conservati.
+
+Il riepilogo `collect` comprende gli otto casi originari e le adjudication di E01/F01/F02. I numeri descrivono soltanto questo campione; i successivi tentativi sugli stessi casi sono regressioni di sviluppo e non nuove prove ignote.
+
+La rigenerazione completa è conservata in `tuned`, con i suoi giudizi in `audit-tuned`. Una successiva correzione esplicita di cinque spiegazioni e tre note sulle trascrizioni produce `edited` e `audit-edited`. Non è una nuova generazione integrale: `scripts/apply_benchmark_editorial.py` applica soltanto sostituzioni il cui testo sorgente corrisponde esattamente alle patch, conserva le versioni precedenti e ricontrolla casi e riferimenti. `collect` include questa terza fase quando presente. I punteggi intermedi sfavorevoli rimangono disponibili.
+
+Le ultime istruzioni dell'autore sono verificate anche su un paragrafo con `input` e `print` di un nome. Questa prova mirata non sostituisce una nuova rigenerazione completa con quelle ultime istruzioni. Il report distingue il risultato dei materiali corretti dalla copertura del tuning nel generatore.

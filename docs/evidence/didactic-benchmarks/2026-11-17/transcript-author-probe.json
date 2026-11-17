@@ -1,0 +1,7 @@
+{
+  "input_sha256": "39a18e1c414ca7833cfd928c272eeb298c70d5575aaf20debdccf7040df8fd22",
+  "prompt_sha256": "3be4eb7648f64291ea65412d30478f6632d34d4a8aaceb8f293f07593858e759",
+  "result": {
+    "explanation": "Nella trascrizione visibile, la prima riga è «Nome? Ada». Il testo «Nome? », compreso lo spazio dopo il punto interrogativo, è mostrato da input per chiedere il nome. «Ada» è invece la risposta digitata dall’utente e resa visibile durante l’inserimento: non è prodotta da print. Premendo Invio, l’utente conclude la risposta e passa alla riga successiva; input restituisce il testo «Ada», che viene conservato nella variabile nome. Poi print mostra «Ciao Ada»: «Ciao» proviene dal testo tra virgolette nel codice, mentre «Ada» proviene dalla variabile nome. La virgola tra i due argomenti fa sì che print li separi con uno spazio; al termine, print va a capo. La trascrizione comprende quindi anche la digitazione dell’utente: lo stdout tecnico, che raccoglie soltanto ciò che produce il programma, non include né quella digitazione né il cambio di riga dovuto a Invio."
+  }
+}

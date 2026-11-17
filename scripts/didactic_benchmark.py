@@ -41,7 +41,7 @@ def write(path, value):
 def prompts(variant):
     if variant=='baseline': return read(BENCH/'baseline-prompts.json')
     from didactyx_engine.lesson_prompts import COMMON_RULES, REVIEW_ROLE, REVIEW_INSTRUCTION, PROMPT_VERSION
-    return {'version':PROMPT_VERSION,'rules':COMMON_RULES,'review_role':REVIEW_ROLE,'review_instruction':REVIEW_INSTRUCTION}
+    return {'version':PROMPT_VERSION,'rules':COMMON_RULES,'review_role':REVIEW_ROLE,'review_instruction':REVIEW_INSTRUCTION,'include_display_context':True}
 
 
 def case_input(case):
@@ -201,7 +201,7 @@ def run_audit(args):
 
 def collect_results(root):
     rubric=read(BENCH/'rubric.json');summary={'rubric_version':rubric['version'],'materials':{},'reviewer_challenges':{}}
-    for variant in ['baseline','tuned']:
+    for variant in ['baseline','tuned']+(['edited'] if (root/'edited/generation.json').exists() else []):
         folder=root/variant;versions=[read(folder/f'lesson-{i}.json') for i in ['L1','L2','L3']]
         audit_dir=root/f'audit-{variant}'
         if (root/f'audit-{variant}-rendered').exists():audit_dir=root/f'audit-{variant}-rendered'

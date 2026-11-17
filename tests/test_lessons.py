@@ -46,7 +46,9 @@ class Factory:
                 ctx=inputs['context']
                 if schema==PART:
                     v=content(ctx);return {'sections':[{**v['sections'][0],'id':i} for i in inputs['assigned_section_ids']]}
-                if schema==REVIEW:return {'summary':'Revisione completata','findings':[]}
+                if schema==REVIEW:
+                    factory.review_input=deepcopy(inputs)
+                    return {'summary':'Revisione completata','findings':[]}
                 if 'proposal' in inputs:return deepcopy(inputs['proposal'])
                 v=content(ctx)
                 if 'contributions' in inputs:v['sections']=[s for p in inputs['contributions'] for s in p['sections']]
@@ -107,6 +109,8 @@ class LessonTests(unittest.TestCase):
         self.assertEqual(wait_job(self.manager,job['id'])['status'],'completed')
         self.assertEqual(before,self.manager.store.head(self.plan_id,'L1'))
         self.assertIsNotNone(self.manager.store.state(self.program['id'],self.plan_id,'L1')['latest_review'])
+        from didactyx_engine.lesson_render import visible_examples
+        self.assertEqual(self.factory.review_input['visible_examples'],visible_examples(before['data'],before['checks']))
     def test_resume_does_not_publish_first_lesson_twice(self):
         self.factory.fail_at=6
         job=self.manager.start({'program_id':self.program['id'],'plan_id':self.plan_id,'lesson_ids':['L1','L2']})

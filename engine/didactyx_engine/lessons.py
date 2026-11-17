@@ -6,6 +6,7 @@ from .planning import PlanningManager
 from .lesson_store import LessonStore
 from .lesson_schema import CONTENT, OUTLINE, PART, REVIEW, content_errors
 from .example_checks import check_examples
+from .lesson_render import visible_examples
 from .store import DomainError
 
 from .lesson_prompts import (COMMON_RULES, AUTHOR_RULES, REVIEW_ROLE, REVIEW_INSTRUCTION,
@@ -52,7 +53,8 @@ class LessonManager(PlanningManager):
                 version=self.store.version(snapshot['program_id'],snapshot['review_version_id'])
                 context=self.store.context(snapshot,version['lesson_id'],{})
                 report=stage('manual_review','Revisione indipendente della lezione…',
-                    REVIEW_ROLE,{'context':context,'content':version['data'],'checks':version['checks']},
+                    REVIEW_ROLE,{'context':context,'content':version['data'],'checks':version['checks'],
+                        'visible_examples':visible_examples(version['data'],version['checks'])},
                     REVIEW_INSTRUCTION,REVIEW)
                 self.store.finish(job_id,report);return
             published=checkpoint.setdefault('published',{})

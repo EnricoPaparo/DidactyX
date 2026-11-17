@@ -1,0 +1,21 @@
+{
+  "version": "0.3.2",
+  "build": 5,
+  "unit_tests_passed": 47,
+  "swift_frozen_engine_integration_passed": true,
+  "ad_hoc_signature_verified": true,
+  "matched_judge_prompt_hashes_across_all_three_phases": true,
+  "example_checks_frozen_cases_passed": 24,
+  "source_and_frozen_pdf_rasters_identical": true,
+  "final_material_version": 3,
+  "platform": "macOS 26.7.2 arm64",
+  "build_test_log_sha256": "3bad62b91d886d2d117f941115b5b2cd9f165482eb79e6abf5942011b5c7e5ef",
+  "native_app_sample_verified": true,
+  "native_history_versions_verified": [
+    1,
+    2,
+    3
+  ],
+  "native_laboratory_current_version_verified": 3,
+  "native_export_pdf_saved_feedback": true
+}

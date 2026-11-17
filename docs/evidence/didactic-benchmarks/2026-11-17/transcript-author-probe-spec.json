@@ -1,0 +1,13 @@
+{
+  "prompt_version": "didactic-v2-ae6666449404",
+  "inputs": {
+    "lesson_context": "Principianti, prima acquisizione di un nome e saluto.",
+    "code": "nome = input(\"Nome? \")\nprint(\"Ciao\", nome)",
+    "stdin": [
+      "Ada"
+    ],
+    "stdout": "Nome? Ciao Ada\n",
+    "visible_transcript": "Nome? Ada\nCiao Ada\n"
+  },
+  "oracle_not_sent_to_model": "Distinguere Ada digitato dopo Nome? da Ciao Ada prodotto da print; la trascrizione include input e messaggi del programma. Non descrivere prompt e saluto come mostrati sulla stessa riga."
+}

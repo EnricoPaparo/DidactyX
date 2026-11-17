@@ -29,3 +29,9 @@ Nelle regressioni, il candidato con sole istruzioni trova il difetto E01, ma in 
 Il nuovo input `visible_examples` viene ricavato dallo stesso helper usato dal lettore e dal PDF: esplicita posizione, dati e testo effettivamente mostrato. Il revisore non deve quindi indovinare la visualizzazione dai soli valori tecnici. Nella successiva regressione H04 riconosce correttamente la trascrizione, preservando il controllo sui frammenti intenzionalmente errati.
 
 Anche i valutatori dei contenuti ricevono questo contesto, con criteri e soglie invariati. Per mantenere confrontabili i giudizi, il baseline completo viene rivalutato con lo stesso contesto e le stesse istruzioni applicate al materiale finale. I rapporti iniziali rimangono disponibili: il confronto conclusivo usa soltanto la coppia allineata alla rappresentazione effettiva.
+
+## Valutazione della rigenerazione e correzione editoriale
+
+I due giudizi allineati alla rappresentazione confermano il miglioramento di C4: la UDA raggiunge 3/4 e supera la soglia, con 87,5/100. Il punteggio C1 scende però a 3/4 per descrizioni del solo stdout accanto alle trascrizioni con eco. L1 e L2 raggiungono 91,25/100. Questi esiti restano in audit-tuned e non vengono sostituiti.
+
+Cinque blocchi e tre note vengono corretti mediante patch esplicite nella versione 3, mantenendo identici programmi, attività e casi. Questa è una correzione editoriale del campione, non una nuova esecuzione completa del workflow. La terza valutazione audit-edited applica gli stessi criteri e istruzioni. Le ultime regole generali dell’autore e del revisore della continuità chiariscono la rappresentazione delle trascrizioni; una prova mirata su input/print di un nome ne verifica il paragrafo, senza pretendere una validazione integrale della nuova generazione.
