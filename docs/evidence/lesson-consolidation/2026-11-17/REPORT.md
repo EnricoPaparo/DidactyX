@@ -103,3 +103,5 @@ Il ricontrollo senza chiamate AI si esegue con `python3 scripts/collect_lesson_c
 ## Perimetro residuo
 
 L’incremento successivo riguarda arricchimento visivo, mappe concettuali, percorsi di esercizi dedicati e verifiche che usino tutti i materiali effettivi, con varianti e adattamenti richiesti dal docente. Feedback delle verifiche e recupero rimangono nell’incremento 5. Consolidamento dell’uso continuativo sul Mac e futura valutazione di Windows restano attività successive. Formule complesse e validazione su altre discipline richiedono lavoro dedicato.
+
+Lavoro salvato nel branch `codex/lesson-consolidation` e nella [PR #5 in bozza](https://github.com/EnricoPaparo/DidactyX/pull/5), basata sulla PR #4 del benchmark precedente. Nessun merge a `main`.

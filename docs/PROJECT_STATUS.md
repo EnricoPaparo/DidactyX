@@ -4,7 +4,7 @@
 - **Versione locale:** DidactyX 0.3.3 per macOS, build 6.
 - **Stato:** punto 1 del consolidamento completato sul pilota: tre lezioni rigenerate integralmente e verificate senza patch editoriali successive.
 - **Branch:** `codex/lesson-consolidation`, basato su `codex/didactic-benchmarks`.
-- **Pull request:** [PR #4](https://github.com/EnricoPaparo/DidactyX/pull/4), aperta in bozza; rapporto, benchmark e tuning nel commit `934f191`. Nessun merge a `main`.
+- **Pull request:** [PR #5](https://github.com/EnricoPaparo/DidactyX/pull/5), aperta in bozza; consolidamento e risultati nel commit `6698c18`. È basata sulla [PR #4](https://github.com/EnricoPaparo/DidactyX/pull/4) del benchmark precedente. Nessun merge a `main`.
 
 ## Completato e utilizzabile
 
