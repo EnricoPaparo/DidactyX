@@ -108,3 +108,5 @@ Nell’app locale 0.3.2 è disponibile **Python · UDA 1 · benchmark didattico*
 PDF finali della versione 3: [L1 · Variabili, input e conversioni](pdf/lesson-L1.pdf), [L2 · Decidere con if ed else](pdf/lesson-L2.pdf), [L3 · Laboratorio](pdf/lesson-L3.pdf). Le note del docente restano interne; i PDF contengono il materiale studente completo.
 
 Il benchmark è utilizzabile come regressione per il prossimo incremento. Le priorità didattiche residue sono osservare meglio la costruzione individuale delle istruzioni, prevedere una riduzione esplicita del carico quando emergono difficoltà e verificare le ultime regole editoriali in una successiva generazione completa. Mappe, materiali visivi, esercitazioni dedicate e verifiche restano nell’incremento 4; il feedback con recupero nell’incremento 5.
+
+Lavoro salvato nel branch `codex/didactic-benchmarks` e nella [PR #4 in bozza](https://github.com/EnricoPaparo/DidactyX/pull/4), basata sul restyling della PR #3. Nessun merge a `main`.

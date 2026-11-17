@@ -4,6 +4,7 @@
 - **Versione locale:** DidactyX 0.3.2 per macOS, build 5.
 - **Stato:** primo traguardo dell’incremento 3 disponibile e benchmark interno completato su una UDA di tre lezioni.
 - **Branch:** `codex/didactic-benchmarks`, basato su `codex/cyberpunk-identity`.
+- **Pull request:** [PR #4](https://github.com/EnricoPaparo/DidactyX/pull/4), aperta in bozza; rapporto, benchmark e tuning nel commit `934f191`. Nessun merge a `main`.
 
 ## Completato e utilizzabile
 
