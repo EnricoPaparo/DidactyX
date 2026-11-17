@@ -1,0 +1,30 @@
+[
+  {
+    "id": "E01",
+    "split": "development",
+    "lesson_id": "L1",
+    "mutation": "identity",
+    "version_path": "docs/evidence/didactic-benchmarks/2026-11-17/tuning-iteration-1/lesson-L1.json",
+    "kind": "fault",
+    "expected": "Rilevare che i casi visibili del codice in S8 mostrano già input e output delle consegne successive, limitando l’autonomia annunciata.",
+    "target": "S8"
+  },
+  {
+    "id": "F01",
+    "split": "final",
+    "lesson_id": "L1",
+    "mutation": "conversion_mutates_source",
+    "kind": "fault",
+    "expected": "Rilevare che int produce un nuovo valore e non converte né modifica la variabile testuale di origine.",
+    "target": "S6"
+  },
+  {
+    "id": "F02",
+    "split": "final",
+    "lesson_id": "L2",
+    "mutation": "intentional_consolidation",
+    "kind": "control",
+    "expected": "Rispettare il ripasso esplicito di casi già noti; non qualificare come errore o obbligo di modifica la mancanza di casi inediti. Raccomandazioni facoltative ammesse.",
+    "target": "brief"
+  }
+]

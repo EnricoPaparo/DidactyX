@@ -18,15 +18,16 @@ from didactyx_engine.planning_store import PlanningStore
 from didactyx_engine.lesson_store import LessonStore
 from didactyx_engine.lesson_schema import content_errors
 
+DEFAULT_TITLE='Python · due lezioni collegate · pilota'
 
-def _prepare(data_directory,annual,versions):
+
+def _prepare(data_directory,annual,versions,title=DEFAULT_TITLE):
     store=Store(data_directory);plans=PlanningStore(store);lessons=LessonStore(store)
     # An explicit example title makes repeated installation recognizable.
-    title='Python · due lezioni collegate · pilota'
     if any(p['title']==title for p in store.list_programs()):
         raise ValueError('Il pilota è già presente: nessun programma è stato sovrascritto.')
     program=store.create({'title':title,'class_label':'2ª superiore · classe fittizia',
-        'description':'Esempio inventato su richiesta: variabili, input, conversioni e if/else. Due lezioni complete con esempi, richiami e PDF.',
+        'description':f'Esempio inventato su richiesta: variabili, input, conversioni e if/else. {len({v["lesson_id"] for v in versions})} lezioni complete con esempi, richiami e PDF.',
         'brief':annual['brief']})
     job=plans.new_job(program['id']);plan_id=plans.publish(job['id'],annual['data'])
     mapping={};installed=[]
@@ -44,15 +45,16 @@ def _prepare(data_directory,annual,versions):
     return {'program_id':program['id'],'plan_id':plan_id,'version_ids':installed}
 
 
-def install(data_directory,annual,versions):
+def install(data_directory,annual,versions,title=DEFAULT_TITLE):
+    if not isinstance(title,str) or not title.strip():raise ValueError('Il campione deve avere un titolo.')
     target=Store(data_directory)
     with tempfile.TemporaryDirectory(prefix='didactyx-pilot-') as staging:
-        result=_prepare(staging,annual,versions)
+        result=_prepare(staging,annual,versions,title)
         source=Store(staging)
         tables=['programs','annual_plans','plan_heads','lesson_versions','lesson_heads','planning_jobs']
         with closing(source.connect()) as src,closing(target.connect()) as dst,dst:
             dst.execute('BEGIN IMMEDIATE')
-            if dst.execute('SELECT 1 FROM programs WHERE title=?',('Python · due lezioni collegate · pilota',)).fetchone():
+            if dst.execute('SELECT 1 FROM programs WHERE title=?',(title,)).fetchone():
                 raise ValueError('Il pilota è già presente: nessun programma è stato sovrascritto.')
             for table in tables:
                 for row in src.execute('SELECT * FROM '+table):
@@ -65,7 +67,8 @@ def main():
     parser.add_argument('--data-dir',type=Path,required=True)
     parser.add_argument('--annual',type=Path,required=True)
     parser.add_argument('--lessons',type=Path,nargs='+',required=True)
+    parser.add_argument('--title',default=DEFAULT_TITLE)
     args=parser.parse_args()
-    print(json.dumps(install(args.data_dir,json.loads(args.annual.read_text()),[json.loads(p.read_text()) for p in args.lessons]),ensure_ascii=False))
+    print(json.dumps(install(args.data_dir,json.loads(args.annual.read_text()),[json.loads(p.read_text()) for p in args.lessons],args.title),ensure_ascii=False))
 
 if __name__=='__main__':main()

@@ -1,0 +1,15 @@
+{
+  "input_sha256": "fc868452bfd881357d4cf04a702c2f357a157c826786c6a1217e95e7a1f8dbe6",
+  "prompt_sha256": "4a9afee064858a16c21eb9f14375a0bb7984c9831347298a44377d538b44af33",
+  "result": {
+    "summary": "Codice eseguibile, risultati, spiegazioni e richiami a L1 risultano coerenti con gli obiettivi e i vincoli. Emerge un’incoerenza nella prova presentata come inedita.",
+    "findings": [
+      {
+        "kind": "coherence",
+        "location": "S7, consegna «Prova autonoma con dati completamente nuovi, mai risolti prima»",
+        "description": "I dati 5, 2.5 e 10 sono già presenti in L1-S8 e già risolti nella lezione attuale: S6 riporta spesa 12.5, condizione falsa e messaggio Budget insufficiente. L’attività è quindi un legittimo consolidamento, non un’applicazione a un caso inedito; la risposta può riprodurre una soluzione già incontrata.",
+        "suggestion": "Mantenere i dati qualificando l’attività come ripresa autonoma di un caso già svolto. Se si vuole osservare l’applicazione a dati inediti, scegliere una nuova terna e aggiornare coerentemente soluzione e tabelle del caso C."
+      }
+    ]
+  }
+}

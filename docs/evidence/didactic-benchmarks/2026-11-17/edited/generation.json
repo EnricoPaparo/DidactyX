@@ -1,0 +1,32 @@
+{
+  "method": "Explicit editorial correction, not full workflow regeneration",
+  "changes": [
+    {
+      "lesson_id": "L1",
+      "from_version": 2,
+      "to_version": 3,
+      "blocks_corrected": 1,
+      "notes_corrected": 1
+    },
+    {
+      "lesson_id": "L2",
+      "from_version": 2,
+      "to_version": 3,
+      "blocks_corrected": 2,
+      "notes_corrected": 1
+    },
+    {
+      "lesson_id": "L3",
+      "from_version": 2,
+      "to_version": 3,
+      "blocks_corrected": 2,
+      "notes_corrected": 1
+    }
+  ],
+  "previous_versions_unchanged": true,
+  "all_lesson_dependencies_current": true,
+  "code_checks_unchanged": true,
+  "patches_sha256": "33d5aab14e10188b1896c1e2912081d12c0d2a26358cbc55eca4f8d1ea957b03",
+  "future_generation_prompt_version": "didactic-v2-ae6666449404",
+  "future_author_rules_not_tested_by_full_corpus_regeneration": true
+}

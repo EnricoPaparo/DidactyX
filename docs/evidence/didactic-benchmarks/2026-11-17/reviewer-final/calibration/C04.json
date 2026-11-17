@@ -1,0 +1,15 @@
+{
+  "input_sha256": "e45b56ce3ca35e53302e71126b61a92c0f93c9ff25cf8f0163ded34e985ad938",
+  "prompt_sha256": "eb03028080d8f9df65685f2d32bd563b0d2cb96d24da6b31b1c86fa6eeef9d41",
+  "result": {
+    "summary": "Spiegazioni, conversioni, calcoli, codice ed esecuzioni visibili sono coerenti con gli obiettivi della prima lezione. Non vengono anticipati condizioni, cicli o funzioni definite dagli studenti. L’assenza di sintesi e domande finali rispetta il brief; rimane un’incoerenza nelle note al docente.",
+    "findings": [
+      {
+        "kind": "coherence",
+        "location": "content.teacher_notes[0]",
+        "description": "La scansione prevede ancora «autocontrollo finale 5» e invita a selezionare quesiti per un confronto conclusivo, lasciando gli altri alla rilettura. Questi riferimenti non corrispondono al materiale attuale, che omette deliberatamente sintesi e domande finali, e reintroducono come attività programmata ciò che il docente ha riservato alla propria gestione orale.",
+        "suggestion": "Eliminare i riferimenti all’autocontrollo e ai quesiti non presenti. Redistribuire i cinque minuti nelle attività delle sezioni, mantenendo i 120 minuti complessivi e lasciando l’eventuale confronto orale alla scelta del docente."
+      }
+    ]
+  }
+}

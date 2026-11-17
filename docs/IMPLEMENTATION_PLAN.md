@@ -1,9 +1,9 @@
 # Piano di sviluppo iniziale di DidactyX
 
-- **Data:** 16 novembre 2026
+- **Data:** 17 novembre 2026
 - **Base:** [architettura approvata](ARCHITECTURE.md) e [Project Brief](PROJECT_BRIEF.md)
 - **Piattaforma:** macOS
-- **Stato:** incrementi 1 e 2 implementati; primo traguardo dell'incremento 3 disponibile, da valutare con il docente
+- **Stato:** incrementi 1 e 2 implementati; primo traguardo dell’incremento 3 e benchmark interno su una UDA di tre lezioni completati
 
 Ogni incremento produce un comportamento utilizzabile e verificabile. La priorità è il motore didattico; l'interfaccia cresce nella misura necessaria a usarlo. I criteri seguenti descrivono il completamento del singolo incremento e non riducono il perimetro finale del brief.
 
@@ -37,7 +37,7 @@ Integrare il lettore WebKit e l'export delle lezioni. Verificare formule e rappr
 
 **Primo traguardo:** app 0.3.0, due lezioni Python generate realmente per una seconda superiore fittizia, su scelta delegata dal docente. Workflow e limiti sono in [LESSON_CONTENT.md](LESSON_CONTENT.md); campioni ed evidenze in [evidence/lesson-content/2026-11-16](evidence/lesson-content/2026-11-16/README.md). Sono implementati corpi effettivi precedenti, richiami verificabili, prerequisiti mancanti, più autori con ricomposizione, due revisioni, storico, ripresa, lettore e PDF. La generazione fuori sequenza e il riallineamento sono coperti dai test automatici. Le formule del primo traguardo sono lineari Unicode; TeX e formule complesse richiedono un incremento dedicato.
 
-Il passaggio successivo è valutare con il docente le due lezioni, correggere gli aspetti didattici o editoriali emersi e sviluppare una prima UDA completa prima di considerare consolidata la qualità del motore.
+**Validazione 0.3.2:** su delega del docente sono stati creati rubriche e casi avversi, valutato il campione iniziale, affinati i prompt e rigenerate in ordine tre lezioni, compreso il laboratorio. Il [rapporto](evidence/didactic-benchmarks/2026-11-17/REPORT.md) conserva risultati, controesempi, iterazioni scartate e limiti. La soglia interna è superata nel campione finale, che include correzioni editoriali esplicite conservate separatamente dalla rigenerazione; non è una misura degli apprendimenti. La UDA è completa nei contenuti di lezione, mentre mappe, esercitazioni dedicate e verifiche rimangono nell’incremento 4.
 
 ## 4 Materiali collegati e valutazione
 
@@ -59,6 +59,6 @@ Verificare ripresa delle attività, errori di rete e quota, consultazione senza 
 
 ## Prossima attività
 
-Aprire il pilota nell'app e valutare profondità, chiarezza, ritmo, esempi e continuità delle due lezioni anche nei PDF. Tradurre i riscontri del docente in criteri e miglioramenti concreti del motore. Successivamente estendere il collaudo a una UDA completa e proseguire con l'incremento 4.
+Consultare il campione «Python · UDA 1 · benchmark didattico», con le versioni iniziali, rigenerate e corrette delle tre lezioni. Il prossimo incremento di implementazione è il 4: arricchimento visivo e mappe, poi esercitazioni e verifiche basate sui materiali effettivi. Mantenere il benchmark come regressione e ampliare in seguito la valutazione ad altri contenuti e al riscontro del docente in classe.
 
 Il [punto di ripresa](PROJECT_STATUS.md) raccoglie stato verificato, limiti e comandi operativi.

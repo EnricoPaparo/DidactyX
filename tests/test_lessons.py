@@ -4,6 +4,7 @@ import sys
 import tempfile
 import time
 import unittest
+from unittest.mock import patch
 
 sys.path.insert(0,str(Path(__file__).resolve().parents[1]/'engine'))
 from didactyx_engine.store import Store,DomainError
@@ -45,7 +46,9 @@ class Factory:
                 ctx=inputs['context']
                 if schema==PART:
                     v=content(ctx);return {'sections':[{**v['sections'][0],'id':i} for i in inputs['assigned_section_ids']]}
-                if schema==REVIEW:return {'summary':'Revisione completata','findings':[]}
+                if schema==REVIEW:
+                    factory.review_input=deepcopy(inputs)
+                    return {'summary':'Revisione completata','findings':[]}
                 if 'proposal' in inputs:return deepcopy(inputs['proposal'])
                 v=content(ctx)
                 if 'contributions' in inputs:v['sections']=[s for p in inputs['contributions'] for s in p['sections']]
@@ -106,6 +109,8 @@ class LessonTests(unittest.TestCase):
         self.assertEqual(wait_job(self.manager,job['id'])['status'],'completed')
         self.assertEqual(before,self.manager.store.head(self.plan_id,'L1'))
         self.assertIsNotNone(self.manager.store.state(self.program['id'],self.plan_id,'L1')['latest_review'])
+        from didactyx_engine.lesson_render import visible_examples
+        self.assertEqual(self.factory.review_input['visible_examples'],visible_examples(before['data'],before['checks']))
     def test_resume_does_not_publish_first_lesson_twice(self):
         self.factory.fail_at=6
         job=self.manager.start({'program_id':self.program['id'],'plan_id':self.plan_id,'lesson_ids':['L1','L2']})
@@ -120,6 +125,15 @@ class LessonTests(unittest.TestCase):
         self.assertEqual(wait_job(self.manager,job['id'])['status'],'failed')
         p=PlanningStore(self.store);j=p.new_job(self.program['id']);p.publish(j['id'],fixture());time.sleep(.03)
         with self.assertRaises(DomainError):self.manager.resume(job['id'])
+    def test_resume_refuses_a_different_prompt_contract(self):
+        self.factory.fail_at=2
+        job=self.manager.start({'program_id':self.program['id'],'plan_id':self.plan_id,'lesson_ids':['L1']})
+        self.assertEqual(wait_job(self.manager,job['id'])['status'],'failed')
+        time.sleep(.03)
+        with patch('didactyx_engine.lessons.PROMPT_VERSION','different-contract'):
+            with self.assertRaisesRegex(DomainError,'istruzioni didattiche sono cambiate'):
+                self.manager.resume(job['id'])
+        self.assertIsNone(self.manager.store.head(self.plan_id,'L1'))
     def test_imaginary_reference_is_rejected(self):
         self.generate(['L1']);ctx=self.factory.contexts[0];v=content(ctx)
         v['continuity']=[{'version_id':'inventato','section_id':'s1','description':'Richiamo inesistente'}]

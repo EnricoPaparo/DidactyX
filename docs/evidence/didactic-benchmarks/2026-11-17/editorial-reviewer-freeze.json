@@ -1,0 +1,8 @@
+{
+  "reviewer_prompt_sha256": "9138259f69ef1742916888ac2a5bc11e453efda5ad6af22f2c9a35c66a0ef2a8",
+  "cases_sha256": "5bd62345e1bd8a9c8be5c67a147c01e8e9c073835fc86dd7ec196822d2db1f34",
+  "development_case": "E01, emerso nella prima rigenerazione e mancato dal revisore consultivo precedente.",
+  "new_final_cases": "F01 e F02 fissati prima di eseguire il nuovo candidato.",
+  "old_H_cases": "Rieseguiti come regressioni; gli esiti originali sono già noti.",
+  "production_generation_prompts_unchanged": true
+}

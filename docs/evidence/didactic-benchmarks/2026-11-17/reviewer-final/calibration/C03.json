@@ -1,0 +1,15 @@
+{
+  "input_sha256": "aaf44d9589a5d7a746bb4c02e13b5f4b6d022829d146e2759311f5ed5be595cb",
+  "prompt_sha256": "eb03028080d8f9df65685f2d32bd563b0d2cb96d24da6b31b1c86fa6eeef9d41",
+  "result": {
+    "summary": "Confronti, selezione, indentazione e risultati riportati sono corretti nei casi proposti. La continuità con L1 è effettiva e i tempi sommano 120 minuti teorici. Emerge una criticità sostanziale nella prova dichiarata inedita: la risposta è già visibile prima della consegna.",
+    "findings": [
+      {
+        "kind": "didactic",
+        "location": "S7, consegna «Prova autonoma con dati completamente nuovi, mai risolti prima»",
+        "description": "La terna 5, 2.5 e 10 non è nuova: compare già in L1, S8. Inoltre, in questa lezione, S6 mostra prima della consegna sia l’esecuzione completa con «Budget insufficiente» e «Controllo terminato», sia la spiegazione della condizione falsa. Le esecuzioni sono effettivamente visibili subito dopo il codice, come conferma visible_examples. L’attività è quindi un consolidamento su un caso già risolto, non l’applicazione inedita annunciata; la risposta corretta non consente di distinguere il trasferimento autonomo dalla ripresa dell’esempio.",
+        "suggestion": "Se si mantiene questa terna, presentare l’attività come ripasso di un caso noto. Se si vuole conservare la finalità di applicazione inedita, scegliere dati non già risolti e mostrarne esecuzione, tabella e spiegazione soltanto nella soluzione successiva alla consegna, lasciando prima i soli esempi modellati."
+      }
+    ]
+  }
+}

@@ -1,0 +1,162 @@
+[
+  {
+    "target": "L1",
+    "scores_by_judge": {
+      "C1": [
+        4,
+        4
+      ],
+      "C2": [
+        4,
+        4
+      ],
+      "C3": [
+        4,
+        4
+      ],
+      "C4": [
+        3,
+        3
+      ],
+      "C5": [
+        3,
+        3
+      ],
+      "C6": [
+        4,
+        3
+      ]
+    },
+    "minimum_per_criterion": {
+      "C1": 4,
+      "C2": 4,
+      "C3": 4,
+      "C4": 3,
+      "C5": 3,
+      "C6": 3
+    },
+    "weighted_minimum": 90.0,
+    "critical_findings": 0,
+    "meets_internal_threshold": true
+  },
+  {
+    "target": "L2",
+    "scores_by_judge": {
+      "C1": [
+        4,
+        4
+      ],
+      "C2": [
+        4,
+        4
+      ],
+      "C3": [
+        4,
+        4
+      ],
+      "C4": [
+        2,
+        2
+      ],
+      "C5": [
+        3,
+        3
+      ],
+      "C6": [
+        4,
+        3
+      ]
+    },
+    "minimum_per_criterion": {
+      "C1": 4,
+      "C2": 4,
+      "C3": 4,
+      "C4": 2,
+      "C5": 3,
+      "C6": 3
+    },
+    "weighted_minimum": 86.25,
+    "critical_findings": 0,
+    "meets_internal_threshold": false
+  },
+  {
+    "target": "L3",
+    "scores_by_judge": {
+      "C1": [
+        4,
+        4
+      ],
+      "C2": [
+        4,
+        4
+      ],
+      "C3": [
+        4,
+        4
+      ],
+      "C4": [
+        2,
+        2
+      ],
+      "C5": [
+        3,
+        3
+      ],
+      "C6": [
+        4,
+        3
+      ]
+    },
+    "minimum_per_criterion": {
+      "C1": 4,
+      "C2": 4,
+      "C3": 4,
+      "C4": 2,
+      "C5": 3,
+      "C6": 3
+    },
+    "weighted_minimum": 86.25,
+    "critical_findings": 0,
+    "meets_internal_threshold": false
+  },
+  {
+    "target": "UDA",
+    "scores_by_judge": {
+      "C1": [
+        4,
+        4
+      ],
+      "C2": [
+        4,
+        4
+      ],
+      "C3": [
+        4,
+        4
+      ],
+      "C4": [
+        2,
+        2
+      ],
+      "C5": [
+        3,
+        3
+      ],
+      "C6": [
+        4,
+        3
+      ]
+    },
+    "minimum_per_criterion": {
+      "C1": 4,
+      "C2": 4,
+      "C3": 4,
+      "C4": 2,
+      "C5": 3,
+      "C6": 3
+    },
+    "weighted_minimum": 86.25,
+    "critical_findings": 0,
+    "meets_internal_threshold": false
+  }
+]

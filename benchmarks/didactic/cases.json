@@ -1,0 +1,74 @@
+[
+  {
+    "id": "C01",
+    "split": "calibration",
+    "lesson_id": "L1",
+    "mutation": "input_numeric",
+    "kind": "fault",
+    "expected": "Rilevare come errore la falsa conversione automatica di input in numero e correggerla in restituzione di stringa.",
+    "target": "S5"
+  },
+  {
+    "id": "C02",
+    "split": "calibration",
+    "lesson_id": "L2",
+    "mutation": "invented_prior",
+    "kind": "fault",
+    "expected": "Rilevare che liste e cicli attribuiti a L1 non compaiono nel corpo effettivo precedente; eliminare la ripresa inventata.",
+    "target": "S1"
+  },
+  {
+    "id": "C03",
+    "split": "calibration",
+    "lesson_id": "L2",
+    "mutation": "repeated_autonomy",
+    "kind": "fault",
+    "expected": "Rilevare che la presunta prova autonoma usa esattamente il caso già risolto; chiedere una variazione nuova prima della soluzione.",
+    "target": "S7"
+  },
+  {
+    "id": "C04",
+    "split": "calibration",
+    "lesson_id": "L1",
+    "mutation": "teacher_omits_closing",
+    "kind": "control",
+    "expected": "Non trattare come errore l’assenza di sintesi e domande finali esplicitamente richiesta dal docente. Ammesse raccomandazioni consultive.",
+    "target": "brief"
+  },
+  {
+    "id": "H01",
+    "split": "holdout",
+    "lesson_id": "L1",
+    "mutation": "assignment_equality",
+    "kind": "fault",
+    "expected": "Rilevare la definizione falsa di = come confronto di uguaglianza, distinguendola dall’assegnazione.",
+    "target": "S2"
+  },
+  {
+    "id": "H02",
+    "split": "holdout",
+    "lesson_id": "L2",
+    "mutation": "exclusive_boundary",
+    "kind": "fault",
+    "expected": "Rilevare che il programma completo esclude erroneamente il budget esatto nonostante i suoi output di prova siano coerenti con il codice. Ricondurre il confronto a <=.",
+    "target": "S6"
+  },
+  {
+    "id": "H03",
+    "split": "holdout",
+    "lesson_id": "L2",
+    "mutation": "generated_means_mastered",
+    "kind": "fault",
+    "expected": "Rilevare l’inferenza infondata che la generazione di L1 provi l’apprendimento di tutti gli studenti; richiedere un riscontro effettivo.",
+    "target": "S1"
+  },
+  {
+    "id": "H04",
+    "split": "holdout",
+    "lesson_id": "L1",
+    "mutation": "intentional_errors",
+    "kind": "control",
+    "expected": "Non segnalare come errori disciplinari da rimuovere i frammenti di S9 dichiarati errati e illustrativi con relativa spiegazione.",
+    "target": "S9"
+  }
+]

@@ -1,0 +1,28 @@
+{
+  "status": "rejected_before_promotion",
+  "lesson_id": "L1",
+  "section_id": "S8",
+  "finding": "I casi del programma completo, stampati prima delle consegne, includono già input e output delle successive prove guidata e individuale.",
+  "evidence": {
+    "preceding_code_inputs": [
+      [
+        "6",
+        "1.5",
+        "11"
+      ],
+      [
+        "7",
+        "0.5",
+        "5"
+      ],
+      [
+        "8",
+        "1.5",
+        "20"
+      ]
+    ],
+    "following_task": "Tentativo con meno aiuti: per 7 quaderni da 0,50 euro e un budget di 5 euro, scrivi individualmente i quattro messaggi finali."
+  },
+  "cause": "Le istruzioni non esplicitano sufficientemente che tutti i casi associati al codice vengono resi visibili nello stesso punto del materiale.",
+  "response": "Esplicitare la visibilità e l’ordine dei casi agli autori e ai revisori automatici. Le istruzioni del revisore consultivo restano invariate."
+}

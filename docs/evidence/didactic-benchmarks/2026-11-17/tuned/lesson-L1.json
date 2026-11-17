@@ -1,0 +1,1168 @@
+{
+  "id": "14eaa4f3-bb10-4bcb-8ea7-a12825fedf81",
+  "program_id": "7db4adad-bc9d-4d72-a79d-a959d0b3a038",
+  "plan_id": "5999f10a-034d-420f-8250-36e8f03debbd",
+  "lesson_id": "L1",
+  "version": 2,
+  "created_at": "2026-11-17T10:30:27.193Z",
+  "brief": "",
+  "data": {
+    "title": "Variabili, input e conversioni",
+    "lead": "Come possiamo far calcolare a Python il costo di un acquisto di quaderni? In questa lezione teorica di 2 ore partiremo dai dati del problema, impareremo a rappresentarli e acquisirli, li convertiremo nei numeri necessari e calcoleremo la spesa. Leggeremo gli esempi e seguiremo le istruzioni su carta, senza attività al computer: non servono conoscenze precedenti di programmazione.",
+    "objective_ids": [
+      "U1-O1",
+      "U1-O2",
+      "U1-O3"
+    ],
+    "sections": [
+      {
+        "id": "S1",
+        "title": "Il problema: acquistare quaderni con un budget",
+        "objective_ids": [
+          "U1-O2",
+          "U1-O3"
+        ],
+        "blocks": [
+          {
+            "kind": "paragraph",
+            "text": "Vuoi acquistare alcuni quaderni, tutti dello stesso prezzo. Per descrivere l'acquisto servono tre informazioni: quanti quaderni vuoi, quanto costa ciascun quaderno e quanto denaro hai a disposizione. Il numero dei quaderni è la quantità; il costo di un singolo quaderno è il prezzo unitario; il denaro disponibile è il budget."
+          },
+          {
+            "kind": "example",
+            "title": "Dalle informazioni alla spesa",
+            "steps": [
+              "Vuoi acquistare 4 quaderni: la quantità è 4.",
+              "Ogni quaderno costa 2,50 euro: questo è il prezzo unitario.",
+              "Hai a disposizione 12 euro: questo è il budget.",
+              "Il costo complessivo, chiamato spesa, si ottiene moltiplicando 4 per 2,50 euro: il risultato è 10 euro."
+            ],
+            "conclusion": "Quantità, prezzo unitario e budget sono dati di partenza. La spesa è invece un risultato da ricavare."
+          },
+          {
+            "kind": "formula",
+            "expression": "spesa = quantità × prezzo unitario",
+            "explanation": "La relazione descrive il calcolo per quaderni tutti dello stesso prezzo. Il segno × indica la moltiplicazione; qui = esprime una relazione matematica. Distingueremo questa scrittura dall'assegnazione in Python."
+          },
+          {
+            "kind": "paragraph",
+            "text": "Il budget non è un fattore della moltiplicazione: il denaro disponibile non modifica il costo dei quaderni. Quattro quaderni da 2,50 euro costano 10 euro qualunque sia il budget. In questa lezione acquisiremo e mostreremo anche il budget, ma non lo useremo per calcolare la spesa e non lo modificheremo."
+          },
+          {
+            "kind": "definition",
+            "term": "Programma",
+            "text": "Una sequenza di istruzioni che il computer esegue. Python è il linguaggio con cui esprimeremo queste istruzioni."
+          },
+          {
+            "kind": "paragraph",
+            "text": "Il nostro programma riceverà i dati, li preparerà per il calcolo, svolgerà la moltiplicazione e mostrerà le informazioni. Non chiederà alla persona di inserire la spesa già calcolata: vogliamo affidare proprio quel lavoro al computer."
+          },
+          {
+            "kind": "table",
+            "headers": [
+              "Parte del lavoro",
+              "Significato",
+              "Nel nostro programma"
+            ],
+            "rows": [
+              [
+                "Ingresso",
+                "Dati forniti al programma",
+                "Quantità, prezzo unitario e budget"
+              ],
+              [
+                "Elaborazione",
+                "Lavoro svolto sui dati",
+                "Preparazione dei numeri e calcolo della spesa"
+              ],
+              [
+                "Uscita",
+                "Informazioni comunicate dal programma",
+                "Dati acquisiti e spesa calcolata"
+              ]
+            ]
+          },
+          {
+            "kind": "paragraph",
+            "text": "Nel nostro modello la quantità è un numero intero non negativo: zero, uno, due o più quaderni. Non acquistiamo frazioni di quaderno. Anche prezzo e budget sono non negativi, cioè possono essere zero oppure positivi. Useremo importi piccoli, in euro interi o multipli di 0,50 euro, per rendere controllabili i calcoli."
+          },
+          {
+            "kind": "callout",
+            "title": "La scrittura dei numeri",
+            "text": "In italiano scriviamo 2,50 euro. Nel codice Python e nelle risposte numeriche richieste dal programma useremo invece il punto: 2.5. Non aggiungeremo euro o € alla risposta numerica: sarà la domanda a indicare l'unità di misura."
+          },
+          {
+            "kind": "paragraph",
+            "text": "Prima di continuare, prova a spiegare quali dati deve fornire la persona e quale risultato deve ricavare il programma."
+          },
+          {
+            "kind": "example",
+            "title": "Confronta la tua spiegazione",
+            "steps": [
+              "La persona fornisce quantità, prezzo unitario e budget.",
+              "Il programma ricava la spesa moltiplicando quantità e prezzo."
+            ],
+            "conclusion": "Chiedere anche la spesa significherebbe far eseguire alla persona proprio il calcolo che vogliamo affidare al programma."
+          }
+        ]
+      },
+      {
+        "id": "S2",
+        "title": "Variabili e assegnazione: associare nomi e valori",
+        "objective_ids": [
+          "U1-O1",
+          "U1-O3"
+        ],
+        "blocks": [
+          {
+            "kind": "paragraph",
+            "text": "Per utilizzare un dato nelle istruzioni successive dobbiamo poterlo riconoscere. Possiamo associare un nome al suo valore: per esempio, il nome quantita al numero dei quaderni."
+          },
+          {
+            "kind": "definition",
+            "term": "Variabile",
+            "text": "Un nome associato a un valore. Nelle istruzioni possiamo usare il nome per ottenere il valore attualmente associato."
+          },
+          {
+            "kind": "paragraph",
+            "text": "In Python l'istruzione quantita = 4 associa il nome quantita al valore 4. Il simbolo = indica un'assegnazione: prima si considera il valore a destra, poi lo si associa al nome a sinistra. Non è un'uguaglianza matematica da dimostrare, ma un'azione da eseguire."
+          },
+          {
+            "kind": "paragraph",
+            "text": "Sceglieremo nomi significativi: quantita, prezzo_unitario, budget e spesa. Nei nostri nomi non inseriamo spazi. Il trattino basso in prezzo_unitario separa visivamente le due parole. Scriviamo quantita senza accento per mantenere una convenzione semplice e uniforme."
+          },
+          {
+            "kind": "paragraph",
+            "text": "Python distingue maiuscole e minuscole: quantita e Quantita sono nomi diversi. Useremo sempre la stessa scrittura in minuscolo. Un nome comprensibile aiuta chi legge, ma non esegue operazioni da solo: chiamare una variabile spesa non basta a far calcolare un costo."
+          },
+          {
+            "kind": "paragraph",
+            "text": "Le istruzioni dei nostri primi programmi vengono eseguite dall'alto verso il basso. Una nuova assegnazione allo stesso nome aggiorna il valore associato. Osserva questa sequenza."
+          },
+          {
+            "kind": "code",
+            "language": "python",
+            "code": "quantita = 4\nquantita = 6",
+            "explanation": "La prima istruzione associa quantita a 4. La seconda associa lo stesso nome a 6. Alla fine il valore attuale è 6: non viene effettuata una somma. Il programma non mostra nulla, perché assegnare un valore e visualizzarlo sono operazioni diverse.",
+            "execution": "check",
+            "cases": [
+              {
+                "stdin": [],
+                "stdout": ""
+              }
+            ]
+          },
+          {
+            "kind": "table",
+            "headers": [
+              "Momento",
+              "Nome",
+              "Valore attuale"
+            ],
+            "rows": [
+              [
+                "Dopo la prima istruzione",
+                "quantita",
+                "4"
+              ],
+              [
+                "Dopo la seconda istruzione",
+                "quantita",
+                "6"
+              ]
+            ]
+          },
+          {
+            "kind": "paragraph",
+            "text": "La tabella è una traccia di esecuzione: annota ciò che accade mentre seguiamo le istruzioni. Le righe descrivono momenti diversi, non due valori attuali presenti contemporaneamente nella variabile. Quando incontriamo una nuova assegnazione allo stesso nome, aggiorniamo la traccia."
+          },
+          {
+            "kind": "paragraph",
+            "text": "Prova ora su carta: dopo l'assegnazione quantita = 5 e poi quantita = 2, quale valore userà un'istruzione successiva che legge quantita? Spiega perché non userà 7."
+          },
+          {
+            "kind": "example",
+            "title": "Soluzione ragionata",
+            "steps": [
+              "Dopo la prima assegnazione il valore è 5.",
+              "La seconda assegnazione associa quantita al valore 2.",
+              "Un'istruzione successiva legge quindi 2."
+            ],
+            "conclusion": "Non è stata scritta una somma: assegnare due volte non significa sommare i valori."
+          },
+          {
+            "kind": "paragraph",
+            "text": "Una variabile che introduciamo deve ricevere un valore prima dell'istruzione che la usa. Per calcolare la spesa, quantità e prezzo dovranno quindi essere già disponibili. Python non anticipa un'assegnazione scritta più avanti."
+          }
+        ]
+      },
+      {
+        "id": "S3",
+        "title": "Testi, interi e numeri decimali",
+        "objective_ids": [
+          "U1-O1"
+        ],
+        "blocks": [
+          {
+            "kind": "paragraph",
+            "text": "Un dato ha un valore e un tipo. Il tipo distingue categorie di dati e determina come possono essere utilizzati nelle operazioni. In questa lezione incontriamo tre tipi: int, float e str."
+          },
+          {
+            "kind": "paragraph",
+            "text": "int rappresenta numeri interi, come 0, 4 e 12. È adatto alla quantità di quaderni, perché nel nostro problema non acquistiamo parti di un quaderno. float rappresenta numeri in virgola mobile: lo useremo per importi che possono avere una parte decimale, come 2.5. Anche 12.0 è un float: lo zero dopo il punto non lo trasforma in un int."
+          },
+          {
+            "kind": "paragraph",
+            "text": "str rappresenta testi, chiamati anche stringhe. Per scrivere direttamente una stringa nel codice la racchiudiamo tra virgolette. Nei nostri esempi useremo le virgolette doppie: \"quaderni\". Le virgolette delimitano il testo, cioè indicano dove comincia e dove finisce; non fanno parte del suo valore."
+          },
+          {
+            "kind": "table",
+            "headers": [
+              "Tipo",
+              "Che cosa rappresenta",
+              "Esempi",
+              "Uso nella lezione"
+            ],
+            "rows": [
+              [
+                "int",
+                "Numeri interi",
+                "0; 4; 12",
+                "Quantità"
+              ],
+              [
+                "float",
+                "Numeri in virgola mobile",
+                "2.5; 10.0; 12.0",
+                "Prezzo, budget e spesa"
+              ],
+              [
+                "str",
+                "Testi",
+                "\"quaderni\"; \"4\"; \"2.5\"",
+                "Messaggi e risposte inizialmente acquisite"
+              ]
+            ]
+          },
+          {
+            "kind": "paragraph",
+            "text": "Confronta 4 e \"4\". Il primo è un numero intero; il secondo è un testo formato da una cifra. Allo stesso modo, 2.5 è un numero, mentre \"2.5\" è un testo. Le cifre dentro una stringa non diventano automaticamente numeri. Il numero intero 12 e il float 12.0, invece, rappresentano qui la stessa quantità numerica, ma hanno tipi diversi."
+          },
+          {
+            "kind": "example",
+            "title": "Il tipo cambia il significato dell'operazione",
+            "steps": [
+              "Con due numeri, 4 + 2 esegue una somma e produce il numero 6.",
+              "Con due stringhe, \"4\" + \"2\" unisce i testi e produce la stringa \"42\".",
+              "L'unione di stringhe si chiama concatenazione. Il risultato contiene cifre, ma rimane un testo."
+            ],
+            "conclusion": "Prima di fare calcoli dobbiamo avere dati numerici, non soltanto testi che sembrano numeri."
+          },
+          {
+            "kind": "paragraph",
+            "text": "Prima di leggere la soluzione, assegna un tipo a ciascun valore: 8, \"8\", 8.0. Poi prevedi il risultato di \"3\" + \"2\" e quello di 3 + 2, spiegando la differenza."
+          },
+          {
+            "kind": "example",
+            "title": "Soluzione ragionata",
+            "steps": [
+              "8 è un int; \"8\" è una str; 8.0 è un float.",
+              "\"3\" + \"2\" produce il testo \"32\", perché unisce due stringhe.",
+              "3 + 2 produce l'intero 5, perché somma due numeri."
+            ],
+            "conclusion": "Non basta osservare le cifre: dobbiamo riconoscere anche il tipo dei dati su cui agisce l'operazione."
+          },
+          {
+            "kind": "paragraph",
+            "text": "Il tipo non contiene automaticamente l'unità di misura. Il valore 2.5 non significa da solo euro: il suo significato dipende dal problema, dal nome della variabile e dai messaggi che lo accompagnano."
+          },
+          {
+            "kind": "callout",
+            "title": "Un modello per imparare",
+            "text": "Molti numeri decimali sono rappresentati da float in modo approssimato. Useremo importi piccoli, interi o multipli di 0,50 euro, per mantenere semplici e controllabili i calcoli. Questo programma serve a imparare e non è una soluzione generale per qualsiasi calcolo monetario reale."
+          }
+        ]
+      },
+      {
+        "id": "S4",
+        "title": "Mostrare testi e valori con print",
+        "objective_ids": [
+          "U1-O1",
+          "U1-O2",
+          "U1-O3"
+        ],
+        "blocks": [
+          {
+            "kind": "paragraph",
+            "text": "Un'assegnazione prepara un valore, ma non lo mostra. Per visualizzare informazioni useremo print, una funzione predefinita di Python: è già disponibile e non dobbiamo costruirla noi."
+          },
+          {
+            "kind": "definition",
+            "term": "Chiamata e argomenti",
+            "text": "Chiamare una funzione significa chiederle di svolgere il suo compito. Si scrive il nome seguito dalle parentesi tonde. Le informazioni fornite dentro le parentesi si chiamano argomenti."
+          },
+          {
+            "kind": "paragraph",
+            "text": "In print(\"Quaderni\"), print è il nome della funzione e \"Quaderni\" è l'argomento. Le parentesi delimitano la chiamata; le virgolette delimitano il testo. Ogni apertura deve avere la propria chiusura."
+          },
+          {
+            "kind": "paragraph",
+            "text": "In print(quantita), il nome quantita non è tra virgolette: Python legge il valore associato a quel nome e lo mostra. print(\"quantita\") mostra invece proprio la parola quantita. Per mostrare il valore di una variabile dobbiamo quindi scriverne il nome senza virgolette."
+          },
+          {
+            "kind": "paragraph",
+            "text": "Possiamo fornire più argomenti separandoli con una virgola. In print(\"Quantita:\", quantita), il primo argomento è un'etichetta testuale e il secondo è il valore della variabile. Normalmente print inserisce uno spazio tra gli argomenti e va a capo alla fine. La virgola separa gli argomenti: non viene stampata e non indica una parte decimale."
+          },
+          {
+            "kind": "paragraph",
+            "text": "I due punti dentro \"Quantita:\" sono semplici caratteri del messaggio: aiutano a separare visivamente l'etichetta dal valore. Anche gli spazi all'interno di una stringa fanno parte del messaggio; il divieto di inserire spazi nei nomi delle nostre variabili non riguarda i testi."
+          },
+          {
+            "kind": "code",
+            "language": "python",
+            "code": "quantita = 4\nprint(\"Quaderni\")\nprint(quantita)\nprint(\"Quantita:\", quantita)",
+            "explanation": "L'assegnazione iniziale non produce una riga visibile. Le tre chiamate a print producono tre righe: un testo, il valore della variabile e un'etichetta seguita da quel valore. L'etichetta rende riconoscibile il significato del numero.",
+            "execution": "check",
+            "cases": [
+              {
+                "stdin": [],
+                "stdout": "Quaderni\n4\nQuantita: 4\n"
+              }
+            ]
+          },
+          {
+            "kind": "paragraph",
+            "text": "Prevedi che cosa cambierebbe nell'uscita sostituendo soltanto la prima istruzione con quantita = 6. Devi modificare anche l'ultima chiamata a print? Formula la previsione prima di leggere la spiegazione."
+          },
+          {
+            "kind": "example",
+            "title": "Soluzione ragionata",
+            "steps": [
+              "La prima riga rimarrebbe Quaderni, perché è un testo scritto direttamente nel programma.",
+              "La seconda riga diventerebbe 6.",
+              "La terza diventerebbe Quantita: 6."
+            ],
+            "conclusion": "Non occorre modificare print: il nome senza virgolette fa leggere il valore attuale della variabile. L'etichetta, invece, rimane uguale."
+          }
+        ]
+      },
+      {
+        "id": "S5",
+        "title": "Chiedere un dato con input",
+        "objective_ids": [
+          "U1-O2",
+          "U1-O3"
+        ],
+        "blocks": [
+          {
+            "kind": "paragraph",
+            "text": "Finora abbiamo scritto la quantità direttamente nel programma. Per cambiarla avremmo dovuto modificare il codice. Possiamo invece chiedere il dato alla persona durante l'esecuzione: a questo serve input, un'altra funzione predefinita."
+          },
+          {
+            "kind": "paragraph",
+            "text": "La chiamata input(\"Quanti quaderni? \") mostra la domanda, attende una risposta e la acquisisce quando viene premuto Invio. Il messaggio della richiesta si chiama prompt. Lo spazio dopo il punto interrogativo separa visivamente la domanda dalla risposta digitata."
+          },
+          {
+            "kind": "definition",
+            "term": "Restituire un valore",
+            "text": "Rendere disponibile un risultato all'istruzione che contiene una chiamata. input restituisce il testo inserito, senza il carattere finale che conclude la riga."
+          },
+          {
+            "kind": "paragraph",
+            "text": "Nell'istruzione quantita_testo = input(\"Quanti quaderni? \"), viene prima eseguita la chiamata a destra: il programma chiede il dato e attende. Quando la persona risponde, il testo restituito viene associato a quantita_testo. L'assegnazione si completa quindi dopo la risposta."
+          },
+          {
+            "kind": "callout",
+            "title": "Il passaggio da non saltare",
+            "text": "input restituisce una stringa anche quando digitiamo soltanto cifre. Digitando 4 otteniamo il testo \"4\", non l'intero 4. Il suffisso _testo aiuta chi legge a ricordarlo, ma è soltanto una scelta nel nome: non determina il tipo del dato."
+          },
+          {
+            "kind": "paragraph",
+            "text": "Nelle uscite degli esempi riportiamo soltanto ciò che il programma scrive, senza la digitazione della persona. Poiché input non va a capo dopo la domanda, in questa rappresentazione il messaggio successivo compare sulla stessa riga. Una schermata interattiva può mostrare anche la risposta digitata e l'andata a capo dovuta a Invio: quella visualizzazione non fa parte dei messaggi scritti dal programma."
+          },
+          {
+            "kind": "code",
+            "language": "python",
+            "code": "quantita_testo = input(\"Quanti quaderni? \")\nprint(\"Hai scritto:\", quantita_testo)",
+            "explanation": "La prima istruzione acquisisce e conserva la risposta come testo. La seconda ne mostra il contenuto dopo l'etichetta. Il 4 presente nel messaggio Hai scritto: 4 è prodotto da print, che legge la stringa conservata nella variabile.",
+            "execution": "check",
+            "cases": [
+              {
+                "stdin": [
+                  "4"
+                ],
+                "stdout": "Quanti quaderni? Hai scritto: 4\n"
+              }
+            ]
+          },
+          {
+            "kind": "example",
+            "title": "Seguire l'acquisizione",
+            "steps": [
+              "Il programma mostra Quanti quaderni? e attende.",
+              "La persona digita 4 e preme Invio.",
+              "input restituisce la stringa \"4\".",
+              "L'assegnazione associa quella stringa a quantita_testo.",
+              "print legge il valore di quantita_testo e ne mostra il contenuto dopo l'etichetta."
+            ],
+            "conclusion": "Nessun passaggio ha ancora trasformato il testo in numero."
+          },
+          {
+            "kind": "paragraph",
+            "text": "Quando rispondi alla domanda digiti 4, senza virgolette. Le virgolette servono nel codice per delimitare una stringa scritta direttamente e nelle nostre spiegazioni per distinguere un testo da un numero."
+          },
+          {
+            "kind": "paragraph",
+            "text": "Prova a spiegare questo apparente contrasto: sullo schermo compare una cifra, ma il dato conservato può essere ancora un testo. Come è possibile?"
+          },
+          {
+            "kind": "example",
+            "title": "Soluzione ragionata",
+            "steps": [
+              "print mostra il contenuto della stringa senza aggiungere le virgolette delimitatrici.",
+              "Vedere 4 sullo schermo non dimostra quindi che la variabile contenga un int.",
+              "Per riconoscere il tipo seguiamo le istruzioni: qui il valore proviene direttamente da input."
+            ],
+            "conclusion": "Il dato conservato in quantita_testo è una str, anche se il suo contenuto è una cifra."
+          }
+        ]
+      },
+      {
+        "id": "S6",
+        "title": "Convertire il testo nei numeri necessari",
+        "objective_ids": [
+          "U1-O1",
+          "U1-O2",
+          "U1-O3"
+        ],
+        "blocks": [
+          {
+            "kind": "paragraph",
+            "text": "Per moltiplicare quantità e prezzo ci servono valori numerici. Dobbiamo ricavarli dai testi acquisiti con input."
+          },
+          {
+            "kind": "definition",
+            "term": "Conversione",
+            "text": "Un'operazione che produce da un dato un valore del tipo necessario."
+          },
+          {
+            "kind": "paragraph",
+            "text": "I nomi int e float indicano i tipi già incontrati e vengono usati anche nelle chiamate di conversione. int(\"4\") restituisce l'intero 4. float(\"2.5\") restituisce il float 2.5. Anche float(\"12\") è valido e restituisce 12.0: per questa conversione il testo non deve necessariamente contenere un punto."
+          },
+          {
+            "kind": "paragraph",
+            "text": "Manteniamo acquisizione e conversione su righe separate. Prima otteniamo il testo; poi ricaviamo il numero. Nell'istruzione quantita = int(quantita_testo), int riceve il valore della variabile quantita_testo. Non mettiamo virgolette intorno al nome, perché vogliamo usare il suo contenuto, non la parola quantita_testo."
+          },
+          {
+            "kind": "paragraph",
+            "text": "La conversione produce un valore numerico e non modifica il testo conservato nella prima variabile. Possiamo quindi avere quantita_testo associata alla stringa \"4\" e quantita associata all'intero 4. Sono due nomi distinti, associati a valori di tipo diverso."
+          },
+          {
+            "kind": "code",
+            "language": "python",
+            "code": "quantita_testo = input(\"Quanti quaderni? \")\nquantita = int(quantita_testo)\nprezzo_testo = input(\"Prezzo di un quaderno in euro: \")\nprezzo_unitario = float(prezzo_testo)\nprint(\"Quantita:\", quantita)\nprint(\"Prezzo unitario in euro:\", prezzo_unitario)",
+            "explanation": "La prima coppia di istruzioni acquisisce e converte la quantità. La seconda fa lo stesso per il prezzo. Le ultime due istruzioni mostrano i numeri ottenuti. Usiamo int per una quantità intera e float per un prezzo che può avere una parte decimale.",
+            "execution": "check",
+            "cases": [
+              {
+                "stdin": [
+                  "4",
+                  "2.5"
+                ],
+                "stdout": "Quanti quaderni? Prezzo di un quaderno in euro: Quantita: 4\nPrezzo unitario in euro: 2.5\n"
+              }
+            ]
+          },
+          {
+            "kind": "table",
+            "headers": [
+              "Passaggio",
+              "Nome",
+              "Valore",
+              "Tipo"
+            ],
+            "rows": [
+              [
+                "Acquisizione della quantità",
+                "quantita_testo",
+                "\"4\"",
+                "str"
+              ],
+              [
+                "Conversione della quantità",
+                "quantita",
+                "4",
+                "int"
+              ],
+              [
+                "Acquisizione del prezzo",
+                "prezzo_testo",
+                "\"2.5\"",
+                "str"
+              ],
+              [
+                "Conversione del prezzo",
+                "prezzo_unitario",
+                "2.5",
+                "float"
+              ]
+            ]
+          },
+          {
+            "kind": "paragraph",
+            "text": "Nella traccia usiamo le virgolette per distinguere i testi dai numeri. Le variabili che contengono i testi restano disponibili: le chiamate di conversione non le hanno modificate."
+          },
+          {
+            "kind": "paragraph",
+            "text": "Per il budget procederemo come per il prezzo: acquisizione del testo e conversione con float. Potremo così rappresentare sia 12 euro sia 12,50 euro, inserendoli rispettivamente come 12 e 12.5."
+          },
+          {
+            "kind": "paragraph",
+            "text": "Il formato della risposta deve essere adatto alla conversione. Per una quantità possiamo inserire 4, ma non quattro o 4.0. Per un prezzo possiamo inserire 2, 2.5 oppure 2.50. Le ultime due scritture producono lo stesso valore numerico: una normale chiamata a print mostra 2.5, senza aggiungere automaticamente una seconda cifra decimale. Non aggiungiamo euro o € alla risposta."
+          },
+          {
+            "kind": "paragraph",
+            "text": "Prima di leggere la soluzione, considera le risposte 5 per la quantità e 3 per il prezzo. Annota valore e tipo delle quattro variabili. Il prezzo diventa un int perché non hai digitato il punto? I testi iniziali cambiano?"
+          },
+          {
+            "kind": "example",
+            "title": "Soluzione ragionata",
+            "steps": [
+              "quantita_testo contiene \"5\", di tipo str; quantita contiene 5, di tipo int.",
+              "prezzo_testo contiene \"3\", di tipo str; prezzo_unitario contiene 3.0, di tipo float.",
+              "Il prezzo è un float perché abbiamo usato la conversione float, anche se nella risposta non era presente il punto.",
+              "I testi iniziali non cambiano: le conversioni hanno prodotto i valori numerici associati agli altri nomi."
+            ],
+            "conclusion": "Il tipo del numero ottenuto dipende dalla conversione scelta, non dalla sola presenza del punto nella risposta."
+          },
+          {
+            "kind": "callout",
+            "title": "Formato convertibile e valore ammesso",
+            "text": "int può convertire \"-2\" nel numero -2, ma una quantità negativa non è ammessa nel nostro acquisto. Una conversione riuscita non garantisce che il valore rispetti le regole del problema. Assumiamo risposte correttamente formattate e valori ammessi: non costruiamo una gestione automatica degli errori."
+          }
+        ]
+      },
+      {
+        "id": "S7",
+        "title": "Calcolare la spesa e leggere un'espressione",
+        "objective_ids": [
+          "U1-O2",
+          "U1-O3"
+        ],
+        "blocks": [
+          {
+            "kind": "paragraph",
+            "text": "Ora quantità e prezzo sono numeri e possiamo moltiplicarli. In Python la moltiplicazione si scrive con l'asterisco *, non con il segno × usato su carta. La nostra istruzione è spesa = quantita * prezzo_unitario."
+          },
+          {
+            "kind": "definition",
+            "term": "Espressione",
+            "text": "Una combinazione di valori, nomi e operatori che produce un risultato. Gli operatori sono simboli che indicano operazioni, come * per la moltiplicazione."
+          },
+          {
+            "kind": "example",
+            "title": "Prima il calcolo, poi l'assegnazione",
+            "steps": [
+              "Python legge il valore associato a quantita: nel nostro esempio è l'intero 4.",
+              "Legge il valore associato a prezzo_unitario: è il float 2.5.",
+              "Calcola l'espressione quantita * prezzo_unitario, cioè 4 * 2.5, e ottiene 10.0.",
+              "Associa il risultato al nome spesa, scritto a sinistra di =."
+            ],
+            "conclusion": "Prima viene calcolata l'espressione a destra; poi viene assegnato il risultato. In questo prodotto tra un int e un float il risultato è un float."
+          },
+          {
+            "kind": "code",
+            "language": "python",
+            "code": "quantita = 4\nprezzo_unitario = 2.5\nspesa = quantita * prezzo_unitario\nprint(\"Spesa in euro:\", spesa)",
+            "explanation": "Qui assegniamo direttamente i dati per concentrarci sul calcolo. Prepariamo i due fattori, calcoliamo la spesa e infine la mostriamo. Il valore 10.0 rappresenta 10 euro. Il messaggio non è una formattazione monetaria: print non aggiunge automaticamente due cifre dopo il punto.",
+            "execution": "check",
+            "cases": [
+              {
+                "stdin": [],
+                "stdout": "Spesa in euro: 10.0\n"
+              }
+            ]
+          },
+          {
+            "kind": "paragraph",
+            "text": "L'ordine delle istruzioni risponde a una necessità: il prodotto richiede quantità e prezzo già disponibili; la visualizzazione richiede una spesa già calcolata. Il budget non compare nel prodotto perché non determina il costo dei quaderni."
+          },
+          {
+            "kind": "table",
+            "headers": [
+              "Operazione",
+              "Simbolo Python",
+              "Esempio",
+              "Risultato"
+            ],
+            "rows": [
+              [
+                "Somma",
+                "+",
+                "4 + 2",
+                "6"
+              ],
+              [
+                "Sottrazione",
+                "-",
+                "12 - 10",
+                "2"
+              ],
+              [
+                "Moltiplicazione",
+                "*",
+                "4 * 2.5",
+                "10.0"
+              ],
+              [
+                "Divisione",
+                "/",
+                "10 / 2",
+                "5.0"
+              ]
+            ]
+          },
+          {
+            "kind": "paragraph",
+            "text": "Con i tipi numerici di questa lezione, la divisione / produce un float anche quando il risultato è esatto: 10 / 2 dà 5.0. Nel nostro programma serve soltanto la moltiplicazione, ma gli altri simboli permettono di leggere semplici calcoli aritmetici."
+          },
+          {
+            "kind": "paragraph",
+            "text": "Moltiplicazione e divisione hanno precedenza su somma e sottrazione. Le parentesi permettono di calcolare prima una parte dell'espressione. Considera (2 + 3) * 2 e 2 + 3 * 2: prevedi i due risultati e spiega quale operazione viene eseguita per prima in ciascun caso."
+          },
+          {
+            "kind": "example",
+            "title": "Soluzione ragionata",
+            "steps": [
+              "In (2 + 3) * 2, le parentesi fanno calcolare prima 2 + 3: si ottiene 5.",
+              "Si calcola poi 5 * 2, ottenendo 10.",
+              "In 2 + 3 * 2, senza parentesi, si calcola prima 3 * 2: si ottiene 6.",
+              "Si somma infine 2 a 6, ottenendo 8."
+            ],
+            "conclusion": "L'ordine dall'alto verso il basso riguarda le istruzioni. Dentro un'espressione bisogna invece rispettare precedenze e parentesi: non basta procedere sempre da sinistra a destra."
+          },
+          {
+            "kind": "paragraph",
+            "text": "Le parentesi hanno qui un ruolo diverso da quelle in print(spesa). Dentro un'espressione possono raggruppare un calcolo; dopo il nome di una funzione delimitano la chiamata. Il contesto permette di riconoscerne il ruolo."
+          }
+        ]
+      },
+      {
+        "id": "S8",
+        "title": "Dal programma completo a un tentativo su carta",
+        "objective_ids": [
+          "U1-O1",
+          "U1-O2",
+          "U1-O3"
+        ],
+        "blocks": [
+          {
+            "kind": "paragraph",
+            "text": "Riuniamo i passaggi. Il programma chiede quantità, prezzo unitario e budget; converte le risposte; calcola la spesa; mostra dati e risultato. Acquisizione e conversione rimangono separate per rendere riconoscibile il lavoro di ogni istruzione."
+          },
+          {
+            "kind": "code",
+            "language": "python",
+            "code": "quantita_testo = input(\"Quanti quaderni? \")\nquantita = int(quantita_testo)\nprezzo_testo = input(\"Prezzo di un quaderno in euro: \")\nprezzo_unitario = float(prezzo_testo)\nbudget_testo = input(\"Budget in euro: \")\nbudget = float(budget_testo)\nspesa = quantita * prezzo_unitario\nprint(\"Quantita:\", quantita)\nprint(\"Prezzo unitario in euro:\", prezzo_unitario)\nprint(\"Budget in euro:\", budget)\nprint(\"Spesa in euro:\", spesa)",
+            "explanation": "Le prime sei istruzioni formano tre coppie: acquisizione e conversione della quantità, del prezzo e del budget. La settima calcola la spesa usando i due fattori numerici. Le ultime quattro comunicano i valori con etichette comprensibili. Le risposte vanno fornite nell'ordine delle richieste.",
+            "execution": "check",
+            "cases": [
+              {
+                "stdin": [
+                  "4",
+                  "2.5",
+                  "12"
+                ],
+                "stdout": "Quanti quaderni? Prezzo di un quaderno in euro: Budget in euro: Quantita: 4\nPrezzo unitario in euro: 2.5\nBudget in euro: 12.0\nSpesa in euro: 10.0\n"
+              }
+            ]
+          },
+          {
+            "kind": "paragraph",
+            "text": "Seguiamo su carta l'esecuzione appena mostrata. Nella traccia scriviamo le stringhe tra virgolette per distinguerle dai numeri. Ogni riga indica il valore reso disponibile da una delle prime sette istruzioni."
+          },
+          {
+            "kind": "table",
+            "headers": [
+              "Istruzione",
+              "Nome che riceve il valore",
+              "Valore",
+              "Tipo"
+            ],
+            "rows": [
+              [
+                "1: acquisizione della quantità",
+                "quantita_testo",
+                "\"4\"",
+                "str"
+              ],
+              [
+                "2: conversione della quantità",
+                "quantita",
+                "4",
+                "int"
+              ],
+              [
+                "3: acquisizione del prezzo",
+                "prezzo_testo",
+                "\"2.5\"",
+                "str"
+              ],
+              [
+                "4: conversione del prezzo",
+                "prezzo_unitario",
+                "2.5",
+                "float"
+              ],
+              [
+                "5: acquisizione del budget",
+                "budget_testo",
+                "\"12\"",
+                "str"
+              ],
+              [
+                "6: conversione del budget",
+                "budget",
+                "12.0",
+                "float"
+              ],
+              [
+                "7: calcolo della spesa",
+                "spesa",
+                "10.0",
+                "float"
+              ]
+            ]
+          },
+          {
+            "kind": "paragraph",
+            "text": "Le chiamate a print leggono i valori senza modificarli. Alla fine budget vale ancora 12.0: non è stata scritta alcuna sottrazione. Anche i testi iniziali rimangono disponibili. Il programma non chiede alla persona di inserire la spesa: la ricava da quantità e prezzo dopo averli convertiti. Cambiare soltanto il budget non modifica quindi il prodotto."
+          },
+          {
+            "kind": "callout",
+            "title": "Una traccia guidata",
+            "text": "Considera 6 quaderni da 1,50 euro e un budget di 15 euro. Sul foglio scrivi le tre risposte nel formato richiesto. Annota poi valore e tipo di quantita_testo, quantita, prezzo_testo, prezzo_unitario, budget_testo e budget. Infine prevedi valore e tipo di spesa e scrivi i quattro messaggi finali. Spiega perché il budget non compare nella moltiplicazione. Completa il tentativo prima di leggere la soluzione."
+          },
+          {
+            "kind": "example",
+            "title": "Soluzione della traccia guidata",
+            "steps": [
+              "Le risposte, nell'ordine, sono 6, 1.5 e 15.",
+              "quantita_testo contiene \"6\", di tipo str; quantita contiene 6, di tipo int.",
+              "prezzo_testo contiene \"1.5\", di tipo str; prezzo_unitario contiene 1.5, di tipo float.",
+              "budget_testo contiene \"15\", di tipo str; budget contiene 15.0, di tipo float.",
+              "Il prodotto 6 * 1.5 produce 9.0, di tipo float, assegnato a spesa."
+            ],
+            "conclusion": "Il budget indica il denaro disponibile, non il numero dei quaderni o il loro prezzo. Per questo non entra nella formula della spesa."
+          },
+          {
+            "kind": "table",
+            "headers": [
+              "Ordine",
+              "Messaggio finale"
+            ],
+            "rows": [
+              [
+                "1",
+                "Quantita: 6"
+              ],
+              [
+                "2",
+                "Prezzo unitario in euro: 1.5"
+              ],
+              [
+                "3",
+                "Budget in euro: 15.0"
+              ],
+              [
+                "4",
+                "Spesa in euro: 9.0"
+              ]
+            ]
+          },
+          {
+            "kind": "paragraph",
+            "text": "La tabella riporta soltanto i quattro messaggi finali: prima di essi il programma presenta le tre richieste dei dati. Hai seguito lo stesso procedimento dell'esempio svolto, cambiando i valori dell'acquisto."
+          },
+          {
+            "kind": "callout",
+            "title": "Un tentativo con meno aiuti",
+            "text": "Usa lo stesso programma per 7 quaderni da 2,50 euro e un budget di 20 euro. Senza eseguirlo al computer, scegli come organizzare una traccia che distingua testi acquisiti, numeri ottenuti e spesa calcolata. Scrivi i quattro messaggi finali e spiega se budget cambia dopo il calcolo. Considera poi una seconda esecuzione con quantità 0, prezzo 1.5 e budget 0: prevedi valore e tipo di spesa e budget alla fine. Completa entrambe le previsioni prima di proseguire."
+          },
+          {
+            "kind": "example",
+            "title": "Soluzione del tentativo con meno aiuti",
+            "steps": [
+              "Nella prima esecuzione le risposte sono 7, 2.5 e 20. I testi acquisiti sono \"7\", \"2.5\" e \"20\", conservati rispettivamente in quantita_testo, prezzo_testo e budget_testo.",
+              "Dopo le conversioni, quantita è l'int 7, prezzo_unitario è il float 2.5 e budget è il float 20.0.",
+              "Il prodotto 7 * 2.5 dà 17.5, di tipo float, assegnato a spesa.",
+              "budget resta 20.0: il programma lo acquisisce e lo mostra, ma non lo aggiorna.",
+              "Nella seconda esecuzione i testi acquisiti sono \"0\", \"1.5\" e \"0\". Dopo le conversioni, quantita è l'int 0, prezzo_unitario è il float 1.5 e budget è il float 0.0.",
+              "Il prodotto 0 * 1.5 produce il float 0.0, assegnato a spesa. Anche budget rimane il float 0.0."
+            ],
+            "conclusion": "La quantità zero è ammessa nel nostro modello. In entrambe le esecuzioni si seguono le stesse istruzioni: cambiano i dati e, di conseguenza, i valori ottenuti."
+          },
+          {
+            "kind": "paragraph",
+            "text": "Per confrontare le previsioni con le uscite complete, riportiamo nuovamente il programma senza modificarlo. Non ci sono nuove istruzioni da studiare: le due esecuzioni seguenti appartengono alla soluzione del tentativo."
+          },
+          {
+            "kind": "code",
+            "language": "python",
+            "code": "quantita_testo = input(\"Quanti quaderni? \")\nquantita = int(quantita_testo)\nprezzo_testo = input(\"Prezzo di un quaderno in euro: \")\nprezzo_unitario = float(prezzo_testo)\nbudget_testo = input(\"Budget in euro: \")\nbudget = float(budget_testo)\nspesa = quantita * prezzo_unitario\nprint(\"Quantita:\", quantita)\nprint(\"Prezzo unitario in euro:\", prezzo_unitario)\nprint(\"Budget in euro:\", budget)\nprint(\"Spesa in euro:\", spesa)",
+            "explanation": "Nella prima esecuzione i quattro messaggi finali mostrano 7, 2.5, 20.0 e 17.5. Nella seconda mostrano 0, 1.5, 0.0 e 0.0. Confronta anche tipi, ordine dei passaggi e spiegazione del budget, non soltanto il prodotto finale.",
+            "execution": "check",
+            "cases": [
+              {
+                "stdin": [
+                  "7",
+                  "2.5",
+                  "20"
+                ],
+                "stdout": "Quanti quaderni? Prezzo di un quaderno in euro: Budget in euro: Quantita: 7\nPrezzo unitario in euro: 2.5\nBudget in euro: 20.0\nSpesa in euro: 17.5\n"
+              },
+              {
+                "stdin": [
+                  "0",
+                  "1.5",
+                  "0"
+                ],
+                "stdout": "Quanti quaderni? Prezzo di un quaderno in euro: Budget in euro: Quantita: 0\nPrezzo unitario in euro: 1.5\nBudget in euro: 0.0\nSpesa in euro: 0.0\n"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "S9",
+        "title": "Capire dove nasce un errore",
+        "objective_ids": [
+          "U1-O1",
+          "U1-O2",
+          "U1-O3"
+        ],
+        "blocks": [
+          {
+            "kind": "paragraph",
+            "text": "Quando un programma si interrompe, individuare l'istruzione interessata aiuta a cercare la causa. Non conviene modificare righe a caso. Leggi il frammento seguente, deliberatamente errato, e prova a indicare che cosa impedisce la conversione e quale cambiamento minimo risolve il problema."
+          },
+          {
+            "kind": "code",
+            "language": "python",
+            "code": "prezzo_unitario = float(\"2,5\")",
+            "explanation": "Frammento deliberatamente errato. Prima di proseguire, confronta la scrittura del testo con il formato richiesto per convertire un importo decimale.",
+            "execution": "illustration",
+            "cases": []
+          },
+          {
+            "kind": "example",
+            "title": "Spiegazione dell'errore",
+            "steps": [
+              "Il testo contiene una virgola, mentre questa conversione richiede il punto decimale.",
+              "Viene segnalato un ValueError: negli esempi della lezione indica che il valore fornito non è adatto alla conversione richiesta.",
+              "L'assegnazione non viene completata, perché la chiamata a destra non restituisce il numero richiesto.",
+              "La correzione è usare il testo \"2.5\"."
+            ],
+            "conclusion": "Non è sbagliata la scrittura italiana 2,5: è diverso il formato richiesto da questa conversione."
+          },
+          {
+            "kind": "callout",
+            "title": "Per la consultazione: altri due errori comuni",
+            "text": "I due esempi seguenti non aggiungono un'attività obbligatoria al percorso. Puoi consultarli per riconoscere un altro testo non adatto alla conversione e un errore nell'ordine delle istruzioni."
+          },
+          {
+            "kind": "code",
+            "language": "python",
+            "code": "quantita = int(\"4.0\")",
+            "explanation": "Frammento deliberatamente errato. int non accetta il testo \"4.0\" come rappresentazione di un intero e segnala un ValueError. Nel procedimento della lezione inseriamo 4 per una quantità intera. Il fatto che 4.0 richiami matematicamente un valore intero non rende quel testo adatto alla conversione usata.",
+            "execution": "illustration",
+            "cases": []
+          },
+          {
+            "kind": "code",
+            "language": "python",
+            "code": "print(spesa)\nspesa = 4 * 2.5",
+            "explanation": "Frammento deliberatamente errato, da leggere in un programma nuovo senza precedenti assegnazioni a spesa. La prima istruzione tenta di leggere un nome non ancora definito: viene segnalato un NameError. L'esecuzione si interrompe prima della seconda riga. Per correggere l'ordine bisogna prima calcolare e assegnare la spesa e poi mostrarla.",
+            "execution": "illustration",
+            "cases": []
+          },
+          {
+            "kind": "paragraph",
+            "text": "Per orientarti, collega il problema al passaggio interessato: il testo rispetta il formato della conversione? Il nome è scritto nello stesso modo e ha già ricevuto un valore? Un'assegnazione scritta più avanti non rende il valore disponibile in anticipo."
+          },
+          {
+            "kind": "paragraph",
+            "text": "Resta distinta la domanda sul significato del dato: un numero ottenuto correttamente può non essere ammesso dal problema, come una quantità negativa. Il programma studiato presuppone dati ammessi e non corregge automaticamente gli inserimenti."
+          }
+        ]
+      }
+    ],
+    "summary": [
+      "Per descrivere l'acquisto acquisiamo quantità, prezzo unitario e budget; ricaviamo la spesa da quantità e prezzo.",
+      "L'assegnazione con = associa un valore a un nome. Una successiva assegnazione allo stesso nome aggiorna il valore, senza sommarlo automaticamente al precedente.",
+      "input restituisce testo. Le conversioni int e float permettono di ottenere i numeri necessari da rappresentazioni valide.",
+      "Il programma prepara i dati prima di usarli: acquisisce, converte, calcola e visualizza. print legge i valori senza modificarli.",
+      "Il budget viene acquisito e mostrato, ma non entra nel prodotto e non viene ridotto della spesa. Il modello assume dati correttamente formattati e ammessi."
+    ],
+    "self_check": [
+      {
+        "question": "Un programma assegna direttamente a quantita la risposta 9 acquisita con input. Il nome scelto basta a ottenere un int? Quale passaggio manca?",
+        "answer": "No. input restituisce la stringa \"9\", qualunque sia il nome scelto. Serve la conversione con int prima di usare la risposta come quantità numerica."
+      },
+      {
+        "question": "Hai acquisito il prezzo in prezzo_testo. Perché float(\"prezzo_testo\") non converte la risposta inserita?",
+        "answer": "Le virgolette fanno usare il testo letterale \"prezzo_testo\", che non rappresenta un numero e provoca un ValueError. Per usare la risposta si scrive float(prezzo_testo), senza virgolette intorno al nome."
+      },
+      {
+        "question": "Un compagno propone spesa = budget * prezzo_unitario. Come spieghi che la formula non descrive il nostro acquisto?",
+        "answer": "Il costo dipende dal numero dei quaderni e dal prezzo di ciascuno, non dal denaro disponibile. Il primo fattore deve essere quantita: spesa = quantita * prezzo_unitario."
+      },
+      {
+        "question": "Con quantità 3, prezzo 3.5 e budget 14, quali numeri mostrano gli ultimi due messaggi del programma completo? Spiega entrambi.",
+        "answer": "Mostrano Budget in euro: 14.0 e Spesa in euro: 10.5. Il budget viene convertito con float e non modificato; la spesa deriva dal prodotto 3 * 3.5."
+      },
+      {
+        "question": "Il programma mostra soltanto la parola spesa invece del costo calcolato. Quale possibile errore cercheresti nella chiamata a print?",
+        "answer": "Cercherei print(\"spesa\"): le virgolette fanno visualizzare la parola. Per leggere il valore si usa il nome senza virgolette, per esempio print(\"Spesa in euro:\", spesa)."
+      },
+      {
+        "question": "In un programma nuovo, il prodotto usa prezzo_unitario prima dell'istruzione che lo ottiene con float. Come ricostruiresti l'ordine necessario?",
+        "answer": "Prima acquisirei e convertirei quantità e prezzo. Quando entrambi i numeri sono disponibili calcolerei la spesa; infine la mostrerei. Un'assegnazione successiva non rende il valore disponibile in anticipo."
+      }
+    ],
+    "terms": [
+      {
+        "term": "Prezzo unitario",
+        "definition": "Costo di una singola unità: qui, di un quaderno."
+      },
+      {
+        "term": "Budget",
+        "definition": "Denaro disponibile per l'acquisto."
+      },
+      {
+        "term": "Variabile",
+        "definition": "Nome attraverso cui si utilizza un valore associato."
+      },
+      {
+        "term": "Assegnazione",
+        "definition": "Istruzione con = che associa al nome a sinistra il risultato della parte destra."
+      },
+      {
+        "term": "Tipo",
+        "definition": "Categoria del dato che ne caratterizza l'uso nelle operazioni."
+      },
+      {
+        "term": "str",
+        "definition": "Tipo dei testi, detti stringhe."
+      },
+      {
+        "term": "int",
+        "definition": "Tipo dei numeri interi; il nome si usa anche nelle conversioni a intero."
+      },
+      {
+        "term": "float",
+        "definition": "Tipo dei numeri in virgola mobile; il nome si usa anche nelle conversioni. Molti decimali sono rappresentati in modo approssimato."
+      },
+      {
+        "term": "Concatenazione",
+        "definition": "Unione di testi, ottenuta negli esempi con +."
+      },
+      {
+        "term": "Funzione predefinita",
+        "definition": "Operazione già disponibile in Python, come input o print, utilizzata attraverso una chiamata."
+      },
+      {
+        "term": "Chiamata",
+        "definition": "Uso di una funzione scrivendone il nome seguito dalle parentesi."
+      },
+      {
+        "term": "Argomento",
+        "definition": "Informazione fornita a una chiamata dentro le parentesi."
+      },
+      {
+        "term": "Restituire",
+        "definition": "Rendere disponibile un valore come risultato di una chiamata."
+      },
+      {
+        "term": "Prompt",
+        "definition": "Messaggio con cui input presenta una richiesta."
+      },
+      {
+        "term": "Conversione",
+        "definition": "Passaggio che produce da un dato un valore del tipo necessario."
+      },
+      {
+        "term": "Espressione",
+        "definition": "Combinazione di valori, nomi e operatori da cui si ottiene un risultato."
+      },
+      {
+        "term": "Traccia di esecuzione",
+        "definition": "Annotazione dei valori mentre si seguono le istruzioni nell'ordine."
+      },
+      {
+        "term": "ValueError",
+        "definition": "Errore che negli esempi segnala un valore non adatto alla conversione richiesta."
+      },
+      {
+        "term": "NameError",
+        "definition": "Errore che negli esempi segnala l'uso di un nome non ancora definito."
+      }
+    ],
+    "continuity": [],
+    "prerequisite_support": [],
+    "source_ids": [
+      "python-values",
+      "python-input"
+    ],
+    "teacher_notes": [
+      "Distribuzione proposta dei 120 minuti teorici: S1 10; S2 15; S3 15; S4 10; S5 15; S6 20; S7 10; S8 20; S9 5. Gli intervalli comprendono spiegazioni, tentativi, confronto e restituzione; non sono tempi osservati. Sintesi, glossario e autocontrollo sono disponibili per la rilettura e non costituiscono una verifica aggiuntiva.",
+      "Mantenere la natura teorica: lettura, previsioni e tracce su carta, senza richiedere esecuzioni al computer degli studenti. Il laboratorio resta successivo a entrambe le lezioni teoriche iniziali. Gli esempi vanno commentati verbalmente, collegando ogni istruzione al suo scopo.",
+      "In S1 verificare oralmente il significato di prezzo unitario e della moltiplicazione. In S2 chiedere di distinguere aggiornamento e somma. In S6 osservare separatamente valore e tipo: leggere correttamente il numero mostrato non documenta, da solo, la distinzione tra testo e numero.",
+      "Presentare le consegne prima delle soluzioni. In S8 tenere visibili il primo programma e la consegna, coprendo i blocchi successivi. Mostrare la soluzione guidata dopo il primo tentativo e la soluzione con le due uscite complete soltanto dopo entrambe le previsioni con aiuti ridotti.",
+      "Per S8, nei 20 minuti proposti prevedere circa 5 minuti per lettura e traccia dell'esempio, 6 per tentativo guidato e restituzione, 6 per le due previsioni con aiuti ridotti e 3 per il confronto conclusivo. La seconda copia del programma è un riferimento per leggere le soluzioni, non una nuova spiegazione riga per riga.",
+      "Raccogliere in S8 una traccia individuale e la spiegazione del ruolo del budget. Considerare ordine dei passaggi, tipi, prodotto e significato delle stampe. Un risultato numerico corretto o una risposta condivisa non bastano ad attribuire comprensione individuale.",
+      "In S9 discutere nel percorso essenziale l'errore del separatore decimale. Lasciare int(\"4.0\") e l'uso anticipato di spesa alla consultazione. Non richiedere memorizzazione dei messaggi completi d'errore né gestione automatica degli inserimenti.",
+      "Le uscite dei programmi includono i prompt ed escludono l'eco della digitazione. Limitare la spiegazione di questa convenzione a quanto serve per leggere gli esempi; privilegiare richieste, risposte, valori e messaggi finali.",
+      "Il contenuto precedente fornito è una versione della stessa L1, non una lezione precedente da considerare appresa. Il caso 4, 2.5, 12 è mantenuto come esempio modellato. I casi 6, 1.5, 15 e 7, 2.5, 20 non risultano già risolti in quella versione; il caso con quantità zero consolida un confine già considerato, con dati parzialmente diversi. Le attività restano variazioni dello stesso problema, non trasferimenti a contesti lontani.",
+      "Non sono forniti previous_materials con identificativi di versione utilizzabili per collegamenti di continuità e non sono segnalati prerequisiti mancanti. Non presumere comunque apprendimenti già avvenuti: usare le brevi risposte e le tracce per decidere quali passaggi riprendere.",
+      "Nella successiva «Decidere con if ed else» riprendere il primo programma completo di S8 mantenendo problema, nomi e notazione. Verificare prima acquisizione, conversioni e prodotto; introdurre allora confronti e indentazione. Non aggiungere qui condizioni, cicli, chiamate annidate, commenti con #, formattazione monetaria o funzioni definite dagli studenti.",
+      "Usare le sintesi fornite di python-values per assegnazioni, tipi, stringhe, operazioni e NameError, e di python-input per input, print, conversioni e ValueError. Non occorre utilizzare python-conditions in questa lezione.",
+      "Conservare importi piccoli, interi o multipli di 0,50 euro. La precisazione su float delimita il modello, senza richiedere un approfondimento sulla rappresentazione numerica. Eventuali adattamenti di accessibilità richiedono informazioni reali sulla classe, qui non disponibili."
+    ]
+  },
+  "context": {
+    "plan_id": "5999f10a-034d-420f-8250-36e8f03debbd",
+    "class_brief": {
+      "free_text": "Classe seconda di istituto tecnico, studenti di 15-16 anni principianti in programmazione. Sanno usare tastiera e file, conoscono operazioni aritmetiche elementari, ma richiedono spiegazioni concrete e graduali. Percorso introduttivo Python di 24 ore complessive: 10 teoria, 10 laboratorio, 2 verifiche, 1 recupero, 1 margine. Quattro UDA. La prima UDA deve iniziare esattamente con due lezioni teoriche di 2 ore ciascuna: 1. Variabili, input e conversioni; 2. Decidere con if ed else. La seconda lezione usa come prerequisito la prima e riprende lo stesso problema concreto, senza presumere conoscenze non spiegate. Nella prima lezione non anticipare if; nella seconda introduci confronti e indentazione. Niente funzioni definite dallo studente o cicli nelle prime due lezioni. Le successive UDA approfondiscono condizioni, ripetizioni essenziali e un piccolo progetto conclusivo. Linguaggio semplice e preciso, spiegazioni autosufficienti, esempi svolti commentati e piccoli controlli di comprensione. I dati della classe sono inventati. Nessun documento curricolare ufficiale fornito.",
+      "school_context": "",
+      "student_profile": "",
+      "starting_knowledge": "",
+      "objectives": "",
+      "topics": "",
+      "organisation": "",
+      "preferences": ""
+    },
+    "objectives": [
+      {
+        "id": "U1-O1",
+        "description": "Distinguere testi, numeri interi e numeri decimali e assegnare valori a variabili con nomi significativi."
+      },
+      {
+        "id": "U1-O2",
+        "description": "Acquisire quantità, prezzo unitario e budget con input, applicare int e float e visualizzare la spesa con print."
+      },
+      {
+        "id": "U1-O3",
+        "description": "Ricostruire e spiegare una sequenza di acquisizione, conversione, calcolo e visualizzazione."
+      }
+    ],
+    "source_versions": [],
+    "missing_prerequisites": [],
+    "sources": [
+      {
+        "id": "python-values",
+        "title": "Python: numeri, stringhe e assegnazioni",
+        "url": "https://docs.python.org/3/tutorial/introduction.html",
+        "consulted_at": "2026-11-16",
+        "content": "Sintesi redazionale della documentazione ufficiale consultata. L'assegnazione associa un nome a un valore. Una successiva assegnazione può cambiare il valore associato. int rappresenta numeri interi, float numeri in virgola mobile e str testo. + somma numeri ma concatena stringhe. / produce un risultato float; // esegue divisione con arrotondamento verso il basso. Le stringhe sono delimitate da virgolette; le virgolette delimitatrici non fanno parte del valore. Un nome usato prima dell'assegnazione provoca NameError. I commenti iniziano con # fuori da stringhe."
+      },
+      {
+        "id": "python-input",
+        "title": "Python: input, print e conversioni",
+        "url": "https://docs.python.org/3/library/functions.html",
+        "consulted_at": "2026-11-16",
+        "content": "Sintesi redazionale della documentazione ufficiale consultata. input(prompt) visualizza l'eventuale prompt senza aggiungere una nuova riga, legge una riga e restituisce una stringa senza il terminatore di riga. int converte una rappresentazione testuale valida di un intero; float converte una rappresentazione numerica valida con il punto decimale. Testo numerico non valido causa ValueError. print separa normalmente gli argomenti con uno spazio e termina con una nuova riga. Nei casi di prova l'output comprende anche i prompt di input. input non converte automaticamente il testo in numeri."
+      },
+      {
+        "id": "python-conditions",
+        "title": "Python: istruzioni if, elif ed else",
+        "url": "https://docs.python.org/3/tutorial/controlflow.html#if-statements",
+        "consulted_at": "2026-11-16",
+        "content": "Sintesi redazionale della documentazione ufficiale consultata. if valuta una condizione. Il blocco indentato viene eseguito se la condizione è vera. elif introduce ulteriori condizioni controllate in ordine soltanto se le precedenti non hanno selezionato un ramo. else è facoltativo e costituisce il ramo residuo. Nella stessa catena viene eseguito al massimo un ramo. Le intestazioni terminano con due punti e l'indentazione delimita i blocchi. = assegna un valore; == confronta valori. I confronti numerici richiedono valori numerici coerenti; confrontare stringhe numeriche non equivale in generale a confrontare numeri."
+      }
+    ]
+  },
+  "checks": [
+    {
+      "section_id": "S2",
+      "block_index": 6,
+      "case": 1,
+      "status": "passed",
+      "message": "Input e output corrispondono.",
+      "transcript": ""
+    },
+    {
+      "section_id": "S4",
+      "block_index": 6,
+      "case": 1,
+      "status": "passed",
+      "message": "Input e output corrispondono.",
+      "transcript": "Quaderni\n4\nQuantita: 4\n"
+    },
+    {
+      "section_id": "S5",
+      "block_index": 6,
+      "case": 1,
+      "status": "passed",
+      "message": "Input e output corrispondono.",
+      "transcript": "Quanti quaderni? 4\nHai scritto: 4\n"
+    },
+    {
+      "section_id": "S6",
+      "block_index": 5,
+      "case": 1,
+      "status": "passed",
+      "message": "Input e output corrispondono.",
+      "transcript": "Quanti quaderni? 4\nPrezzo di un quaderno in euro: 2.5\nQuantita: 4\nPrezzo unitario in euro: 2.5\n"
+    },
+    {
+      "section_id": "S7",
+      "block_index": 3,
+      "case": 1,
+      "status": "passed",
+      "message": "Input e output corrispondono.",
+      "transcript": "Spesa in euro: 10.0\n"
+    },
+    {
+      "section_id": "S8",
+      "block_index": 1,
+      "case": 1,
+      "status": "passed",
+      "message": "Input e output corrispondono.",
+      "transcript": "Quanti quaderni? 4\nPrezzo di un quaderno in euro: 2.5\nBudget in euro: 12\nQuantita: 4\nPrezzo unitario in euro: 2.5\nBudget in euro: 12.0\nSpesa in euro: 10.0\n"
+    },
+    {
+      "section_id": "S8",
+      "block_index": 12,
+      "case": 1,
+      "status": "passed",
+      "message": "Input e output corrispondono.",
+      "transcript": "Quanti quaderni? 7\nPrezzo di un quaderno in euro: 2.5\nBudget in euro: 20\nQuantita: 7\nPrezzo unitario in euro: 2.5\nBudget in euro: 20.0\nSpesa in euro: 17.5\n"
+    },
+    {
+      "section_id": "S8",
+      "block_index": 12,
+      "case": 2,
+      "status": "passed",
+      "message": "Input e output corrispondono.",
+      "transcript": "Quanti quaderni? 0\nPrezzo di un quaderno in euro: 1.5\nBudget in euro: 0\nQuantita: 0\nPrezzo unitario in euro: 1.5\nBudget in euro: 0.0\nSpesa in euro: 0.0\n"
+    },
+    {
+      "section_id": "S9",
+      "block_index": 1,
+      "status": "not_run",
+      "message": "Codice illustrativo o linguaggio non eseguito automaticamente."
+    },
+    {
+      "section_id": "S9",
+      "block_index": 4,
+      "status": "not_run",
+      "message": "Codice illustrativo o linguaggio non eseguito automaticamente."
+    },
+    {
+      "section_id": "S9",
+      "block_index": 5,
+      "status": "not_run",
+      "message": "Codice illustrativo o linguaggio non eseguito automaticamente."
+    }
+  ]
+}

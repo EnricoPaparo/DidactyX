@@ -1,0 +1,6 @@
+{
+  "passes_targeted_oracle": true,
+  "method": "Lettura della spiegazione rispetto a codice, stdout e trascrizione; sessione responsabile del benchmark.",
+  "evidence": "Distingue Ada digitato nella prima riga da Ciao Ada prodotto da print; distingue la trascrizione dal solo stdout.",
+  "scope": "Prova di un paragrafo con le istruzioni correnti dell’autore, non rigenerazione completa della UDA."
+}

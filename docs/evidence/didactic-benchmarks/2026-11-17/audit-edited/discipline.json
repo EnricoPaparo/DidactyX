@@ -1,0 +1,557 @@
+{
+  "input_sha256": "24f2d23957f00b79dadaab32ef5744f9d2af2d2bf49107f976f7292bf9c04cb9",
+  "prompt_sha256": "29b824e6f849cce5a54de22b44e48f456414961fb1dbe423d708ee390d2d4ba2",
+  "result": {
+    "evaluations": [
+      {
+        "target": "L1",
+        "ratings": [
+          {
+            "criterion_id": "C1",
+            "score": 4,
+            "reason": "Assegnazione, tipi, conversioni, calcoli e uscite sono corretti. Gli errori intenzionali sono riconoscibili e i limiti monetari del modello sono espliciti.",
+            "evidence": [
+              {
+                "lesson_id": "L1",
+                "section_id": "S6",
+                "quote": "La conversione produce un valore numerico e non modifica il testo conservato nella prima variabile."
+              },
+              {
+                "lesson_id": "L1",
+                "section_id": "S3",
+                "quote": "Questo programma serve a imparare e non è una soluzione generale per qualsiasi calcolo monetario reale."
+              }
+            ],
+            "improvement": "Nessuna correzione disciplinare necessaria nei casi forniti."
+          },
+          {
+            "criterion_id": "C2",
+            "score": 4,
+            "reason": "Le spiegazioni collegano sintassi, significato e scopo. Sono chiarite distinzioni decisive per principianti: assegnare e mostrare, testo e numero, precedenza delle operazioni e ordine delle istruzioni.",
+            "evidence": [
+              {
+                "lesson_id": "L1",
+                "section_id": "S2",
+                "quote": "Non è un'uguaglianza matematica da dimostrare, ma un'azione da eseguire."
+              },
+              {
+                "lesson_id": "L1",
+                "section_id": "S7",
+                "quote": "L'ordine dall'alto verso il basso riguarda le istruzioni. Dentro un'espressione bisogna invece rispettare precedenze e parentesi"
+              }
+            ],
+            "improvement": "Mantenere queste distinzioni nella restituzione orale, senza ridurre il lavoro alla lettura delle uscite."
+          },
+          {
+            "criterion_id": "C3",
+            "score": 4,
+            "reason": "La progressione parte dal problema concreto, introduce gli strumenti prima dell'integrazione e prepara esattamente la lezione successiva. Non anticipa condizioni, cicli o funzioni definite dagli studenti.",
+            "evidence": [
+              {
+                "lesson_id": "L1",
+                "section_id": "S1",
+                "quote": "In questa lezione acquisiremo e mostreremo anche il budget, ma non lo useremo per calcolare la spesa e non lo modificheremo."
+              },
+              {
+                "lesson_id": "L1",
+                "section_id": "teacher_notes",
+                "quote": "Nella successiva «Decidere con if ed else» riprendere il primo programma completo di S8 mantenendo problema, nomi e notazione."
+              }
+            ],
+            "improvement": "Nessuna integrazione di prerequisiti necessaria rispetto al brief."
+          },
+          {
+            "criterion_id": "C4",
+            "score": 4,
+            "reason": "Sono presenti modellamento, traccia guidata e previsioni con minori indicazioni. I casi meno guidati non sono già risolti prima della consegna nell'ordine reale dei blocchi; le attività su carta rispettano la natura teorica.",
+            "evidence": [
+              {
+                "lesson_id": "L1",
+                "section_id": "S8",
+                "quote": "Senza eseguirlo al computer, scegli come organizzare una traccia che distingua testi acquisiti, numeri ottenuti e spesa calcolata."
+              },
+              {
+                "lesson_id": "L1",
+                "section_id": "S8",
+                "quote": "Completa entrambe le previsioni prima di proseguire."
+              }
+            ],
+            "improvement": "Attuare l'indicazione già presente di coprire le soluzioni durante i tentativi."
+          },
+          {
+            "criterion_id": "C5",
+            "score": 4,
+            "reason": "Le consegne osservano tipi, ordine, calcolo e significato del budget, non soltanto il risultato numerico. Il feedback affronta cause specifiche e sono previste evidenze individuali. Le variazioni costituiscono trasferimento vicino.",
+            "evidence": [
+              {
+                "lesson_id": "L1",
+                "section_id": "S6",
+                "quote": "Il prezzo diventa un int perché non hai digitato il punto? I testi iniziali cambiano?"
+              },
+              {
+                "lesson_id": "L1",
+                "section_id": "teacher_notes",
+                "quote": "Raccogliere in S8 una traccia individuale e la spiegazione del ruolo del budget."
+              },
+              {
+                "lesson_id": "L1",
+                "section_id": "S9",
+                "quote": "L'assegnazione non viene completata, perché la chiamata a destra non restituisce il numero richiesto."
+              }
+            ],
+            "improvement": "Usare separatamente correttezza del prodotto e correttezza dei tipi, come già indicato nei criteri di osservazione."
+          },
+          {
+            "criterion_id": "C6",
+            "score": 4,
+            "reason": "La scansione proposta totalizza 120 minuti e comprende tentativi e restituzione. Consultazione ed essenziale sono distinti; non sono richieste dotazioni informatiche agli studenti né inventati adattamenti individuali.",
+            "evidence": [
+              {
+                "lesson_id": "L1",
+                "section_id": "teacher_notes",
+                "quote": "Gli intervalli comprendono spiegazioni, tentativi, confronto e restituzione; non sono tempi osservati."
+              },
+              {
+                "lesson_id": "L1",
+                "section_id": "S9",
+                "quote": "I due esempi seguenti non aggiungono un'attività obbligatoria al percorso."
+              }
+            ],
+            "improvement": "Verificare in attuazione la tenuta dei tempi, senza trasformare glossario e autocontrollo in ulteriori attività obbligatorie."
+          }
+        ],
+        "findings": []
+      },
+      {
+        "target": "L2",
+        "ratings": [
+          {
+            "criterion_id": "C1",
+            "score": 4,
+            "reason": "Confronti, booleani, scelta dei rami e prosecuzione sono corretti, compresi uguaglianza e zero. È distinta la convenzione dei quattro spazi dal requisito sintattico dell'indentazione. La piccola incoerenza descrittiva sull'eco non altera codice o risultati.",
+            "evidence": [
+              {
+                "lesson_id": "L2",
+                "section_id": "S2",
+                "quote": "Il budget è sufficiente quando la spesa è inferiore al denaro disponibile oppure quando è esattamente uguale."
+              },
+              {
+                "lesson_id": "L2",
+                "section_id": "S5",
+                "quote": "Non è l’unica ampiezza riconosciuta da Python, ma è la convenzione che useremo in modo uniforme."
+              }
+            ],
+            "improvement": "Uniformare la descrizione dell'uscita in S1 alla trascrizione effettivamente mostrata."
+          },
+          {
+            "criterion_id": "C2",
+            "score": 4,
+            "reason": "Ogni nuovo elemento è spiegato prima dell'impiego. Gli esempi chiariscono perché si sceglie un ramo, cosa viene saltato e come il rientro cambia il comportamento; False non viene confuso con un errore.",
+            "evidence": [
+              {
+                "lesson_id": "L2",
+                "section_id": "S4",
+                "quote": "Dopo else non scriviamo un secondo confronto: è già l’alternativa prevista quando la condizione di if è falsa."
+              },
+              {
+                "lesson_id": "L2",
+                "section_id": "S5",
+                "quote": "Cambiare il rientro può cambiare il comportamento, anche senza cambiare le parole dei messaggi."
+              }
+            ],
+            "improvement": "Eliminare il contrasto locale tra spiegazione dello stdout ed esempio con eco, mantenendo la distinzione già correttamente spiegata altrove."
+          },
+          {
+            "criterion_id": "C3",
+            "score": 4,
+            "reason": "Il programma completo conserva effettivamente le undici istruzioni di L1 prima di aggiungere la selezione. Problema, nomi, conversioni e dati sono coerenti; la ripresa non presume apprendimenti già avvenuti.",
+            "evidence": [
+              {
+                "lesson_id": "L2",
+                "section_id": "S6",
+                "quote": "Conserviamo le richieste, le conversioni separate, il calcolo e le quattro stampe di «Variabili, input e conversioni»."
+              },
+              {
+                "lesson_id": "L2",
+                "section_id": "teacher_notes",
+                "quote": "La disponibilità del materiale L1 non prova che i passaggi siano stati spiegati o appresi."
+              }
+            ],
+            "improvement": "Nessuna modifica del raccordo disciplinare necessaria."
+          },
+          {
+            "criterion_id": "C4",
+            "score": 4,
+            "reason": "La sequenza passa dal confronto modellato alla lettura guidata dei rami e a tre previsioni con organizzazione autonoma. Le esecuzioni risolutive di S7 sono dopo le consegne, non prima; i precedenti casi dichiaratamente ripresi hanno funzione di consolidamento.",
+            "evidence": [
+              {
+                "lesson_id": "L2",
+                "section_id": "S7",
+                "quote": "Organizza autonomamente una traccia."
+              },
+              {
+                "lesson_id": "L2",
+                "section_id": "S7",
+                "quote": "Formula tutte e tre le previsioni prima di leggere le soluzioni."
+              }
+            ],
+            "improvement": "Conservare la presentazione differita delle soluzioni prevista nelle note."
+          },
+          {
+            "criterion_id": "C5",
+            "score": 4,
+            "reason": "I compiti richiedono spiegazioni, previsioni, controesempi e diagnosi. Osservano separatamente prodotto, condizione, ramo e prosecuzione; includono casi sotto, sulla e sopra la soglia e una raccolta individuale.",
+            "evidence": [
+              {
+                "lesson_id": "L2",
+                "section_id": "S8",
+                "quote": "Prima di leggere la spiegazione, cerca un acquisto che mostri perché i messaggi diventano sbagliati."
+              },
+              {
+                "lesson_id": "L2",
+                "section_id": "teacher_notes",
+                "quote": "Raccogliere in S7 una traccia individuale distinguendo prodotto, confronto, risultato booleano, ramo, messaggio saltato e prosecuzione."
+              }
+            ],
+            "improvement": "Nella restituzione mantenere distinte le difficoltà di calcolo, confronto e lettura dei blocchi."
+          },
+          {
+            "criterion_id": "C6",
+            "score": 4,
+            "reason": "Le attività sono compatibili con una lezione teorica di 120 minuti: lettura e tracce su carta, senza laboratorio anticipato. I tempi includono restituzione e sono presentati come proposte; i materiali finali sono di consultazione.",
+            "evidence": [
+              {
+                "lesson_id": "L2",
+                "section_id": "teacher_notes",
+                "quote": "I tempi comprendono spiegazione, tentativi, confronto e restituzione; non sono tempi osservati."
+              },
+              {
+                "lesson_id": "L2",
+                "section_id": "teacher_notes",
+                "quote": "Sintesi, glossario e autocontrollo finale restano disponibili per la consultazione, senza aggiungere una verifica."
+              }
+            ],
+            "improvement": "Monitorare soprattutto i 22 minuti di S7, senza aggiungere una seconda spiegazione integrale del programma."
+          }
+        ],
+        "findings": [
+          {
+            "severity": "minor",
+            "location": "L2/S1, spiegazione del blocco code e relativo visible_examples",
+            "description": "Incoerenza descrittiva locale, non errore di Python: il testo annuncia un'uscita senza risposte digitate, mentre l'esempio effettivamente visibile contiene l'eco di 4, 2.5 e 12. Le spiegazioni successive distinguono correttamente trascrizione e stdout.",
+            "evidence": [
+              {
+                "lesson_id": "L2",
+                "section_id": "S1",
+                "quote": "Nell’uscita riportiamo ciò che scrive il programma, senza riprodurre le risposte digitate"
+              },
+              {
+                "lesson_id": "L2",
+                "section_id": "S1",
+                "quote": "Quanti quaderni? 4\nPrezzo di un quaderno in euro: 2.5\nBudget in euro: 12\n"
+              }
+            ],
+            "suggestion": "Riferire la frase senza eco esclusivamente allo stdout tecnico, precisando che la pagina mostra invece la trascrizione interattiva."
+          }
+        ]
+      },
+      {
+        "target": "L3",
+        "ratings": [
+          {
+            "criterion_id": "C1",
+            "score": 4,
+            "reason": "Programma, conversioni, risultati attesi e diagnosi sono corretti. I frammenti incompleti, non autonomi o deliberatamente errati sono dichiarati. È corretta anche la distinzione tra previsione del booleano e messaggio effettivamente stampato.",
+            "evidence": [
+              {
+                "lesson_id": "L3",
+                "section_id": "S4",
+                "quote": "Il frammento seguente è intenzionalmente incompleto e non deve essere eseguito."
+              },
+              {
+                "lesson_id": "L3",
+                "section_id": "S5",
+                "quote": "Il programma completo non stampa direttamente True o False."
+              }
+            ],
+            "improvement": "Nessuna correzione disciplinare necessaria nei programmi e nelle prove forniti."
+          },
+          {
+            "criterion_id": "C2",
+            "score": 4,
+            "reason": "La prima esperienza operativa è spiegata concretamente, distinguendo editor, file e dati inseriti durante l'esecuzione. Le istruzioni sono collegate ai loro scopi e la diagnosi procede per cause, non per modifiche casuali.",
+            "evidence": [
+              {
+                "lesson_id": "L3",
+                "section_id": "S2",
+                "quote": "Non aggiungere le risposte come nuove righe nell’editor: nel file scriviamo le istruzioni, durante l’esecuzione forniamo i dati."
+              },
+              {
+                "lesson_id": "L3",
+                "section_id": "S6",
+                "quote": "Cambia una cosa alla volta, salva e ripeti una prova pertinente."
+              }
+            ],
+            "improvement": "Mantenere il collegamento tra ogni correzione e una prova capace di verificarla."
+          },
+          {
+            "criterion_id": "C3",
+            "score": 4,
+            "reason": "Il laboratorio segue entrambe le lezioni teoriche e ne conserva esattamente il programma. Il ponte consiste nel costruire, salvare, eseguire e controllare ciò che prima era letto su carta, senza introdurre nuovi costrutti.",
+            "evidence": [
+              {
+                "lesson_id": "L3",
+                "section_id": "S1",
+                "quote": "Ora lo riprendiamo per costruire e controllare il programma al computer."
+              },
+              {
+                "lesson_id": "L3",
+                "section_id": "S4",
+                "quote": "Integra soltanto ciò che manca: non aggiungere una seconda copia delle acquisizioni o delle stampe già presenti."
+              }
+            ],
+            "improvement": "Nessuna estensione ai contenuti delle UDA successive necessaria."
+          },
+          {
+            "criterion_id": "C4",
+            "score": 3,
+            "reason": "Modellamento, completamenti e riduzione degli aiuti sono adeguati. I casi finali sono nuovi e le soluzioni seguono i tentativi. Il limite è che l'autonomia finale riguarda soprattutto previsione e collaudo di un programma già interamente fornito, meno la produzione o modifica del codice.",
+            "evidence": [
+              {
+                "lesson_id": "L3",
+                "section_id": "S3",
+                "quote": "Aggiungi due righe dopo quelle del prezzo."
+              },
+              {
+                "lesson_id": "L3",
+                "section_id": "S7",
+                "quote": "Usa il programma completo senza modificarne le istruzioni."
+              }
+            ],
+            "improvement": "Per rendere più solida anche l'autonomia sul codice, sostituire una parte della ripetizione finale con una piccola modifica individuale non già mostrata identicamente, usando soltanto print e collocazione nei blocchi già studiati."
+          },
+          {
+            "criterion_id": "C5",
+            "score": 4,
+            "reason": "Atteso e osservato sono distinti operativamente; le osservazioni devono provenire dal file dello studente. Le prove coprono i tre rapporti con il budget, il feedback localizza le cause e traccia e spiegazione individuali rendono osservabile il ragionamento oltre al prodotto di coppia.",
+            "evidence": [
+              {
+                "lesson_id": "L3",
+                "section_id": "S5",
+                "quote": "Questa tabella descrive il comportamento atteso del programma corretto: non sostituisce le osservazioni del tuo file."
+              },
+              {
+                "lesson_id": "L3",
+                "section_id": "S7",
+                "quote": "Traccia e spiegazione restano individuali anche se il file è stato realizzato in coppia."
+              },
+              {
+                "lesson_id": "L3",
+                "section_id": "S6",
+                "quote": "Con la sola prova C il problema potrebbe sfuggire"
+              }
+            ],
+            "improvement": "Raccogliere effettivamente le registrazioni iniziali e le eventuali correzioni, senza sostituirle con le tabelle risolte."
+          },
+          {
+            "criterion_id": "C6",
+            "score": 4,
+            "reason": "La proposta totalizza 120 minuti, include salvataggi e avvii, distingue gli errori essenziali da quelli di consultazione e prevede raccolte individuali simultanee. Dotazioni e accessibilità sono condizioni da verificare, non dati inventati.",
+            "evidence": [
+              {
+                "lesson_id": "L3",
+                "section_id": "teacher_notes",
+                "quote": "Le stime comprendono lettura, tentativi, salvataggi, avvii, confronto e restituzione; non sono tempi osservati."
+              },
+              {
+                "lesson_id": "L3",
+                "section_id": "teacher_notes",
+                "quote": "Raccogliere contemporaneamente traccia e spiegazione individuali, senza colloqui sequenziali."
+              }
+            ],
+            "improvement": "Verificare preventivamente comandi e accessibilità dell'ambiente, come richiesto dalle note, per proteggere il tempo delle evidenze individuali finali."
+          }
+        ],
+        "findings": [
+          {
+            "severity": "minor",
+            "location": "L3/S7, applicazione finale con aiuti ridotti",
+            "description": "Limite dell'evidenza di autonomia, non errore né mancata novità dei dati: il compito finale verifica previsione, esecuzione e spiegazione, ma non una modifica individuale del codice senza riferimento risolto.",
+            "evidence": [
+              {
+                "lesson_id": "L3",
+                "section_id": "S7",
+                "quote": "Usa il programma completo senza modificarne le istruzioni."
+              },
+              {
+                "lesson_id": "L3",
+                "section_id": "S7",
+                "quote": "È una variazione numerica dello stesso problema, da affrontare con meno indicazioni."
+              }
+            ],
+            "suggestion": "Inserire, in sostituzione di una ripetizione e senza aumentare le ore, una piccola modifica individuale entro i costrutti noti, chiedendone previsione e verifica prima del confronto con la soluzione."
+          }
+        ]
+      },
+      {
+        "target": "U1",
+        "ratings": [
+          {
+            "criterion_id": "C1",
+            "score": 4,
+            "reason": "Tutti e quattro gli obiettivi U1 sono coperti con contenuti e risultati coerenti. Acquisizione, conversione, prodotto e decisione usano gli stessi significati; uguaglianza, input ammessi e limiti di float sono mantenuti nelle tre lezioni.",
+            "evidence": [
+              {
+                "lesson_id": "L1",
+                "section_id": "S7",
+                "quote": "Prima viene calcolata l'espressione a destra; poi viene assegnato il risultato."
+              },
+              {
+                "lesson_id": "L2",
+                "section_id": "S2",
+                "quote": "Il caso di uguaglianza appartiene alla sufficienza del budget."
+              },
+              {
+                "lesson_id": "L3",
+                "section_id": "S1",
+                "quote": "Assumiamo risposte correttamente convertibili: il programma non corregge automaticamente gli inserimenti."
+              }
+            ],
+            "improvement": "Correggere soltanto l'incoerenza locale di L2/S1 nella descrizione dell'esempio con eco."
+          },
+          {
+            "criterion_id": "C2",
+            "score": 4,
+            "reason": "L'UDA costruisce nessi espliciti tra problema, rappresentazione dei dati, calcolo e decisione. Il laboratorio rende operative le spiegazioni e mantiene la richiesta di motivare le scelte.",
+            "evidence": [
+              {
+                "lesson_id": "L1",
+                "section_id": "S1",
+                "quote": "Il budget non è un fattore della moltiplicazione: il denaro disponibile non modifica il costo dei quaderni."
+              },
+              {
+                "lesson_id": "L2",
+                "section_id": "S6",
+                "quote": "La selezione dipende dal lavoro precedente: non sostituisce acquisizione, conversioni o calcolo."
+              },
+              {
+                "lesson_id": "L3",
+                "section_id": "S7",
+                "quote": "Collega ogni scelta al suo scopo."
+              }
+            ],
+            "improvement": "Preservare le motivazioni causali durante l'attuazione, evitando che le tabelle diventino semplici esercizi di copiatura."
+          },
+          {
+            "criterion_id": "C3",
+            "score": 4,
+            "reason": "Le tre lezioni complete rispettano titoli, ordine e durate: quattro ore teoriche seguite da due di laboratorio. Il programma viene ampliato senza cambi arbitrari di nomi o dati; presenza dei materiali e apprendimento sono esplicitamente distinti.",
+            "evidence": [
+              {
+                "lesson_id": "L2",
+                "section_id": "S6",
+                "quote": "Le prime undici istruzioni riprendono il programma di «Variabili, input e conversioni»."
+              },
+              {
+                "lesson_id": "L3",
+                "section_id": "teacher_notes",
+                "quote": "Durata proposta: 120 minuti di laboratorio, dopo entrambe le lezioni teoriche iniziali."
+              },
+              {
+                "lesson_id": "L3",
+                "section_id": "teacher_notes",
+                "quote": "la disponibilità dei materiali L1 e L2 non documenta che siano stati spiegati o appresi."
+              }
+            ],
+            "improvement": "Nessuna modifica della sequenza teoria-laboratorio necessaria."
+          },
+          {
+            "criterion_id": "C4",
+            "score": 3,
+            "reason": "L'UDA presenta una progressione adeguata da esempi a tracce, completamenti e prove con meno aiuti. Le soluzioni non precedono impropriamente i casi autonomi. Resta più documentata l'autonomia nel leggere e collaudare che nel modificare il programma.",
+            "evidence": [
+              {
+                "lesson_id": "L1",
+                "section_id": "S8",
+                "quote": "scegli come organizzare una traccia"
+              },
+              {
+                "lesson_id": "L2",
+                "section_id": "S7",
+                "quote": "Formula tutte e tre le previsioni prima di leggere le soluzioni."
+              },
+              {
+                "lesson_id": "L3",
+                "section_id": "S7",
+                "quote": "Usa il programma completo senza modificarne le istruzioni."
+              }
+            ],
+            "improvement": "Rafforzare la chiusura del laboratorio con una modifica individuale circoscritta del codice, senza nuovi costrutti e senza richiedere un programma interamente da zero."
+          },
+          {
+            "criterion_id": "C5",
+            "score": 4,
+            "reason": "Le evidenze previste coprono spiegazione, previsione, applicazione a nuovi dati e diagnosi. Nel laboratorio sono presenti attesi e osservati separati, prove pertinenti e contributi individuali. Non viene attribuita alle variazioni numeriche una generalizzazione ampia.",
+            "evidence": [
+              {
+                "lesson_id": "L2",
+                "section_id": "S7",
+                "quote": "Queste attività variano i dati dello stesso problema di acquisto."
+              },
+              {
+                "lesson_id": "L3",
+                "section_id": "S5",
+                "quote": "La differenza può dipendere dalla previsione, dall’inserimento o dal programma"
+              },
+              {
+                "lesson_id": "L3",
+                "section_id": "teacher_notes",
+                "quote": "Il funzionamento del file condiviso non basta a documentare la comprensione di ciascuno."
+              }
+            ],
+            "improvement": "Usare le tracce individuali per distinguere quali obiettivi risultano documentati, senza estendere il giudizio dal solo funzionamento del file."
+          },
+          {
+            "criterion_id": "C6",
+            "score": 4,
+            "reason": "Le scansioni proposte rispettano le sei ore U1, includendo osservazione e feedback senza aggiungere verifiche. L'essenziale è distinto dalla consultazione e le condizioni tecnologiche sono dichiarate. La fattibilità è progettata, non dimostrata da tempi osservati.",
+            "evidence": [
+              {
+                "lesson_id": "L1",
+                "section_id": "teacher_notes",
+                "quote": "Sintesi, glossario e autocontrollo sono disponibili per la rilettura e non costituiscono una verifica aggiuntiva."
+              },
+              {
+                "lesson_id": "L3",
+                "section_id": "teacher_notes",
+                "quote": "Prima dell’attività verificare disponibilità e accessibilità dell’ambiente Python già predisposto e dei computer individuali o condivisi a coppie."
+              }
+            ],
+            "improvement": "Verificare sul campo disponibilità degli strumenti e tenuta delle scansioni, mantenendo le attività individuali entro il laboratorio."
+          }
+        ],
+        "findings": [
+          {
+            "severity": "minor",
+            "location": "U1, chiusura applicativa in L3/S7",
+            "description": "L'UDA soddisfa il requisito di riduzione degli aiuti, ma la sua evidenza finale di autonomia è concentrata su previsione, collaudo e spiegazione del codice fornito. Non documenta altrettanto direttamente una modifica autonoma del programma.",
+            "evidence": [
+              {
+                "lesson_id": "L3",
+                "section_id": "S7",
+                "quote": "Per ciascuno dei tre budget prevedi i numeri ottenuti dalle conversioni, il prodotto, il confronto completo, il risultato booleano e i messaggi conclusivi."
+              },
+              {
+                "lesson_id": "L3",
+                "section_id": "S7",
+                "quote": "Usa il programma completo senza modificarne le istruzioni."
+              }
+            ],
+            "suggestion": "Integrare una piccola modifica individuale nel tempo già previsto, sostituendo una ripetizione e mantenendo il confronto con la soluzione dopo il tentativo."
+          }
+        ]
+      }
+    ],
+    "summary": "Punteggi ponderati: L1 100/100; L2 100/100; L3 96,25/100; U1 96,25/100. Tutte le soglie di accettazione sono soddisfatte sui materiali disponibili; nessuna criticità grave. Rilievi minori: descrizione dell'eco in L2/S1 e autonomia sul codice meno documentata rispetto a previsione e collaudo. Le tre lezioni e tutti gli obiettivi U1 sono disponibili. I giudizi riguardano la progettazione e i contenuti, non apprendimenti effettivi o tempi osservati."
+  }
+}

@@ -1,0 +1,15 @@
+{
+  "input_sha256": "fc868452bfd881357d4cf04a702c2f357a157c826786c6a1217e95e7a1f8dbe6",
+  "prompt_sha256": "7d868e333efdc243dbdd62d8230fd4b0cf0cdca38c3be0dd09377f6da598fa43",
+  "result": {
+    "summary": "La lezione è disciplinarmente corretta, autosufficiente e coerente con durata, natura teorica e prerequisiti dichiarati. Esempi, risultati e spiegazioni dei rami sono corretti; la continuità con L1 è reale e documentata. Non emergono fonti inventate o anticipazioni indebite. È necessaria una correzione nella presentazione della prova autonoma.",
+    "findings": [
+      {
+        "kind": "coherence",
+        "location": "S7, paragrafo «Prova autonoma con dati completamente nuovi, mai risolti prima»",
+        "description": "I dati 5, 2.5 e 10 non sono nuovi: compaiono già in L1, S8, e sono nuovamente risolti in S6 della lezione corrente, compresa la decisione sul budget. L'esercizio può servire come consolidamento, ma non offre l'applicazione a un caso inedito annunciata dalla consegna.",
+        "suggestion": "Presentarlo come ricostruzione autonoma di un caso già incontrato, eliminando l'affermazione di novità. Se si vuole invece osservare il trasferimento a dati nuovi, usare per esempio quantità 6, prezzo 1.5 e budget 8: spesa 9.0, condizione False, ramo else. Aggiornare coerentemente soluzione e righe del caso C nelle due tabelle."
+      }
+    ]
+  }
+}

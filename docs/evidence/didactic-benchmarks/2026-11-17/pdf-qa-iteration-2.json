@@ -1,0 +1,35 @@
+{
+  "engine_version": "0.3.2",
+  "lessons": [
+    {
+      "lesson_id": "L1",
+      "version": 2,
+      "pages": 22,
+      "learner_strings": 373,
+      "missing_strings": [],
+      "all_pages_visually_reviewed": true,
+      "source_and_frozen_rasters_identical": true,
+      "pdf_sha256": "e684c6433bdf771972c5a033144054db4442a252a84f973d01b6a68bbc3bf9e4"
+    },
+    {
+      "lesson_id": "L2",
+      "version": 2,
+      "pages": 23,
+      "learner_strings": 343,
+      "missing_strings": [],
+      "all_pages_visually_reviewed": true,
+      "source_and_frozen_rasters_identical": true,
+      "pdf_sha256": "09b4c7daad586ba3696307645e5a521514ae4dfb71dda4cb85aebe99c225365c"
+    },
+    {
+      "lesson_id": "L3",
+      "version": 2,
+      "pages": 24,
+      "learner_strings": 433,
+      "missing_strings": [],
+      "all_pages_visually_reviewed": true,
+      "source_and_frozen_rasters_identical": true,
+      "pdf_sha256": "8c4a10030ea89beead49debab21fb318d49710eb46be014a0c90dead39cc7bed"
+    }
+  ]
+}

@@ -34,5 +34,22 @@ class PilotInstallTests(unittest.TestCase):
         versions=deepcopy(self.versions);versions[1]['data']['continuity'][0]['version_id']='missing'
         with self.assertRaises(ValueError):install(self.folder.name,self.annual,versions)
         self.assertEqual(self.target.list_programs(),[self.existing])
+    def test_distinct_benchmark_title_preserves_existing_pilot(self):
+        first=install(self.folder.name,self.annual,self.versions)
+        before=self.target.get(first['program_id'])
+        second=install(self.folder.name,self.annual,self.versions,title='Python · UDA benchmark')
+        self.assertNotEqual(first['program_id'],second['program_id'])
+        self.assertEqual(self.target.get(first['program_id']),before)
+        self.assertEqual(self.target.get(second['program_id'])['title'],'Python · UDA benchmark')
+    def test_import_keeps_before_after_history_and_current_dependencies(self):
+        self.case.generate(['L1','L2'])
+        updated=[self.case.manager.store.head(self.case.plan_id,i) for i in ['L1','L2']]
+        result=install(self.folder.name,self.annual,self.versions+updated,title='Confronto didattico')
+        lessons=LessonStore(self.target);second=lessons.head(result['plan_id'],'L2')
+        self.assertEqual(second['version'],2)
+        self.assertEqual(second['data']['continuity'][0]['version_id'],lessons.head(result['plan_id'],'L1')['id'])
+        self.assertFalse(lessons.stale_reasons(second))
+        self.assertEqual(len(lessons.state(result['program_id'],result['plan_id'],'L1')['versions']),2)
+        self.assertIn('2 lezioni complete',self.target.get(result['program_id'])['description'])
 
 if __name__=='__main__':unittest.main()

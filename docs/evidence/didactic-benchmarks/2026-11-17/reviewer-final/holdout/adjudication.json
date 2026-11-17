@@ -1,0 +1,29 @@
+{
+  "method": "Lettura dei rapporti e controllo dei rilievi rispetto agli oracoli e al materiale effettivamente visualizzato.",
+  "cases": [
+    {
+      "case": "H01",
+      "target_detected": true,
+      "false_alarm_on_protected_control": null,
+      "evidence": "Distingue assegnazione e confronto nella definizione errata di S2."
+    },
+    {
+      "case": "H02",
+      "target_detected": true,
+      "false_alarm_on_protected_control": null,
+      "evidence": "Riconosce il caso di uguaglianza escluso dal programma completo e gli output coerenti col codice ma contrari all’obiettivo."
+    },
+    {
+      "case": "H03",
+      "target_detected": true,
+      "false_alarm_on_protected_control": null,
+      "evidence": "Rifiuta l’inferenza di apprendimento dalla generazione e propone un controllo effettivo dei prerequisiti."
+    },
+    {
+      "case": "H04",
+      "target_detected": null,
+      "false_alarm_on_protected_control": false,
+      "evidence": "Rispetta i frammenti deliberatamente errati. Riconosce correttamente che le esecuzioni visibili includono gli input digitati; propone soltanto controlli formativi distribuiti."
+    }
+  ]
+}

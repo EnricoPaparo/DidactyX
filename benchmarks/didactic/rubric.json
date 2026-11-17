@@ -1,0 +1,87 @@
+{
+  "version": "1.0",
+  "locked_before_tuning": "2026-11-17",
+  "purpose": "Valutazione dei contenuti generati, non misurazione degli apprendimenti reali.",
+  "scale": {
+    "0": "Assente o gravemente errato",
+    "1": "Lacune sostanziali che impediscono il lavoro previsto",
+    "2": "Parziale: materiale utilizzabile con integrazioni significative",
+    "3": "Adeguato: spiegazioni, attività ed evidenze coerenti con obiettivi e brief",
+    "4": "Solido: nessi espliciti, controllo di comprensione e autonomia verificabili senza anticipazioni improprie"
+  },
+  "criteria": [
+    {
+      "id": "C1",
+      "name": "Correttezza disciplinare e dei risultati",
+      "weight": 25,
+      "look_for": "Definizioni, linguaggio, calcoli, codice, dati di prova e risposte coerenti; confini del modello espliciti; codice errato intenzionale riconosciuto come tale."
+    },
+    {
+      "id": "C2",
+      "name": "Profondità esplicativa e comprensibilità",
+      "weight": 20,
+      "look_for": "Spiegazione del perché dei passaggi, introduzione dei termini prima dell’impiego, esempi effettivamente risolti; nessun punteggio assegnato per sola lunghezza o numero di pagine."
+    },
+    {
+      "id": "C3",
+      "name": "Progressione e continuità effettiva",
+      "weight": 15,
+      "look_for": "Riprese esatte dei corpi precedenti, notazione e dati coerenti, prerequisiti sostenuti; pianificato, generato e appreso distinti. Alla scala UDA: ponte tra teoria e laboratorio."
+    },
+    {
+      "id": "C4",
+      "name": "Attività e riduzione degli aiuti",
+      "weight": 15,
+      "look_for": "Esempio modellato, attività guidata e applicazione con aiuti ridotti secondo brief e disciplina; il caso autonomo non è già identicamente risolto, la soluzione segue il tentativo."
+    },
+    {
+      "id": "C5",
+      "name": "Comprensione, trasferimento vicino e feedback",
+      "weight": 15,
+      "look_for": "Domande o compiti che osservano gli obiettivi: spiegare, prevedere, applicare a dati nuovi. Criteri e feedback concreti; diagnosi della difficoltà. Una variazione di dati è trasferimento vicino, non prova di generalizzazione ampia."
+    },
+    {
+      "id": "C6",
+      "name": "Fattibilità, carico e accessibilità",
+      "weight": 10,
+      "look_for": "Percorso realistico per tempi e strumenti, distinguendo lavoro essenziale e consultazione; linguaggio adeguato ai principianti. Nessuna diagnosi o adattamento individuale inventato. Le stime di tempo non sono misure osservate."
+    }
+  ],
+  "acceptance": {
+    "minimum_weighted_score": 75,
+    "minimum_each_criterion": 3,
+    "critical_findings_allowed": 0,
+    "unit_requirements": [
+      "Tutte le tre lezioni e tutti gli obiettivi U1 disponibili",
+      "Laboratorio applicativo successivo alla teoria, con riduzione degli aiuti",
+      "Evidenza individuale osservabile oltre al lavoro in coppia",
+      "Nessuna conoscenza o apprendimento dedotto dalla presenza dei file"
+    ]
+  },
+  "sources": [
+    {
+      "title": "AERO — At a glance: Explicit instruction",
+      "url": "https://www.edresearch.edu.au/guides-resources/practice-guides/glance-explicit-instruction",
+      "consulted_at": "2026-11-17",
+      "use": "Sequenza di piccoli passi, spiegazione e modellamento, pratica guidata e indipendente, controlli di comprensione; adattamento al contesto, non copione obbligatorio."
+    },
+    {
+      "title": "EEF — Metacognition and Self-Regulated Learning, second edition",
+      "url": "https://educationendowmentfoundation.org.uk/education-evidence/guidance-reports/metacognition",
+      "consulted_at": "2026-11-17",
+      "use": "Pianificare, monitorare e valutare il lavoro entro la disciplina, con supporto esplicito e gradualmente ridotto."
+    },
+    {
+      "title": "Python 3.12 — Built-in Functions",
+      "url": "https://docs.python.org/3.12/library/functions.html",
+      "consulted_at": "2026-11-17",
+      "use": "Oracolo disciplinare per input, conversioni e print."
+    },
+    {
+      "title": "Python 3.12 — More Control Flow Tools",
+      "url": "https://docs.python.org/3.12/tutorial/controlflow.html#if-statements",
+      "consulted_at": "2026-11-17",
+      "use": "Oracolo disciplinare per selezione e blocchi."
+    }
+  ]
+}

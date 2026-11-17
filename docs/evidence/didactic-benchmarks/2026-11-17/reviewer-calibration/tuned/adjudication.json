@@ -1,0 +1,29 @@
+{
+  "method": "Lettura del rapporto rispetto all’oracolo da parte del revisore principale; risultati non dedotti dal numero di findings.",
+  "cases": [
+    {
+      "case": "C01",
+      "target_detected": true,
+      "false_alarm_on_protected_control": null,
+      "evidence": "S5: individua la falsa conversione automatica, la contraddizione con S6 e propone int separato da input."
+    },
+    {
+      "case": "C02",
+      "target_detected": true,
+      "false_alarm_on_protected_control": null,
+      "evidence": "S1: confronta con L1-S8, individua lista e ciclo inesistenti e propone il richiamo ai soli dati realmente spiegati."
+    },
+    {
+      "case": "C03",
+      "target_detected": true,
+      "false_alarm_on_protected_control": null,
+      "evidence": "S7: riconosce i dati già risolti, distingue consolidamento e prova inedita e propone di cambiare consegna o terna."
+    },
+    {
+      "case": "C04",
+      "target_detected": null,
+      "false_alarm_on_protected_control": false,
+      "evidence": "Rispetta l’omissione deliberata di domande e sintesi. Segnala soltanto la nota docente rimasta riferita a quesiti assenti e la riallinea senza imporne il ripristino."
+    }
+  ]
+}

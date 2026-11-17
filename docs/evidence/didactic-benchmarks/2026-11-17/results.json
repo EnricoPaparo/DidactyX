@@ -1,0 +1,623 @@
+{
+  "rubric_version": "1.0",
+  "materials": {
+    "baseline": {
+      "ratings": [
+        {
+          "target": "L1",
+          "scores_by_judge": {
+            "C1": [
+              4,
+              4
+            ],
+            "C2": [
+              4,
+              4
+            ],
+            "C3": [
+              4,
+              4
+            ],
+            "C4": [
+              3,
+              3
+            ],
+            "C5": [
+              3,
+              3
+            ],
+            "C6": [
+              4,
+              3
+            ]
+          },
+          "minimum_per_criterion": {
+            "C1": 4,
+            "C2": 4,
+            "C3": 4,
+            "C4": 3,
+            "C5": 3,
+            "C6": 3
+          },
+          "weighted_minimum": 90.0,
+          "critical_findings": 0,
+          "meets_internal_threshold": true
+        },
+        {
+          "target": "L2",
+          "scores_by_judge": {
+            "C1": [
+              4,
+              4
+            ],
+            "C2": [
+              4,
+              4
+            ],
+            "C3": [
+              4,
+              4
+            ],
+            "C4": [
+              2,
+              2
+            ],
+            "C5": [
+              3,
+              3
+            ],
+            "C6": [
+              4,
+              3
+            ]
+          },
+          "minimum_per_criterion": {
+            "C1": 4,
+            "C2": 4,
+            "C3": 4,
+            "C4": 2,
+            "C5": 3,
+            "C6": 3
+          },
+          "weighted_minimum": 86.25,
+          "critical_findings": 0,
+          "meets_internal_threshold": false
+        },
+        {
+          "target": "L3",
+          "scores_by_judge": {
+            "C1": [
+              4,
+              4
+            ],
+            "C2": [
+              4,
+              4
+            ],
+            "C3": [
+              4,
+              4
+            ],
+            "C4": [
+              2,
+              2
+            ],
+            "C5": [
+              3,
+              3
+            ],
+            "C6": [
+              4,
+              3
+            ]
+          },
+          "minimum_per_criterion": {
+            "C1": 4,
+            "C2": 4,
+            "C3": 4,
+            "C4": 2,
+            "C5": 3,
+            "C6": 3
+          },
+          "weighted_minimum": 86.25,
+          "critical_findings": 0,
+          "meets_internal_threshold": false
+        },
+        {
+          "target": "UDA",
+          "scores_by_judge": {
+            "C1": [
+              4,
+              4
+            ],
+            "C2": [
+              4,
+              4
+            ],
+            "C3": [
+              4,
+              4
+            ],
+            "C4": [
+              2,
+              2
+            ],
+            "C5": [
+              3,
+              3
+            ],
+            "C6": [
+              4,
+              3
+            ]
+          },
+          "minimum_per_criterion": {
+            "C1": 4,
+            "C2": 4,
+            "C3": 4,
+            "C4": 2,
+            "C5": 3,
+            "C6": 3
+          },
+          "weighted_minimum": 86.25,
+          "critical_findings": 0,
+          "meets_internal_threshold": false
+        }
+      ],
+      "structural_and_reference_checks_passed": true,
+      "code_checks": [
+        {
+          "lesson_id": "L1",
+          "sections": 9,
+          "passed_cases": 10,
+          "not_run_blocks": 3,
+          "continuity_refs": 0
+        },
+        {
+          "lesson_id": "L2",
+          "sections": 8,
+          "passed_cases": 10,
+          "not_run_blocks": 3,
+          "continuity_refs": 5
+        },
+        {
+          "lesson_id": "L3",
+          "sections": 7,
+          "passed_cases": 8,
+          "not_run_blocks": 5,
+          "continuity_refs": 8
+        }
+      ]
+    },
+    "tuned": {
+      "ratings": [
+        {
+          "target": "L1",
+          "scores_by_judge": {
+            "C1": [
+              3,
+              3
+            ],
+            "C2": [
+              4,
+              4
+            ],
+            "C3": [
+              4,
+              4
+            ],
+            "C4": [
+              4,
+              4
+            ],
+            "C5": [
+              4,
+              4
+            ],
+            "C6": [
+              4,
+              3
+            ]
+          },
+          "minimum_per_criterion": {
+            "C1": 3,
+            "C2": 4,
+            "C3": 4,
+            "C4": 4,
+            "C5": 4,
+            "C6": 3
+          },
+          "weighted_minimum": 91.25,
+          "critical_findings": 0,
+          "meets_internal_threshold": true
+        },
+        {
+          "target": "L2",
+          "scores_by_judge": {
+            "C1": [
+              3,
+              3
+            ],
+            "C2": [
+              4,
+              4
+            ],
+            "C3": [
+              4,
+              4
+            ],
+            "C4": [
+              4,
+              4
+            ],
+            "C5": [
+              4,
+              4
+            ],
+            "C6": [
+              4,
+              3
+            ]
+          },
+          "minimum_per_criterion": {
+            "C1": 3,
+            "C2": 4,
+            "C3": 4,
+            "C4": 4,
+            "C5": 4,
+            "C6": 3
+          },
+          "weighted_minimum": 91.25,
+          "critical_findings": 0,
+          "meets_internal_threshold": true
+        },
+        {
+          "target": "L3",
+          "scores_by_judge": {
+            "C1": [
+              3,
+              3
+            ],
+            "C2": [
+              4,
+              4
+            ],
+            "C3": [
+              4,
+              4
+            ],
+            "C4": [
+              3,
+              3
+            ],
+            "C5": [
+              4,
+              4
+            ],
+            "C6": [
+              3,
+              3
+            ]
+          },
+          "minimum_per_criterion": {
+            "C1": 3,
+            "C2": 4,
+            "C3": 4,
+            "C4": 3,
+            "C5": 4,
+            "C6": 3
+          },
+          "weighted_minimum": 87.5,
+          "critical_findings": 0,
+          "meets_internal_threshold": true
+        },
+        {
+          "target": "UDA",
+          "scores_by_judge": {
+            "C1": [
+              3,
+              3
+            ],
+            "C2": [
+              4,
+              4
+            ],
+            "C3": [
+              4,
+              4
+            ],
+            "C4": [
+              3,
+              3
+            ],
+            "C5": [
+              4,
+              4
+            ],
+            "C6": [
+              3,
+              3
+            ]
+          },
+          "minimum_per_criterion": {
+            "C1": 3,
+            "C2": 4,
+            "C3": 4,
+            "C4": 3,
+            "C5": 4,
+            "C6": 3
+          },
+          "weighted_minimum": 87.5,
+          "critical_findings": 0,
+          "meets_internal_threshold": true
+        }
+      ],
+      "structural_and_reference_checks_passed": true,
+      "code_checks": [
+        {
+          "lesson_id": "L1",
+          "sections": 9,
+          "passed_cases": 8,
+          "not_run_blocks": 3,
+          "continuity_refs": 0
+        },
+        {
+          "lesson_id": "L2",
+          "sections": 8,
+          "passed_cases": 9,
+          "not_run_blocks": 2,
+          "continuity_refs": 5
+        },
+        {
+          "lesson_id": "L3",
+          "sections": 7,
+          "passed_cases": 7,
+          "not_run_blocks": 5,
+          "continuity_refs": 9
+        }
+      ]
+    },
+    "edited": {
+      "ratings": [
+        {
+          "target": "L1",
+          "scores_by_judge": {
+            "C1": [
+              4,
+              4
+            ],
+            "C2": [
+              4,
+              4
+            ],
+            "C3": [
+              4,
+              4
+            ],
+            "C4": [
+              4,
+              4
+            ],
+            "C5": [
+              4,
+              4
+            ],
+            "C6": [
+              4,
+              3
+            ]
+          },
+          "minimum_per_criterion": {
+            "C1": 4,
+            "C2": 4,
+            "C3": 4,
+            "C4": 4,
+            "C5": 4,
+            "C6": 3
+          },
+          "weighted_minimum": 97.5,
+          "critical_findings": 0,
+          "meets_internal_threshold": true
+        },
+        {
+          "target": "L2",
+          "scores_by_judge": {
+            "C1": [
+              4,
+              4
+            ],
+            "C2": [
+              4,
+              4
+            ],
+            "C3": [
+              4,
+              4
+            ],
+            "C4": [
+              4,
+              4
+            ],
+            "C5": [
+              4,
+              4
+            ],
+            "C6": [
+              4,
+              3
+            ]
+          },
+          "minimum_per_criterion": {
+            "C1": 4,
+            "C2": 4,
+            "C3": 4,
+            "C4": 4,
+            "C5": 4,
+            "C6": 3
+          },
+          "weighted_minimum": 97.5,
+          "critical_findings": 0,
+          "meets_internal_threshold": true
+        },
+        {
+          "target": "L3",
+          "scores_by_judge": {
+            "C1": [
+              4,
+              4
+            ],
+            "C2": [
+              4,
+              4
+            ],
+            "C3": [
+              4,
+              4
+            ],
+            "C4": [
+              3,
+              3
+            ],
+            "C5": [
+              4,
+              4
+            ],
+            "C6": [
+              4,
+              3
+            ]
+          },
+          "minimum_per_criterion": {
+            "C1": 4,
+            "C2": 4,
+            "C3": 4,
+            "C4": 3,
+            "C5": 4,
+            "C6": 3
+          },
+          "weighted_minimum": 93.75,
+          "critical_findings": 0,
+          "meets_internal_threshold": true
+        },
+        {
+          "target": "UDA",
+          "scores_by_judge": {
+            "C1": [
+              4,
+              4
+            ],
+            "C2": [
+              4,
+              4
+            ],
+            "C3": [
+              4,
+              4
+            ],
+            "C4": [
+              3,
+              3
+            ],
+            "C5": [
+              4,
+              4
+            ],
+            "C6": [
+              4,
+              3
+            ]
+          },
+          "minimum_per_criterion": {
+            "C1": 4,
+            "C2": 4,
+            "C3": 4,
+            "C4": 3,
+            "C5": 4,
+            "C6": 3
+          },
+          "weighted_minimum": 93.75,
+          "critical_findings": 0,
+          "meets_internal_threshold": true
+        }
+      ],
+      "structural_and_reference_checks_passed": true,
+      "code_checks": [
+        {
+          "lesson_id": "L1",
+          "sections": 9,
+          "passed_cases": 8,
+          "not_run_blocks": 3,
+          "continuity_refs": 0
+        },
+        {
+          "lesson_id": "L2",
+          "sections": 8,
+          "passed_cases": 9,
+          "not_run_blocks": 2,
+          "continuity_refs": 5
+        },
+        {
+          "lesson_id": "L3",
+          "sections": 7,
+          "passed_cases": 7,
+          "not_run_blocks": 5,
+          "continuity_refs": 9
+        }
+      ]
+    }
+  },
+  "reviewer_challenges": {
+    "calibration": {
+      "baseline": {
+        "targeted_faults_detected": 3,
+        "targeted_faults_total": 3,
+        "controls_without_targeted_false_alarm": 1,
+        "controls_total": 1
+      },
+      "tuned": {
+        "targeted_faults_detected": 3,
+        "targeted_faults_total": 3,
+        "controls_without_targeted_false_alarm": 1,
+        "controls_total": 1
+      }
+    },
+    "holdout": {
+      "baseline": {
+        "targeted_faults_detected": 3,
+        "targeted_faults_total": 3,
+        "controls_without_targeted_false_alarm": 1,
+        "controls_total": 1
+      },
+      "tuned": {
+        "targeted_faults_detected": 3,
+        "targeted_faults_total": 3,
+        "controls_without_targeted_false_alarm": 1,
+        "controls_total": 1
+      }
+    }
+  },
+  "editorial_regressions": {
+    "development": [
+      {
+        "case": "E01",
+        "target_detected": true,
+        "false_alarm_on_protected_control": null,
+        "evidence": "Il rilievo individua in S8 input e output delle prove già mostrati prima delle consegne, propone il loro spostamento dopo il tentativo e distingue consolidamento e autonomia."
+      }
+    ],
+    "final": [
+      {
+        "case": "F01",
+        "target_detected": true,
+        "false_alarm_on_protected_control": null,
+        "evidence": "Rileva la conversione falsamente attribuita alla variabile di origine in S6 e spiega che soltanto quantita riceve il nuovo valore intero."
+      },
+      {
+        "case": "F02",
+        "target_detected": null,
+        "false_alarm_on_protected_control": false,
+        "evidence": "Nessun finding: accetta esplicitamente il consolidamento richiesto dal docente e non impone dati inediti."
+      }
+    ]
+  }
+}

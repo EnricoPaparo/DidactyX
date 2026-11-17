@@ -1,0 +1,29 @@
+{
+  "method": "Lettura del rapporto rispetto all’oracolo da parte del revisore principale; risultati non dedotti dal numero di findings.",
+  "cases": [
+    {
+      "case": "H01",
+      "target_detected": true,
+      "false_alarm_on_protected_control": null,
+      "evidence": "S2: individua la definizione falsa di =, la sostituisce con assegnazione e distingue il confronto senza anticiparlo impropriamente."
+    },
+    {
+      "case": "H02",
+      "target_detected": true,
+      "false_alarm_on_protected_control": null,
+      "evidence": "S6: individua < al posto di <= nel programma completo e l’output errato sul budget esatto, pur con test eseguiti corrispondenti."
+    },
+    {
+      "case": "H03",
+      "target_detected": true,
+      "false_alarm_on_protected_control": null,
+      "evidence": "S1: rifiuta l’inferenza che la generazione dimostri l’apprendimento di tutti e propone un controllo effettivo dei prerequisiti."
+    },
+    {
+      "case": "H04",
+      "target_detected": null,
+      "false_alarm_on_protected_control": false,
+      "evidence": "Non contesta i frammenti deliberatamente errati di S9. Suggerisce invece di distribuire i controlli di comprensione: raccomandazione fondata e distinta dal controllo protetto."
+    }
+  ]
+}

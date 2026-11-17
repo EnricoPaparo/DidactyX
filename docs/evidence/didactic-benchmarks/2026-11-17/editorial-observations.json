@@ -1,0 +1,34 @@
+{
+  "severity": "minor",
+  "kind": "presentation_consistency",
+  "status": "corrected_in_version_3",
+  "observations": [
+    {
+      "lesson_id": "L2",
+      "section_id": "S4",
+      "block_index": 8,
+      "quote": "Anche qui l’uscita riporta soltanto ciò che scrive il programma, senza la risposta digitata dalla persona. input non aggiunge una nuova riga dopo la richiesta: per questo il messaggio finale segue il prompt sulla stessa riga. Una schermata interattiva può mostrare anche la digitazione e il passaggio alla riga successiva dovuto a Invio."
+    },
+    {
+      "lesson_id": "L2",
+      "section_id": "S6",
+      "block_index": 3,
+      "quote": "Le risposte sono fornite nell’ordine delle richieste. L’uscita comprende i prompt, ma non la digitazione della persona. Ogni chiamata a print termina con una nuova riga."
+    },
+    {
+      "lesson_id": "L3",
+      "section_id": "S3",
+      "block_index": 2,
+      "quote": "Nelle uscite degli esempi riportiamo soltanto ciò che scrive il programma, senza le risposte digitate dalla persona. input mostra la richiesta senza aggiungere una nuova riga: per questo qui i due messaggi appaiono uno dopo l’altro. Nell’ambiente interattivo potresti vedere anche le risposte e il passaggio alla riga successiva dovuto a Invio."
+    },
+    {
+      "lesson_id": "L3",
+      "section_id": "S7",
+      "block_index": 13,
+      "quote": "Le tre esecuzioni controllano una spesa inferiore, uguale e superiore al budget. I prompt sono compresi nell’uscita, mentre la digitazione della persona è esclusa. Ogni print termina con una nuova riga."
+    }
+  ],
+  "description": "L2/L3 descrivono in alcuni passaggi il solo stdout senza eco, mentre lettore e PDF mostrano la trascrizione verificata con eco. Esplicitare la distinzione tra ciò che scrive il programma e ciò che compare nella trascrizione. I risultati Python non cambiano.",
+  "discovered_by": "Lettura del contenuto e ispezione del PDF nella sessione responsabile del benchmark.",
+  "correction": "Five explanatory blocks and three internal notes corrected by explicit editorial patches. Original versions and audit scores preserved."
+}

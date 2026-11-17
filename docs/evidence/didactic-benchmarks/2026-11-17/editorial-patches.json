@@ -1,0 +1,70 @@
+{
+  "L1": {
+    "blocks": [
+      {
+        "section": "S5",
+        "index": 5,
+        "field": "text",
+        "text": "Nelle esecuzioni di esempio mostriamo una trascrizione interattiva: dopo la domanda compare anche la risposta digitata dalla persona. Per esempio, in Quanti quaderni? 4 il programma scrive il prompt e la persona digita 4, poi preme Invio. La riga successiva Hai scritto: 4 viene prodotta da print. La risposta digitata non è una stampa del programma. input non aggiunge da solo una nuova riga: nella trascrizione il passaggio alla riga successiva accompagna Invio.",
+        "expected": "Nelle uscite degli esempi riportiamo soltanto ciò che il programma scrive, senza la digitazione della persona. Poiché input non va a capo dopo la domanda, in questa rappresentazione il messaggio successivo compare sulla stessa riga. Una schermata interattiva può mostrare anche la risposta digitata e l'andata a capo dovuta a Invio: quella visualizzazione non fa parte dei messaggi scritti dal programma."
+      }
+    ],
+    "notes": [
+      {
+        "index": 7,
+        "expected": "Le uscite dei programmi includono i prompt ed escludono l'eco della digitazione. Limitare la spiegazione di questa convenzione a quanto serve per leggere gli esempi; privilegiare richieste, risposte, valori e messaggi finali.",
+        "text": "Le esecuzioni visibili sono trascrizioni con eco dei dati digitati. Distinguerle dallo stdout tecnico, che comprende i prompt ma esclude l’eco. Privilegiare il riconoscimento di richieste, risposte e messaggi prodotti dal programma."
+      }
+    ]
+  },
+  "L2": {
+    "blocks": [
+      {
+        "section": "S4",
+        "index": 8,
+        "field": "text",
+        "text": "L’esecuzione di esempio mostra una trascrizione interattiva: il programma scrive Budget in euro:, la persona digita 12 e preme Invio. La riga successiva Budget sufficiente è prodotta da print. La risposta 12 compare perché è stata digitata, non perché il programma l’ha stampata. input non aggiunge da solo una nuova riga; nella trascrizione il passaggio alla riga successiva accompagna Invio.",
+        "expected": "Anche qui l’uscita riporta soltanto ciò che scrive il programma, senza la risposta digitata dalla persona. input non aggiunge una nuova riga dopo la richiesta: per questo il messaggio finale segue il prompt sulla stessa riga. Una schermata interattiva può mostrare anche la digitazione e il passaggio alla riga successiva dovuto a Invio."
+      },
+      {
+        "section": "S6",
+        "index": 3,
+        "field": "text",
+        "text": "Le risposte sono fornite nell’ordine delle richieste. La trascrizione mostra sia i prompt prodotti dal programma sia i dati digitati dalla persona. Le righe successive con etichette e valori sono prodotte dalle chiamate a print, ciascuna delle quali termina con una nuova riga.",
+        "expected": "Le risposte sono fornite nell’ordine delle richieste. L’uscita comprende i prompt, ma non la digitazione della persona. Ogni chiamata a print termina con una nuova riga."
+      }
+    ],
+    "notes": [
+      {
+        "index": 12,
+        "expected": "Le uscite includono i prompt ed escludono l’eco della digitazione. Limitare la spiegazione di questa convenzione a quanto serve per leggere gli esempi. Le affermazioni sulla prosecuzione riguardano i programmi proposti con dati ammessi e senza errori di esecuzione.",
+        "text": "Le esecuzioni visibili mostrano le trascrizioni con eco dei dati digitati; lo stdout tecnico include invece i prompt ed esclude l’eco. Distinguere risposta inserita e valore stampato senza appesantire la spiegazione. Le affermazioni sulla prosecuzione riguardano i programmi proposti con dati ammessi e senza errori di esecuzione."
+      }
+    ]
+  },
+  "L3": {
+    "blocks": [
+      {
+        "section": "S3",
+        "index": 2,
+        "field": "text",
+        "text": "Le esecuzioni di esempio sono trascrizioni interattive: mostrano le richieste scritte dal programma e le risposte digitate dalla persona. Dopo Quanti quaderni? compare 4 perché la persona lo inserisce e preme Invio; la richiesta successiva appare sulla riga seguente. input non aggiunge da solo una nuova riga: nella trascrizione il passaggio alla riga successiva accompagna Invio. In questo frammento non ci sono ancora chiamate a print che mostrino i valori acquisiti.",
+        "expected": "Nelle uscite degli esempi riportiamo soltanto ciò che scrive il programma, senza le risposte digitate dalla persona. input mostra la richiesta senza aggiungere una nuova riga: per questo qui i due messaggi appaiono uno dopo l’altro. Nell’ambiente interattivo potresti vedere anche le risposte e il passaggio alla riga successiva dovuto a Invio."
+      },
+      {
+        "section": "S7",
+        "index": 13,
+        "field": "explanation",
+        "text": "Le tre esecuzioni controllano una spesa inferiore, uguale e superiore al budget. Le trascrizioni mostrano i prompt e le risposte digitate dalla persona; queste risposte non sono prodotte da print. Le righe successive sono invece messaggi e valori stampati dal programma. Ogni print termina con una nuova riga.",
+        "expected": "Le tre esecuzioni controllano una spesa inferiore, uguale e superiore al budget. I prompt sono compresi nell’uscita, mentre la digitazione della persona è esclusa. Ogni print termina con una nuova riga."
+      }
+    ],
+    "notes": [
+      {
+        "index": 13,
+        "expected": "Le uscite degli esempi comprendono i prompt ed escludono l’eco della digitazione. Spiegare questa convenzione soltanto quanto serve per leggere il materiale; nel laboratorio privilegiare richieste, risposte e risultati effettivamente visibili.",
+        "text": "Le esecuzioni mostrate sono trascrizioni con eco delle risposte digitate, distinta dallo stdout tecnico senza eco. Collegare richieste, risposte inserite e risultati stampati; nel laboratorio privilegiare ciò che si vede effettivamente nell’ambiente disponibile."
+      }
+    ]
+  }
+}

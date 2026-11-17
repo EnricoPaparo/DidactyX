@@ -1,0 +1,24 @@
+{
+  "corpus_generation_prompt_version": "didactic-v2-25661f37ff47",
+  "generative_role_sha256": {
+    "COMMON_RULES": "1b00ea8fe56f455a41aa182a3fdb24953478d52722c17cac44e07b856c5d0685",
+    "AUTHOR_RULES": "adc47a2b310ef268702d8086f9489b461dcba6a0cbe9e6d8122db0df28ab228c",
+    "DISCIPLINE_INSTRUCTION": "2703362067949912b7dd0bd13e67e920289c2b80b46ddfa495ba04deaaea6245",
+    "CONTINUITY_INSTRUCTION": "e10af85731113451184e10efe676d6ae971f993eceb8a78c6ac4a3c99fd76c5d"
+  },
+  "generative_rules_unchanged_after_corpus": false,
+  "manual_reviewer_candidate_sha256": "b7a2c377ee2a6e08dc19c86ff69cb65e3d4c15186f53220d37664a445f6030d9",
+  "manual_reviewer_uses_actual_display_context": true,
+  "first_corpus_release_prompt_version": "didactic-v2-0c3e4ffabf50",
+  "release_prompt_version": "didactic-v2-ae6666449404",
+  "subsequent_change": "General clarification of actual interactive transcripts appended to author and continuity rules.",
+  "release_generative_role_sha256": {
+    "COMMON_RULES": "1b00ea8fe56f455a41aa182a3fdb24953478d52722c17cac44e07b856c5d0685",
+    "AUTHOR_RULES": "805bda7013b7edb21e61d795f541888822095254e3cf92520e4072570319f6c4",
+    "DISCIPLINE_INSTRUCTION": "2703362067949912b7dd0bd13e67e920289c2b80b46ddfa495ba04deaaea6245",
+    "CONTINUITY_INSTRUCTION": "4e9c948381d679ffb00a98e67447429726a4b65ab282b9ed6b73a87cecb997a6"
+  },
+  "final_materials_method": "Explicit editorial patches applied to the generated corpus, separately audited; not a full new workflow run.",
+  "latest_author_rules_full_corpus_regeneration_tested": false,
+  "manual_reviewer_unchanged_since_11_case_validation": true
+}

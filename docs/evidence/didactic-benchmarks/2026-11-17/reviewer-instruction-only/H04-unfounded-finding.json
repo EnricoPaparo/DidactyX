@@ -1,0 +1,8 @@
+{
+  "case": "H04",
+  "targeted_control_respected": true,
+  "additional_unfounded_finding": true,
+  "finding": "Il rapporto suggerisce che la pagina ometta i dati digitati, deducendolo dal solo stdout tecnico.",
+  "actual_rendering": "I controlli passed conservano transcript con eco; example_output usa quel transcript nel lettore e nel PDF.",
+  "action": "Contesto effettivo di visualizzazione fornito al revisore; nuova verifica dell’intero set."
+}

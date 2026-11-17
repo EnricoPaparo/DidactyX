@@ -1,0 +1,10 @@
+{
+  "prompt_version": "didactic-v2-9856ad607bf0",
+  "prompt_files_sha256": {
+    "engine/didactyx_engine/lesson_prompts.py": "6ddd600c539436bd38fbc80ad0b596033dcbfd7dc031086a91b66999e4c5fdaf",
+    "engine/didactyx_engine/lessons.py": "f9a2a0efd67fbb85a365e9eaec35595aa881c5537a6b945e5ad3cbac4672b089"
+  },
+  "calibration_report": "BASELINE_REPORT.md",
+  "heldout_results_available_at_freeze": false,
+  "rubric_unchanged": true
+}

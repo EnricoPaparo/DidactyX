@@ -1,0 +1,15 @@
+{
+  "input_sha256": "09e719defcb68eefb0cec8af391858d808ec160fdefad02554201272d09277b6",
+  "prompt_sha256": "f4ad6f2d813d2ff828214d2c0f5785fb5ed13317ddd67e4c5c9ddae7597be605",
+  "result": {
+    "summary": "La L1 rispetta titolo, durata teorica e divieti iniziali. Spiegazioni, calcoli, conversioni e uscite attese risultano coerenti; i frammenti errati sono dichiaratamente illustrativi. La principale criticità riguarda le risposte mostrate prima dei controlli individuali, che ne limitano il valore come evidenza di comprensione autonoma.",
+    "findings": [
+      {
+        "kind": "didactic",
+        "location": "S8: casi del programma completo e «Tentativo con meno aiuti»; S9: controllo conclusivo; teacher_notes sulla raccolta delle evidenze individuali",
+        "description": "Subito dopo il codice di S8 vengono mostrati tutti i casi, compresi 7/0.5/5 e 8/1.5/20, con le quattro uscite complete. Successivamente S8 richiede proprio i messaggi del primo caso e S9 chiede spesa e budget finale del secondo. L'invito a formulare una previsione prima della soluzione arriva quindi dopo che queste risposte sono già visibili. Non è improprio consolidare casi noti, né il materiale ne rivendica l'inediticità; tuttavia la riproduzione dei risultati offre un'evidenza debole di previsione autonoma. Le richieste di motivazione conservano invece una propria utilità.",
+        "suggestion": "Mantenere prima delle consegne i soli casi modellati necessari, spostando i casi 7/0.5/5 e 8/1.5/20 nelle rispettive soluzioni successive. Conservare dati e notazione attuali. Se si preferisce lasciare tutti i casi anticipati, presentare le attività come rilettura ragionata e precisare nelle note che l'evidenza individuale va cercata nella spiegazione dei passaggi, non nella sola restituzione delle uscite già mostrate."
+      }
+    ]
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "method": "Lettura del rapporto e confronto con il difetto bersaglio da parte del revisore principale.",
+  "cases": [
+    {
+      "case": "E01",
+      "target_detected": true,
+      "false_alarm_on_protected_control": null,
+      "evidence": "S8–S9: riconosce che i casi 7/0.5/5 e 8/1.5/20 sono già mostrati prima delle consegne e limita l’evidenza di previsione autonoma, senza negare il valore delle motivazioni."
+    }
+  ]
+}

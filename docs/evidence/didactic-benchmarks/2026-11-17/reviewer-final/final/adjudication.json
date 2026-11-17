@@ -1,0 +1,17 @@
+{
+  "method": "Lettura del rapporto rispetto all’oracolo e ai corpi effettivi, da parte della sessione responsabile del benchmark; non adjudication umana indipendente.",
+  "cases": [
+    {
+      "case": "F01",
+      "target_detected": true,
+      "false_alarm_on_protected_control": null,
+      "evidence": "Rileva la conversione falsamente attribuita alla variabile di origine in S6 e spiega che soltanto quantita riceve il nuovo valore intero."
+    },
+    {
+      "case": "F02",
+      "target_detected": null,
+      "false_alarm_on_protected_control": false,
+      "evidence": "Nessun finding: accetta esplicitamente il consolidamento richiesto dal docente e non impone dati inediti."
+    }
+  ]
+}

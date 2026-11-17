@@ -1,0 +1,12 @@
+{
+  "prompt_version": "didactic-v2-25661f37ff47",
+  "prompt_files_sha256": {
+    "engine/didactyx_engine/lesson_prompts.py": "1d770a611652996d9805345673f9e01fccd7344fc4c2ebf91e28f505863cc146",
+    "engine/didactyx_engine/lessons.py": "f9a2a0efd67fbb85a365e9eaec35595aa881c5537a6b945e5ad3cbac4672b089"
+  },
+  "reason": "Visibilità e ordine di lettura dei casi; difetto editoriale della prima iterazione documentato in tuning-iteration-1.",
+  "manual_reviewer_prompt_unchanged": true,
+  "manual_reviewer_prompt_sha256": "4a9afee064858a16c21eb9f14375a0bb7984c9831347298a44377d538b44af33",
+  "rubric_unchanged": true,
+  "heldout_results_used_to_tune_manual_reviewer": false
+}
