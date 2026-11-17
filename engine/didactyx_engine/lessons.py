@@ -85,8 +85,14 @@ class LessonManager(PlanningManager):
                 for key,role,instruction in [
                     ('discipline','Sei un revisore della correttezza disciplinare distinto dagli autori.',DISCIPLINE_INSTRUCTION),
                     ('continuity','Sei il revisore della progressione e della chiarezza didattica.',CONTINUITY_INSTRUCTION)]:
+                    if prefix+key in checkpoint:
+                        content=checkpoint[prefix+key]
+                        continue
+                    if cancelled():raise GenerationCancelled()
+                    review_checks=check_examples(content)
                     content=stage(prefix+key,label+('revisione disciplinare…' if key=='discipline' else 'revisione della continuità…'),role,
-                                  {**inputs,'proposal':content},instruction,CONTENT)
+                                  {**inputs,'proposal':content,'checks':review_checks,
+                                   'visible_examples':visible_examples(content,review_checks)},instruction,CONTENT)
                 for attempt in range(3):
                     errors=content_errors(content,context); checks=check_examples(content) if not errors else []
                     errors += [f"Esempio {c['section_id']}, blocco {c['block_index']}: {c['message']}" for c in checks if c['status']=='failed']
