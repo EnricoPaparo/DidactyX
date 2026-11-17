@@ -1,0 +1,8 @@
+{
+  "input_sha256": "9ddc8a7229b37847ce7759eb8955489a4d8f10afa2cf609c1ab33e4b476628ec",
+  "prompt_sha256": "eb03028080d8f9df65685f2d32bd563b0d2cb96d24da6b31b1c86fa6eeef9d41",
+  "result": {
+    "summary": "Non emergono criticità sostanziali. Codice, output, risposte e confronto spesa <= budget sono corretti, compreso il caso di uguaglianza. I frammenti errati di S8 sono dichiarati e correttamente spiegati. La continuità con L1 è effettiva: nomi, conversioni separate e tre acquisti sono conservati; confronti e indentazione sono introdotti esplicitamente. La scansione totalizza 120 minuti teorici. Considerando anche le esecuzioni immediatamente visibili, le attività riprendono soluzioni note: è consolidamento legittimo, conforme al brief, non evidenza di trasferimento a casi nuovi. Le note prevedono riscontri individuali senza presumere apprendimenti già acquisiti.",
+    "findings": []
+  }
+}

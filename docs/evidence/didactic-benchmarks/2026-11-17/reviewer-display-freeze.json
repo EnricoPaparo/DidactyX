@@ -1,0 +1,6 @@
+{
+  "candidate_file_sha256": "b7a2c377ee2a6e08dc19c86ff69cb65e3d4c15186f53220d37664a445f6030d9",
+  "reason": "Il candidato con sole istruzioni ha formulato in H04 un’osservazione infondata sugli input omessi, mentre il renderer mostra le trascrizioni verificate con eco.",
+  "change": "Aggiunta agli input la rappresentazione effettiva degli esempi, ricavata dallo stesso helper del lettore/PDF. La rubrica rimane identica; baseline e tuned dei contenuti vengono valutati entrambi con questo contesto.",
+  "generation_prompts_unchanged": true
+}

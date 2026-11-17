@@ -18,6 +18,7 @@ from didactyx_engine.generation import CodexGenerator
 from didactyx_engine.planning_schema import S, STRINGS, obj, array, REVIEW
 from didactyx_engine.example_checks import check_examples
 from didactyx_engine.lesson_schema import content_errors
+from didactyx_engine.lesson_render import visible_examples
 
 BENCH = ROOT / 'benchmarks/didactic'
 SOURCE = ROOT / 'docs/evidence/lesson-content/2026-11-16'
@@ -44,7 +45,9 @@ def prompts(variant):
 
 
 def case_input(case):
-    annual=read(SOURCE/'annual-plan.json');version=deepcopy(read(SOURCE/f"lesson-{case['lesson_id']}.json"))
+    annual=read(SOURCE/'annual-plan.json')
+    source=ROOT/case['version_path'] if case.get('version_path') else SOURCE/f"lesson-{case['lesson_id']}.json"
+    version=deepcopy(read(source))
     uda=annual['data']['udas'][0];metadata=next(l for l in uda['lessons'] if l['id']==case['lesson_id'])
     data=version['data'];mutation=case['mutation'];specific=version['brief']
     sections={s['id']:s for s in data['sections']}
@@ -71,9 +74,16 @@ def case_input(case):
             if example_case['stdin']==['3','2','6']:example_case['stdout']=example_case['stdout'].replace('Budget sufficiente','Budget insufficiente')
     elif mutation=='generated_means_mastered':
         sections['S1']['blocks'].append({'kind':'paragraph','text':'La generazione del file della prima lezione dimostra che tutti gli studenti hanno già acquisito input, conversioni e variabili. Possiamo quindi saltare qualsiasi controllo su queste conoscenze e considerarle apprese da tutta la classe.'})
-    elif mutation!='intentional_errors':raise ValueError(mutation)
+    elif mutation=='conversion_mutates_source':
+        sections['S6']['blocks'].append({'kind':'paragraph','text':'Dopo quantita = int(quantita_testo), anche quantita_testo viene trasformata nello stesso numero intero: la conversione modifica contemporaneamente entrambe le variabili.'})
+    elif mutation=='intentional_consolidation':
+        for block in sections['S7']['blocks']:
+            if block['kind']=='paragraph' and block['text'].startswith('Caso C da provare'):
+                block['text']='Ripresa del caso C già risolto: usa di nuovo le risposte 5, 2.5 e 10 per ricostruire il ragionamento e confrontarlo con la soluzione nota.'
+        specific='Questa lezione serve soltanto al consolidamento: mantieni deliberatamente gli stessi casi già svolti e le loro soluzioni. Non presentarla come prova di trasferimento a dati nuovi. Non voglio aggiungere casi inediti; puoi segnalarne l’eventuale utilità come raccomandazione facoltativa.'
+    elif mutation not in ('intentional_errors','identity'):raise ValueError(mutation)
     previous=[] if case['lesson_id']=='L1' else [read(SOURCE/'lesson-L1.json')]
-    context={'plan_id':annual['id'],'class_brief':annual['brief'],'annual_context':annual['data']['context'],
+    context={'plan_id':version['plan_id'],'class_brief':annual['brief'],'annual_context':annual['data']['context'],
         'annual_structure':annual['data'],'uda':{k:v for k,v in uda.items() if k!='lessons'},'lesson':metadata,
         'lesson_brief':specific,'previous_materials':[{k:v[k] for k in ['id','lesson_id','version','data']} for v in previous],
         'missing_prerequisites':[],'sources':version['context']['sources'],'previous_content':data,
@@ -99,9 +109,11 @@ def call_cached(path, inputs, role, instruction, schema, work_dir):
 
 
 def run_reviews(args):
-    selected=[c for c in read(BENCH/'cases.json') if c['split']==args.split];prompt=prompts(args.variant)
+    selected=[c for c in read(args.cases) if c['split']==args.split]
+    prompt=read(args.prompt_file) if args.prompt_file else prompts(args.variant)
     def run(case):
         inputs=case_input(case)
+        if prompt.get('include_display_context'):inputs['visible_examples']=visible_examples(inputs['content'],inputs['checks'])
         result=call_cached(args.output/f"{case['id']}.json",inputs,prompt['review_role'],prompt['rules']+'\n'+prompt['review_instruction'],REVIEW,args.work_dir/case['id'])
         print(json.dumps({'case':case['id'],'completed':True,'findings':len(result['result']['findings'])}),flush=True)
     with ThreadPoolExecutor(max_workers=2) as pool:
@@ -146,8 +158,12 @@ def check_audit(report, versions, annual=None):
                     for v in value.values():yield from leaves(v)
                 elif isinstance(value,list):
                     for v in value:yield from leaves(v)
-            if not any(normalize(ref['quote']) in normalize(s) for s in leaves(source)):
-                raise ValueError('Unverifiable audit quotation: '+str(ref))
+            matched=any(normalize(ref['quote']) in normalize(s) for s in leaves(source))
+            if not matched and version.get('checks') is not None:
+                displayed=visible_examples(version['data'],version['checks'])['examples']
+                matched=any(normalize(ref['quote']) in normalize(example['displayed_text'])
+                    for example in displayed if example['section_id']==ref['section_id'])
+            if not matched:raise ValueError('Unverifiable audit quotation: '+str(ref))
 
 
 def aggregate_reports(reports, rubric):
@@ -170,10 +186,11 @@ def run_audit(args):
     versions=[read(args.materials/f'lesson-{i}.json') for i in ['L1','L2','L3']]
     annual=read(args.materials/'annual-plan.json');rubric=read(BENCH/'rubric.json')
     inputs={'rubric':rubric,'annual_plan':annual['data'],'class_brief':annual['brief'],
-        'materials':[{k:v[k] for k in ['lesson_id','brief','data','checks']} for v in versions]}
+        'materials':[{**{k:v[k] for k in ['lesson_id','brief','data','checks']},'visible_examples':visible_examples(v['data'],v['checks'])} for v in versions]}
     instruction='''Valuta tutti i materiali L1, L2, L3 e poi la UDA complessiva applicando esattamente i sei criteri. Sei un valutatore, non l’autore: non riscrivere i testi e non assegnare voti per lunghezza, eleganza o dichiarazioni di qualità. Un punteggio 4 richiede evidenze solide. Motiva ogni punteggio con brevi citazioni letterali realmente presenti, lesson_id e section_id esatti; per campi finali usa summary, self_check, terms o teacher_notes. Riporta debolezze concrete, non richieste generiche di più esempi. Distingui errori, limiti e preferenze pedagogiche. Rispetta le scelte esplicite e le attività su carta nelle due lezioni teoriche. Per il laboratorio controlla osservabilità individuale, riduzione degli aiuti, nuovi casi e rapporto tra atteso e osservato. Non penalizzare l’assenza dei moduli futuri di mappe e verifiche formali. Non assumere apprendimenti effettivi, né presentare le stime dei tempi come dati osservati. La presenza di risposte ragionate è richiesta dal prodotto; valuta se la consegna invita a tentare prima di leggerle, senza esigere versioni separate studente/docente.'''
     roles={'discipline':'Sei un valutatore indipendente della correttezza disciplinare e della coerenza tra obiettivi, spiegazioni, esempi e risultati. Applica comunque tutti i criteri della rubrica.',
         'pedagogy':'Sei un valutatore indipendente della progressione didattica per principianti, del carico, della pratica guidata e dell’autonomia osservabile. Applica comunque tutti i criteri della rubrica.'}
+    instruction+=' Ogni visible_examples descrive gli esempi effettivamente mostrati subito dopo il relativo codice e prima dei blocchi successivi. Se è presente una trascrizione verificata con eco degli input, quella sostituisce lo stdout tecnico nella pagina: non dedurre un’omissione degli input guardando soltanto i valori stdout. Per autonomia e novità valuta questo ordine reale di lettura.'
     def run(name):
         saved=call_cached(args.output/f'{name}.json',inputs,roles[name],instruction,AUDIT,args.work_dir/name)
         check_audit(saved['result'],versions,annual)
@@ -186,7 +203,9 @@ def collect_results(root):
     rubric=read(BENCH/'rubric.json');summary={'rubric_version':rubric['version'],'materials':{},'reviewer_challenges':{}}
     for variant in ['baseline','tuned']:
         folder=root/variant;versions=[read(folder/f'lesson-{i}.json') for i in ['L1','L2','L3']]
-        annual=read(folder/'annual-plan.json');reports=[normalize_audit(read(root/f'audit-{variant}'/f'{name}.json')['result'],annual) for name in ['discipline','pedagogy']]
+        audit_dir=root/f'audit-{variant}'
+        if (root/f'audit-{variant}-rendered').exists():audit_dir=root/f'audit-{variant}-rendered'
+        annual=read(folder/'annual-plan.json');reports=[normalize_audit(read(audit_dir/f'{name}.json')['result'],annual) for name in ['discipline','pedagogy']]
         for report in reports:check_audit(report,versions,annual)
         checks=[]
         ordered=[l for u in annual['data']['udas'] for l in u['lessons']]
@@ -208,7 +227,9 @@ def collect_results(root):
         cases=[c for c in read(BENCH/'cases.json') if c['split']==split]
         result={}
         for variant in ['baseline','tuned']:
-            judgments=read(root/f'reviewer-{split}'/variant/'adjudication.json')['cases']
+            directory=root/f'reviewer-{split}'/variant
+            if variant=='tuned' and (root/'reviewer-final'/split).exists():directory=root/'reviewer-final'/split
+            judgments=read(directory/'adjudication.json')['cases']
             if {j['case'] for j in judgments}!={c['id'] for c in cases} or len(judgments)!=len(cases):raise ValueError('Adjudication missing or duplicated.')
             faults=[next(j for j in judgments if j['case']==c['id']) for c in cases if c['kind']=='fault']
             controls=[next(j for j in judgments if j['case']==c['id']) for c in cases if c['kind']=='control']
@@ -216,13 +237,27 @@ def collect_results(root):
             result[variant]={'targeted_faults_detected':sum(j['target_detected'] for j in faults),'targeted_faults_total':len(faults),
                 'controls_without_targeted_false_alarm':sum(not j['false_alarm_on_protected_control'] for j in controls),'controls_total':len(controls)}
         summary['reviewer_challenges'][split]=result
+    summary['editorial_regressions']={}
+    for split in ['development','final']:
+        directory=root/'reviewer-final'/split
+        cases=[c for c in read(BENCH/'editorial-cases.json') if c['split']==split]
+        judgments=read(directory/'adjudication.json')['cases']
+        if {j['case'] for j in judgments}!={c['id'] for c in cases} or len(judgments)!=len(cases):
+            raise ValueError('Editorial adjudication missing or duplicated.')
+        for case in cases:
+            read(directory/f"{case['id']}.json")
+            judgment=next(j for j in judgments if j['case']==case['id'])
+            key='target_detected' if case['kind']=='fault' else 'false_alarm_on_protected_control'
+            if type(judgment[key]) is not bool:raise ValueError('Unresolved editorial adjudication.')
+        summary['editorial_regressions'][split]=judgments
     write(root/'results.json',summary)
     return summary
 
 
 def main():
     parser=argparse.ArgumentParser(description=__doc__);subs=parser.add_subparsers(dest='command',required=True)
-    review=subs.add_parser('review');review.add_argument('--variant',choices=['baseline','tuned'],required=True);review.add_argument('--split',choices=['calibration','holdout'],required=True)
+    review=subs.add_parser('review');review.add_argument('--variant',choices=['baseline','tuned'],required=True);review.add_argument('--split',choices=['calibration','holdout','development','final'],required=True)
+    review.add_argument('--cases',type=Path,default=BENCH/'cases.json');review.add_argument('--prompt-file',type=Path)
     audit=subs.add_parser('audit');audit.add_argument('--materials',type=Path,required=True)
     collect=subs.add_parser('collect');collect.add_argument('--evidence-root',type=Path,required=True)
     for sub in [review,audit]:

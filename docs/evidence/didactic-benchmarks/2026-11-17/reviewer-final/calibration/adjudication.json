@@ -1,0 +1,29 @@
+{
+  "method": "Lettura dei rapporti e controllo dei rilievi rispetto agli oracoli e al materiale effettivamente visualizzato.",
+  "cases": [
+    {
+      "case": "C01",
+      "target_detected": true,
+      "false_alarm_on_protected_control": null,
+      "evidence": "Individua e corregge la falsa conversione automatica di input; distingue il codice verificato dall’affermazione errata."
+    },
+    {
+      "case": "C02",
+      "target_detected": true,
+      "false_alarm_on_protected_control": null,
+      "evidence": "Confronta il corpo di L1 e individua liste e cicli attribuiti falsamente alla lezione precedente."
+    },
+    {
+      "case": "C03",
+      "target_detected": true,
+      "false_alarm_on_protected_control": null,
+      "evidence": "Riconosce le soluzioni dei dati già visibili prima della consegna dichiarata inedita e distingue consolidamento da applicazione autonoma."
+    },
+    {
+      "case": "C04",
+      "target_detected": null,
+      "false_alarm_on_protected_control": false,
+      "evidence": "Rispetta l’omissione richiesta; segnala soltanto la nota docente rimasta incoerente."
+    }
+  ]
+}

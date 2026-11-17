@@ -1,0 +1,11 @@
+{
+  "method": "Lettura del rapporto rispetto all’oracolo e ai corpi effettivi, da parte della sessione responsabile del benchmark; non adjudication umana indipendente.",
+  "cases": [
+    {
+      "case": "E01",
+      "target_detected": true,
+      "false_alarm_on_protected_control": null,
+      "evidence": "Il rilievo individua in S8 input e output delle prove già mostrati prima delle consegne, propone il loro spostamento dopo il tentativo e distingue consolidamento e autonomia."
+    }
+  ]
+}

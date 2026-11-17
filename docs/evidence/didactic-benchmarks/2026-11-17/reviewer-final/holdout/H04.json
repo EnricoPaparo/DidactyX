@@ -1,0 +1,15 @@
+{
+  "input_sha256": "4fff0c2f76e6876429d015efa997f0457749c15ebd7a8d8077e5f7dabccdd8f4",
+  "prompt_sha256": "eb03028080d8f9df65685f2d32bd563b0d2cb96d24da6b31b1c86fa6eeef9d41",
+  "result": {
+    "summary": "Non emergono errori disciplinari: spiegazioni, codice, calcoli, conversioni e risposte sono coerenti. I frammenti errati sono dichiarati e le esecuzioni visibili includono correttamente gli input digitati. L1 rispetta durata, natura teorica e divieti di anticipazione. Un miglioramento riguarda l’organizzazione dei controlli formativi.",
+    "findings": [
+      {
+        "kind": "didactic",
+        "location": "content.sections S2–S8; content.self_check; content.teacher_notes, prima e seconda nota",
+        "description": "Le sezioni presentano esempi e tracce già completati, mentre le domande esplicite sono raccolte nell’autocontrollo finale. Le note richiedono previsioni e compilazione di tracce, ma non individuano dove proporle durante la spiegazione. L’alternanza richiesta tra spiegazione e piccoli controlli rimane quindi poco operativa, con il rischio di rilevare soltanto alla fine difficoltà su assegnazione, tipi e conversioni.",
+        "suggestion": "Collocare alcuni quesiti già presenti dopo S2, S3 e S6 e indicare una traccia da completare prima della restituzione, redistribuendo i minuti senza superare i 120 previsti. Possono restare casi già noti: sono controlli di comprensione e consolidamento, non prove di applicazione inedita."
+      }
+    ]
+  }
+}

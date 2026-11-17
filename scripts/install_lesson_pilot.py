@@ -27,7 +27,7 @@ def _prepare(data_directory,annual,versions,title=DEFAULT_TITLE):
     if any(p['title']==title for p in store.list_programs()):
         raise ValueError('Il pilota è già presente: nessun programma è stato sovrascritto.')
     program=store.create({'title':title,'class_label':'2ª superiore · classe fittizia',
-        'description':f'Esempio inventato su richiesta: variabili, input, conversioni e if/else. {len(versions)} lezioni complete con esempi, richiami e PDF.',
+        'description':f'Esempio inventato su richiesta: variabili, input, conversioni e if/else. {len({v["lesson_id"] for v in versions})} lezioni complete con esempi, richiami e PDF.',
         'brief':annual['brief']})
     job=plans.new_job(program['id']);plan_id=plans.publish(job['id'],annual['data'])
     mapping={};installed=[]

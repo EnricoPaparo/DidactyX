@@ -1,0 +1,15 @@
+{
+  "input_sha256": "09e719defcb68eefb0cec8af391858d808ec160fdefad02554201272d09277b6",
+  "prompt_sha256": "4a9afee064858a16c21eb9f14375a0bb7984c9831347298a44377d538b44af33",
+  "result": {
+    "summary": "L1 rispetta i vincoli: 120 minuti teorici, problema concreto coerente, nessuna anticipazione di if, cicli o funzioni definite dagli studenti. Spiegazioni, calcoli, conversioni e uscite attese sono corretti; i frammenti errati sono dichiarati intenzionali. Gli obiettivi sono sostanzialmente coperti, con controlli individuali e aiuti progressivamente ridotti. Le applicazioni ripetute non sono presentate come inedite. Emerge una sola incoerenza redazionale nelle note.",
+    "findings": [
+      {
+        "kind": "coherence",
+        "location": "content.teacher_notes, ottava nota",
+        "description": "La frase «previous_content e proposal riguardano versioni della stessa L1» richiama proposal, che non compare nei materiali forniti. Il riferimento rende ambiguo quali versioni il docente debba confrontare.",
+        "suggestion": "Sostituire proposal con il riferimento al contenuto attuale, oppure eliminare il richiamo al campo assente, mantenendo la precisazione che una versione precedente della stessa lezione non prova apprendimenti già acquisiti."
+      }
+    ]
+  }
+}

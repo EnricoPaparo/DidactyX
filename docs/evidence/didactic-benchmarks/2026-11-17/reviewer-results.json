@@ -1,0 +1,30 @@
+{
+  "calibration": {
+    "baseline": {
+      "detected": 3,
+      "faults": 3,
+      "controls_passed": 1,
+      "controls": 1
+    },
+    "tuned": {
+      "detected": 3,
+      "faults": 3,
+      "controls_passed": 1,
+      "controls": 1
+    }
+  },
+  "holdout": {
+    "baseline": {
+      "detected": 3,
+      "faults": 3,
+      "controls_passed": 1,
+      "controls": 1
+    },
+    "tuned": {
+      "detected": 3,
+      "faults": 3,
+      "controls_passed": 1,
+      "controls": 1
+    }
+  }
+}

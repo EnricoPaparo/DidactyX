@@ -35,6 +35,24 @@ class DidacticBenchmarkTests(unittest.TestCase):
         self.assertFalse(value['content']['self_check'])
         self.assertIn('ometti deliberatamente',value['context']['lesson_brief'])
 
+    def test_real_counterexample_exposes_answer_before_the_autonomous_task(self):
+        from didactyx_engine.lesson_render import render_html
+        case=next(c for c in bench.read(bench.BENCH/'editorial-cases.json') if c['id']=='E01')
+        value=bench.case_input(case)
+        version=bench.read(ROOT/case['version_path'])
+        html=render_html(version)
+        self.assertLess(html.index('Quanti quaderni? 7'),html.index('Tentativo con meno aiuti'))
+        self.assertFalse(any(c['status']=='failed' for c in value['checks']))
+
+    def test_review_context_uses_actual_visible_transcript(self):
+        from html import escape
+        from didactyx_engine.lesson_render import visible_examples,render_html
+        version=bench.read(bench.SOURCE/'lesson-L1.json')
+        examples=visible_examples(version['data'],version['checks'])['examples']
+        example=next(e for e in examples if e['section_id']=='S5' and e['case']==1)
+        self.assertIn('Quanti quaderni? 4',example['displayed_text'])
+        self.assertIn(escape(example['displayed_text']),render_html(version))
+
     def test_cached_result_is_bound_to_input_and_prompt(self):
         with tempfile.TemporaryDirectory() as directory:
             path=Path(directory)/'report.json';signature={'input_sha256':bench.digest({'text':'original'}),

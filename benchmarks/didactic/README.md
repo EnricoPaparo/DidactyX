@@ -50,3 +50,16 @@ I risultati vengono salvati dopo ogni chiamata con hash di input e prompt. Ripet
 Le fonti didattiche e disciplinari sono elencate nella rubrica: guide AERO ed EEF e documentazione ufficiale Python. Le indicazioni sono tradotte in criteri operativi per questo contesto; non impongono un'unica metodologia o una lunghezza prefissata. Le scelte esplicite del docente rimangono prioritarie e le raccomandazioni consultive.
 
 I valutatori sono sessioni dello stesso servizio generativo usato dal prodotto: la separazione dei ruoli non elimina possibili errori e preferenze condivise. Le mutazioni note e i controlli eseguibili forniscono riscontri aggiuntivi. Il campione limitato non misura tutte le discipline, tutti i bisogni educativi o l'efficacia reale in classe. Le stime del carico e dei tempi sono giudizi sui materiali, non tempi di studenti osservati.
+
+## Regressione editoriale emersa durante il tuning
+
+La prima rigenerazione ha introdotto dati diversi, inserendone però input e output nei casi di codice mostrati prima delle consegne. Il controesempio reale E01 è conservato in `tuning-iteration-1` e descritto in [editorial-cases.json](editorial-cases.json). Il revisore consultivo inizialmente affinato lo ha mancato; questo esito negativo rimane nelle evidenze.
+
+Un candidato successivo esplicita l'ordine editoriale di quei casi. È verificato dapprima su E01 e su due nuovi casi F01–F02 fissati prima della prova: un errore sulla conversione della variabile di origine e un ripasso deliberato che deve rimanere legittimo. Gli otto casi originari vengono poi rieseguiti come regressioni, con la stessa rubrica; non sono presentati come nuovi casi ignoti.
+
+```sh
+python3 scripts/didactic_benchmark.py review --variant tuned --split development --cases benchmarks/didactic/editorial-cases.json --prompt-file benchmarks/didactic/reviewer-editorial-candidate.json --output output/benchmark/editorial-development --work-dir tmp/benchmark/editorial-development
+python3 scripts/didactic_benchmark.py review --variant tuned --split final --cases benchmarks/didactic/editorial-cases.json --prompt-file benchmarks/didactic/reviewer-editorial-candidate.json --output output/benchmark/editorial-final --work-dir tmp/benchmark/editorial-final
+```
+
+Il candidato consultivo è valutato separatamente mentre la generazione della UDA mantiene il proprio contratto congelato. Il diario del tuning distingue questo intervento dalle valutazioni iniziali e conserva le istruzioni e i risultati di ciascuna fase.

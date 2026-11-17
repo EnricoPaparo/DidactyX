@@ -1,0 +1,21 @@
+{
+  "input_sha256": "11e684088670ccc577801a4c70939cf0415fae87e4797caf4f4af87a3b052321",
+  "prompt_sha256": "f4ad6f2d813d2ff828214d2c0f5785fb5ed13317ddd67e4c5c9ddae7597be605",
+  "result": {
+    "summary": "La ripresa di L1 è documentata e pertinente; la scansione prevista mantiene le 2 ore teoriche. Emergono però un errore sostanziale nel programma completo e un limite nell’autonomia osservabile delle attività di tracciamento.",
+    "findings": [
+      {
+        "kind": "error",
+        "location": "S6 «Il programma completo»: blocco code, secondo caso associato e spiegazioni successive; raccordo con S7.",
+        "description": "Il codice usa «if spesa < budget:» invece di «if spesa <= budget:». Con gli input 3, 2, 6 stampa quindi «Budget insufficiente», come confermano output e transcript. Questo comportamento viola U1-O4: il budget deve essere sufficiente anche quando coincide con la spesa. Contraddice inoltre la spiegazione successiva di S6, la traccia B di S7, la sintesi e l’autocontrollo. Il controllo «passed» certifica soltanto la corrispondenza con l’output associato, anch’esso semanticamente errato rispetto all’obiettivo. L’esempio centrale rischia così di insegnare una regola opposta a quella spiegata.",
+        "suggestion": "Sostituire nel programma completo < con <= e aggiornare il secondo output atteso a «Budget sufficiente», conservando gli altri messaggi. Ricontrollare insieme codice, casi associati e tracce sui tre rapporti tra spesa e budget: dopo questa correzione le spiegazioni già presenti risultano allineate."
+      },
+      {
+        "kind": "didactic",
+        "location": "S7 «Seguire i tre casi senza eseguire il programma»: caso B guidato, caso C «con maggiore autonomia» e variazione dei budget.",
+        "description": "Prima delle consegne lo studente ha già visto i risultati: S3 presenta i confronti per tutti e tre i casi; i casi mostrati subito dopo il codice di S6 riportano gli output completi; S4 mostra già gli esiti per budget 12, 10 e 9.5 con spesa 10.0. I calcoli dei tre acquisti erano inoltre svolti in L1-S8. La ripresa è un consolidamento legittimo, ma la progressione dichiarata verso maggiore autonomia offre evidenze limitate: lo studente può riprodurre risposte già disponibili invece di ricostruire il percorso.",
+        "suggestion": "Se si mantiene questa sequenza, presentare esplicitamente S7 come consolidamento su casi noti e osservare soprattutto le motivazioni dei passaggi. Se si vuole un controllo meno guidato, mantenere prima il solo esempio modellato e collocare i casi destinati alla prova, con relativi output e tracce risolte, dopo la consegna, eliminandone le anticipazioni pertinenti. Non è necessario introdurre dati nuovi."
+      }
+    ]
+  }
+}

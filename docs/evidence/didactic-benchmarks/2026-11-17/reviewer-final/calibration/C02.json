@@ -1,0 +1,21 @@
+{
+  "input_sha256": "03b9ca6453abda0e0cba827c2f3cf7ebd0ed92695bd98625516180e4269963ac",
+  "prompt_sha256": "eb03028080d8f9df65685f2d32bd563b0d2cb96d24da6b31b1c86fa6eeef9d41",
+  "result": {
+    "summary": "Confronti, codice, risultati e spiegazioni dell’indentazione sono coerenti con gli esempi proposti. Emergono però un falso richiamo alla lezione precedente e un limite nell’osservabilità dell’autonomia.",
+    "findings": [
+      {
+        "kind": "coherence",
+        "location": "S1, ultimo paragrafo: «Come abbiamo già imparato […] la lista acquisti […] e il ciclo for»",
+        "description": "Il materiale effettivo di L1 non contiene liste né cicli: calcola la spesa di una sola tipologia di quaderno mediante quantità e prezzo unitario. Il paragrafo attribuisce quindi alla lezione precedente contenuti inesistenti e apprendimenti non accertati. Inoltre introduce riferimenti incompatibili con il divieto esplicito di affrontare cicli nelle prime due lezioni, contraddicendo anche le note al docente.",
+        "suggestion": "Eliminare il riferimento a lista e ciclo. Richiamare soltanto acquisizioni, conversioni separate e prodotto spesa = quantita * prezzo_unitario, verificandone la comprensione senza dichiararli già appresi."
+      },
+      {
+        "kind": "didactic",
+        "location": "S7, casi B e C e variazione del budget; S8, consegna «Completa ora su carta»",
+        "description": "Prima delle consegne lo studente ha già visto le risposte: S6 mostra tutte e tre le esecuzioni complete; S4 mostra gli esiti per budget 12, 10 e 9.5; in S8 il frammento corretto precede quello da completare. Le trascrizioni effettivamente visibili confermano questa anticipazione. Il consolidamento su casi noti è legittimo, ma il caso C proposto «con maggiore autonomia» e il completamento non permettono, da soli, di distinguere una previsione o scelta autonoma dalla riproduzione della soluzione.",
+        "suggestion": "Qualificare queste attività come ricostruzione guidata e chiedere motivazioni individuali su confronto, ramo e rientri. Se si vuole osservare una previsione senza risposta già esposta, mantenere prima il solo esempio modellato e spostare le esecuzioni e i frammenti risolutivi pertinenti dopo la consegna, controllando anche le anticipazioni nelle tabelle. Non occorre introdurre dati nuovi per rendere valido il ripasso."
+      }
+    ]
+  }
+}

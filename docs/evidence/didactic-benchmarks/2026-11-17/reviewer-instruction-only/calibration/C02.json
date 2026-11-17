@@ -1,0 +1,27 @@
+{
+  "input_sha256": "7c4bad231efa5224f3ee8c6d746417aafd7cf877fc4198b7283668501212a99b",
+  "prompt_sha256": "f4ad6f2d813d2ff828214d2c0f5785fb5ed13317ddd67e4c5c9ddae7597be605",
+  "result": {
+    "summary": "I confronti, la gestione dell’uguaglianza e gli output proposti sono coerenti con il problema; i frammenti errati sono dichiarati come tali. Emergono un falso richiamo alla lezione precedente e due limiti nell’osservabilità del lavoro autonomo.",
+    "findings": [
+      {
+        "kind": "coherence",
+        "location": "S1, ultimo paragrafo: «Come abbiamo già imparato… la lista acquisti… il ciclo for»",
+        "description": "Il materiale effettivo di L1 non contiene liste né cicli: calcola la spesa con quantita * prezzo_unitario. Il paragrafo attribuisce inoltre un apprendimento non documentato e introduce concetti esclusi dalle prime due lezioni. Contraddice sia il programma appena riportato sia le note al docente che vietano l’introduzione di cicli.",
+        "suggestion": "Eliminare questo richiamo e riferirsi esclusivamente alla sequenza realmente presente in L1: acquisizione, conversioni separate, prodotto e visualizzazione. Formulare la ripresa come ricostruzione da verificare, non come apprendimento già avvenuto."
+      },
+      {
+        "kind": "didactic",
+        "location": "S7, consegne dei casi B e C e variazione del budget; precedenti casi di codice in S3, S4 e S6",
+        "description": "Prima delle consegne sono già visibili i risultati dei confronti e gli output pertinenti. In particolare, S6 mostra integralmente gli stessi casi B e C e ne spiega l’esito; S4 mostra già la variazione con budget 12, 10 e 9.5. La ripetizione è legittima come consolidamento, ma l’invito a procedere «con maggiore autonomia» non basta a distinguere una ricostruzione ragionata dalla riproduzione di risposte già lette.",
+        "suggestion": "Se si vuole osservare una previsione autonoma, mantenere prima i soli esempi modellati e collocare i casi destinati alla prova, con output e tabelle risolutive, dopo la relativa consegna. Se si conserva l’ordine attuale, presentare l’attività come ricostruzione di casi noti e raccogliere soprattutto le motivazioni dei passaggi, senza attribuirle valore di applicazione inedita."
+      },
+      {
+        "kind": "didactic",
+        "location": "S8, frammento corretto seguito da «Completa ora su carta la struttura seguente»",
+        "description": "Il frammento corretto immediatamente precedente contiene esattamente il confronto e tutti i rientri richiesti dal completamento. L’esercizio può servire da consolidamento, ma così non permette, da solo, di osservare se lo studente sa scegliere la condizione e organizzare i blocchi senza copiare il modello.",
+        "suggestion": "Dopo l’analisi dell’errore, proporre il completamento prima del frammento corretto e spostare quest’ultimo nella soluzione successiva. Mantenere esplicita la disponibilità preliminare di spesa e budget e chiedere una breve motivazione dell’uguaglianza inclusa e della stampa fuori dai rami."
+      }
+    ]
+  }
+}

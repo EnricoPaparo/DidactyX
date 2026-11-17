@@ -1,0 +1,21 @@
+{
+  "input_sha256": "bf4d706947cf2a46865708da39edf693fd2ee955e98bef6097ab9730da0cd6db",
+  "prompt_sha256": "eb03028080d8f9df65685f2d32bd563b0d2cb96d24da6b31b1c86fa6eeef9d41",
+  "result": {
+    "summary": "Nei casi forniti, codice, risultati, inclusione dell’uguaglianza e riprese effettive di L1 sono coerenti. La scansione totalizza 120 minuti teorici. Emergono due criticità sostanziali: un’attribuzione infondata di apprendimento e risposte anticipate che limitano l’osservabilità del lavoro autonomo.",
+    "findings": [
+      {
+        "kind": "coherence",
+        "location": "S1, ultimo paragrafo; confronto con learning_status e terza nota al docente",
+        "description": "Il paragrafo sostiene che la generazione del materiale di L1 dimostri l’apprendimento di tutti gli studenti e permetta di saltare qualsiasi controllo. Non esistono evidenze a sostegno: il contesto precisa che i materiali non si presumono spiegati o appresi. Inoltre, la nota al docente richiede espressamente di controllare e ricostruire i prerequisiti. Le indicazioni contraddittorie possono far avviare i confronti senza verificare la comprensione di variabili e conversioni.",
+        "suggestion": "Eliminare l’inferenza dalla disponibilità del materiale all’apprendimento. Sostituirla con un breve controllo individuale su testo restituito da input, conversione numerica e calcolo della spesa, seguito dalla ricostruzione dei passaggi non compresi prima di proseguire."
+      },
+      {
+        "kind": "didactic",
+        "location": "S7, casi B e C e variazione del budget; S8, consegna di completamento",
+        "description": "Quando vengono proposte le attività, le risposte sono già disponibili. Prima di S7, le esecuzioni visibili di S6 mostrano tutti e tre gli acquisti e il testo spiega anche condizione e ramo dei casi B e C. I budget 12, 10 e 9.5 sono già risolti nelle esecuzioni di S4. In S8, il frammento corretto immediatamente precedente coincide con la soluzione del completamento. Il consolidamento su casi noti è legittimo, ma l’invito a tentare prima della soluzione non neutralizza queste anticipazioni: le risposte possono derivare dalla riproduzione anziché dalla comprensione, limitando la progressione dichiarata verso maggiore autonomia.",
+        "suggestion": "Conservare i casi già svolti come consolidamento esplicito, senza considerarli da soli evidenza di autonomia. Per un controllo autonomo, mantenere prima soltanto gli esempi modellati e collocare dopo la consegna le risposte dei casi destinati alla prova, evitando anticipazioni anche nelle tabelle e nelle spiegazioni; in alternativa, aggiungere una piccola variazione non già risolta, richiedendo una breve motivazione individuale."
+      }
+    ]
+  }
+}

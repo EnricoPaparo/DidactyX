@@ -1,0 +1,11 @@
+{
+  "method": "Lettura del rapporto e confronto con il difetto bersaglio da parte del revisore principale.",
+  "cases": [
+    {
+      "case": "E01",
+      "target_detected": false,
+      "false_alarm_on_protected_control": null,
+      "evidence": "Il revisore consultivo della prima iterazione segnala soltanto il riferimento redazionale a proposal e non riconosce le risposte della prova già presenti nei casi precedenti."
+    }
+  ]
+}

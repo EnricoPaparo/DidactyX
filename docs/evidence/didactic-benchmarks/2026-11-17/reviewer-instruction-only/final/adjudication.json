@@ -1,0 +1,17 @@
+{
+  "method": "Lettura del rapporto e confronto con il difetto bersaglio da parte del revisore principale.",
+  "cases": [
+    {
+      "case": "F01",
+      "target_detected": true,
+      "false_alarm_on_protected_control": null,
+      "evidence": "S6: identifica l’affermazione falsa che int modifichi anche quantita_testo e la distingue dal nuovo valore assegnato a quantita."
+    },
+    {
+      "case": "F02",
+      "target_detected": null,
+      "false_alarm_on_protected_control": false,
+      "evidence": "Accetta esplicitamente il consolidamento su casi noti richiesto dal docente; nessun finding e nessun obbligo di aggiungere casi nuovi."
+    }
+  ]
+}

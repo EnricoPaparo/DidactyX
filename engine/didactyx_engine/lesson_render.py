@@ -13,6 +13,21 @@ def example_output(version, section_id, block_index, case_number, case):
     match=next((c for c in version['checks'] if c.get('section_id')==section_id and c.get('block_index')==block_index and c.get('case')==case_number and c.get('status')=='passed' and 'transcript' in c),None)
     return ('Esecuzione di esempio',match['transcript']) if match else ('Output atteso',case['stdout'])
 
+
+def visible_examples(data, checks):
+    """Exact case presentation used by both readers, for grounded review."""
+    version={'data':data,'checks':checks};examples=[]
+    for section in data['sections']:
+        for block_index,block in enumerate(section['blocks']):
+            if block['kind']!='code':continue
+            for number,case in enumerate(block['cases'],1):
+                label,text=example_output(version,section['id'],block_index,number,case)
+                examples.append({'section_id':section['id'],'block_index':block_index,'case':number,
+                    'input_lines':case['stdin'],'label':label,'displayed_text':text or 'Nessuna uscita visualizzata.'})
+    return {'position':'Ogni caso è visibile subito dopo il proprio blocco code, prima dei blocchi successivi.',
+        'transcripts':'Quando è disponibile una trascrizione verificata, il lettore e il PDF usano quella, con eco dei dati digitati, al posto dello stdout tecnico.',
+        'examples':examples}
+
 def render_html(version):
     data=version['data']; body=[]
     if version['context'].get('objectives'):
@@ -99,9 +114,10 @@ def export_pdf(version,directory):
             if k=='paragraph':story.append(p(b['text']))
             elif k=='definition':story.extend([p(b['term'],'h3'),p(b['text'])])
             elif k=='example':
-                story.append(p(b['title'],'h3'))
-                for i,s in enumerate(b['steps'],1):story.append(p(f'{i}. {s}'))
-                story.append(p(b['conclusion']))
+                example=[p(b['title'],'h3')]
+                example.extend(p(f'{i}. {s}') for i,s in enumerate(b['steps'],1))
+                example.append(p(b['conclusion']))
+                story.append(KeepTogether(example))
             elif k=='code':
                 story.extend([KeepTogether([code(b['code'])]),p(b['explanation'])])
                 for i,c in enumerate(b['cases'],1):
@@ -127,8 +143,9 @@ def export_pdf(version,directory):
         for q in data['self_check']:story.extend([p(q['question'],'h3'),p(q['answer'])])
     sources=[s for s in version['context']['sources'] if s['id'] in data['source_ids']]
     if sources:
-        story.append(p('Riferimenti','h2'))
-        for s in sources:story.extend([p(s['title'],'h3'),p(s['url'],'small')])
+        references=[p('Riferimenti','h2')]
+        for s in sources:references.extend([p(s['title'],'h3'),p(s['url'],'small')])
+        story.append(KeepTogether(references))
     directory=Path(directory).expanduser().resolve();directory.mkdir(parents=True,exist_ok=True)
     slug=re.sub(r'[^\w-]+','-',data['title']).strip('-')[:65] or 'lezione'
     target=directory/f'{slug}_v{version["version"]}_{uuid.uuid4().hex[:12]}.pdf';temporary=target.with_suffix('.pdf.tmp')

@@ -1,0 +1,15 @@
+{
+  "input_sha256": "9ca102f91544a4843a7ce5335d465b1e47ce84647db4a6dcf4a05e0c2a029550",
+  "prompt_sha256": "eb03028080d8f9df65685f2d32bd563b0d2cb96d24da6b31b1c86fa6eeef9d41",
+  "result": {
+    "summary": "La L1 rispetta i vincoli iniziali: teoria di 120 minuti, nessuna anticipazione di condizioni o cicli, prerequisiti introdotti esplicitamente. Calcoli, conversioni, codice e uscite risultano coerenti; gli errori di S9 sono intenzionali e correttamente spiegati. Emerge però un limite sostanziale nell’ordine di presentazione: diverse risposte sono visibili prima delle consegne di previsione.",
+    "findings": [
+      {
+        "kind": "didactic",
+        "location": "S8, codice completo e successive prove 6/1.5/11 e 7/0.5/5; S9, controllo 8/1.5/20; analogamente S5, previsione con 6, e S6, traccia con 2 e 3.",
+        "description": "Le esecuzioni effettivamente mostrate anticipano le risposte richieste. Subito dopo il codice di S8 compaiono tutti gli otto casi, inclusi i messaggi finali delle due prove successive e il risultato del controllo conclusivo di S9. Anche la risposta con 6 in S5 e i numeri convertiti della prova 2/3 in S6 sono già visualizzati prima delle rispettive consegne. Il riuso è legittimo come consolidamento, e non viene falsamente dichiarato inedito; tuttavia l’invito a prevedere prima della soluzione non impedisce di riprendere risultati già letti. Si indebolisce quindi l’osservabilità della previsione autonoma richiamata nelle note al docente. Le spiegazioni sui tipi e sul procedimento conservano invece un valore diagnostico distinto.",
+        "suggestion": "Mantenere prima delle consegne soltanto le esecuzioni modellate, spostando i casi delle prove accanto alle soluzioni successive, senza cambiare dati o notazione. In particolare, collocare il caso 8/1.5/20 dopo il controllo di S9. Se si preferisce conservare l’ordine attuale, presentare queste attività come rilettura motivata di risultati già disponibili e adeguare le note: osservare la spiegazione individuale, senza considerare la sola riproduzione dell’output una previsione autonoma."
+      }
+    ]
+  }
+}
