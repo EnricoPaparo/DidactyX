@@ -1,0 +1,18 @@
+{
+  "version": "0.3.3",
+  "build": 6,
+  "unit_tests_passed": 48,
+  "swift_frozen_engine_integration_passed": true,
+  "local_signature_verified": true,
+  "frozen_python_cases_passed": 24,
+  "pdf_pages_visually_reviewed": 63,
+  "source_and_frozen_pdf_rasters_identical": true,
+  "native_sample_verified": true,
+  "build_test_log_sha256": "08f880720af548b553fb5c93229bbb76582c1a66815583274a1a47abddc54267",
+  "native_history_versions_verified": [
+    1,
+    2
+  ],
+  "native_laboratory_version": 2,
+  "native_pdf_saved_feedback_verified": true
+}

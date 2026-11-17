@@ -6,7 +6,7 @@ import sys
 
 ROOT=Path(__file__).resolve().parents[1]
 sys.path[:0]=[str(ROOT/'engine'),str(ROOT/'scripts')]
-from didactic_benchmark import read,write,check_audit,normalize_audit,aggregate_reports,BENCH
+from didactic_benchmark import read,write,digest,check_audit,normalize_audit,aggregate_reports,BENCH
 from didactyx_engine.lesson_schema import content_errors
 from didactyx_engine.example_checks import check_examples
 from didactyx_engine.store import Store
@@ -72,6 +72,8 @@ def collect(evidence,directory,previous):
             'passed_cases':sum(c['status']=='passed' for c in checks),'not_run_blocks':sum(c['status']=='not_run' for c in checks),
             'continuity_refs':len(version['data']['continuity']),
             'workflow_stages':[key for key in job['checkpoint'] if key.startswith(code+':')],
+            'workflow_output_sha256':{key:digest(value) for key,value in job['checkpoint'].items() if key.startswith(code+':')},
+            'published_data_sha256':digest(version['data']),
             'author_groups':len(job['checkpoint'][code+':outline']['author_groups']),
             'published_content_equals_final_workflow_output':True})
     acceptance=acceptance_checks(evidence/'acceptance.json',versions)
