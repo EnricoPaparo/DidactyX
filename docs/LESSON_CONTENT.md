@@ -62,4 +62,12 @@ Su scelta delegata dal docente, la prima UDA del pilota è stata completata con 
 
 La revisione consultiva riceve anche `visible_examples`, ricavato dallo stesso helper usato dal lettore e dal PDF. Conosce così sia l’ordine degli esempi sia la trascrizione realmente mostrata, evitando di scambiare lo stdout tecnico per il testo della pagina. I prompt dei ruoli sono in `engine/didactyx_engine/lesson_prompts.py`; un fingerprint impedisce riprese con istruzioni cambiate. Il risultato riguarda un campione interno e non dimostra da solo efficacia in classe o generalizzazione ad altre discipline.
 
-Le ultime precisazioni dei prompt sulle trascrizioni sono state provate su un paragrafo mirato; la versione 3 del campione comprende correzioni editoriali esplicite, valutate separatamente. Non è stata eseguita un’altra rigenerazione integrale della UDA con quelle ultime precisazioni.
+Nella fase 0.3.2 le ultime precisazioni dei prompt sulle trascrizioni erano state provate su un paragrafo mirato; la versione 3 del campione comprende correzioni editoriali esplicite, valutate separatamente. In quella fase non era stata eseguita un’altra rigenerazione integrale della UDA.
+
+## Consolidamento completo 0.3.3
+
+Le istruzioni generative rafforzano il prodotto individuale di costruzione o modifica delle istruzioni e la riduzione del carico che protegga tentativo e restituzione. La profondità delle spiegazioni rimane disponibile per consultazione; le scelte esplicite del docente restano prioritarie.
+
+Entrambi i revisori automatici ricevono `checks` e `visible_examples` della proposta effettiva. Dopo una correzione disciplinare i controlli sono ricalcolati per la proposta corretta: il secondo revisore non valuta una trascrizione precedente. I passaggi già completati vengono riusati durante la ripresa.
+
+Il [collaudo integrale](evidence/lesson-consolidation/2026-11-17/REPORT.md) rigenera le tre lezioni in ordine con lo stesso contratto congelato e verifica la corrispondenza dei contenuti con l’uscita finale del workflow. Nessuna correzione editoriale successiva viene usata per superare la prova. La rubrica e i requisiti specifici del punto 1 sono verificati con citazioni controllabili; questa rimane una validazione interna sul pilota, senza misure di apprendimento in classe.

@@ -1,0 +1,1129 @@
+{
+  "id": "13b8e971-ad31-4910-b0cf-1d5e2720e2d8",
+  "program_id": "a6f84973-fd28-4c48-8c50-5f7e0e625e56",
+  "plan_id": "0482c074-5b7a-4e6a-b89b-17bbfb49d863",
+  "lesson_id": "L3",
+  "version": 2,
+  "created_at": "2026-11-17T16:15:39.210Z",
+  "brief": "",
+  "data": {
+    "title": "Dal calcolo alla prima decisione di acquisto",
+    "lead": "In questo laboratorio di 2 ore realizzerai al computer la prima versione di «Acquisti sotto controllo». Il programma chiederà i dati di un acquisto di quaderni, calcolerà la spesa e comunicherà se il budget basta. Dopo una costruzione guidata scriverai una variante individuale della decisione, confronterai previsioni e risultati e spiegherai le tue scelte.",
+    "objective_ids": [
+      "U1-O1",
+      "U1-O2",
+      "U1-O3",
+      "U1-O4"
+    ],
+    "sections": [
+      {
+        "id": "S1",
+        "title": "Che cosa deve fare il nostro programma",
+        "objective_ids": [
+          "U1-O1",
+          "U1-O2",
+          "U1-O3",
+          "U1-O4"
+        ],
+        "blocks": [
+          {
+            "kind": "paragraph",
+            "text": "Riprendiamo il problema presentato nei materiali delle due lezioni teoriche: acquistare quaderni tutti dello stesso prezzo. La quantità indica quanti quaderni vogliamo comprare; il prezzo unitario è il costo di un quaderno; il budget è il denaro disponibile. La spesa è il costo complessivo, che il programma deve ricavare."
+          },
+          {
+            "kind": "example",
+            "title": "L’acquisto di partenza",
+            "steps": [
+              "Vogliamo acquistare 4 quaderni.",
+              "Ogni quaderno costa 2,50 euro e abbiamo un budget di 12 euro.",
+              "Moltiplichiamo quantità e prezzo unitario: 4 × 2,50 = 10 euro.",
+              "Dieci euro non superano i dodici disponibili: il programma deve comunicare Budget sufficiente."
+            ],
+            "conclusion": "Il calcolo trova il costo; la decisione stabilisce se quel costo rientra nel denaro disponibile. Il budget non è un fattore della moltiplicazione."
+          },
+          {
+            "kind": "paragraph",
+            "text": "Realizzeremo un file contenente istruzioni Python e conserveremo le prove del suo comportamento. Il programma dovrà chiedere quantità, prezzo unitario e budget, convertire le risposte nei numeri necessari, calcolare e mostrare la spesa. Comunicherà un solo esito, Budget sufficiente oppure Budget insufficiente, e mostrerà infine Controllo terminato. Non effettuerà un pagamento e non sottrarrà la spesa dal budget."
+          },
+          {
+            "kind": "paragraph",
+            "text": "Ricostruiamo i passaggi necessari, senza dare per scontato che siano già chiari. Una variabile è un nome associato a un valore. Nell’istruzione quantita = 4, il simbolo = indica un’assegnazione: Python ottiene il valore a destra e lo associa al nome a sinistra. Useremo quantita, prezzo_unitario, budget e spesa. Il trattino basso separa le parole di prezzo_unitario. Manteniamo sempre la stessa scrittura dei nomi: Python distingue maiuscole e minuscole."
+          },
+          {
+            "kind": "paragraph",
+            "text": "input è una funzione predefinita, cioè già disponibile in Python. Mostra una richiesta, attende una risposta e restituisce un testo quando premiamo Invio. Restituire significa rendere disponibile un valore all’istruzione che contiene la chiamata. I testi appartengono al tipo str e si chiamano anche stringhe. Digitando 4 otteniamo inizialmente la stringa \"4\", non il numero 4."
+          },
+          {
+            "kind": "paragraph",
+            "text": "La conversione int permette di ottenere da un testo valido il numero intero necessario per la quantità. Per prezzo e budget useremo float, che permette di rappresentare anche importi con una parte decimale. Acquisizione e conversione rimarranno su righe separate: quantita_testo conserverà il testo ricevuto e quantita il numero ottenuto. La conversione produce un nuovo valore e non modifica la stringa conservata nell’altra variabile. Il suffisso _testo aiuta chi legge, ma non determina il tipo del dato."
+          },
+          {
+            "kind": "table",
+            "headers": [
+              "Passaggio",
+              "Che cosa accade nel nostro acquisto"
+            ],
+            "rows": [
+              [
+                "Acquisire",
+                "Ricevere quantità, prezzo unitario e budget come testi."
+              ],
+              [
+                "Convertire",
+                "Ottenere la quantità con int e gli importi con float."
+              ],
+              [
+                "Calcolare",
+                "Moltiplicare quantità e prezzo unitario."
+              ],
+              [
+                "Mostrare",
+                "Usare print per comunicare dati e spesa."
+              ],
+              [
+                "Decidere",
+                "Confrontare spesa e budget e scegliere il messaggio."
+              ]
+            ]
+          },
+          {
+            "kind": "paragraph",
+            "text": "Il confronto spesa <= budget domanda se la spesa è minore o uguale al budget. I caratteri < e = formano insieme l’operatore <= e non vanno separati. Il confronto produce True quando la relazione è vera e False quando è falsa. Questi valori logici, detti booleani, hanno l’iniziale maiuscola e si scrivono senza virgolette."
+          },
+          {
+            "kind": "paragraph",
+            "text": "La struttura if/else sceglie un ramo, cioè una delle alternative di istruzioni: con True esegue quello di if, con False quello di else. L’uguaglianza deve dare sufficienza: avere esattamente il denaro necessario permette di coprire il costo, anche se non avanza nulla."
+          },
+          {
+            "kind": "callout",
+            "title": "Prima di iniziare, spiega due passaggi",
+            "text": "Rispondi individualmente prima di leggere il confronto seguente. Dopo che una persona digita 4, quale dato restituisce input e come otteniamo il numero da usare nel prodotto? Perché, con 4 quaderni da 2,50 euro, cambiare soltanto il budget non cambia la spesa?"
+          },
+          {
+            "kind": "paragraph",
+            "text": "input restituisce la stringa \"4\"; int permette di ricavarne l’intero 4. La spesa rimane 10 euro perché dipende da quantità e prezzo unitario, non dal denaro disponibile. Se una risposta non ti era chiara, individua il passaggio incerto: lo ricostruiremo durante la scrittura delle istruzioni."
+          },
+          {
+            "kind": "callout",
+            "title": "Le ipotesi del nostro modello",
+            "text": "Usiamo quantità intere non negative, prezzi e budget non negativi e risposte correttamente convertibili. Durante l’esecuzione scriviamo i decimali con il punto, senza virgolette e senza simbolo dell’euro: per esempio 2.5. Scegliamo importi piccoli, in euro interi o multipli di 0,50 euro. Il programma non corregge automaticamente gli inserimenti. Molti altri decimali sono rappresentati da float in modo approssimato: questo è un modello didattico, non una soluzione generale per qualsiasi calcolo monetario reale."
+          }
+        ]
+      },
+      {
+        "id": "S2",
+        "title": "Scrivere, salvare e avviare il primo file",
+        "objective_ids": [
+          "U1-O1",
+          "U1-O2",
+          "U1-O3"
+        ],
+        "blocks": [
+          {
+            "kind": "paragraph",
+            "text": "Lavoreremo in un ambiente Python che si ipotizza già predisposto. Con il docente individua l’editor, cioè lo spazio in cui scrivere e modificare le istruzioni, e lo spazio in cui il programma presenterà richieste e risultati. Individua anche i comandi per salvare e avviare il file. La loro posizione dipende dall’ambiente disponibile."
+          },
+          {
+            "kind": "paragraph",
+            "text": "Crea un nuovo file e salvalo come acquisto_quaderni.py nella cartella indicata per il lavoro. L’estensione .py identifica il file come file Python. Salvare conserva le istruzioni; avviare il programma ne fa eseguire il contenuto. Dopo una modifica, salva prima del nuovo avvio."
+          },
+          {
+            "kind": "paragraph",
+            "text": "Cominciamo con due istruzioni, ciascuna su una riga e senza spazi iniziali. La prima prepara un valore; la seconda lo comunica con print. Per chiamare questa funzione scriviamo il nome seguito dalle parentesi tonde. Le informazioni fornite dentro le parentesi si chiamano argomenti."
+          },
+          {
+            "kind": "code",
+            "language": "python",
+            "code": "quantita = 4\nprint(\"Quantita:\", quantita)",
+            "explanation": "L’assegnazione associa quantita all’intero 4 senza mostrarlo. print riceve due argomenti separati dalla virgola: il testo dell’etichetta e il valore della variabile. Le virgolette delimitano il testo Quantita:, mentre quantita senza virgolette permette di leggere il valore associato al nome. Ogni parentesi e ogni virgoletta aperta devono avere la propria chiusura. Normalmente print inserisce uno spazio fra gli argomenti e termina andando a capo. Questo programma non chiede dati.",
+            "execution": "check",
+            "cases": [
+              {
+                "stdin": [],
+                "stdout": "Quantita: 4\n"
+              }
+            ]
+          },
+          {
+            "kind": "list",
+            "items": [
+              "Salva il file e avvialo: cerca la riga Quantita: 4 nello spazio dei risultati.",
+              "Prima di modificare il codice, prevedi che cosa cambierà sostituendo 4 con 6 nella prima riga.",
+              "Esegui soltanto quella modifica, salva e avvia di nuovo.",
+              "Confronta ciò che compare con la tua previsione."
+            ]
+          },
+          {
+            "kind": "paragraph",
+            "text": "Dopo la modifica deve comparire Quantita: 6. La stampa non deve essere riscritta: legge il valore attuale di quantita. Se compare ancora 4, controlla prima di avere salvato la modifica e di avere avviato il file corretto. Aggiungere altre istruzioni prima di questi controlli potrebbe nascondere la causa."
+          },
+          {
+            "kind": "paragraph",
+            "text": "Se lavori in coppia, chi non ha scritto le due righe ne spiega il significato e controlla il risultato. Entrambi dovete riconoscere quale istruzione assegna e quale visualizza: vedere l’uscita corretta non basta a spiegare il procedimento."
+          },
+          {
+            "kind": "callout",
+            "title": "Il file contiene istruzioni, non le risposte dell’acquisto",
+            "text": "Tra poco useremo input. Quando apparirà una domanda, digiterai la risposta nello spazio in cui il programma in esecuzione la attende e premerai Invio. Non aggiungere 4 o 2.5 come nuove righe nel file: nel file scriviamo le istruzioni, durante l’esecuzione forniamo i dati."
+          }
+        ]
+      },
+      {
+        "id": "S3",
+        "title": "Costruire acquisizioni, conversioni e calcolo",
+        "objective_ids": [
+          "U1-O1",
+          "U1-O2",
+          "U1-O3"
+        ],
+        "blocks": [
+          {
+            "kind": "paragraph",
+            "text": "Sostituisci le due righe del piccolo programma iniziale. Non conservare quantita = 6: la quantità dovrà dipendere dalla risposta della persona, non da un valore fisso nel codice. Costruiremo il programma aggiungendo una parte alla volta nello stesso file."
+          },
+          {
+            "kind": "paragraph",
+            "text": "La prima parte acquisisce e converte quantità e prezzo. In una chiamata a input, il testo dentro le parentesi è la richiesta mostrata alla persona, chiamata anche prompt. Lo spazio finale nella richiesta separa visivamente la domanda dalla risposta digitata."
+          },
+          {
+            "kind": "code",
+            "language": "python",
+            "code": "quantita_testo = input(\"Quanti quaderni? \")\nquantita = int(quantita_testo)\nprezzo_testo = input(\"Prezzo di un quaderno in euro: \")\nprezzo_unitario = float(prezzo_testo)",
+            "explanation": "Queste quattro righe possono essere eseguite anche da sole, ma costituiscono soltanto la prima parte del programma dell’acquisto. Scrivile senza rientri iniziali. La prima coppia acquisisce e converte la quantità; la seconda acquisisce e converte il prezzo. Dopo la seconda risposta il programma termina: non contiene ancora budget, calcolo o stampe dei valori ottenuti. Nell’esecuzione di esempio, 4 e 2.5 sono risposte digitate dalla persona dopo le richieste e confermate con Invio, non valori visualizzati da print.",
+            "execution": "check",
+            "cases": [
+              {
+                "stdin": [
+                  "4",
+                  "2.5"
+                ],
+                "stdout": "Quanti quaderni? Prezzo di un quaderno in euro: "
+              }
+            ]
+          },
+          {
+            "kind": "example",
+            "title": "Che cosa succede rispondendo 4 e 2.5",
+            "steps": [
+              "La prima chiamata a input mostra Quanti quaderni? e attende. Dopo la risposta 4 e Invio, restituisce la stringa \"4\", assegnata a quantita_testo.",
+              "int legge il valore di quantita_testo e restituisce l’intero 4, che viene assegnato a quantita.",
+              "La seconda chiamata a input acquisisce il prezzo: prezzo_testo riceve la stringa \"2.5\".",
+              "float converte quella stringa nel numero 2.5, assegnato a prezzo_unitario."
+            ],
+            "conclusion": "Le variabili con suffisso _testo conservano le risposte iniziali; quelle numeriche saranno usate nel calcolo. Le conversioni non cancellano i testi."
+          },
+          {
+            "kind": "paragraph",
+            "text": "Nella conversione int(quantita_testo), il nome è senza virgolette perché dobbiamo usare il suo valore. Scrivere int(\"quantita_testo\") significherebbe tentare di convertire proprio la parola quantita_testo, che non rappresenta un intero. Le virgolette distinguono un testo scritto direttamente nel codice dal nome di una variabile."
+          },
+          {
+            "kind": "callout",
+            "title": "Aggiungi tu la coppia del budget",
+            "text": "Prima di leggere la soluzione, scrivi due istruzioni dopo quelle del prezzo. La prima deve chiedere Budget in euro: seguito da uno spazio e conservare la risposta in budget_testo. La seconda deve ottenere il numero e associarlo a budget. Scegli la conversione pensando a un budget che può avere una parte decimale."
+          },
+          {
+            "kind": "paragraph",
+            "text": "Soluzione da confrontare con il tuo tentativo: per il budget scegliamo float, come per il prezzo. Non basta chiamare la variabile budget per renderne numerico il contenuto; serve la conversione."
+          },
+          {
+            "kind": "code",
+            "language": "python",
+            "code": "budget_testo = input(\"Budget in euro: \")\nbudget = float(budget_testo)",
+            "explanation": "Aggiungi questa coppia dopo le quattro righe precedenti, senza duplicarle. Con la risposta 12, budget_testo conserva la stringa \"12\" e budget riceve il float 12.0. La coppia può funzionare anche da sola: l’esempio ne isola il comportamento. Chiede e converte il budget, ma non stampa il numero ottenuto. Il 12 visibile dopo la richiesta è la risposta digitata.",
+            "execution": "check",
+            "cases": [
+              {
+                "stdin": [
+                  "12"
+                ],
+                "stdout": "Budget in euro: "
+              }
+            ]
+          },
+          {
+            "kind": "paragraph",
+            "text": "Nel file devono ora esserci sei righe: tre coppie di acquisizione e conversione. Aggiungi il calcolo e le quattro stampe seguenti. In Python la moltiplicazione si indica con l’asterisco *. Prima viene calcolato il prodotto a destra di =, poi il risultato viene associato al nome spesa."
+          },
+          {
+            "kind": "code",
+            "language": "python",
+            "code": "spesa = quantita * prezzo_unitario\nprint(\"Quantita:\", quantita)\nprint(\"Prezzo unitario in euro:\", prezzo_unitario)\nprint(\"Budget in euro:\", budget)\nprint(\"Spesa in euro:\", spesa)",
+            "explanation": "Questo frammento non è autonomo: va aggiunto dopo le sei righe che hanno preparato i dati. Quantità e prezzo devono essere disponibili come numeri prima del prodotto. La spesa deve essere calcolata prima della sua stampa. Il budget è mostrato, ma non entra nella moltiplicazione.",
+            "execution": "illustration",
+            "cases": []
+          },
+          {
+            "kind": "paragraph",
+            "text": "Salva e avvia il programma costruito. Inserisci 4, 2.5 e 12, in quest’ordine, confermando ogni risposta con Invio. Dopo le richieste devono comparire quattro righe: Quantita: 4, Prezzo unitario in euro: 2.5, Budget in euro: 12.0 e Spesa in euro: 10.0. Non compare ancora un esito sulla sufficienza del budget: manca la selezione."
+          },
+          {
+            "kind": "table",
+            "headers": [
+              "Nome",
+              "Valore con le risposte 4, 2.5 e 12",
+              "Tipo",
+              "Origine"
+            ],
+            "rows": [
+              [
+                "quantita_testo",
+                "\"4\"",
+                "str",
+                "Risposta acquisita con input"
+              ],
+              [
+                "quantita",
+                "4",
+                "int",
+                "Conversione con int"
+              ],
+              [
+                "budget_testo",
+                "\"12\"",
+                "str",
+                "Risposta acquisita con input"
+              ],
+              [
+                "budget",
+                "12.0",
+                "float",
+                "Conversione con float"
+              ],
+              [
+                "spesa",
+                "10.0",
+                "float",
+                "Prodotto di quantita e prezzo_unitario"
+              ]
+            ]
+          },
+          {
+            "kind": "paragraph",
+            "text": "La tabella è una traccia dei valori: le virgolette distinguono i testi dai numeri, ma non sono caratteri da digitare nelle risposte. Anche prezzo_testo conserva la stringa \"2.5\", mentre prezzo_unitario contiene il float 2.5. Le stampe leggono i valori senza modificarli. Se il prezzo fosse inserito come 2, float produrrebbe comunque 2.0: il tipo del risultato dipende dalla conversione applicata, non dalla presenza del punto nella risposta."
+          },
+          {
+            "kind": "callout",
+            "title": "Individua e motiva",
+            "text": "Nel tuo file indica l’istruzione che ottiene il numero 4 dal testo \"4\" e quella che ricava 10.0. Spiega perché sono operazioni diverse e perché non chiediamo alla persona di inserire la spesa. Poi confronta la tua spiegazione con quella seguente."
+          },
+          {
+            "kind": "paragraph",
+            "text": "quantita = int(quantita_testo) converte una rappresentazione testuale in un numero. spesa = quantita * prezzo_unitario usa invece due numeri per calcolare un nuovo risultato. Non chiediamo la spesa perché vogliamo affidare proprio quel calcolo al programma. Se lavori in coppia, scambiate chi scrive e chi controlla prima della fase successiva."
+          }
+        ]
+      },
+      {
+        "id": "S4",
+        "title": "Aggiungere la scelta senza perdere il caso esatto",
+        "objective_ids": [
+          "U1-O3",
+          "U1-O4"
+        ],
+        "blocks": [
+          {
+            "kind": "paragraph",
+            "text": "Il programma prepara e mostra gli importi. Ora deve scegliere un messaggio. Ricostruiamo la struttura: if introduce la condizione; else introduce l’alternativa per il risultato falso. Si scrivono in minuscolo e senza virgolette: sono parole del linguaggio, non messaggi da stampare. Le loro righe iniziali, chiamate intestazioni, terminano con due punti. Sotto ciascuna intestazione scriviamo il blocco, cioè le istruzioni appartenenti a quel ramo."
+          },
+          {
+            "kind": "paragraph",
+            "text": "L’indentazione è il rientro iniziale delle righe e in Python delimita i blocchi. Adottiamo uniformemente quattro spazi: è la convenzione usata nel nostro lavoro. if ed else sono allineati fra loro; le stampe dei due esiti sono rientrate sotto la rispettiva intestazione. else non richiede un secondo confronto: è già l’alternativa prevista quando la condizione di if è falsa."
+          },
+          {
+            "kind": "callout",
+            "title": "Completa la decisione prima di guardare il modello",
+            "text": "Aggiungi al tuo file le istruzioni necessarie, provando prima di leggere il programma completo. Quando la spesa non supera il budget deve comparire Budget sufficiente; altrimenti Budget insufficiente. Considera sufficiente anche il caso esatto. Dopo entrambi i percorsi deve comparire Controllo terminato. Scrivi il confronto, le due intestazioni e le tre stampe, scegliendo i rientri."
+          },
+          {
+            "kind": "paragraph",
+            "text": "Per controllare il tentativo considera due domande: con spesa e budget entrambi pari a 10 euro, il tuo confronto dà sufficienza? La stampa finale si trova fuori da entrambi i rami? Quella posizione la rende una prosecuzione comune, raggiunta dopo qualunque ramo scelto."
+          },
+          {
+            "kind": "paragraph",
+            "text": "Soluzione di confronto: il programma seguente riprende quello completo della seconda lezione. Nel tuo file aggiungi soltanto ciò che manca; non incollare una seconda copia delle acquisizioni e delle stampe."
+          },
+          {
+            "kind": "code",
+            "language": "python",
+            "code": "quantita_testo = input(\"Quanti quaderni? \")\nquantita = int(quantita_testo)\nprezzo_testo = input(\"Prezzo di un quaderno in euro: \")\nprezzo_unitario = float(prezzo_testo)\nbudget_testo = input(\"Budget in euro: \")\nbudget = float(budget_testo)\nspesa = quantita * prezzo_unitario\nprint(\"Quantita:\", quantita)\nprint(\"Prezzo unitario in euro:\", prezzo_unitario)\nprint(\"Budget in euro:\", budget)\nprint(\"Spesa in euro:\", spesa)\nif spesa <= budget:\n    print(\"Budget sufficiente\")\nelse:\n    print(\"Budget insufficiente\")\nprint(\"Controllo terminato\")",
+            "explanation": "Le prime sei righe acquisiscono e convertono i dati; la settima calcola la spesa. Dopo le quattro stampe dei valori, Python valuta spesa <= budget e sceglie una sola stampa di esito. L’ultima stampa è fuori dai rami. Nell’esecuzione di esempio, 4, 2.5 e 12 sono risposte digitate dopo le domande e confermate con Invio; non sono prodotte da print. Seguono le quattro righe dei valori, il messaggio scelto e quello finale.",
+            "execution": "check",
+            "cases": [
+              {
+                "stdin": [
+                  "4",
+                  "2.5",
+                  "12"
+                ],
+                "stdout": "Quanti quaderni? Prezzo di un quaderno in euro: Budget in euro: Quantita: 4\nPrezzo unitario in euro: 2.5\nBudget in euro: 12.0\nSpesa in euro: 10.0\nBudget sufficiente\nControllo terminato\n"
+              }
+            ]
+          },
+          {
+            "kind": "example",
+            "title": "Perché il programma sceglie quel percorso",
+            "steps": [
+              "Le conversioni preparano quantita pari a 4, prezzo_unitario pari a 2.5 e budget pari a 12.0.",
+              "Il prodotto 4 * 2.5 produce spesa pari a 10.0.",
+              "La condizione diventa 10.0 <= 12.0 e produce True.",
+              "Viene eseguita la stampa sotto if: Budget sufficiente. Quella sotto else viene saltata.",
+              "La stampa Controllo terminato viene raggiunta dopo la selezione."
+            ],
+            "conclusion": "True non deve necessariamente comparire sullo schermo: il programma usa quel risultato per scegliere quale messaggio stampare."
+          },
+          {
+            "kind": "paragraph",
+            "text": "La decisione usa budget, non budget_testo: deve confrontare importi numerici. Inoltre deve trovarsi dopo la preparazione del budget e dopo il calcolo della spesa, perché Python non anticipa le assegnazioni scritte più avanti. Usare qui la spesa numerica e il budget ancora testuale non eseguirebbe il confronto numerico richiesto e provocherebbe un errore."
+          },
+          {
+            "kind": "paragraph",
+            "text": "Il confronto non cambia gli importi. Dopo questa esecuzione budget vale ancora 12.0 e spesa vale ancora 10.0. Le stampe comunicano i valori e l’esito, ma nessuna istruzione sottrae il costo dal denaro disponibile. Indica nel tuo file dove avvengono conversione, calcolo, scelta e prosecuzione comune, spiegando il compito di ciascuna parte."
+          }
+        ]
+      },
+      {
+        "id": "S5",
+        "title": "Prevedere e osservare i tre rapporti con il budget",
+        "objective_ids": [
+          "U1-O2",
+          "U1-O3",
+          "U1-O4"
+        ],
+        "blocks": [
+          {
+            "kind": "definition",
+            "term": "Risultato atteso e risultato osservato",
+            "text": "Il risultato atteso è ciò che prevedi prima di avviare il programma, ragionando sui dati e sulle istruzioni. Il risultato osservato è ciò che leggi effettivamente durante l’esecuzione. Confrontarli permette di cercare differenze da spiegare."
+          },
+          {
+            "kind": "paragraph",
+            "text": "Manteniamo 4 quaderni al prezzo di 2,50 euro e variamo soltanto il budget: 12, 10 e 9,50 euro. Riprendiamo i confronti già presentati nei materiali della seconda lezione: sono consolidamenti, non casi inediti. Ora controlliamo il comportamento del programma che hai costruito."
+          },
+          {
+            "kind": "callout",
+            "title": "Prevedi prima di avviare",
+            "text": "Prima delle esecuzioni compila le colonne delle previsioni. Per ogni riga scrivi la spesa, il confronto con i valori al posto dei nomi, il risultato True o False e il messaggio scelto. Considera anche Controllo terminato. Lascia vuota l’osservazione finché non hai eseguito davvero la prova."
+          },
+          {
+            "kind": "table",
+            "headers": [
+              "Quantità; prezzo; budget",
+              "Spesa prevista",
+              "Confronto con i valori",
+              "Risultato logico",
+              "Messaggi previsti",
+              "Osservazione effettiva"
+            ],
+            "rows": [
+              [
+                "4; 2.5; 12",
+                "Da compilare prima",
+                "Da compilare prima",
+                "Da compilare prima",
+                "Da compilare prima",
+                "Da compilare dopo"
+              ],
+              [
+                "4; 2.5; 10",
+                "Da compilare prima",
+                "Da compilare prima",
+                "Da compilare prima",
+                "Da compilare prima",
+                "Da compilare dopo"
+              ],
+              [
+                "4; 2.5; 9.5",
+                "Da compilare prima",
+                "Da compilare prima",
+                "Da compilare prima",
+                "Da compilare prima",
+                "Da compilare dopo"
+              ]
+            ]
+          },
+          {
+            "kind": "paragraph",
+            "text": "Salva il file. Per ogni acquisto avvia il programma e rispondi alle tre richieste, premendo Invio dopo ciascun dato. Quando termina, avvialo di nuovo per la prova successiva: non è presente una ripetizione automatica. Anche quando quantità e prezzo rimangono uguali, devi inserirli nuovamente. Non occorre modificare le istruzioni."
+          },
+          {
+            "kind": "paragraph",
+            "text": "Controlla prima i quattro valori mostrati, poi l’esito e la stampa finale. Registra quello che osservi, non quello che dovrebbe comparire. Se lavori in coppia, alternate chi inserisce i dati e chi confronta il risultato con la previsione."
+          },
+          {
+            "kind": "example",
+            "title": "Confronto delle previsioni, dopo il tentativo",
+            "steps": [
+              "In tutti e tre gli acquisti la spesa è 4 * 2.5, quindi 10.0. Il budget non modifica il prodotto.",
+              "Con budget 12.0, il confronto 10.0 <= 12.0 produce True: il messaggio atteso è Budget sufficiente.",
+              "Con budget 10.0, il confronto 10.0 <= 10.0 produce ancora True: il messaggio atteso è Budget sufficiente.",
+              "Con budget 9.5, il confronto 10.0 <= 9.5 produce False: il messaggio atteso è Budget insufficiente.",
+              "In tutte e tre le esecuzioni deve seguire Controllo terminato, perché la sua stampa è fuori dai rami."
+            ],
+            "conclusion": "Il caso esatto controlla il confine fra sufficienza e insufficienza. False, nell’ultima prova, è il risultato corretto del confronto, non un errore."
+          },
+          {
+            "kind": "paragraph",
+            "text": "Il programma non stampa direttamente il valore booleano. Lo ricostruisci dalla condizione e controlli quale messaggio viene scelto. Una spesa corretta non garantisce da sola una decisione corretta: un confronto sbagliato o una stampa nel ramo sbagliato possono produrre un esito diverso da quello richiesto."
+          },
+          {
+            "kind": "callout",
+            "title": "Conserva le differenze",
+            "text": "Se atteso e osservato non coincidono, non cancellare la previsione per adattarla allo schermo. Controlla nell’ordine dati inseriti, conversioni, prodotto, confronto e rientri. Annota la causa individuata, correggi ciò che serve e ripeti una prova pertinente. Anche la previsione può essere sbagliata: devi stabilirlo con il ragionamento, non scegliendo automaticamente una delle due versioni."
+          },
+          {
+            "kind": "paragraph",
+            "text": "Queste prove controllano comportamenti importanti, ma non dimostrano la correttezza di ogni possibile parte del programma. Il percorso completo comprende i tre acquisti. Se i primi avvii richiedono più tempo, il docente può indicare come attività essenziale di questa sezione soltanto la prova con budget 10; le altre due rimangono disponibili per consultazione. Il tentativo individuale e il confronto finale restano nel lavoro previsto."
+          }
+        ]
+      },
+      {
+        "id": "S6",
+        "title": "Capire la causa prima di correggere",
+        "objective_ids": [
+          "U1-O2",
+          "U1-O3",
+          "U1-O4"
+        ],
+        "blocks": [
+          {
+            "kind": "paragraph",
+            "text": "Prima di cambiare il codice, descrivi che cosa succede: il file non parte, l’esecuzione si interrompe dopo una risposta oppure il programma termina ma non mostra ciò che è richiesto? Sono situazioni diverse. I casi seguenti servono per la diagnosi e rimangono disponibili per consultazione. Non devi introdurre questi errori nel tuo file funzionante: affronta anzitutto il problema effettivamente incontrato, oppure il caso scelto con il docente."
+          },
+          {
+            "kind": "paragraph",
+            "text": "Primo caso: alla richiesta del prezzo viene digitato 2,5 e il programma si interrompe durante la conversione. Prima di leggere la spiegazione, confronta quella risposta con il formato richiesto. La riga seguente isola il tentativo di conversione."
+          },
+          {
+            "kind": "code",
+            "language": "python",
+            "code": "prezzo_unitario = float(\"2,5\")",
+            "explanation": "Il frammento è deliberatamente errato. Il testo usa la virgola decimale, non accettata da float in questa conversione, e provoca ValueError: un errore dovuto al valore fornito. Nel programma dell’acquisto input acquisisce il testo, ma la successiva conversione non riesce. Occorre riavviare il programma e inserire 2.5 con il punto; non è previsto un reinserimento automatico.",
+            "execution": "illustration",
+            "cases": []
+          },
+          {
+            "kind": "paragraph",
+            "text": "Non occorre sostituire float con int: il prezzo può avere una parte decimale e la conversione scelta è adatta. È la risposta che non rispetta il formato. Dopo il nuovo inserimento, il caso conosciuto 4, 2.5, 12 deve produrre spesa 10.0, Budget sufficiente e Controllo terminato. Ricorda anche la differenza tra convertibile e ammesso: \"-2\" è convertibile con int, ma una quantità negativa non appartiene al nostro modello."
+          },
+          {
+            "kind": "paragraph",
+            "text": "Secondo caso: il frammento seguente dovrebbe trovarsi dopo la preparazione di spesa e budget. Non è autonomo ed è deliberatamente errato. Prima della spiegazione individua la riga che non mostra correttamente la propria appartenenza al ramo e proponi una modifica."
+          },
+          {
+            "kind": "code",
+            "language": "python",
+            "code": "if spesa <= budget:\nprint(\"Budget sufficiente\")\nelse:\n    print(\"Budget insufficiente\")\nprint(\"Controllo terminato\")",
+            "explanation": "Manca il rientro della stampa immediatamente sotto if. Nella forma su più righe usata qui è richiesto un blocco indentato dopo l’intestazione. Se questa struttura è presente nel file, Python segnala un errore di indentazione prima di eseguirne le istruzioni. Non significa che il confronto abbia prodotto False e non fa scegliere automaticamente else.",
+            "execution": "illustration",
+            "cases": []
+          },
+          {
+            "kind": "paragraph",
+            "text": "La correzione consiste nell’aggiungere quattro spazi iniziali a print(\"Budget sufficiente\"). if ed else rimangono allineati e le loro intestazioni terminano con due punti. Dopo il salvataggio prova sia un budget sufficiente sia uno insufficiente per controllare entrambi i percorsi."
+          },
+          {
+            "kind": "paragraph",
+            "text": "Terzo caso: anche qui spesa e budget si intendono già disponibili. Il frammento non è autonomo, ma la struttura è valida. Prima di leggere la spiegazione, osserva l’ultima stampa e scegli quale tipo di acquisto potrebbe rivelare che non rispetta la richiesta."
+          },
+          {
+            "kind": "code",
+            "language": "python",
+            "code": "if spesa <= budget:\n    print(\"Budget sufficiente\")\nelse:\n    print(\"Budget insufficiente\")\n    print(\"Controllo terminato\")",
+            "explanation": "Controllo terminato è dentro il blocco di else, quindi compare soltanto quando il budget è insufficiente. Il programma richiesto deve mostrarlo dopo entrambi gli esiti. Questo è un errore rispetto al comportamento desiderato, non una mancanza del blocco obbligatorio. La stampa finale deve essere riportata al livello di if ed else.",
+            "execution": "illustration",
+            "cases": []
+          },
+          {
+            "kind": "example",
+            "title": "Una prova rivelatrice",
+            "steps": [
+              "Con spesa 10.0 e budget 12.0, la condizione è vera e viene eseguito if.",
+              "Nel frammento con la stampa finale dentro else compare Budget sufficiente, ma manca Controllo terminato: la differenza diventa visibile.",
+              "Con un budget insufficiente verrebbe eseguito else e comparirebbero entrambi i messaggi del suo blocco. Quella sola prova potrebbe non far notare l’errore.",
+              "Dopo aver spostato la stampa fuori dai rami, ripeti una prova sufficiente e una insufficiente: il messaggio finale deve comparire in entrambe."
+            ],
+            "conclusion": "Non basta che Python smetta di segnalare errori: occorre controllare che il programma faccia ciò che è richiesto."
+          },
+          {
+            "kind": "callout",
+            "title": "Motiva un intervento",
+            "text": "Per un problema del tuo file, oppure per uno dei frammenti, completa: «La causa è…; cambio… perché…; controllerò con…». Cambia una cosa alla volta e verifica l’effetto. Se il tuo programma funziona, conserva il file e svolgi la diagnosi sul frammento scelto."
+          }
+        ]
+      },
+      {
+        "id": "S7",
+        "title": "Scrivere individualmente una variante della decisione",
+        "objective_ids": [
+          "U1-O1",
+          "U1-O2",
+          "U1-O3",
+          "U1-O4"
+        ],
+        "blocks": [
+          {
+            "kind": "paragraph",
+            "text": "Ora realizza una piccola variante individuale. Conserva acquisto_quaderni.py e crea un nuovo file chiamato acquisto_personale.py. Se condividi il computer, componi comunque le tue istruzioni, anche inizialmente su carta, e usa il turno concordato per salvarle ed eseguirle nel tuo file. Previsioni, traccia e spiegazione devono essere personali."
+          },
+          {
+            "kind": "paragraph",
+            "text": "Il problema non cambia: una sola tipologia di quaderno e un budget. Cambia il modo di formulare la domanda della selezione. Usa if spesa > budget: come intestazione del primo ramo. L’operatore > significa «maggiore»: il confronto è vero quando la spesa supera il budget, falso quando non lo supera. Due valori uguali non sono uno maggiore dell’altro."
+          },
+          {
+            "kind": "paragraph",
+            "text": "Questo confronto è presentato nella seconda lezione; la disposizione alternativa dei messaggi compare anche nel suo autocontrollo. Non occorre presumere di ricordare quella soluzione: ricostruisci la scelta partendo dal significato appena richiamato. Puoi consultare il programma precedente con <=, ma non limitarti a cambiare il simbolo senza ragionare sui messaggi."
+          },
+          {
+            "kind": "callout",
+            "title": "Il tuo programma, prima della soluzione",
+            "text": "Non passare ancora alla sezione successiva. Scrivi una tua versione completa secondo i requisiti seguenti. Il modello precedente può aiutarti con la sintassi; la scelta dei messaggi nei rami deve essere ricostruita e motivata da te."
+          },
+          {
+            "kind": "list",
+            "items": [
+              "Acquisisci quantità, prezzo e budget con gli stessi tre prompt: Quanti quaderni? seguito da uno spazio; Prezzo di un quaderno in euro: seguito da uno spazio; Budget in euro: seguito da uno spazio.",
+              "Conserva i nomi quantita_testo, quantita, prezzo_testo, prezzo_unitario, budget_testo e budget. Mantieni acquisizione e conversione su righe separate, scegliendo int oppure float.",
+              "Calcola spesa attraverso quantita e prezzo_unitario: non assegnare direttamente il risultato numerico.",
+              "Mostra la spesa con l’etichetta Spesa in euro:. In questa variante non è necessario riscrivere le altre tre stampe descrittive.",
+              "Usa if spesa > budget: e il ramo else. Decidi in quale ramo collocare Budget sufficiente e in quale Budget insufficiente.",
+              "Fai comparire Controllo terminato dopo entrambi i possibili esiti."
+            ]
+          },
+          {
+            "kind": "paragraph",
+            "text": "Controlla nomi, parentesi, virgolette, due punti e rientri, poi salva. Non aggiungere nuovi strumenti: servono soltanto acquisizioni, conversioni, prodotto, stampe e una selezione if/else. Per motivare la disposizione dei messaggi, parti dalla domanda «La spesa supera il budget?»."
+          },
+          {
+            "kind": "callout",
+            "title": "Due previsioni prima delle prove",
+            "text": "Considera 5 quaderni al prezzo di 1,50 euro. Prepara prima le previsioni per budget 7,50 euro e budget 7 euro. Per ciascuna scrivi spesa, confronto con i valori, risultato logico, ramo scelto e messaggi attesi. Indica quale prova controlla l’uguaglianza. Non avviare il programma prima di avere annotato queste previsioni."
+          },
+          {
+            "kind": "table",
+            "headers": [
+              "Quantità; prezzo; budget",
+              "Spesa prevista",
+              "Confronto e risultato",
+              "Ramo e messaggi previsti",
+              "Risultato osservato"
+            ],
+            "rows": [
+              [
+                "5; 1.5; 7.5",
+                "Da compilare prima",
+                "Da compilare prima",
+                "Da compilare prima",
+                "Da compilare dopo"
+              ],
+              [
+                "5; 1.5; 7",
+                "Da compilare prima",
+                "Da compilare prima",
+                "Da compilare prima",
+                "Da compilare dopo"
+              ]
+            ]
+          },
+          {
+            "kind": "paragraph",
+            "text": "Sono variazioni numeriche dello stesso problema: il procedimento da costruire resta quello dell’acquisto di quaderni. Dopo le previsioni, avvia il tuo file per ciascun acquisto, rispondi alle tre richieste e registra ciò che osservi davvero. Conserva eventuali differenze invece di sostituirle con l’uscita desiderata."
+          },
+          {
+            "kind": "paragraph",
+            "text": "Per il caso con budget esatto prepara anche una breve traccia individuale. Annota le tre risposte come stringhe e i tre numeri ottenuti con le conversioni, indicandone i tipi. Prosegui con il prodotto, il valore di spesa, il confronto, il ramo eseguito, il messaggio saltato e la stampa raggiunta dopo la selezione. Puoi usare una tabella o brevi annotazioni: non occorre ricopiare il programma."
+          },
+          {
+            "kind": "paragraph",
+            "text": "Accompagna il file con una breve spiegazione personale: perché hai scelto int per la quantità e float per gli importi? Come hai stabilito la posizione dei due messaggi? Perché la stampa finale si trova nella posizione che hai scelto? Collega le motivazioni alle tue righe di codice."
+          },
+          {
+            "kind": "callout",
+            "title": "Conserva il tentativo prima del confronto",
+            "text": "Mantieni riconoscibili le istruzioni iniziali e le previsioni, per esempio annotando nel foglio delle prove le righe prima di correggerle. Solo dopo aver scritto, provato e motivato la tua versione passa alla soluzione seguente. Questa attività non è una verifica sommativa: serve a individuare i passaggi che sai costruire e quelli per cui occorre ancora sostegno."
+          }
+        ]
+      },
+      {
+        "id": "S8",
+        "title": "Confrontare la variante e conservare le evidenze",
+        "objective_ids": [
+          "U1-O1",
+          "U1-O2",
+          "U1-O3",
+          "U1-O4"
+        ],
+        "blocks": [
+          {
+            "kind": "paragraph",
+            "text": "Questa è la soluzione di confronto della variante individuale. Consultala dopo il tentativo. Non sostituire subito tutto il tuo file: confronta prima acquisizioni, conversioni e prodotto; poi controlla il confronto, i messaggi e i rientri. Se una riga è diversa, chiediti quale comportamento produce."
+          },
+          {
+            "kind": "code",
+            "language": "python",
+            "code": "quantita_testo = input(\"Quanti quaderni? \")\nquantita = int(quantita_testo)\nprezzo_testo = input(\"Prezzo di un quaderno in euro: \")\nprezzo_unitario = float(prezzo_testo)\nbudget_testo = input(\"Budget in euro: \")\nbudget = float(budget_testo)\nspesa = quantita * prezzo_unitario\nprint(\"Spesa in euro:\", spesa)\nif spesa > budget:\n    print(\"Budget insufficiente\")\nelse:\n    print(\"Budget sufficiente\")\nprint(\"Controllo terminato\")",
+            "explanation": "Il programma mantiene acquisizioni e conversioni separate e calcola la spesa tramite le variabili. La condizione domanda se il costo supera il budget: perciò il ramo di if comunica insufficienza. Il ramo else comunica sufficienza e comprende anche l’uguaglianza. Nelle esecuzioni di esempio, le risposte vengono digitate dopo ciascuna domanda e Invio porta alla riga successiva; le righe con spesa, esito e messaggio finale sono prodotte da print.",
+            "execution": "check",
+            "cases": [
+              {
+                "stdin": [
+                  "5",
+                  "1.5",
+                  "7.5"
+                ],
+                "stdout": "Quanti quaderni? Prezzo di un quaderno in euro: Budget in euro: Spesa in euro: 7.5\nBudget sufficiente\nControllo terminato\n"
+              },
+              {
+                "stdin": [
+                  "5",
+                  "1.5",
+                  "7"
+                ],
+                "stdout": "Quanti quaderni? Prezzo di un quaderno in euro: Budget in euro: Spesa in euro: 7.5\nBudget insufficiente\nControllo terminato\n"
+              }
+            ]
+          },
+          {
+            "kind": "example",
+            "title": "Il caso esatto con il confronto >",
+            "steps": [
+              "Le risposte 5, 1.5 e 7.5 vengono acquisite inizialmente come testi.",
+              "Le conversioni producono quantita pari a 5, prezzo_unitario pari a 1.5 e budget pari a 7.5.",
+              "Il prodotto 5 * 1.5 produce spesa pari a 7.5.",
+              "Il confronto 7.5 > 7.5 produce False: due importi uguali non sono uno maggiore dell’altro.",
+              "Viene saltata la stampa Budget insufficiente sotto if ed eseguita Budget sufficiente sotto else.",
+              "Compare infine Controllo terminato, fuori dai rami."
+            ],
+            "conclusion": "Nella variante il caso esatto passa da else. Il ramo scelto cambia rispetto al modello con <=, ma l’esito dell’acquisto rimane corretto."
+          },
+          {
+            "kind": "example",
+            "title": "Il caso insufficiente con lo stesso costo",
+            "steps": [
+              "Quantità e prezzo sono ancora 5 e 1.5, quindi la spesa rimane 7.5.",
+              "La risposta 7 viene convertita da float in 7.0.",
+              "Il confronto 7.5 > 7.0 produce True.",
+              "Viene eseguita la stampa Budget insufficiente sotto if e viene saltata Budget sufficiente sotto else.",
+              "Dopo il ramo scelto compare Controllo terminato."
+            ],
+            "conclusion": "Cambiare soltanto l’operatore del modello precedente, lasciando invariati i messaggi, comunicherebbe esiti sbagliati. Il messaggio deve corrispondere alla relazione controllata."
+          },
+          {
+            "kind": "paragraph",
+            "text": "Per gli importi ammessi dal nostro modello, se la spesa non è maggiore del budget, allora è minore oppure uguale: questo spiega il messaggio di sufficienza sotto else. Non stiamo controllando se il programma è giusto o sbagliato; stiamo valutando una relazione fra due numeri. False può quindi portare proprio all’esito favorevole."
+          },
+          {
+            "kind": "paragraph",
+            "text": "Riprendi la traccia individuale del caso esatto preparata prima della soluzione. Confronta i valori e i tipi con la tabella seguente. Se correggi qualcosa, lascia riconoscibile il dato iniziale e aggiungi la ragione della correzione."
+          },
+          {
+            "kind": "table",
+            "headers": [
+              "Nome",
+              "Valore nel caso esatto",
+              "Tipo",
+              "Come è ottenuto"
+            ],
+            "rows": [
+              [
+                "quantita_testo",
+                "\"5\"",
+                "str",
+                "input"
+              ],
+              [
+                "quantita",
+                "5",
+                "int",
+                "int(quantita_testo)"
+              ],
+              [
+                "prezzo_testo",
+                "\"1.5\"",
+                "str",
+                "input"
+              ],
+              [
+                "prezzo_unitario",
+                "1.5",
+                "float",
+                "float(prezzo_testo)"
+              ],
+              [
+                "budget_testo",
+                "\"7.5\"",
+                "str",
+                "input"
+              ],
+              [
+                "budget",
+                "7.5",
+                "float",
+                "float(budget_testo)"
+              ],
+              [
+                "spesa",
+                "7.5",
+                "float",
+                "Prodotto 5 * 1.5"
+              ]
+            ]
+          },
+          {
+            "kind": "paragraph",
+            "text": "Dopo questi valori la traccia deve mostrare anche il percorso: 7.5 > 7.5 produce False; viene eseguito else con Budget sufficiente, viene saltata la stampa Budget insufficiente e si raggiunge Controllo terminato. Le variabili testuali conservano le stringhe iniziali. budget rimane 7.5: il confronto non effettua sottrazioni. Anche nell’altra prova il budget conserva il valore inserito, cioè 7.0."
+          },
+          {
+            "kind": "paragraph",
+            "text": "Se correggi il file, scrivi una breve motivazione della modifica e ripeti una prova che possa rivelarne l’effetto. Per controllare che l’uguaglianza dia sufficienza devi usare il budget esatto, non soltanto un budget insufficiente. Conserva distinti previsione iniziale, risultato osservato prima della correzione ed eventuale nuova osservazione."
+          },
+          {
+            "kind": "list",
+            "items": [
+              "Salva acquisto_quaderni.py e acquisto_personale.py, mantenendo riconoscibili i due file.",
+              "Conserva dati delle prove, previsioni e risultati effettivamente osservati.",
+              "Consegna la traccia individuale del caso esatto e la breve spiegazione delle scelte.",
+              "Se hai corretto istruzioni, aggiungi causa, modifica e prova ripetuta; distingui ciò che avevi scritto inizialmente da ciò che hai ricostruito durante il confronto."
+            ]
+          },
+          {
+            "kind": "paragraph",
+            "text": "Questi materiali costituiscono la prima tappa di «Acquisti sotto controllo»: un programma per una sola tipologia di quaderno, con calcolo della spesa e decisione sul budget. Conservare anche i tentativi permette di riconoscere non soltanto il risultato finale, ma i passaggi con cui lo hai costruito e corretto."
+          }
+        ]
+      }
+    ],
+    "summary": [
+      "Il lavoro al computer segue la sequenza scrivere, salvare, avviare e osservare. I dati richiesti da input si digitano durante l’esecuzione, non come istruzioni nel file.",
+      "input restituisce stringhe. int permette di ottenere la quantità intera; float permette di ottenere prezzo e budget numerici. Le conversioni non modificano i testi conservati nelle altre variabili.",
+      "spesa = quantita * prezzo_unitario esprime il calcolo attraverso i dati. Il budget non entra nel prodotto e non viene ridotto automaticamente.",
+      "Con spesa <= budget, il ramo vero comunica sufficienza. Con spesa > budget, il ramo vero comunica insufficienza: i messaggi devono corrispondere al significato del confronto.",
+      "L’uguaglianza indica un budget sufficiente. I due punti e l’indentazione organizzano la selezione; la stampa finale fuori dai rami viene raggiunta dopo entrambi i percorsi.",
+      "Le previsioni precedono le esecuzioni. Le osservazioni registrano ciò che accade davvero; una correzione richiede una causa motivata e una prova pertinente.",
+      "Il programma presuppone dati ammessi e convertibili. L’uso di float con piccoli importi interi o multipli di 0,50 euro ha finalità didattiche."
+    ],
+    "self_check": [
+      {
+        "question": "Nella variante con > inserisci quantità 0, prezzo 2.5 e budget 0. Quale percorso è corretto?",
+        "answer": "La quantità zero è ammessa. La spesa è 0.0 e il budget convertito è 0.0. Il confronto 0.0 > 0.0 produce False: viene eseguito else con Budget sufficiente, poi compare Controllo terminato."
+      },
+      {
+        "question": "Prima della selezione viene aggiunta l’istruzione budget = 0.0. Il programma sta ancora usando il denaro dichiarato dalla persona?",
+        "answer": "Non in generale. La nuova assegnazione sostituisce il valore numerico del budget con 0.0. La selezione usa il valore disponibile quando viene valutata, non quello precedentemente inserito o mostrato."
+      },
+      {
+        "question": "Una persona sostituisce il prodotto con spesa = 7.5 e supera le due prove individuali. Quale nuova prova può mettere in evidenza il limite?",
+        "answer": "Si possono inserire quantità 2, prezzo 1.5 e budget 4. La spesa corretta è 3.0 e il budget basta; con il valore fisso 7.5 il programma mostra invece un costo sbagliato e comunica insufficienza. Per esprimere il procedimento serve spesa = quantita * prezzo_unitario."
+      },
+      {
+        "question": "Nel messaggio print(\"Spesa in euro:\", spesa), i due punti hanno lo stesso ruolo di quelli alla fine di else:?",
+        "answer": "No. Dentro le virgolette sono caratteri del messaggio. Alla fine di else: sono parte delle regole di scrittura di Python e introducono, nella forma usata, il blocco indentato."
+      },
+      {
+        "question": "Un compagno prevede correttamente tutti i messaggi, ma non ha scritto alcuna istruzione. Quale abilità rimane ancora da osservare?",
+        "answer": "La capacità di costruire il programma: acquisizioni, conversioni, calcolo e selezione con messaggi e rientri appropriati. Prevedere l’uscita e comporre le istruzioni sono abilità diverse."
+      },
+      {
+        "question": "Per la quantità viene digitato 4.0. Perché non basta osservare che rappresenta matematicamente un valore intero?",
+        "answer": "input restituisce il testo \"4.0\", che int non accetta come rappresentazione testuale di un intero e che causa ValueError. Nel procedimento richiesto occorre digitare 4, senza punto."
+      }
+    ],
+    "terms": [
+      {
+        "term": "Editor",
+        "definition": "Spazio dell’ambiente di lavoro in cui si scrivono e si modificano le istruzioni."
+      },
+      {
+        "term": "Esecuzione",
+        "definition": "Svolgimento delle istruzioni del programma da parte del computer."
+      },
+      {
+        "term": "Variabile",
+        "definition": "Nome associato a un valore."
+      },
+      {
+        "term": "Assegnazione",
+        "definition": "Istruzione con = che associa al nome a sinistra il risultato ottenuto dalla parte destra."
+      },
+      {
+        "term": "str",
+        "definition": "Tipo dei testi, chiamati anche stringhe; è il tipo delle risposte restituite da input."
+      },
+      {
+        "term": "int",
+        "definition": "Tipo dei numeri interi; il nome si usa anche per convertire una rappresentazione testuale valida in un intero."
+      },
+      {
+        "term": "float",
+        "definition": "Tipo dei numeri in virgola mobile, usato qui per gli importi. Il nome si usa anche nelle conversioni; molti decimali sono rappresentati in modo approssimato."
+      },
+      {
+        "term": "Argomento",
+        "definition": "Informazione fornita dentro le parentesi di una chiamata."
+      },
+      {
+        "term": "Prompt",
+        "definition": "Messaggio con cui input presenta una richiesta alla persona."
+      },
+      {
+        "term": "Conversione",
+        "definition": "Operazione che produce da un dato un valore del tipo necessario."
+      },
+      {
+        "term": "Valore booleano",
+        "definition": "Valore logico: True rappresenta vero e False rappresenta falso."
+      },
+      {
+        "term": "Ramo",
+        "definition": "Una delle alternative di istruzioni della selezione if/else."
+      },
+      {
+        "term": "Intestazione",
+        "definition": "Riga che introduce una parte della selezione, come if seguito dalla condizione oppure else; termina con due punti."
+      },
+      {
+        "term": "Blocco",
+        "definition": "Gruppo di istruzioni appartenenti a una struttura, delimitato dall’indentazione."
+      },
+      {
+        "term": "Indentazione",
+        "definition": "Rientro iniziale delle righe che delimita i blocchi. Nel laboratorio si adottano quattro spazi uniformi."
+      },
+      {
+        "term": "Prosecuzione comune",
+        "definition": "Parte dopo la selezione e fuori dai suoi rami, raggiunta dopo entrambi i percorsi nei programmi studiati."
+      },
+      {
+        "term": "Risultato atteso",
+        "definition": "Risultato previsto prima dell’esecuzione ragionando sui dati e sulle istruzioni."
+      },
+      {
+        "term": "Risultato osservato",
+        "definition": "Risultato effettivamente letto durante l’esecuzione."
+      },
+      {
+        "term": "Caso di prova",
+        "definition": "Insieme di dati accompagnato da un risultato atteso, scelto per controllare un comportamento del programma."
+      },
+      {
+        "term": "Traccia di esecuzione",
+        "definition": "Annotazione dei valori e del percorso seguito, comprese le istruzioni eseguite e quelle saltate."
+      },
+      {
+        "term": "ValueError",
+        "definition": "Errore che negli esempi segnala un valore testuale non adatto alla conversione richiesta."
+      }
+    ],
+    "continuity": [
+      {
+        "version_id": "016fcfcc-7a13-4e5a-adb7-aff2e5e7712f",
+        "section_id": "S6",
+        "description": "S1 e S3 riprendono acquisizioni e conversioni separate, conservando quantita_testo e quantita, prezzo_testo e prezzo_unitario, budget_testo e budget. È mantenuta la distinzione fra stringa iniziale e numero ottenuto."
+      },
+      {
+        "version_id": "016fcfcc-7a13-4e5a-adb7-aff2e5e7712f",
+        "section_id": "S7",
+        "description": "S3 conserva spesa = quantita * prezzo_unitario, la valutazione del prodotto prima dell’assegnazione e la necessità di preparare i fattori prima del loro uso."
+      },
+      {
+        "version_id": "016fcfcc-7a13-4e5a-adb7-aff2e5e7712f",
+        "section_id": "S8",
+        "description": "S3 e S4 mantengono i prompt, i nomi, le quattro etichette e il caso 4, 2.5, 12 del programma completo. L’esecuzione al computer consolida lo stesso acquisto."
+      },
+      {
+        "version_id": "016fcfcc-7a13-4e5a-adb7-aff2e5e7712f",
+        "section_id": "S9",
+        "description": "S6 riprende la conversione deliberatamente errata float(\"2,5\") e distingue formato convertibile e valore ammesso dal problema."
+      },
+      {
+        "version_id": "f54009e7-3ddb-4d69-a515-c213c67fd7ab",
+        "section_id": "S2",
+        "description": "Sono ripresi <=, > e i risultati True e False. S7 richiama esplicitamente il significato di > prima di richiedere la composizione della variante. La disposizione alternativa dei messaggi è presente anche nel secondo autocontrollo di questa versione di L2."
+      },
+      {
+        "version_id": "f54009e7-3ddb-4d69-a515-c213c67fd7ab",
+        "section_id": "S3",
+        "description": "S5 consolida i budget 12, 10 e 9.5 già esaminati con spesa fissata a 10.0. Nel laboratorio la stessa spesa viene ricavata dall’acquisto di 4 quaderni da 2.5 euro."
+      },
+      {
+        "version_id": "f54009e7-3ddb-4d69-a515-c213c67fd7ab",
+        "section_id": "S5",
+        "description": "S4 riporta lo stesso programma completo di sedici righe, con identici nomi, prompt, etichette, selezione con <= e stampa Controllo terminato fuori dai rami."
+      },
+      {
+        "version_id": "f54009e7-3ddb-4d69-a515-c213c67fd7ab",
+        "section_id": "S7",
+        "description": "S6 riprende la diagnosi della stampa non indentata dopo if e la distingue dalla stampa finale collocata dentro else, valida nella struttura ma non conforme alla richiesta."
+      },
+      {
+        "version_id": "f54009e7-3ddb-4d69-a515-c213c67fd7ab",
+        "section_id": "S8",
+        "description": "S7 e S8 riprendono il procedimento di composizione, previsione dei percorsi e motivazione della prosecuzione comune. Le combinazioni 5, 1.5, 7.5 e 5, 1.5, 7 non sono già interamente risolte nei materiali precedenti forniti; sono variazioni numeriche dello stesso problema."
+      }
+    ],
+    "prerequisite_support": [],
+    "source_ids": [
+      "python-values",
+      "python-input",
+      "python-conditions"
+    ],
+    "teacher_notes": [
+      "Scansione proposta: S1 10 minuti; S2 10; S3 20; S4 15; S5 15; S6 10; S7 25; S8 15. Totale: 120 minuti di laboratorio, dopo le due lezioni teoriche iniziali. Le stime includono spiegazioni, scrittura, tentativi, esecuzioni, confronto e restituzione; verificarle nel contesto reale. Non aggiungere una verifica sommativa.",
+      "Prima dell’incontro verificare disponibilità e accessibilità dell’ambiente Python, creazione e salvataggio dei file e modalità effettive di esecuzione. Mostrare soltanto i comandi realmente disponibili, senza presumere un’interfaccia specifica.",
+      "Con computer condivisi organizzare in anticipo turni entro le attività previste. Durante la scrittura un componente può comporre il proprio codice su carta mentre l’altro usa il dispositivo; ciascuno deve poi salvare ed eseguire il proprio file. Usare cartelle personali per distinguere file con lo stesso nome. Verificare prima della lezione la sostenibilità di questa organizzazione con le dotazioni effettive.",
+      "In S1 raccogliere brevi risposte individuali sul testo restituito da input, sulla conversione e sull’assenza del budget dal prodotto. Restituire subito il passaggio necessario. La presenza dei materiali di L1 e L2 non documenta che siano stati spiegati o appresi.",
+      "In S2 controllare riconoscimento del file, salvataggio e avvio. La previsione della modifica da 4 a 6 precede il secondo avvio. Se il risultato non cambia, far controllare prima il file salvato e quello eseguito.",
+      "In S3 rendere disponibile la soluzione della coppia del budget soltanto dopo il tentativo. Le prime quattro righe e la coppia del budget possono essere eseguite separatamente, ma nel file dell’acquisto vanno riunite una sola volta. Non imporre avvii aggiuntivi per ogni frammento: il controllo pratico essenziale riguarda il programma riunito con 4, 2.5 e 12.",
+      "In S4 lasciare comporre condizione e stampe prima di mostrare il programma completo. Il caso associato è soltanto 4, 2.5, 12 ed è un esempio risolto. Far individuare la dipendenza della decisione dai valori numerici e la posizione della stampa comune.",
+      "In S5 far registrare le previsioni prima degli avvii. I casi sono consolidamenti dichiarati. La colonna delle osservazioni va compilata soltanto dal programma effettivamente eseguito. Non sostituire le discrepanze con risultati attesi: chiedere di stabilire se dipendono dalla previsione, dai dati digitati o dal codice.",
+      "In S6 selezionare anzitutto un problema effettivamente emerso; in assenza di problemi scegliere un frammento diagnostico. Gli altri casi rimangono consultabili. Lasciare un breve tentativo prima della spiegazione e non richiedere di alterare il file funzionante. Distinguere conversione fallita durante l’esecuzione, struttura non valida e comportamento eseguibile ma non conforme.",
+      "Proteggere i 25 minuti di S7: indicativamente 2 per la consegna, 10 per comporre e salvare, 8 per previsioni, prove e traccia schematica, 5 per le motivazioni. Non chiedere di ricopiare il programma nella traccia. Raccogliere o rendere riconoscibile il tentativo prima del confronto.",
+      "Tenere S8 separata o coperta fino alla conclusione del tentativo di S7. È consentito consultare il modello con <=, ma non anticipare la variante completa con >. La richiesta individuale comprende istruzioni effettive e la ricostruzione dei messaggi nei rami; non si esaurisce nel cambiare i dati di ingresso.",
+      "Per S8 prevedere indicativamente 4 minuti di confronto ragionato, 5 di confronto della traccia e restituzione, 4 di correzione motivata con prova pertinente e 2 di salvataggio e raccolta. Correggere la traccia già prodotta senza richiederne una nuova copia dopo il modello. Se non occorrono correzioni, usare il tempo per motivare la corrispondenza fra confronto e messaggi.",
+      "Se richiamo e primi avvii evidenziano difficoltà, portare S1 e S2 a 15 minuti ciascuna. Ridurre S5 a 10 minuti, eseguendo obbligatoriamente soltanto il caso con budget 10; lasciare gli altri due alla consultazione. Ridurre S6 a 5 minuti sul problema prevalente. S3 e S4 restano a 20 e 15 minuti; S7 e S8 conservano 25 e 15 minuti. Totale ancora 120 minuti. Restano essenziali la composizione individuale, le sue due prove, la traccia e la restituzione.",
+      "Osservare separatamente tipi, conversioni, prodotto tramite variabili, significato del confronto, disposizione dei messaggi, indentazione, previsione, traccia e spiegazione. Registrare quali parti sono state composte prima del modello, quali consultate e quali corrette dopo. Né il file condiviso funzionante né la sola previsione corretta dimostrano la costruzione individuale delle istruzioni.",
+      "Le esecuzioni visibili includono le risposte digitate dopo i prompt e il passaggio di riga dovuto a Invio, come nelle trascrizioni fornite. Le risposte non sono prodotte da print. Lo stdout tecnico dei casi contiene invece soltanto quanto emesso dal programma: include i prompt, senza nuove righe automatiche e senza eco della digitazione. Non presentarlo come riproduzione letterale del dialogo visibile.",
+      "Mantenere quantità intere non negative, prezzi e budget non negativi, risposte convertibili e punto decimale. Usare piccoli importi interi o multipli di 0,50 euro. Non trasformare la distinzione fra convertibilità e valore ammesso in una richiesta di validazione generale o reinserimento automatico.",
+      "Non introdurre elif, condizioni composte, cicli, funzioni definite dagli studenti, commenti Python, chiamate annidate o formattazione monetaria. La variante con > ricostruisce una diversa corrispondenza fra un confronto già presentato e i messaggi, senza aggiungere costrutti.",
+      "Sintesi, glossario e autocontrollo sono materiali di consultazione, non attività ulteriori da sommare ai 120 minuti. Un quesito può sostituire un controllo equivalente. Conservare i due file e le produzioni individuali come prima tappa del progetto P1.",
+      "Per i rimandi usare soltanto le versioni effettivamente fornite di L1 e L2 e le sintesi di python-values, python-input e python-conditions. Non risultano prerequisiti mancanti dichiarati. Il contesto è fittizio: dotazioni, accessibilità e adattamenti specifici richiedono informazioni effettive; non sono disponibili documenti curricolari ufficiali."
+    ]
+  },
+  "context": {
+    "plan_id": "0482c074-5b7a-4e6a-b89b-17bbfb49d863",
+    "class_brief": {
+      "free_text": "Classe seconda di istituto tecnico, studenti di 15-16 anni principianti in programmazione. Sanno usare tastiera e file, conoscono operazioni aritmetiche elementari, ma richiedono spiegazioni concrete e graduali. Percorso introduttivo Python di 24 ore complessive: 10 teoria, 10 laboratorio, 2 verifiche, 1 recupero, 1 margine. Quattro UDA. La prima UDA deve iniziare esattamente con due lezioni teoriche di 2 ore ciascuna: 1. Variabili, input e conversioni; 2. Decidere con if ed else. La seconda lezione usa come prerequisito la prima e riprende lo stesso problema concreto, senza presumere conoscenze non spiegate. Nella prima lezione non anticipare if; nella seconda introduci confronti e indentazione. Niente funzioni definite dallo studente o cicli nelle prime due lezioni. Le successive UDA approfondiscono condizioni, ripetizioni essenziali e un piccolo progetto conclusivo. Linguaggio semplice e preciso, spiegazioni autosufficienti, esempi svolti commentati e piccoli controlli di comprensione. I dati della classe sono inventati. Nessun documento curricolare ufficiale fornito.",
+      "school_context": "",
+      "student_profile": "",
+      "starting_knowledge": "",
+      "objectives": "",
+      "topics": "",
+      "organisation": "",
+      "preferences": ""
+    },
+    "objectives": [
+      {
+        "id": "U1-O1",
+        "description": "Distinguere testi, numeri interi e numeri decimali e assegnare valori a variabili con nomi significativi."
+      },
+      {
+        "id": "U1-O2",
+        "description": "Acquisire quantità, prezzo unitario e budget con input, applicare int e float e visualizzare la spesa con print."
+      },
+      {
+        "id": "U1-O3",
+        "description": "Ricostruire e spiegare una sequenza di acquisizione, conversione, calcolo e visualizzazione."
+      },
+      {
+        "id": "U1-O4",
+        "description": "Usare un confronto e una struttura if/else per distinguere un budget sufficiente da uno insufficiente, rispettando l'indentazione e includendo il caso di spesa uguale al budget."
+      }
+    ],
+    "source_versions": [
+      {
+        "lesson_id": "L1",
+        "version_id": "016fcfcc-7a13-4e5a-adb7-aff2e5e7712f"
+      },
+      {
+        "lesson_id": "L2",
+        "version_id": "f54009e7-3ddb-4d69-a515-c213c67fd7ab"
+      }
+    ],
+    "missing_prerequisites": [],
+    "sources": [
+      {
+        "id": "python-values",
+        "title": "Python: numeri, stringhe e assegnazioni",
+        "url": "https://docs.python.org/3/tutorial/introduction.html",
+        "consulted_at": "2026-11-16",
+        "content": "Sintesi redazionale della documentazione ufficiale consultata. L'assegnazione associa un nome a un valore. Una successiva assegnazione può cambiare il valore associato. int rappresenta numeri interi, float numeri in virgola mobile e str testo. + somma numeri ma concatena stringhe. / produce un risultato float; // esegue divisione con arrotondamento verso il basso. Le stringhe sono delimitate da virgolette; le virgolette delimitatrici non fanno parte del valore. Un nome usato prima dell'assegnazione provoca NameError. I commenti iniziano con # fuori da stringhe."
+      },
+      {
+        "id": "python-input",
+        "title": "Python: input, print e conversioni",
+        "url": "https://docs.python.org/3/library/functions.html",
+        "consulted_at": "2026-11-16",
+        "content": "Sintesi redazionale della documentazione ufficiale consultata. input(prompt) visualizza l'eventuale prompt senza aggiungere una nuova riga, legge una riga e restituisce una stringa senza il terminatore di riga. int converte una rappresentazione testuale valida di un intero; float converte una rappresentazione numerica valida con il punto decimale. Testo numerico non valido causa ValueError. print separa normalmente gli argomenti con uno spazio e termina con una nuova riga. Nei casi di prova l'output comprende anche i prompt di input. input non converte automaticamente il testo in numeri."
+      },
+      {
+        "id": "python-conditions",
+        "title": "Python: istruzioni if, elif ed else",
+        "url": "https://docs.python.org/3/tutorial/controlflow.html#if-statements",
+        "consulted_at": "2026-11-16",
+        "content": "Sintesi redazionale della documentazione ufficiale consultata. if valuta una condizione. Il blocco indentato viene eseguito se la condizione è vera. elif introduce ulteriori condizioni controllate in ordine soltanto se le precedenti non hanno selezionato un ramo. else è facoltativo e costituisce il ramo residuo. Nella stessa catena viene eseguito al massimo un ramo. Le intestazioni terminano con due punti e l'indentazione delimita i blocchi. = assegna un valore; == confronta valori. I confronti numerici richiedono valori numerici coerenti; confrontare stringhe numeriche non equivale in generale a confrontare numeri."
+      }
+    ]
+  },
+  "checks": [
+    {
+      "section_id": "S2",
+      "block_index": 3,
+      "case": 1,
+      "status": "passed",
+      "message": "Input e output corrispondono.",
+      "transcript": "Quantita: 4\n"
+    },
+    {
+      "section_id": "S3",
+      "block_index": 2,
+      "case": 1,
+      "status": "passed",
+      "message": "Input e output corrispondono.",
+      "transcript": "Quanti quaderni? 4\nPrezzo di un quaderno in euro: 2.5\n"
+    },
+    {
+      "section_id": "S3",
+      "block_index": 7,
+      "case": 1,
+      "status": "passed",
+      "message": "Input e output corrispondono.",
+      "transcript": "Budget in euro: 12\n"
+    },
+    {
+      "section_id": "S3",
+      "block_index": 9,
+      "status": "not_run",
+      "message": "Codice illustrativo o linguaggio non eseguito automaticamente."
+    },
+    {
+      "section_id": "S4",
+      "block_index": 5,
+      "case": 1,
+      "status": "passed",
+      "message": "Input e output corrispondono.",
+      "transcript": "Quanti quaderni? 4\nPrezzo di un quaderno in euro: 2.5\nBudget in euro: 12\nQuantita: 4\nPrezzo unitario in euro: 2.5\nBudget in euro: 12.0\nSpesa in euro: 10.0\nBudget sufficiente\nControllo terminato\n"
+    },
+    {
+      "section_id": "S6",
+      "block_index": 2,
+      "status": "not_run",
+      "message": "Codice illustrativo o linguaggio non eseguito automaticamente."
+    },
+    {
+      "section_id": "S6",
+      "block_index": 5,
+      "status": "not_run",
+      "message": "Codice illustrativo o linguaggio non eseguito automaticamente."
+    },
+    {
+      "section_id": "S6",
+      "block_index": 8,
+      "status": "not_run",
+      "message": "Codice illustrativo o linguaggio non eseguito automaticamente."
+    },
+    {
+      "section_id": "S8",
+      "block_index": 1,
+      "case": 1,
+      "status": "passed",
+      "message": "Input e output corrispondono.",
+      "transcript": "Quanti quaderni? 5\nPrezzo di un quaderno in euro: 1.5\nBudget in euro: 7.5\nSpesa in euro: 7.5\nBudget sufficiente\nControllo terminato\n"
+    },
+    {
+      "section_id": "S8",
+      "block_index": 1,
+      "case": 2,
+      "status": "passed",
+      "message": "Input e output corrispondono.",
+      "transcript": "Quanti quaderni? 5\nPrezzo di un quaderno in euro: 1.5\nBudget in euro: 7\nSpesa in euro: 7.5\nBudget insufficiente\nControllo terminato\n"
+    }
+  ]
+}

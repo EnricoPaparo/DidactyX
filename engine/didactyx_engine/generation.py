@@ -33,7 +33,7 @@ class CodexGenerator:
                 cwd=directory, env=environment, stdin=subprocess.PIPE, stdout=subprocess.PIPE,
                 stderr=subprocess.DEVNULL, text=True, bufsize=1)
             threading.Thread(target=self._read, daemon=True).start()
-            self.request("initialize", {"clientInfo": {"name": "didactyx_generation", "title": "DidactyX", "version": "0.3.2"}})
+            self.request("initialize", {"clientInfo": {"name": "didactyx_generation", "title": "DidactyX", "version": "0.3.3"}})
             self.send({"method": "initialized", "params": {}})
             account = self.request("account/read", {"refreshToken": False}).get("account") or {}
             if account.get("type") != "chatgpt":

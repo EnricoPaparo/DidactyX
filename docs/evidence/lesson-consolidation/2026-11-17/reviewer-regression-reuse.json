@@ -1,0 +1,20 @@
+{
+  "manual_instruction_hash_unchanged": true,
+  "actual_inputs_hashes_unchanged": true,
+  "cases": [
+    "C01",
+    "C02",
+    "C03",
+    "C04",
+    "H01",
+    "H02",
+    "H03",
+    "H04",
+    "E01",
+    "F01",
+    "F02"
+  ],
+  "new_model_calls": 0,
+  "source": "../../didactic-benchmarks/2026-11-17/reviewer-final",
+  "interpretation": "Risultati precedenti riutilizzati con identità verificata di istruzioni e input, non nuova esecuzione AI."
+}

@@ -1,0 +1,1046 @@
+{
+  "id": "0482c074-5b7a-4e6a-b89b-17bbfb49d863",
+  "program_id": "a6f84973-fd28-4c48-8c50-5f7e0e625e56",
+  "version": 1,
+  "created_at": "2026-11-17T15:08:27.944Z",
+  "change_request": "",
+  "brief": {
+    "free_text": "Classe seconda di istituto tecnico, studenti di 15-16 anni principianti in programmazione. Sanno usare tastiera e file, conoscono operazioni aritmetiche elementari, ma richiedono spiegazioni concrete e graduali. Percorso introduttivo Python di 24 ore complessive: 10 teoria, 10 laboratorio, 2 verifiche, 1 recupero, 1 margine. Quattro UDA. La prima UDA deve iniziare esattamente con due lezioni teoriche di 2 ore ciascuna: 1. Variabili, input e conversioni; 2. Decidere con if ed else. La seconda lezione usa come prerequisito la prima e riprende lo stesso problema concreto, senza presumere conoscenze non spiegate. Nella prima lezione non anticipare if; nella seconda introduci confronti e indentazione. Niente funzioni definite dallo studente o cicli nelle prime due lezioni. Le successive UDA approfondiscono condizioni, ripetizioni essenziali e un piccolo progetto conclusivo. Linguaggio semplice e preciso, spiegazioni autosufficienti, esempi svolti commentati e piccoli controlli di comprensione. I dati della classe sono inventati. Nessun documento curricolare ufficiale fornito.",
+    "school_context": "",
+    "student_profile": "",
+    "starting_knowledge": "",
+    "objectives": "",
+    "topics": "",
+    "organisation": "",
+    "preferences": ""
+  },
+  "data": {
+    "context": {
+      "subject": "Informatica: introduzione a Python, dai dati alle decisioni",
+      "school_context": "Classe seconda di istituto tecnico; indirizzo non specificato. Percorso introduttivo di 24 ore articolato in quattro UDA. Il contesto è un pilota interamente fittizio, pensato per valutare soprattutto due lezioni iniziali complete e collegate.",
+      "class_profile": "2ª A, composta da studenti di 15-16 anni principianti in programmazione. Sono necessarie spiegazioni concrete, graduali e autosufficienti. Numero degli studenti, bisogni educativi specifici e dotazioni tecnologiche non sono indicati.",
+      "starting_knowledge": [
+        "Utilizzare la tastiera.",
+        "Gestire file a livello elementare.",
+        "Eseguire operazioni aritmetiche elementari.",
+        "Non sono richieste conoscenze pregresse di programmazione."
+      ],
+      "goals": [
+        {
+          "id": "G1",
+          "description": "Rappresentare dati semplici mediante variabili, distinguendo testi, numeri interi e numeri decimali."
+        },
+        {
+          "id": "G2",
+          "description": "Acquisire dati con input, convertirli nei tipi numerici necessari e comunicare risultati con print."
+        },
+        {
+          "id": "G3",
+          "description": "Tradurre un problema concreto in una sequenza di istruzioni e calcoli, spiegando il significato dei risultati."
+        },
+        {
+          "id": "G4",
+          "description": "Utilizzare confronti e strutture condizionali per prendere decisioni, rispettando l'indentazione di Python."
+        },
+        {
+          "id": "G5",
+          "description": "Applicare ripetizioni essenziali a semplici operazioni ricorrenti, riconoscendone lo scopo."
+        },
+        {
+          "id": "G6",
+          "description": "Realizzare un piccolo progetto conclusivo che integri dati, calcoli, decisioni e ripetizioni, verificandone il comportamento con casi di prova."
+        }
+      ],
+      "required_topics": [
+        "Articolazione in quattro UDA: fondamenti e prime decisioni; approfondimento delle condizioni; ripetizioni essenziali; piccolo progetto conclusivo.",
+        "Prima UDA, prima lezione: «Variabili, input e conversioni», teorica, della durata esatta di 2 ore.",
+        "Prima UDA, seconda lezione: «Decidere con if ed else», teorica, della durata esatta di 2 ore, immediatamente successiva alla prima.",
+        "Variabili, assegnazione, tipi di dato elementari, input, conversioni numeriche, operazioni aritmetiche e visualizzazione dei risultati.",
+        "Confronti, condizioni, if, else e indentazione, introdotti nella seconda lezione.",
+        "Approfondimento successivo delle condizioni e della gestione di più casi.",
+        "Ripetizioni essenziali mediante cicli, da affrontare soltanto dopo le prime due lezioni.",
+        "Progetto conclusivo di dimensioni contenute, con prove su dati e risultati attesi."
+      ],
+      "optional_topics": [],
+      "preferences": [
+        "Mantenere esattamente titoli, ordine, durata e natura teorica delle prime due lezioni.",
+        "Collegare le due lezioni iniziali attraverso lo stesso problema concreto; la seconda deve usare soltanto prerequisiti già spiegati nella prima o introdotti esplicitamente al momento.",
+        "Non anticipare if nella prima lezione.",
+        "Non introdurre cicli o funzioni definite dagli studenti nelle prime due lezioni.",
+        "Usare linguaggio semplice e preciso, spiegazioni autosufficienti, esempi svolti commentati e brevi controlli di comprensione.",
+        "Prevedere gradualità tra osservazione di esempi, comprensione guidata e applicazione autonoma.",
+        "Considerare tutte le durate come ore di calendario, senza duplicare il conteggio delle attività integrate.",
+        "Mantenere recupero e margine come riserve del percorso, senza trasformarli in lezioni aggiuntive.",
+        "Limitare questa elaborazione al riordino del contesto e dei vincoli, senza sviluppare il contenuto completo delle lezioni."
+      ],
+      "total_hours": 24,
+      "hours": {
+        "theory": 10,
+        "laboratory": 10,
+        "assessment": 2,
+        "recovery": 1,
+        "buffer": 1
+      },
+      "assumptions": [
+        "Il monte ore di 24 ore costituisce l'intero budget disponibile per questo percorso; non viene esteso a un'annualità completa della disciplina.",
+        "In assenza dell'indirizzo dell'istituto, si propone un percorso informatico di base senza specializzazioni settoriali.",
+        "Come problema comune alle prime due lezioni si propone «Acquistare quaderni con un budget»: prima si acquisiscono quantità, prezzo e budget e si calcola la spesa; poi si decide se il budget è sufficiente.",
+        "Per il laboratorio si ipotizza la disponibilità di un ambiente Python già predisposto e di un computer per studente o per coppia; dotazioni e accessibilità restano da valutare.",
+        "Le prime quattro ore restano teoriche come richiesto: esempi commentati e controlli di comprensione sostengono la concretezza senza sostituire queste lezioni con attività di laboratorio.",
+        "Non si attribuiscono alla classe bisogni educativi o livelli di competenza ulteriori rispetto a quelli dichiarati; eventuali adattamenti richiederanno informazioni specifiche."
+      ],
+      "curriculum_references": []
+    },
+    "udas": [
+      {
+        "id": "U1",
+        "title": "Fondamenti e prime decisioni",
+        "description": "Apri il percorso con due lezioni teoriche consecutive di 2 ore esatte ciascuna: «Variabili, input e conversioni» e «Decidere con if ed else». Usa lo stesso problema, «Acquistare quaderni con un budget»: nella prima lezione rappresenta i dati e calcola la spesa; nella seconda introduci la decisione sulla sufficienza del budget. Colloca le 2 ore di laboratorio soltanto dopo entrambe le lezioni.",
+        "period": "Avvio del percorso: ore programmate 1–6",
+        "prerequisites": [
+          "Utilizzare la tastiera e gestire semplici file.",
+          "Eseguire operazioni aritmetiche elementari.",
+          "Non sono richieste conoscenze pregresse di programmazione."
+        ],
+        "annual_goal_ids": [
+          "G1",
+          "G2",
+          "G3",
+          "G4"
+        ],
+        "objectives": [
+          {
+            "id": "U1-O1",
+            "description": "Distinguere testi, numeri interi e numeri decimali e assegnare valori a variabili con nomi significativi."
+          },
+          {
+            "id": "U1-O2",
+            "description": "Acquisire quantità, prezzo unitario e budget con input, applicare int e float e visualizzare la spesa con print."
+          },
+          {
+            "id": "U1-O3",
+            "description": "Ricostruire e spiegare una sequenza di acquisizione, conversione, calcolo e visualizzazione."
+          },
+          {
+            "id": "U1-O4",
+            "description": "Usare un confronto e una struttura if/else per distinguere un budget sufficiente da uno insufficiente, rispettando l'indentazione e includendo il caso di spesa uguale al budget."
+          }
+        ],
+        "knowledge": [
+          "Variabile, valore, assegnazione e lettura sequenziale delle istruzioni.",
+          "Tipi str, int e float; differenza tra un testo contenente cifre e un numero.",
+          "input restituisce un testo; int e float permettono le conversioni numeriche richieste.",
+          "Operazioni aritmetiche elementari, parentesi e visualizzazione con print.",
+          "Confronti e valori True e False, introdotti nella seconda lezione.",
+          "Struttura if/else, due punti e indentazione, introdotti nella seconda lezione."
+        ],
+        "skills": [
+          "Scegliere nomi comprensibili per le variabili.",
+          "Convertire la quantità in intero e prezzo e budget in numeri decimali.",
+          "Calcolare la spesa moltiplicando quantità e prezzo unitario.",
+          "Seguire l'esecuzione annotando i valori delle variabili.",
+          "Prevedere il ramo eseguito quando la spesa è minore, uguale o maggiore del budget."
+        ],
+        "competences": [
+          "Tradurre un acquisto semplice in dati, calcoli e una prima decisione motivata.",
+          "Spiegare il comportamento di un breve programma collegando istruzioni e risultati."
+        ],
+        "topics": [
+          "«Variabili, input e conversioni»: 2 ore teoriche esatte; variabili, assegnazione, tipi elementari, input, conversioni, operazioni aritmetiche e print. Acquisizione di quantità, prezzo unitario e budget e calcolo della spesa, senza introdurre condizioni.",
+          "«Decidere con if ed else»: 2 ore teoriche esatte, immediatamente successive alla prima lezione; ripresa dello stesso problema e introduzione esplicita di confronti, condizioni, True e False, if, else, due punti e indentazione.",
+          "Laboratorio di 2 ore successivo alle prime quattro ore: realizzazione guidata, esecuzione e modifica del programma di acquisto.",
+          "Quantità intera non negativa, prezzo e budget non negativi; dati numerici correttamente formattati, con il punto come separatore decimale.",
+          "Esempi e prove con importi piccoli in euro interi o multipli di 0,50 euro.",
+          "Riconoscimento guidato degli errori più comuni di conversione e, dalla seconda lezione, di indentazione; nessuna gestione automatica degli errori."
+        ],
+        "optional_topics": [],
+        "methods": [
+          "Nelle due lezioni teoriche alterna spiegazioni brevi, esempi svolti commentati verbalmente, tracciamento su carta e piccoli controlli di comprensione, senza attività operative al computer degli studenti.",
+          "In «Variabili, input e conversioni» esplicita il significato di virgolette, parentesi, assegnazione e chiamate alle funzioni predefinite usate negli esempi, senza richiedere conoscenze di sintassi pregresse.",
+          "In «Decidere con if ed else» riprendi soltanto quanto già spiegato e presenta ogni elemento nuovo prima di usarlo; non introdurre cicli o funzioni definite dagli studenti.",
+          "Procedi dall'osservazione alla comprensione guidata e poi all'applicazione in laboratorio, riducendo gradualmente gli aiuti.",
+          "Nel laboratorio alterna scrittura e spiegazione del codice, anche nel lavoro a coppie."
+        ],
+        "assessment": [
+          "Controlli formativi integrati: distinguere testo e numero, prevedere una conversione e completare una traccia di esecuzione.",
+          "Dalla seconda lezione, controlli sui tre rapporti tra spesa e budget: minore, uguale e maggiore.",
+          "Osservazione del laboratorio e breve spiegazione individuale, senza verifica sommativa separata.",
+          "Criteri: correttezza dei tipi e dei calcoli, scelta del confronto, indentazione e capacità di collegare codice e risultato. Le osservazioni sono comprese nelle ore delle attività."
+        ],
+        "hours": {
+          "theory": 4,
+          "laboratory": 2,
+          "assessment": 0
+        },
+        "lessons": [
+          {
+            "id": "L1",
+            "title": "Variabili, input e conversioni",
+            "description": "In «Variabili, input e conversioni» parti dall'acquisto di quaderni e identifica quantità, prezzo unitario, budget e spesa. Introduci variabili, assegnazione e tipi elementari, spiegando ogni simbolo prima dell'uso. Presenta input, int, float e print attraverso esempi svolti commentati verbalmente. Acquisisci anche il budget, ma limita l'elaborazione al calcolo della spesa e alla visualizzazione dei dati. Alterna spiegazioni, tracce su carta e brevi domande con restituzione, senza attività al computer degli studenti.",
+            "kind": "theory",
+            "duration_hours": 2,
+            "objective_ids": [
+              "U1-O1",
+              "U1-O2",
+              "U1-O3"
+            ],
+            "concepts": [
+              "Dati in ingresso, elaborazione e risultati dell'acquisto di quaderni.",
+              "Variabile, nome significativo, valore e assegnazione con =.",
+              "Lettura delle istruzioni dall'alto verso il basso.",
+              "Testo str, numero intero int e numero decimale float.",
+              "Virgolette per i testi e parentesi nelle chiamate alle funzioni predefinite.",
+              "input restituisce un testo; conversioni con int e float.",
+              "Punto come separatore decimale e ipotesi di dati correttamente convertibili.",
+              "Moltiplicazione per calcolare la spesa; richiamo delle operazioni elementari e delle parentesi.",
+              "print per visualizzare testi e valori, anche separando gli argomenti con la virgola.",
+              "Differenza tra dato acquisito, dato convertito e risultato calcolato."
+            ],
+            "prerequisite_lesson_ids": [],
+            "methods": [
+              "Spiegazione dialogata con esempi brevi svolti e commentati verbalmente.",
+              "Presentazione iniziale separata di acquisizione e conversione, prima di mostrarne l'eventuale composizione.",
+              "Tracciamento su carta di nomi, valori e tipi delle variabili.",
+              "Controlli di comprensione su testo e numero, scelta della conversione e previsione della spesa, seguiti da restituzione."
+            ],
+            "project_ids": [
+              "P1"
+            ]
+          },
+          {
+            "id": "L2",
+            "title": "Decidere con if ed else",
+            "description": "In «Decidere con if ed else» riprendi i dati e il calcolo della spesa di «Variabili, input e conversioni». Introduci il confronto tra spesa e budget, i risultati True e False e la condizione prima di presentare if ed else. Spiega due punti, blocchi e indentazione di quattro spazi. Mostra una decisione che considera sufficiente anche un budget uguale alla spesa. Guida la lettura dei due rami e proponi tracce su carta con spesa minore, uguale e maggiore del budget.",
+            "kind": "theory",
+            "duration_hours": 2,
+            "objective_ids": [
+              "U1-O3",
+              "U1-O4"
+            ],
+            "concepts": [
+              "Confronto tra due valori numerici.",
+              "Operatori <= e > nel problema della sufficienza del budget.",
+              "Valori booleani True e False come risultati dei confronti.",
+              "Condizione e scelta tra due alternative.",
+              "Struttura if/else e significato dei due rami.",
+              "Due punti alla fine delle intestazioni.",
+              "Indentazione di quattro spazi per delimitare i blocchi; allineamento di if ed else.",
+              "Esecuzione di un solo ramo e prosecuzione dopo la selezione.",
+              "Inclusione del caso di spesa uguale al budget tra gli acquisti possibili."
+            ],
+            "prerequisite_lesson_ids": [
+              "L1"
+            ],
+            "methods": [
+              "Richiamo guidato del medesimo problema e delle istruzioni già spiegate.",
+              "Esempio svolto commentato verbalmente, introducendo ogni elemento nuovo prima del suo impiego.",
+              "Tracce su carta dei tre rapporti tra spesa e budget.",
+              "Brevi controlli su valore del confronto, ramo eseguito e posizione delle istruzioni, con restituzione.",
+              "Lettura ragionata di un errore di indentazione, senza attività operative al computer degli studenti."
+            ],
+            "project_ids": [
+              "P1"
+            ]
+          },
+          {
+            "id": "L3",
+            "title": "Dal calcolo alla prima decisione di acquisto",
+            "description": "In «Dal calcolo alla prima decisione di acquisto» accompagna la prima applicazione al computer, dopo entrambe le lezioni teoriche. Fai realizzare il programma per una tipologia di quaderno, verificando acquisizione, conversioni, spesa e decisione sul budget. Riduci progressivamente gli aiuti e chiedi di confrontare risultati attesi e osservati nei tre rapporti tra spesa e budget. Raccogli una breve spiegazione individuale e una traccia che comprenda l'uguaglianza.",
+            "kind": "laboratory",
+            "duration_hours": 2,
+            "objective_ids": [
+              "U1-O1",
+              "U1-O2",
+              "U1-O3",
+              "U1-O4"
+            ],
+            "concepts": [
+              "Traduzione della sequenza studiata in un programma eseguibile.",
+              "Acquisizione e conversione di quantità, prezzo e budget.",
+              "Calcolo e visualizzazione della spesa.",
+              "Decisione con if/else e confronto inclusivo della soglia.",
+              "Risultato atteso e risultato osservato.",
+              "Riconoscimento guidato di errori di conversione e indentazione."
+            ],
+            "prerequisite_lesson_ids": [
+              "L1",
+              "L2"
+            ],
+            "methods": [
+              "Realizzazione iniziale guidata e successivo completamento con aiuti ridotti.",
+              "Lavoro individuale o a coppie con alternanza tra scrittura e lettura del codice.",
+              "Prove con budget sufficiente, esatto e insufficiente.",
+              "Osservazione formativa e breve spiegazione individuale comprese nel laboratorio."
+            ],
+            "project_ids": [
+              "P1"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "U2",
+        "title": "Approfondire le condizioni e gestire più casi",
+        "description": "Riprendi «Acquistare quaderni con un budget» e passa dalla scelta tra due alternative alla distinzione tra avanzo, spesa esatta e budget insufficiente. Introduci elif dopo il consolidamento di if/else e affronta poi semplici condizioni composte. Usa dati piccoli e controllabili manualmente, mantenendo l'attenzione sulla logica delle decisioni.",
+        "period": "Sviluppo delle decisioni: ore programmate 7–11",
+        "prerequisites": [
+          "U1: variabili, input, conversioni numeriche, calcoli e print.",
+          "U1: confronti e struttura if/else con indentazione.",
+          "Capacità di seguire una breve traccia di esecuzione."
+        ],
+        "annual_goal_ids": [
+          "G2",
+          "G3",
+          "G4"
+        ],
+        "objectives": [
+          {
+            "id": "U2-O1",
+            "description": "Distinguere assegnazione e confronto di uguaglianza e scegliere gli operatori di confronto appropriati."
+          },
+          {
+            "id": "U2-O2",
+            "description": "Costruire una selezione if/elif/else per gestire tre esiti alternativi e calcolare avanzo o importo mancante."
+          },
+          {
+            "id": "U2-O3",
+            "description": "Combinare due condizioni semplici con and oppure or e spiegarne il significato nel problema."
+          },
+          {
+            "id": "U2-O4",
+            "description": "Verificare le decisioni mediante casi ordinari e casi al confine, confrontando risultato atteso e osservato."
+          }
+        ],
+        "knowledge": [
+          "Operatori di confronto e distinzione tra = e ==.",
+          "Selezione multipla con if, elif ed else.",
+          "Ordine dei controlli ed esecuzione di un solo ramo nella selezione proposta.",
+          "Significato di and e or applicati a due condizioni semplici.",
+          "Differenza tra dato numerico non coerente con il problema e testo non convertibile.",
+          "Casi di prova e valori al confine."
+        ],
+        "skills": [
+          "Organizzare condizioni senza sovrapposizioni involontarie o casi dimenticati.",
+          "Calcolare e comunicare avanzo o importo mancante.",
+          "Riconoscere quantità, prezzi o budget negativi e segnalarli con una condizione.",
+          "Preparare casi di prova con risultati attesi prima dell'esecuzione.",
+          "Correggere errori logici confrontando previsione ed esecuzione."
+        ],
+        "competences": [
+          "Modellare una decisione con più esiti, motivando condizioni e ordine dei controlli.",
+          "Valutare la correttezza di un semplice programma attraverso prove significative."
+        ],
+        "topics": [
+          "Consolidamento dei confronti e dell'indentazione.",
+          "Tre esiti per l'acquisto: avanzo, budget esattamente utilizzato e importo mancante.",
+          "Condizioni composte semplici con and e or, senza combinazioni lunghe o precedenze implicite.",
+          "Segnalazione di valori numerici negativi in brevi esercizi dedicati, senza cicli di reinserimento o gestione delle eccezioni.",
+          "Prove sotto, sulla e sopra la soglia del budget; dati monetari didattici piccoli, in euro interi o multipli di 0,50 euro."
+        ],
+        "optional_topics": [],
+        "methods": [
+          "Confronta soluzioni brevi e chiedi di motivare quale ramo verrà eseguito.",
+          "Fai costruire tabelle con dati, esito atteso ed esito osservato.",
+          "Presenta separatamente selezione multipla e condizioni composte prima di proporne eventuali combinazioni.",
+          "Alterna esercizi guidati, confronto a coppie e applicazioni individuali.",
+          "Mantieni l'ipotesi di input correttamente convertibili: il controllo del segno non gestisce qualsiasi errore di inserimento."
+        ],
+        "assessment": [
+          "Controlli formativi integrati su scelta dei confronti, ordine dei rami, significato di and e or e casi al confine.",
+          "Verifica individuale di 1 ora: lettura di codice, completamento di una selezione multipla, interpretazione di una semplice condizione composta e proposta di casi di prova.",
+          "Criteri: correttezza delle condizioni, copertura dei tre esiti, indentazione e motivazione dei risultati."
+        ],
+        "hours": {
+          "theory": 2,
+          "laboratory": 2,
+          "assessment": 1
+        },
+        "lessons": [
+          {
+            "id": "L4",
+            "title": "Tre esiti per lo stesso acquisto",
+            "description": "In «Tre esiti per lo stesso acquisto» riprendi la prima versione del programma e distingui avanzo, spesa esatta e importo mancante. Consolida i confronti già incontrati e introduci gli altri operatori, chiarendo la differenza tra assegnazione e uguaglianza. Presenta elif e l'ordine dei controlli con un esempio commentato. Fai prevedere il ramo eseguito e il calcolo della differenza, scegliendo importi piccoli in euro interi o multipli di 0,50 euro.",
+            "kind": "theory",
+            "duration_hours": 1,
+            "objective_ids": [
+              "U2-O1",
+              "U2-O2",
+              "U2-O4"
+            ],
+            "concepts": [
+              "Operatori <, <=, >, >=, == e !=.",
+              "Differenza tra assegnazione con = e confronto con ==.",
+              "Selezione if/elif/else.",
+              "Ordine dei controlli ed esecuzione del primo ramo con condizione vera.",
+              "else come caso residuo.",
+              "Avanzo come budget meno spesa; importo mancante come spesa meno budget.",
+              "Casi sotto, sulla e sopra la soglia."
+            ],
+            "prerequisite_lesson_ids": [
+              "L3"
+            ],
+            "methods": [
+              "Confronto guidato tra la versione a due esiti e quella a tre esiti.",
+              "Esempio svolto commentato verbalmente.",
+              "Tracciamento su carta dei rami e dei risultati.",
+              "Brevi domande sulla scelta dei confronti e sul caso di uguaglianza, con restituzione."
+            ],
+            "project_ids": [
+              "P1"
+            ]
+          },
+          {
+            "id": "L5",
+            "title": "Programmare e provare i tre esiti",
+            "description": "In «Programmare e provare i tre esiti» fai modificare la prima versione di «Acquisti sotto controllo» usando if/elif/else. Chiedi di preparare almeno tre casi con risultati attesi prima dell'esecuzione e di annotare poi quelli osservati. Guida il confronto tra esiti e calcoli, con particolare attenzione all'uguaglianza e al segno delle differenze. Fai motivare individualmente una scelta di confronto o una correzione.",
+            "kind": "laboratory",
+            "duration_hours": 1,
+            "objective_ids": [
+              "U2-O1",
+              "U2-O2",
+              "U2-O4"
+            ],
+            "concepts": [
+              "Adattamento del programma a una selezione con tre rami.",
+              "Calcolo dell'avanzo o dell'importo mancante nel ramo appropriato.",
+              "Tabella con dati, risultati attesi e risultati osservati.",
+              "Individuazione di errori logici attraverso i casi di prova."
+            ],
+            "prerequisite_lesson_ids": [
+              "L3",
+              "L4"
+            ],
+            "methods": [
+              "Modifica guidata iniziale seguita da completamento individuale o a coppie.",
+              "Preparazione delle previsioni prima dell'esecuzione.",
+              "Confronto tra pari sulle prove.",
+              "Feedback formativo su condizioni, indentazione e spiegazione dei risultati."
+            ],
+            "project_ids": [
+              "P1"
+            ]
+          },
+          {
+            "id": "L6",
+            "title": "Combinare due condizioni con and e or",
+            "description": "In «Combinare due condizioni con and e or» introduci separatamente il significato di entrambe le condizioni vere e di almeno una condizione vera. Usa coppie di confronti semplici riferiti a quantità, prezzo e budget, facendo esplicitare prima il loro significato in italiano. Distingui un numero negativo, convertibile ma non ammesso nel problema, da un testo non convertibile. Mantieni separati questi esercizi dalla selezione multipla finché i due costrutti non risultano comprensibili.",
+            "kind": "theory",
+            "duration_hours": 1,
+            "objective_ids": [
+              "U2-O1",
+              "U2-O3",
+              "U2-O4"
+            ],
+            "concepts": [
+              "Condizione composta da due confronti.",
+              "and: entrambe le condizioni devono essere vere.",
+              "or: almeno una condizione deve essere vera, anche quando sono vere entrambe.",
+              "Previsione del risultato a partire dai valori delle due condizioni.",
+              "Condizioni semplici per riconoscere valori numerici negativi.",
+              "Differenza tra controllo del valore e possibilità di conversione del testo.",
+              "Uso di combinazioni brevi senza mescolare and e or nella stessa espressione."
+            ],
+            "prerequisite_lesson_ids": [
+              "L4",
+              "L5"
+            ],
+            "methods": [
+              "Traduzione guidata da frasi concrete a coppie di confronti.",
+              "Esempi commentati separati per and e or.",
+              "Piccole tabelle con le combinazioni di vero e falso.",
+              "Controlli di comprensione su un controesempio per ciascun operatore, con restituzione."
+            ],
+            "project_ids": [
+              "P1"
+            ]
+          },
+          {
+            "id": "L7",
+            "title": "Provare condizioni composte e valori al confine",
+            "description": "In «Provare condizioni composte e valori al confine» proponi brevi esercizi autonomi collegati agli acquisti: usa and per richiedere due requisiti e or per segnalare almeno un valore negativo tra due dati. Fai scegliere prove che rendano vera e falsa ciascuna condizione composta. Riprendi inoltre le prove della selezione multipla. Non richiedere di integrare ogni controllo nel progetto e ricorda che la segnalazione non consente il reinserimento automatico.",
+            "kind": "laboratory",
+            "duration_hours": 1,
+            "objective_ids": [
+              "U2-O1",
+              "U2-O3",
+              "U2-O4"
+            ],
+            "concepts": [
+              "Applicazione separata di and e or a due confronti.",
+              "Segnalazione di valori numerici non ammessi in esercizi circoscritti.",
+              "Prove con una sola condizione vera, entrambe vere ed entrambe false.",
+              "Valori al confine, compreso zero quando pertinente.",
+              "Revisione delle prove dei tre esiti del progetto."
+            ],
+            "prerequisite_lesson_ids": [
+              "L5",
+              "L6"
+            ],
+            "methods": [
+              "Esercizi brevi con aiuti progressivamente ridotti.",
+              "Previsione individuale prima dell'esecuzione.",
+              "Confronto a coppie tra prove e controesempi.",
+              "Restituzione sugli errori logici e sui limiti dei controlli."
+            ],
+            "project_ids": [
+              "P1"
+            ]
+          },
+          {
+            "id": "L8",
+            "title": "Verifica sulle decisioni e sui casi di prova",
+            "description": "In «Verifica sulle decisioni e sui casi di prova» raccogli evidenze individuali attraverso lettura di codice, completamento di una selezione a tre esiti, interpretazione di una condizione con and oppure or e scelta di casi di prova. Usa consegne brevi riferite agli acquisti, senza richiedere costrutti nuovi. Valuta separatamente scelta delle condizioni, copertura degli esiti, indentazione e motivazione dei risultati.",
+            "kind": "assessment",
+            "duration_hours": 1,
+            "objective_ids": [
+              "U2-O1",
+              "U2-O2",
+              "U2-O3",
+              "U2-O4"
+            ],
+            "concepts": [
+              "Assegnazione e confronto di uguaglianza.",
+              "Selezione if/elif/else e ordine dei rami.",
+              "Significato di and e or.",
+              "Risultati attesi e casi al confine."
+            ],
+            "prerequisite_lesson_ids": [
+              "L4",
+              "L5",
+              "L6",
+              "L7"
+            ],
+            "methods": [
+              "Prova individuale con quesiti di lettura, completamento e breve motivazione.",
+              "Richiesta di previsioni verificabili con calcoli manuali.",
+              "Valutazione con criteri esplicitati prima della prova."
+            ],
+            "project_ids": [
+              "P1"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "U3",
+        "title": "Ripetizioni essenziali e totale progressivo",
+        "description": "Estendi il problema dell'acquisto a più voci e fai emergere la necessità di ripetere gli stessi passaggi. Introduci un solo schema fondamentale, il ciclo for con range, e costruisci il totale progressivo. Colloca la decisione sul budget dopo il ciclo, distinguendo le istruzioni ripetute da quelle eseguite una sola volta.",
+        "period": "Introduzione delle ripetizioni: ore programmate 12–16",
+        "prerequisites": [
+          "U1: acquisizione e conversione dei dati, operazioni aritmetiche e visualizzazione.",
+          "U2: decisioni con più casi e costruzione di semplici prove.",
+          "Comprendere e applicare l'indentazione."
+        ],
+        "annual_goal_ids": [
+          "G1",
+          "G2",
+          "G3",
+          "G4",
+          "G5"
+        ],
+        "objectives": [
+          {
+            "id": "U3-O1",
+            "description": "Riconoscere una sequenza di operazioni da ripetere un numero noto di volte."
+          },
+          {
+            "id": "U3-O2",
+            "description": "Usare for e range per acquisire e trattare il numero indicato di voci di acquisto."
+          },
+          {
+            "id": "U3-O3",
+            "description": "Inizializzare e aggiornare una variabile accumulatrice per ottenere la spesa complessiva."
+          },
+          {
+            "id": "U3-O4",
+            "description": "Tracciare le iterazioni, distinguere il corpo del ciclo dalle istruzioni successive e collocare la decisione finale sul budget fuori dal ciclo."
+          }
+        ],
+        "knowledge": [
+          "Ripetizione e iterazione.",
+          "Ciclo for, variabile di iterazione e significato essenziale di range.",
+          "range con un solo argomento: partenza da zero ed esclusione del limite finale.",
+          "Corpo del ciclo e indentazione.",
+          "Inizializzazione e aggiornamento di un accumulatore.",
+          "Differenza tra spesa di una voce e totale complessivo."
+        ],
+        "skills": [
+          "Individuare le istruzioni da ripetere.",
+          "Prevedere quante volte viene eseguito un ciclo semplice.",
+          "Acquisire quantità e prezzo per ciascuna voce.",
+          "Aggiornare il totale senza reinizializzarlo nel corpo del ciclo.",
+          "Verificare il totale con un calcolo manuale.",
+          "Applicare al totale finale la decisione già studiata sul budget."
+        ],
+        "competences": [
+          "Automatizzare operazioni ricorrenti mediante una ripetizione essenziale.",
+          "Spiegare come il totale si costruisce progressivamente e verificarne la coerenza.",
+          "Integrare una ripetizione con una decisione già conosciuta."
+        ],
+        "topics": [
+          "Dalla duplicazione delle istruzioni al ciclo.",
+          "for e range con numero di ripetizioni noto prima dell'avvio del ciclo.",
+          "Totale progressivo mediante assegnazione esplicita.",
+          "Posizione delle istruzioni prima, dentro e dopo il ciclo.",
+          "Prove con una voce e con più voci; numero di voci assunto intero positivo.",
+          "Decisione sul budget eseguita una sola volta dopo il calcolo del totale."
+        ],
+        "optional_topics": [],
+        "methods": [
+          "Simula le iterazioni su carta con una tabella dei valori prima di passare al computer.",
+          "Presenta un esempio commentato e riduci gradualmente gli aiuti.",
+          "Nel lavoro a coppie alterna chi scrive il codice e chi verifica la traccia.",
+          "Confronta la collocazione corretta dell'inizializzazione e della decisione finale con brevi esempi contenenti un errore.",
+          "Mantieni il percorso essenziale: non richiedere while, liste o funzioni definite dagli studenti."
+        ],
+        "assessment": [
+          "Controlli formativi integrati sul numero delle iterazioni e sull'evoluzione del totale.",
+          "Raccogli una breve traccia individuale e una spiegazione della correzione di un errore di inizializzazione o indentazione.",
+          "Criteri: correttezza della ripetizione, posizione delle istruzioni, aggiornamento del totale e coerenza tra traccia e risultato.",
+          "Le osservazioni e le tracce sono comprese nelle ore di teoria e laboratorio, senza verifica sommativa separata."
+        ],
+        "hours": {
+          "theory": 2,
+          "laboratory": 3,
+          "assessment": 0
+        },
+        "lessons": [
+          {
+            "id": "L9",
+            "title": "Ripetere l'acquisizione delle voci con for e range",
+            "description": "In «Ripetere l'acquisizione delle voci con for e range» passa da una tipologia di quaderno a più voci di materiale scolastico. Distingui il numero delle voci dalla quantità acquistata per ciascuna. Fai riconoscere i passaggi ripetuti e introduci for, in, range e variabile di iterazione prima di usarli. Mostra su carta il numero delle esecuzioni e l'indentazione del corpo, limitando inizialmente ogni ripetizione al calcolo della singola voce.",
+            "kind": "theory",
+            "duration_hours": 1,
+            "objective_ids": [
+              "U3-O1",
+              "U3-O2",
+              "U3-O4"
+            ],
+            "concepts": [
+              "Voce di acquisto e quantità di articoli della stessa voce.",
+              "Numero di ripetizioni noto prima del ciclo.",
+              "Sintassi essenziale di for con in e range.",
+              "range con un argomento: valori da zero al limite escluso.",
+              "Variabile di iterazione e iterazione corrente.",
+              "Due punti e indentazione del corpo del ciclo.",
+              "Istruzioni ripetute e istruzioni successive al ciclo."
+            ],
+            "prerequisite_lesson_ids": [
+              "L3",
+              "L7"
+            ],
+            "methods": [
+              "Confronto tra istruzioni duplicate e ripetizione.",
+              "Esempio svolto commentato verbalmente.",
+              "Simulazione su carta con una voce e con più voci.",
+              "Controlli sul numero di esecuzioni e sull'appartenenza delle istruzioni al corpo del ciclo."
+            ],
+            "project_ids": [
+              "P1"
+            ]
+          },
+          {
+            "id": "L10",
+            "title": "Acquisire e calcolare più voci",
+            "description": "In «Acquisire e calcolare più voci» fai realizzare un ciclo che acquisisce quantità e prezzo e visualizza la spesa di ciascuna voce. Chiedi di prevedere quante richieste di dati compariranno e di confrontare la previsione con l'esecuzione. Usa un numero di voci intero positivo e non richiedere ancora il totale complessivo. Fai correggere un breve errore di indentazione spiegando quali istruzioni devono ripetersi.",
+            "kind": "laboratory",
+            "duration_hours": 1,
+            "objective_ids": [
+              "U3-O1",
+              "U3-O2",
+              "U3-O4"
+            ],
+            "concepts": [
+              "Acquisizione del numero di voci prima del ciclo.",
+              "Acquisizione e conversione ripetute di quantità e prezzo.",
+              "Calcolo della spesa della singola voce.",
+              "Corrispondenza tra numero di iterazioni e numero di voci trattate.",
+              "Effetti dell'indentazione sulla ripetizione."
+            ],
+            "prerequisite_lesson_ids": [
+              "L3",
+              "L9"
+            ],
+            "methods": [
+              "Completamento guidato seguito da una piccola variazione autonoma.",
+              "Alternanza a coppie tra scrittura e verifica della traccia.",
+              "Prove con una e più voci.",
+              "Breve spiegazione individuale della collocazione di un'istruzione."
+            ],
+            "project_ids": [
+              "P1"
+            ]
+          },
+          {
+            "id": "L11",
+            "title": "Costruire il totale e decidere dopo il ciclo",
+            "description": "In «Costruire il totale e decidere dopo il ciclo» riprendi le spese delle singole voci e introduci un accumulatore inizializzato prima della ripetizione. Spiega l'aggiornamento con assegnazione esplicita, distinguendo il valore precedente da quello nuovo. Traccia il totale a ogni iterazione e mostra perché reinizializzarlo nel corpo produce un risultato errato. Colloca infine la decisione a tre esiti dopo il ciclo, applicandola al totale definitivo.",
+            "kind": "theory",
+            "duration_hours": 1,
+            "objective_ids": [
+              "U3-O3",
+              "U3-O4"
+            ],
+            "concepts": [
+              "Accumulatore e inizializzazione del totale a zero.",
+              "Aggiornamento esplicito: nuovo totale ottenuto dal totale precedente e dalla spesa corrente.",
+              "Valutazione dell'espressione prima dell'assegnazione del nuovo valore.",
+              "Traccia delle variazioni del totale.",
+              "Inizializzazione prima, aggiornamento dentro e decisione dopo il ciclo.",
+              "Riutilizzo di if/elif/else sul totale complessivo."
+            ],
+            "prerequisite_lesson_ids": [
+              "L4",
+              "L9",
+              "L10"
+            ],
+            "methods": [
+              "Esempio svolto con tabella delle iterazioni e dei totali.",
+              "Confronto tra collocazione corretta ed errata dell'inizializzazione.",
+              "Domande sulla posizione della decisione finale.",
+              "Breve traccia individuale con restituzione formativa."
+            ],
+            "project_ids": [
+              "P1"
+            ]
+          },
+          {
+            "id": "L12",
+            "title": "Integrare ripetizione, totale e decisione",
+            "description": "In «Integrare ripetizione, totale e decisione» fai estendere «Acquisti sotto controllo» a più voci, acquisendo il budget una sola volta e aggiornando il totale nel ciclo. Richiedi la decisione finale soltanto al termine della ripetizione. Fai verificare il risultato con calcoli manuali e prove con una e più voci. Raccogli una traccia individuale e la spiegazione della correzione di un errore di inizializzazione o indentazione.",
+            "kind": "laboratory",
+            "duration_hours": 2,
+            "objective_ids": [
+              "U3-O1",
+              "U3-O2",
+              "U3-O3",
+              "U3-O4"
+            ],
+            "concepts": [
+              "Integrazione dell'acquisizione ripetuta con l'accumulatore.",
+              "Budget e numero di voci acquisiti prima della ripetizione.",
+              "Distinzione tra spesa corrente e totale.",
+              "Selezione finale esterna al ciclo.",
+              "Prove con una e più voci e controllo manuale del totale.",
+              "Correzione di errori nella posizione delle istruzioni."
+            ],
+            "prerequisite_lesson_ids": [
+              "L5",
+              "L10",
+              "L11"
+            ],
+            "methods": [
+              "Realizzazione con aiuti progressivamente ridotti.",
+              "Lavoro individuale o a coppie con alternanza dei ruoli.",
+              "Confronto tra risultato atteso, traccia e risultato osservato.",
+              "Raccolta di evidenze individuali e feedback compresi nel laboratorio."
+            ],
+            "project_ids": [
+              "P1"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "U4",
+        "title": "Progetto conclusivo: acquisti sotto controllo",
+        "description": "Guida la classe a integrare quanto appreso in «Acquisti sotto controllo», un piccolo programma che acquisisce un budget e più voci di acquisto, calcola la spesa e comunica l'esito. Dedica la teoria alla pianificazione, alla documentazione essenziale e alla lettura ragionata delle prove, senza aggiungere nuovi costrutti di programmazione. Mantieni separate dalle 22 ore programmate le riserve di 1 ora di recupero e 1 ora di margine.",
+        "period": "Sintesi conclusiva: ore programmate 17–22",
+        "prerequisites": [
+          "U1: variabili, tipi, acquisizione, conversioni e calcoli.",
+          "U2: selezione multipla e casi di prova.",
+          "U3: ciclo for, range, accumulatore e decisione successiva al ciclo."
+        ],
+        "annual_goal_ids": [
+          "G1",
+          "G2",
+          "G3",
+          "G4",
+          "G5",
+          "G6"
+        ],
+        "objectives": [
+          {
+            "id": "U4-O1",
+            "description": "Definire dati in ingresso, dati ammessi, risultati attesi e sequenza delle operazioni del progetto."
+          },
+          {
+            "id": "U4-O2",
+            "description": "Integrare acquisizione, calcoli, ripetizione e decisione in un programma di dimensioni contenute."
+          },
+          {
+            "id": "U4-O3",
+            "description": "Documentare almeno tre casi di prova: budget sufficiente con avanzo, spesa esatta e budget insufficiente, includendo una prova con una sola voce e una con più voci."
+          },
+          {
+            "id": "U4-O4",
+            "description": "Spiegare le scelte realizzative, correggere eventuali errori e dichiarare i limiti sugli input accettati."
+          }
+        ],
+        "knowledge": [
+          "Scomposizione di un problema in dati, elaborazione e risultati.",
+          "Integrazione di sequenza, selezione e ripetizione.",
+          "Risultato atteso, risultato osservato e correzione degli errori.",
+          "Nomi significativi e funzione dei commenti introdotti dal simbolo #.",
+          "Limiti di un programma rispetto ai dati ammessi."
+        ],
+        "skills": [
+          "Preparare una breve specifica comprensibile del programma.",
+          "Integrare e adattare le soluzioni costruite nelle UDA precedenti.",
+          "Organizzare un prospetto di prove riproducibili con tutti i dati necessari.",
+          "Individuare un errore attraverso una traccia di esecuzione.",
+          "Presentare il funzionamento del programma con lessico semplice e preciso."
+        ],
+        "competences": [
+          "Realizzare una soluzione informatica essenziale per sostenere una decisione di spesa.",
+          "Verificare e comunicare il comportamento della soluzione, distinguendo risultati corretti e limiti dichiarati.",
+          "Lavorare con autonomia crescente e rendere riconoscibile il proprio contributo."
+        ],
+        "topics": [
+          "Pianificazione del progetto «Acquisti sotto controllo».",
+          "Acquisizione del budget e del numero di voci.",
+          "Calcolo ripetuto delle spese e aggiornamento del totale.",
+          "Decisione finale tra avanzo, spesa esatta e importo mancante.",
+          "Documentazione dei dati ammessi, delle prove e dei risultati.",
+          "Commenti essenziali e spiegazione individuale."
+        ],
+        "optional_topics": [],
+        "methods": [
+          "Usa una consegna circoscritta con requisiti essenziali e risultati osservabili.",
+          "Prevedi pianificazione guidata, realizzazione progressivamente autonoma e confronto tra pari sui casi di prova.",
+          "Se il prodotto viene realizzato a coppie, raccogli comunque una spiegazione e una piccola modifica individuali.",
+          "Assumi input correttamente formattati, quantità intere non negative, prezzi e budget non negativi e numero di voci intero positivo.",
+          "Per le prove usa importi piccoli in euro interi o multipli di 0,50 euro, inseriti con il punto decimale; non richiedere gestione generale degli errori, reinserimento automatico o nuovi costrutti."
+        ],
+        "assessment": [
+          "Feedback formativo integrato durante pianificazione, realizzazione e revisione.",
+          "Verifica conclusiva individuale di 1 ora: esecuzione di casi predisposti, breve spiegazione scritta delle scelte e piccola modifica coerente con i costrutti studiati.",
+          "Seleziona consegne brevi che consentano di raccogliere contemporaneamente evidenze individuali, senza prevedere colloqui sequenziali con tutta la classe nell'ora di verifica.",
+          "Criteri: correttezza del programma, integrazione dei costrutti, qualità delle prove, chiarezza della spiegazione e autonomia. Il funzionamento del prodotto di coppia non determina da solo la valutazione individuale."
+        ],
+        "hours": {
+          "theory": 2,
+          "laboratory": 3,
+          "assessment": 1
+        },
+        "lessons": [
+          {
+            "id": "L13",
+            "title": "Pianificare Acquisti sotto controllo",
+            "description": "In «Pianificare Acquisti sotto controllo» fai rileggere la versione costruita e definire una breve specifica conclusiva: dati richiesti, valori ammessi, operazioni e risultati. Guida la preparazione di almeno tre prove che coprano i tre esiti e comprendano una e più voci. Introduci il simbolo # e la funzione dei commenti, distinguendoli dalle istruzioni eseguite. Mantieni la pianificazione entro i costrutti già studiati.",
+            "kind": "theory",
+            "duration_hours": 1,
+            "objective_ids": [
+              "U4-O1",
+              "U4-O3",
+              "U4-O4"
+            ],
+            "concepts": [
+              "Specifica essenziale del problema.",
+              "Dati in ingresso, elaborazione e risultati.",
+              "Quantità intere non negative, prezzi e budget non negativi, numero di voci intero positivo.",
+              "Testi correttamente convertibili e punto decimale.",
+              "Prove riproducibili con tutti i dati di ciascuna voce.",
+              "Commenti introdotti da # e nomi significativi.",
+              "Limiti dichiarati senza gestione generale degli errori."
+            ],
+            "prerequisite_lesson_ids": [
+              "L7",
+              "L12"
+            ],
+            "methods": [
+              "Lettura ragionata della versione precedente del progetto.",
+              "Pianificazione guidata su un prospetto di dati, operazioni e risultati.",
+              "Preparazione dei risultati attesi prima della revisione al computer.",
+              "Controlli di comprensione su requisiti, commenti e dati ammessi."
+            ],
+            "project_ids": [
+              "P1"
+            ]
+          },
+          {
+            "id": "L14",
+            "title": "Consolidare il programma conclusivo",
+            "description": "In «Consolidare il programma conclusivo» fai adattare e completare la versione precedente seguendo la specifica di «Pianificare Acquisti sotto controllo». Chiedi di rendere chiari nomi, messaggi e commenti essenziali e di eseguire le prove preparate, registrando i risultati osservati. Sostieni la correzione attraverso tracce mirate, senza fornire subito la soluzione. Se lavori a coppie, alterna i ruoli e raccogli brevi spiegazioni individuali.",
+            "kind": "laboratory",
+            "duration_hours": 2,
+            "objective_ids": [
+              "U4-O1",
+              "U4-O2",
+              "U4-O3",
+              "U4-O4"
+            ],
+            "concepts": [
+              "Integrazione di sequenza, selezione e ripetizione.",
+              "Coerenza tra specifica e programma.",
+              "Chiarezza di nomi, messaggi e commenti.",
+              "Esecuzione dei casi e registrazione dei risultati osservati.",
+              "Localizzazione degli errori mediante tracce.",
+              "Documentazione dei limiti del programma."
+            ],
+            "prerequisite_lesson_ids": [
+              "L5",
+              "L12",
+              "L13"
+            ],
+            "methods": [
+              "Realizzazione progressivamente autonoma a partire dalle versioni precedenti.",
+              "Confronto tra pari sui casi di prova.",
+              "Feedback mirato su errori osservabili e scelte da motivare.",
+              "Spiegazioni individuali integrate nel lavoro, anche in presenza di un prodotto di coppia."
+            ],
+            "project_ids": [
+              "P1"
+            ]
+          },
+          {
+            "id": "L15",
+            "title": "Leggere le prove e spiegare le scelte",
+            "description": "In «Leggere le prove e spiegare le scelte» guida la lettura dei prospetti prodotti e confronta risultati attesi e osservati. Fai discutere se le prove coprono avanzo, spesa esatta e importo mancante, con una e più voci. Riprendi gli errori emersi distinguendo calcolo, condizioni e posizione delle istruzioni. Prepara la spiegazione individuale delle scelte e dei limiti, senza aggiungere nuovi costrutti.",
+            "kind": "theory",
+            "duration_hours": 1,
+            "objective_ids": [
+              "U4-O1",
+              "U4-O3",
+              "U4-O4"
+            ],
+            "concepts": [
+              "Completezza e riproducibilità dei casi di prova richiesti.",
+              "Lettura delle differenze tra risultato atteso e osservato.",
+              "Traccia come supporto alla spiegazione e alla correzione.",
+              "Motivazione della posizione di inizializzazione, aggiornamento e decisione.",
+              "Distinzione tra comportamento verificato e limiti dichiarati.",
+              "Commenti utili a spiegare le scelte senza ripetere ogni istruzione."
+            ],
+            "prerequisite_lesson_ids": [
+              "L7",
+              "L14"
+            ],
+            "methods": [
+              "Discussione guidata di prospetti di prova ed errori emersi nel laboratorio.",
+              "Confronto tra spiegazioni brevi più o meno precise.",
+              "Tracciamento mirato su carta.",
+              "Breve controllo individuale sulla motivazione di una scelta e di un limite."
+            ],
+            "project_ids": [
+              "P1"
+            ]
+          },
+          {
+            "id": "L16",
+            "title": "Revisionare e documentare la versione finale",
+            "description": "In «Revisionare e documentare la versione finale» fai applicare le correzioni motivate in «Leggere le prove e spiegare le scelte» e ripetere le prove dopo le modifiche. Richiedi il programma conclusivo, la descrizione dei dati ammessi e il prospetto con almeno tre casi completi. Raccogli una piccola modifica e una spiegazione individuali come preparazione alla verifica, mantenendo tutte le attività nell'ora di laboratorio.",
+            "kind": "laboratory",
+            "duration_hours": 1,
+            "objective_ids": [
+              "U4-O1",
+              "U4-O2",
+              "U4-O3",
+              "U4-O4"
+            ],
+            "concepts": [
+              "Revisione coerente con la specifica.",
+              "Ripetizione delle prove dopo una correzione.",
+              "Documentazione finale di programma, dati ammessi e risultati.",
+              "Piccole modifiche entro i costrutti studiati.",
+              "Spiegazione del contributo individuale."
+            ],
+            "prerequisite_lesson_ids": [
+              "L14",
+              "L15"
+            ],
+            "methods": [
+              "Revisione con autonomia crescente.",
+              "Confronto finale tra previsione ed esecuzione.",
+              "Piccola modifica individuale con motivazione.",
+              "Feedback formativo sui requisiti essenziali prima della verifica."
+            ],
+            "project_ids": [
+              "P1"
+            ]
+          },
+          {
+            "id": "L17",
+            "title": "Verifica conclusiva di Acquisti sotto controllo",
+            "description": "In «Verifica conclusiva di Acquisti sotto controllo» proponi contemporaneamente a tutti una prova individuale circoscritta: esecuzione di casi predisposti, breve spiegazione scritta e piccola modifica con i costrutti studiati. Chiedi di motivare il totale progressivo, la decisione finale e i limiti sugli input. Valuta correttezza, integrazione, prove, chiarezza e autonomia, senza far dipendere il giudizio individuale dal solo funzionamento del prodotto di coppia.",
+            "kind": "assessment",
+            "duration_hours": 1,
+            "objective_ids": [
+              "U4-O1",
+              "U4-O2",
+              "U4-O3",
+              "U4-O4"
+            ],
+            "concepts": [
+              "Integrazione di acquisizione, conversioni, calcoli, ciclo e selezione.",
+              "Risultati attesi e osservati nei casi predisposti.",
+              "Motivazione delle scelte realizzative.",
+              "Piccola modifica coerente con i requisiti.",
+              "Dati ammessi e limiti della soluzione."
+            ],
+            "prerequisite_lesson_ids": [
+              "L15",
+              "L16"
+            ],
+            "methods": [
+              "Prova individuale al computer con brevi risposte scritte.",
+              "Consegne simultanee e circoscritte, senza colloqui sequenziali.",
+              "Valutazione distinta di funzionamento, spiegazione e modifica individuale.",
+              "Criteri condivisi prima della prova."
+            ],
+            "project_ids": [
+              "P1"
+            ]
+          }
+        ]
+      }
+    ],
+    "projects": [
+      {
+        "id": "P1",
+        "title": "Acquisti sotto controllo",
+        "description": "Usa «Acquisti sotto controllo» come unico progetto progressivo per mantenere riconoscibile il problema mentre aumenta la complessità del programma. Parti dall'acquisto di quaderni e arriva a più voci di materiale scolastico. Richiedi un programma testuale, una breve descrizione dei dati ammessi e un prospetto delle prove. Tutte le tappe sono comprese nelle ore delle UDA; il progetto non aggiunge ore al percorso.",
+        "competences": [
+          "Rappresentare un problema concreto attraverso dati, calcoli, decisioni e ripetizioni.",
+          "Controllare i risultati con prove motivate e riproducibili.",
+          "Spiegare una soluzione informatica, il proprio contributo e i limiti del programma."
+        ],
+        "milestones": [
+          {
+            "uda_id": "U1",
+            "description": "Dopo «Variabili, input e conversioni» e «Decidere con if ed else», fai realizzare in laboratorio la prima versione per una sola tipologia di quaderno, con decisione sulla sufficienza del budget.",
+            "deliverable": "Programma essenziale con variabili significative e breve traccia di esecuzione comprendente il caso di spesa uguale al budget."
+          },
+          {
+            "uda_id": "U2",
+            "description": "In «Approfondire le condizioni e gestire più casi» fai distinguere avanzo, spesa esatta e importo mancante, verificando i tre esiti con dati semplici. Mantieni i controlli sui valori negativi come esercizi circoscritti, senza ampliare obbligatoriamente il progetto.",
+            "deliverable": "Versione con selezione multipla e tabella di almeno tre casi di prova, con dati, risultati attesi e risultati osservati."
+          },
+          {
+            "uda_id": "U3",
+            "description": "In «Ripetizioni essenziali e totale progressivo» fai estendere il calcolo a un numero noto di voci, accumulando le spese e applicando la decisione finale soltanto dopo il ciclo.",
+            "deliverable": "Versione con ciclo e totale progressivo, accompagnata da una traccia delle iterazioni e da prove con una e più voci."
+          },
+          {
+            "uda_id": "U4",
+            "description": "In «Progetto conclusivo: acquisti sotto controllo» fai consolidare la soluzione senza introdurre nuovi costrutti, documentare le prove e rendere riconoscibile la comprensione individuale del funzionamento.",
+            "deliverable": "Programma conclusivo commentato in modo essenziale, descrizione dei dati ammessi e prospetto di almeno tre prove con risultati attesi e osservati; breve spiegazione individuale."
+          }
+        ]
+      }
+    ],
+    "review_notes": [
+      "In «Fondamenti e prime decisioni» mantieni l'avvio richiesto: prima «Variabili, input e conversioni», poi «Decidere con if ed else», entrambe teoriche e di 2 ore esatte. Rispetto a un'alternanza immediata tra teoria e laboratorio, questa scelta rinvia l'applicazione al computer: sostieni le prime quattro ore con esempi commentati verbalmente, tracce su carta e controlli brevi, senza anticipare il laboratorio.",
+      "Usa «Acquistare quaderni con un budget» come ipotesi progettuale comune alle due lezioni iniziali. In «Variabili, input e conversioni» acquisisci anche il budget, ma limita il lavoro a dati, conversioni e calcolo della spesa. Introduci confronti, condizioni e indentazione soltanto in «Decidere con if ed else»; non inserire cicli o funzioni definite dagli studenti nelle prime due lezioni.",
+      "Per «Python · dai dati alle decisioni» destina 10 ore alla teoria, 10 al laboratorio e 2 alle verifiche. Conserva inoltre 1 ora di recupero e 1 ora di margine entro le 24 ore complessive. Le riserve restano disponibili lungo il percorso, senza diventare lezioni aggiuntive; se utilizzate, fanno slittare le attività successive. Controlli formativi e tappe di «Acquisti sotto controllo» sono già compresi nelle attività indicate.",
+      "Dopo «Verifica sulle decisioni e sui casi di prova», valuta se utilizzare la riserva di recupero per difficoltà su conversioni, confronti o indentazione, scegliendo il bisogno prevalente emerso. Conserva il margine per imprevisti organizzativi o tempi di apprendimento più distesi, senza aggiungere contenuti obbligatori.",
+      "In «Tre esiti per lo stesso acquisto» e «Programmare e provare i tre esiti» consolida prima la selezione multipla. Affronta poi «Combinare due condizioni con and e or» con esercizi separati: evita che la contemporanea introduzione di più novità nasconda il significato delle decisioni.",
+      "Fin da «Variabili, input e conversioni», scegli importi piccoli in euro interi o multipli di 0,50 euro. Mantieni questa scelta nelle prove di «Acquisti sotto controllo»: rende controllabili i calcoli e i confronti di uguaglianza senza richiedere un approfondimento sulla rappresentazione approssimata di molti decimali con float. Presenta il programma come modello didattico, non come soluzione affidabile per qualsiasi calcolo monetario reale.",
+      "In «Ripetizioni essenziali e totale progressivo» limita la ripetizione a for con range e usa l'aggiornamento esplicito del totale. In «Acquisire e calcolare più voci» fai comprendere prima la ripetizione dei passaggi; introduci poi l'accumulatore in «Costruire il totale e decidere dopo il ciclo». Distingui il numero di voci dalle quantità acquistate e rendi visibile la posizione della decisione dopo il ciclo; non servono liste, while o funzioni definite dagli studenti.",
+      "Per «Acquisti sotto controllo» dichiara gli input ammessi: testi correttamente convertibili, quantità intere non negative, prezzi e budget non negativi e numero di voci intero positivo. La segnalazione dei valori negativi affrontata in «Provare condizioni composte e valori al confine» non equivale a una gestione completa degli errori e non richiede un reinserimento automatico.",
+      "In «Pianificare Acquisti sotto controllo» introduci esplicitamente il simbolo # prima di richiedere commenti nel programma. Usa «Leggere le prove e spiegare le scelte» per interpretare il lavoro già svolto e preparare una revisione motivata, non per aggiungere nuovi costrutti.",
+      "Per «Dal calcolo alla prima decisione di acquisto» e per il progetto conclusivo si ipotizzano un ambiente Python già predisposto e un computer per studente o coppia. Valuta disponibilità, accessibilità e numerosità della classe. Per «Verifica conclusiva di Acquisti sotto controllo» prevedi l'accesso individuale al computer, eventualmente organizzando turni equivalenti entro l'ora prevista; raccogli evidenze individuali anche se il progetto è stato realizzato a coppie.",
+      "Il contesto di «Python · dai dati alle decisioni» è interamente fittizio. Non sono indicati indirizzo specifico, bisogni educativi o documenti curricolari ufficiali: mantieni il taglio introduttivo generale e valuta eventuali adattamenti quando disporrai di informazioni effettive sulla classe. Le descrizioni delineano le attività senza sviluppare il contenuto completo delle lezioni."
+    ]
+  }
+}

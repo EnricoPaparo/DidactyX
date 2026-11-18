@@ -1,8 +1,8 @@
 # DidactyX Project Brief
 
-- **Versione:** 1.2
-- **Data:** 15 novembre 2026
-- **Stato:** requisiti e workflow concordati; stack macOS approvato, dettagli di implementazione in definizione
+- **Versione:** 1.3
+- **Data:** 18 novembre 2026
+- **Stato:** requisiti e workflow concordati; stack macOS approvato, fondazione, piano annuale e pilota delle lezioni implementati; materiali collegati e recupero ancora da realizzare
 - **Prima piattaforma:** macOS
 - **Destinatario iniziale:** il docente ideatore del progetto
 
@@ -11,6 +11,8 @@ DidactyX è un motore didattico che accompagna il docente dalla progettazione an
 Il prodotto concentra la complessità nella generazione, nel coordinamento e nella revisione dei contenuti. L'esperienza del docente rimane minimale: descrivere le esigenze, consultare il percorso, richiedere materiali e modifiche, revisionare ed esportare PDF. Questo documento costituisce il riferimento di prodotto per l'implementazione.
 
 Le precisazioni funzionali rendono verificabili i requisiti già espressi e ne chiariscono i casi ambigui. Lo stack approvato è documentato nell'[architettura macOS](ARCHITECTURE.md); gli aspetti ancora da decidere sono raccolti nella sezione 19 e i prossimi incrementi nel [piano di sviluppo](IMPLEMENTATION_PLAN.md).
+
+Questo brief descrive il prodotto completo desiderato, non soltanto le funzioni già disponibili. Lo [stato verificato](PROJECT_STATUS.md) distingue implementazione e lavoro residuo; il [passaggio alla prossima sessione](SESSION_HANDOFF.md) conserva il contesto della conversazione e delle prove.
 
 ## Indice
 
@@ -560,15 +562,14 @@ Il 15 novembre 2026 è stato approvato lo stack della prima versione macOS: Swif
 
 Le seguenti scelte richiedono ancora definizione o verifica:
 
-- Dettagli della struttura del codice, comunicazione tra app e motore e confezionamento dell'app macOS.
+- Estensione dei contratti e dell'archivio a materiali visivi, mappe, esercitazioni, verifiche e recupero. Struttura del codice, protocollo locale JSON a righe, SQLite schema 3 e runtime incluso sono già implementati per il perimetro corrente.
 - Accesso di un nuovo docente, gestione della dipendenza Codex e compatibilità delle funzioni tra le modalità di autenticazione. Testo e immagini sono stati verificati sul login locale già presente, come documentato nel [rapporto tecnico](TECHNICAL_FEASIBILITY.md).
-- Modelli da utilizzare, orchestrazione dei ruoli e ripartizione del lavoro tra agenti.
-- Schema SQLite, formato strutturato dei materiali, gestione degli allegati e versionamento dei progetti.
-- Identificazione della versione corrente, collegamento dei materiali dopo una rigenerazione e ripresa coerente del lavoro.
-- Recupero del contesto, memoria del percorso e verifica della continuità tra contenuti.
-- Schema definitivo dei metadati e fonti curricolari pertinenti ai contesti supportati.
-- Fonti disciplinari, metodo di verifica e criteri pratici per valutare la qualità.
-- Materia, tipo di scuola e classe da usare per il primo percorso pilota; ampiezza dell'eventuale supporto interdisciplinare.
+- Scelta esplicita dei modelli per i ruoli e orchestrazione dei materiali ancora mancanti. Per piano e lezioni i ruoli sono implementati; le lezioni supportano più autori e ricomposizione.
+- Gestione completa degli allegati e riallineamento dei materiali collegati futuri. Versioni, dipendenze e ripresa coerente di piano e lezioni sono già implementate.
+- Recupero del contesto su percorsi lunghi e verifica della continuità oltre il pilota. Le lezioni attuali usano già i corpi precedenti effettivi.
+- Estensione dei metadati e delle fonti curricolari ai contesti da supportare; i contratti annuali e delle lezioni correnti sono in `schemas/`.
+- Fonti disciplinari ulteriori e validazione dei criteri di qualità su altre materie e nell'utilizzo in classe. Rubrica, casi avversi e benchmark interno del pilota sono già documentati.
+- Ampliamento del pilota e dell'eventuale supporto interdisciplinare. La scelta iniziale è stata delegata dal docente: informatica, seconda superiore fittizia, tre lezioni Python collegate.
 - Verifica del renderer PDF su formule complesse, mappe articolate e raccolte lunghe; template editoriali e dettagli del design dell'interfaccia.
 - Requisiti minimi di macOS e hardware, installazione, aggiornamenti e conservazione dei dati tra versioni dell'app.
 - Distribuzione ad altri docenti e futura valutazione del supporto Windows.
@@ -586,3 +587,4 @@ Quando saranno prese decisioni tecniche, potranno essere documentate in file ded
 | 1.0 | 14 novembre 2026 | Raccolta iniziale delle decisioni di prodotto e del workflow concordato. |
 | 1.1 | 14 novembre 2026 | Precisazione di contesto applicato, versioni, revisione, varianti, tempi del recupero e criteri di verifica della qualità. Perimetro e priorità invariati. |
 | 1.2 | 15 novembre 2026 | Registrazione dello stack macOS approvato, collegamento ad architettura e piano di sviluppo e aggiornamento delle decisioni ancora aperte. |
+| 1.3 | 18 novembre 2026 | Chiarimento del perimetro implementato rispetto ai requisiti completi, aggiornamento delle decisioni aperte e collegamento al passaggio di sessione. Requisiti di prodotto invariati. |

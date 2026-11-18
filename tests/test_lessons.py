@@ -30,7 +30,9 @@ def content(context):
 
 
 class Factory:
-    def __init__(self,multiple=False):self.contexts=[];self.multiple=multiple;self.fail_at=None;self.calls=0
+    def __init__(self,multiple=False):
+        self.contexts=[];self.multiple=multiple;self.fail_at=None;self.calls=0
+        self.auto_reviews=[];self.change_first_review=False
     def __call__(self,directory,cancelled):
         factory=self
         class Generator:
@@ -49,7 +51,13 @@ class Factory:
                 if schema==REVIEW:
                     factory.review_input=deepcopy(inputs)
                     return {'summary':'Revisione completata','findings':[]}
-                if 'proposal' in inputs:return deepcopy(inputs['proposal'])
+                if 'proposal' in inputs:
+                    factory.auto_reviews.append(deepcopy(inputs));value=deepcopy(inputs['proposal'])
+                    if factory.change_first_review and len(factory.auto_reviews)==1:
+                        block=value['sections'][0]['blocks'][1]
+                        block.update({'code':'nome = input("Nome? ")\nprint("Ciao", nome)',
+                            'cases':[{'stdin':['Ada'],'stdout':'Nome? Ciao Ada\n'}]})
+                    return value
                 v=content(ctx)
                 if 'contributions' in inputs:v['sections']=[s for p in inputs['contributions'] for s in p['sections']]
                 return v
@@ -111,6 +119,13 @@ class LessonTests(unittest.TestCase):
         self.assertIsNotNone(self.manager.store.state(self.program['id'],self.plan_id,'L1')['latest_review'])
         from didactyx_engine.lesson_render import visible_examples
         self.assertEqual(self.factory.review_input['visible_examples'],visible_examples(before['data'],before['checks']))
+    def test_automatic_reviews_receive_display_of_their_actual_proposal(self):
+        self.factory.change_first_review=True;self.generate(['L1'])
+        first,second=self.factory.auto_reviews
+        self.assertEqual(first['visible_examples']['examples'][0]['displayed_text'],'5\n')
+        self.assertEqual(second['visible_examples']['examples'][0]['displayed_text'],'Nome? Ada\nCiao Ada\n')
+        self.assertEqual(second['checks'][0]['status'],'passed')
+        self.assertEqual(second['proposal']['sections'][0]['blocks'][1]['cases'][0]['stdin'],['Ada'])
     def test_resume_does_not_publish_first_lesson_twice(self):
         self.factory.fail_at=6
         job=self.manager.start({'program_id':self.program['id'],'plan_id':self.plan_id,'lesson_ids':['L1','L2']})

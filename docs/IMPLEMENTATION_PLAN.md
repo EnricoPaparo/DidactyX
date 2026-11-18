@@ -3,7 +3,7 @@
 - **Data:** 17 novembre 2026
 - **Base:** [architettura approvata](ARCHITECTURE.md) e [Project Brief](PROJECT_BRIEF.md)
 - **Piattaforma:** macOS
-- **Stato:** incrementi 1 e 2 implementati; primo traguardo dell’incremento 3 e benchmark interno su una UDA di tre lezioni completati
+- **Stato:** incrementi 1 e 2 implementati; primo traguardo dell’incremento 3, benchmark interno e consolidamento completo sul pilota di tre lezioni completati
 
 Ogni incremento produce un comportamento utilizzabile e verificabile. La priorità è il motore didattico; l'interfaccia cresce nella misura necessaria a usarlo. I criteri seguenti descrivono il completamento del singolo incremento e non riducono il perimetro finale del brief.
 
@@ -39,6 +39,8 @@ Integrare il lettore WebKit e l'export delle lezioni. Verificare formule e rappr
 
 **Validazione 0.3.2:** su delega del docente sono stati creati rubriche e casi avversi, valutato il campione iniziale, affinati i prompt e rigenerate in ordine tre lezioni, compreso il laboratorio. Il [rapporto](evidence/didactic-benchmarks/2026-11-17/REPORT.md) conserva risultati, controesempi, iterazioni scartate e limiti. La soglia interna è superata nel campione finale, che include correzioni editoriali esplicite conservate separatamente dalla rigenerazione; non è una misura degli apprendimenti. La UDA è completa nei contenuti di lezione, mentre mappe, esercitazioni dedicate e verifiche rimangono nell’incremento 4.
 
+**Consolidamento 0.3.3:** completata la prova integrale dei prompt successivi, con contenuti uguali all’uscita del workflow, senza patch editoriali successive. Verificati scrittura individuale, riduzione concreta del carico, trascrizioni e continuità; risultati e limiti nel [rapporto](evidence/lesson-consolidation/2026-11-17/REPORT.md).
+
 ## 4 Materiali collegati e valutazione
 
 Integrare arricchimento visivo, mappe concettuali ed esercitazioni con autori e revisori dedicati. Implementare le verifiche usando lezioni, mappe ed esercitazioni pertinenti, con N varianti e gli adattamenti richiesti. Estendere le esportazioni PDF e il controllo di impaginazione.
@@ -59,6 +61,6 @@ Verificare ripresa delle attività, errori di rete e quota, consultazione senza 
 
 ## Prossima attività
 
-Consultare il campione «Python · UDA 1 · benchmark didattico», con le versioni iniziali, rigenerate e corrette delle tre lezioni. Il prossimo incremento di implementazione è il 4: arricchimento visivo e mappe, poi esercitazioni e verifiche basate sui materiali effettivi. Mantenere il benchmark come regressione e ampliare in seguito la valutazione ad altri contenuti e al riscontro del docente in classe.
+Consultare «Python · UDA 1 · consolidamento 0.3.3», con versioni iniziali e rigenerate dall’intero workflow; il campione storico del benchmark rimane conservato. Il prossimo incremento di implementazione è il 4: arricchimento visivo e mappe, poi esercitazioni e verifiche basate sui materiali effettivi. Mantenere il benchmark come regressione e ampliare in seguito la valutazione ad altri contenuti e al riscontro del docente in classe.
 
 Il [punto di ripresa](PROJECT_STATUS.md) raccoglie stato verificato, limiti e comandi operativi.
