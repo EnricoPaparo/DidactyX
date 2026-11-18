@@ -1,6 +1,6 @@
 # Architettura di DidactyX per macOS
 
-- **Data:** 16 novembre 2026
+- **Data:** 18 novembre 2026; riallineamento documentale allo stato 0.3.3
 - **Stato:** stack approvato; fondazione, progettazione annuale e primo traguardo dei contenuti implementati
 - **Ambito:** prima applicazione locale per macOS
 - **Riferimento di prodotto:** [Project Brief](PROJECT_BRIEF.md)
@@ -130,11 +130,11 @@ Le verifiche del collegamento tra app e motore e della conservazione dei dati pr
 
 ## 12 Dettagli ancora da definire
 
-La fondazione e la progettazione annuale hanno ora un protocollo locale JSON a righe, migrazioni SQLite fino alla versione 2, uno schema del percorso, attività persistenti con ripresa per passaggio e un runtime Python incluso nell'app. I contratti sono in `schemas/`; l'implementazione annuale è descritta in [ANNUAL_PLANNING.md](ANNUAL_PLANNING.md).
+Fondazione, progettazione annuale e contenuti delle lezioni hanno un protocollo locale JSON a righe, migrazioni SQLite fino alla versione 3, schemi del percorso e dei contenuti, attività persistenti con ripresa per passaggio e un runtime Python incluso nell'app. I contratti sono in `schemas/`; l'implementazione è descritta in [ANNUAL_PLANNING.md](ANNUAL_PLANNING.md) e [LESSON_CONTENT.md](LESSON_CONTENT.md).
 
-Restano da definire i contratti dei contenuti completi, il recupero del contesto su percorsi lunghi, la scelta dei modelli per i diversi ruoli, i template editoriali dei materiali, la distribuzione ad altri docenti e i requisiti minimi verificati del sistema. La materia e la classe del percorso pilota richiedono inoltre una scelta con il docente.
+Restano da definire i contratti dei materiali collegati e del recupero, il recupero del contesto su percorsi lunghi, la scelta dei modelli per i diversi ruoli, i template editoriali dei materiali futuri, la distribuzione ad altri docenti e i requisiti minimi verificati del sistema. Il pilota è stato scelto su delega del docente: informatica, seconda superiore fittizia, tre lezioni Python. Il [passaggio di sessione](SESSION_HANDOFF.md) raccoglie decisioni, prove e limiti, senza confondere il pilota con la validazione del prodotto completo.
 
-## 11 Primo traguardo dei contenuti implementato
+## 13 Primo traguardo dei contenuti implementato
 
 `LessonStore` conserva versioni, dipendenze e revisioni dei materiali. `LessonManager` coordina progetto esplicativo, uno o più autori, eventuale ricomposizione e revisioni disciplinare e della continuità. I contenuti precedenti vengono recuperati integralmente nelle versioni salvate. Pubblicazione del risultato e punto di ripresa sono atomici; i riferimenti diventati obsoleti producono segnalazioni, senza riscritture automatiche.
 

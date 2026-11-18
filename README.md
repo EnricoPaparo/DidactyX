@@ -7,6 +7,7 @@ La priorità del progetto è una qualità didattica molto elevata, sostenuta da 
 ## Documentazione
 
 - [Stato e ripresa del lavoro](docs/PROJECT_STATUS.md): risultati disponibili e prossime attività.
+- [Passaggio alla prossima sessione](docs/SESSION_HANDOFF.md): contesto completo, decisioni del docente, evidenze, limiti e indicazioni per continuare anche con un altro modello.
 - [Project Brief](docs/PROJECT_BRIEF.md): visione, requisiti, workflow generativo, interfaccia e decisioni ancora aperte.
 - [Verifica tecnica iniziale](docs/TECHNICAL_FEASIBILITY.md): prove reali su account Codex, generazione, revisione, immagini, ripresa e PDF, con evidenze e limiti.
 - [Architettura macOS](docs/ARCHITECTURE.md): stack approvato, responsabilità dei componenti e organizzazione tecnica iniziale.

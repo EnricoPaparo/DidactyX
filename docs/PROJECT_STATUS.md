@@ -1,10 +1,12 @@
 # Stato del progetto e punto di ripresa
 
-- **Aggiornamento:** 17 novembre 2026.
+- **Aggiornamento:** 18 novembre 2026; verifica e passaggio documentale, senza modifiche all'app.
 - **Versione locale:** DidactyX 0.3.3 per macOS, build 6.
 - **Stato:** punto 1 del consolidamento completato sul pilota: tre lezioni rigenerate integralmente e verificate senza patch editoriali successive.
 - **Branch:** `codex/lesson-consolidation`, basato su `codex/didactic-benchmarks`.
 - **Pull request:** [PR #5](https://github.com/EnricoPaparo/DidactyX/pull/5), aperta in bozza; consolidamento e risultati nel commit `6698c18`. È basata sulla [PR #4](https://github.com/EnricoPaparo/DidactyX/pull/4) del benchmark precedente. Nessun merge a `main`.
+
+Per continuare in un'altra chat o con un altro modello, leggere il [passaggio completo alla prossima sessione](SESSION_HANDOFF.md): raccoglie decisioni di prodotto, contesto, implementazione, evidenze, limiti e proposta del prossimo incremento. Il docente preferisce «Astra 2» per la nuova sessione; il modello interno dell'app non è stato cambiato.
 
 ## Completato e utilizzabile
 
